@@ -83,14 +83,12 @@ what makes "click the pencil, it's live in a minute" true.
 
 ### Repository
 
-`amatei/does-play-dice`, **private** for now. Transfer to Jeff or a project org before launch;
-that changes `repo_url` in `wiki/mkdocs.yml`, `repo` in `wiki/docs/admin/config.yml`, and the
-handles in `.github/CODEOWNERS`.
+[`doesplaydice/doesplaydice`](https://github.com/doesplaydice/doesplaydice), owned by the
+**doesplaydice** organization. Private until the licence is chosen; it has to be public for
+GitHub Pages on the free plan.
 
-### Two real unknowns still marked REPLACE-ME
+### One real unknown still marked REPLACE-ME
 
-- **Jeff's GitHub handle** in `.github/CODEOWNERS` — needed before branch protection can enforce
-  the frozen-core rule.
 - **The CMS OAuth broker URL** in `wiki/docs/admin/config.yml` — a small Cloudflare Worker that
   has to be deployed before browser sign-in works. Until then, `/admin/` still works locally via
   *Work with Local Repository*.

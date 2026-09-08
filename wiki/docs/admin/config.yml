@@ -14,7 +14,7 @@
 
 backend:
   name: github
-  repo: amatei/does-play-dice        # private for now; transfer before launch
+  repo: doesplaydice/doesplaydice
   branch: main
   base_url: https://sveltia-cms-auth.REPLACE-ME.workers.dev # TODO: deploy the OAuth broker
   squash_merges: true

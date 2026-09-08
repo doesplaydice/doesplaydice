@@ -26,7 +26,7 @@ Two doors, same result &mdash; both open a pull request:
     ---
 
     Add a markdown file to `wiki/docs/community/modules/` and open a PR. See
-    [CONTRIBUTING.md](https://github.com/amatei/does-play-dice/blob/main/CONTRIBUTING.md).
+    [CONTRIBUTING.md](https://github.com/doesplaydice/doesplaydice/blob/main/CONTRIBUTING.md).
 
 </div>
 
