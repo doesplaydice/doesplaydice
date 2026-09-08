@@ -91,9 +91,10 @@ extra:
       link: https://doesplaydice.com
       name: doesplaydice.com
 
-# OPEN DECISION — license goes here. Deliberately left unset.
 copyright: >
-  OPEN DECISION — license not yet chosen. See <a href="/contribute/">Contribute</a>.
+  Does Play Dice by Jeff Adams &middot; text licensed
+  <a href="https://creativecommons.org/licenses/by/4.0/" rel="license">CC BY 4.0</a>
+  &middot; the name and logo are excluded
 
 nav:
   - Home: index.md

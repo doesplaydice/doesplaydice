@@ -138,6 +138,6 @@ collections:
         widget: select
         required: false
         options: ["Same as the core game", "CC BY", "CC BY-SA", "CC0 / public domain", "All rights reserved"]
-        hint: "OPEN DECISION -- align these options with Q6 once the core license is chosen."
+        hint: "The core game is CC BY 4.0. You may release your own work under any terms you like."
       - { name: summary, label: "One-line summary", widget: text }
       - { name: body, label: "The module", widget: markdown }

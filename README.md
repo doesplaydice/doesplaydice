@@ -8,7 +8,7 @@ A working MkDocs Material site, built from Jeff's own material, to make the foll
 conversation concrete. **It is a conversation prop, not a deliverable.**
 
 It is deliberately **decision-neutral**: every unresolved question is rendered as a visible
-`OPEN DECISION` block rather than silently answered. The name, the license, the table of
+`OPEN DECISION` block rather than silently answered. The table of
 contents, the setting, and the governance model are all Jeff's calls. The prototype asks them;
 it does not make them.
 
@@ -84,8 +84,7 @@ what makes "click the pencil, it's live in a minute" true.
 ### Repository
 
 [`doesplaydice/doesplaydice`](https://github.com/doesplaydice/doesplaydice), owned by the
-**doesplaydice** organization. Private until the licence is chosen; it has to be public for
-GitHub Pages on the free plan.
+**doesplaydice** organization. Public, licensed CC BY 4.0.
 
 ### One real unknown still marked REPLACE-ME
 

@@ -6,7 +6,7 @@ date: 2026-08-24
 players: "3-5"
 length: "One session"
 dice: "d4, d6, d12"
-license: "Same as the core game"
+license: "CC BY 4.0 (same as the core game)"
 summary: "A cart, a road, and three ways past the thing blocking it. A first session for people who have never rolled a die."
 ---
 

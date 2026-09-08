@@ -1,8 +1,8 @@
-# Contribute <span class="dpd-status stub">Needs decisions</span>
+# Contribute <span class="dpd-status ready">Settled</span>
 
 <div class="dpd-protobar" markdown>
-**This page can't be written until three questions are answered.** They're below. This is the
-page where Jeff's actual motivation for the whole project lives, so it's worth getting right.
+**Decided 8 September 2026.** The game is licensed **CC BY 4.0**, the name and logo are held
+back as marks, and the one-page rules are frozen canon. The reasoning is below.
 </div>
 
 > *"I have a vendetta against the Open Gaming License, and it's a problem to me that anyone can
@@ -44,50 +44,55 @@ link, or if they are savvy, go to the GitHub site and mirror or fork."*
 
 ---
 
-## Three decisions block this page
+## The licence: CC BY 4.0
 
-!!! decision "1. Which license?"
+**You may copy it, change it, translate it, print it, and sell what you make** &mdash; including
+commercially, and including work you keep closed. No permission needed, nothing to share back.
 
-    "Open source" means something specific for **software** and something different for a
-    **game text**. MIT and GPL are the wrong shape for a book. The real options:
+The one requirement is credit:
 
-    | License | What it means here |
-    | --- | --- |
-    | **CC0** | Public domain. Anyone does anything, no credit required |
-    | **CC BY** | Anyone does anything, must credit you |
-    | **CC BY-SA** | Anyone does anything, must credit you, **and derivatives must stay equally open** (copyleft) |
-    | **ORC License** | Purpose-built for TTRPGs post-OGL, backed by Paizo and others. Irrevocable by design — which is the specific thing the OGL crisis proved matters |
+!!! quote "The attribution to use"
 
-    Jeff's own table of contents says **"Copyleft"** — but copyleft constrains exactly the
-    commercial add-on ecosystem he says he wants: *"I want people to be able to earn a living
-    and to make money for their art and their contributions."* Under CC BY-SA, a paid module
-    may have to be released under the same open terms.
+    Based on *Does Play Dice* by Jeff Adams &mdash; doesplaydice.com &mdash; licensed CC BY 4.0.
 
-    **That tension has to be resolved by Jeff, and only Jeff.** He's the lawyer, it's his
-    vendetta, and it's the most consequential irreversible decision in the project.
+If you changed things, say so. That's the whole obligation.
 
-!!! decision "2. What's the trademark position?"
+### Why this one
 
-    The standard model — the one Wizards and Paizo both use — is **free text, defended name**.
-    The rules are open; the logo and the name are not. That's what lets you keep quality
-    control over what calls itself official while the game itself stays genuinely free.
+The Open Gaming Licence turned out to be revocable, and the 2023 attempt to revoke it nearly
+took a twenty-year ecosystem down with it. **CC BY cannot be revoked** &mdash; not by Jeff, not
+by anyone who acquires this project later, not by anyone at all. That is the entire point.
 
-    **Questions for Jeff:** do you want a defended mark? Under which name (see the naming
-    decision on the home page)? And does a compatibility badge exist — an "works with Does Play
-    Dice" logo third parties can use under stated conditions?
+It's also the licence Wizards of the Coast ultimately released the D&D 5.1 SRD under, so material
+can move between the two.
 
-!!! decision "3. Who owns canon?"
+Share-alike was considered and rejected. It would have forced anyone building on the game to
+open their own work too &mdash; which sounds protective, but would have blocked exactly the
+thing this project wants: people earning a living from what they make.
 
-    Jeff said two things on the call that pull in opposite directions:
+## The name is not part of the licence
 
-    - *"I don't want to be the sole person responsible for it. I want people to help out and to implement their own ideas."*
-    - Everything must stay **backwards compatible** with the one page, forever.
+The licence covers the **text**. It does not grant rights to the name **Does Play Dice** or the
+logo.
 
-    Those can both be true, but only with an explicit rule about what the community can change:
+You're free to build on the game and say your work is *compatible with* or *based on* Does Play
+Dice. You may not present it as the official game.
 
-    - **Open core** — pull requests can alter the basic rules. Maximum community ownership, and the compatibility promise is only as strong as review.
-    - **Frozen core, open everything else** — the one page is Jeff's and it's versioned deliberately; the community expands freely around it. Protects the promise, but Jeff stays the bottleneck on the part he says he doesn't want to be sole owner of.
-    - **Stewarded** — Jeff holds canon now, with a named path to handing it to a group later.
+That separation is deliberate and it's the standard arrangement: **the work is free to fork, the
+name stays accountable.** It's how a stranger tells the difference between the game and
+something that merely resembles it.
 
-    **Question for Jeff:** which one? This decides what `CONTRIBUTING.md` says, what the pull
-    request template asks, and whether a stranger can change the game.
+## Who owns canon
+
+The **one-page rules are frozen**. Changes there need Jeff's approval, because a change to the
+core can invalidate every character, module and adventure anyone has already made.
+
+**Everything else is open.** Modules, settings, adversaries, optional rules and tools merge on
+ordinary review. That's the front door, and it's deliberately unowned.
+
+Over time, canon is intended to pass from Jeff to a named group of maintainers &mdash; he has
+been explicit that he doesn't want to be the only person responsible for it.
+
+!!! quote "The one rule that matters"
+
+    Anything you write must work at a table that only knows the one page.
