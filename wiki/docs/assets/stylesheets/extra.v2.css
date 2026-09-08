@@ -1,0 +1,304 @@
+@import url('https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@400;500;600;700&display=swap');
+
+/* ===========================================================================
+   DOES PLAY DICE -- "Field Manual"
+
+   Utilitarian, tabular, squared-off. Condensed uppercase headings with section
+   numbers, boxed tables, hard rules, one olive-brass accent.
+
+   Light  = printed manual: warm paper stock, black ink.
+   Dark   = the same manual read at night: deep olive-black, warm off-white ink.
+   Both are designed; neither is an inversion of the other.
+   =========================================================================== */
+
+/* ---------- Light ---------------------------------------------------------- */
+[data-md-color-scheme="default"]{
+  --dpd-paper:#E8E6DE;
+  --dpd-surface:#F2F0E9;
+  --dpd-sunk:#DAD7CB;
+  --dpd-ink:#1F231C;
+  --dpd-ink-mid:#33392F;
+  --dpd-ink-mute:#5E6356;
+  --dpd-rule:#1F231C;
+  --dpd-rule-soft:#C3C0B4;
+  --dpd-brass:#7A6A2E;
+  --dpd-brass-tint:rgba(122,106,46,.12);
+  --dpd-green:#3D5B34;
+  --dpd-green-tint:rgba(61,91,52,.12);
+
+  --md-default-bg-color:var(--dpd-paper);
+  --md-default-fg-color:var(--dpd-ink);
+  --md-default-fg-color--light:var(--dpd-ink-mute);
+  --md-default-fg-color--lighter:var(--dpd-rule-soft);
+  --md-default-fg-color--lightest:#D0CDC1;
+  --md-typeset-color:var(--dpd-ink-mid);
+  --md-typeset-a-color:var(--dpd-brass);
+  --md-primary-fg-color:var(--dpd-ink);
+  --md-primary-bg-color:var(--dpd-paper);
+  --md-accent-fg-color:var(--dpd-brass);
+  --md-code-bg-color:var(--dpd-sunk);
+  --md-code-fg-color:var(--dpd-ink-mid);
+  --md-footer-bg-color:var(--dpd-ink);
+  --md-footer-bg-color--dark:#14170F;
+}
+
+/* ---------- Dark ----------------------------------------------------------- */
+[data-md-color-scheme="slate"]{
+  --dpd-paper:#14170F;
+  --dpd-surface:#1B1F16;
+  --dpd-sunk:#20241A;
+  --dpd-ink:#E4E2D4;
+  --dpd-ink-mid:#C6C4B4;
+  --dpd-ink-mute:#8D9182;
+  --dpd-rule:#5C6153;
+  --dpd-rule-soft:#333829;
+  --dpd-brass:#C9B36A;
+  --dpd-brass-tint:rgba(201,179,106,.14);
+  --dpd-green:#8FB07D;
+  --dpd-green-tint:rgba(143,176,125,.14);
+
+  --md-default-bg-color:var(--dpd-paper);
+  --md-default-fg-color:var(--dpd-ink);
+  --md-default-fg-color--light:var(--dpd-ink-mute);
+  --md-default-fg-color--lighter:var(--dpd-rule-soft);
+  --md-default-fg-color--lightest:#2A2F20;
+  --md-typeset-color:var(--dpd-ink-mid);
+  --md-typeset-a-color:var(--dpd-brass);
+  --md-primary-fg-color:#0E1109;
+  --md-primary-bg-color:var(--dpd-ink);
+  --md-accent-fg-color:var(--dpd-brass);
+  --md-code-bg-color:var(--dpd-sunk);
+  --md-code-fg-color:var(--dpd-ink-mid);
+  --md-footer-bg-color:#0E1109;
+  --md-footer-bg-color--dark:#0A0C06;
+}
+
+/* ---------- Typography ----------------------------------------------------- */
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3,
+.md-typeset h4,
+.md-header__topic .md-ellipsis{
+  font-family:"Saira Condensed","Arial Narrow",sans-serif;
+  text-transform:uppercase;
+  letter-spacing:.02em;
+  font-weight:700;
+  color:var(--dpd-ink);
+}
+.md-typeset h1{
+  font-size:2rem; line-height:1.05; margin:0 0 .3rem;
+  border-bottom:3px solid var(--dpd-rule);
+  padding-bottom:.25rem;
+  box-shadow:0 3px 0 -1px var(--dpd-paper), 0 4px 0 -1px var(--dpd-rule);
+}
+.md-typeset h2{
+  font-size:1.42rem; line-height:1.1; margin:2.2rem 0 .7rem;
+  padding-bottom:.2rem; border-bottom:1px solid var(--dpd-rule);
+}
+.md-typeset h3{ font-size:1.1rem; margin:1.6rem 0 .5rem; }
+.md-typeset h4{
+  font-size:.86rem; letter-spacing:.09em; margin:1.2rem 0 .4rem;
+  color:var(--dpd-ink-mute);
+}
+
+/* Section numbering on h2 -- the field-manual tell.
+   NB: .md-typeset and .md-content__inner are the SAME element in Material,
+   so the reset must sit on .md-typeset itself, not on a descendant. */
+.md-typeset{ counter-reset:dpdsec; }
+.md-typeset h2::before{
+  counter-increment:dpdsec;
+  content:counter(dpdsec) ".0\00a0\00a0";
+  font-family:"IBM Plex Mono",monospace;
+  font-size:.62em; font-weight:500; letter-spacing:.04em;
+  color:var(--dpd-brass);
+  text-transform:none;
+}
+
+.md-typeset{ font-size:.8rem; line-height:1.7; }
+.md-typeset p{ max-width:42rem; }
+.md-typeset strong{ color:var(--dpd-ink); font-weight:600; }
+
+/* ---------- Chrome --------------------------------------------------------- */
+.md-header{ box-shadow:0 1px 0 var(--dpd-rule); }
+.md-header__title{ font-weight:700; letter-spacing:.03em; }
+.md-tabs{ border-bottom:1px solid var(--dpd-rule); }
+.md-tabs__link{
+  font-family:"IBM Plex Mono",monospace; font-size:.62rem;
+  letter-spacing:.13em; text-transform:uppercase; opacity:.85;
+}
+.md-tabs__link--active{ opacity:1; }
+.md-nav__title{
+  font-family:"Saira Condensed",sans-serif; text-transform:uppercase;
+  letter-spacing:.06em; font-weight:700;
+}
+.md-nav__link{ font-size:.72rem; }
+.md-search__input{ border-radius:2px; }
+
+/* ---------- Tables: boxed, not ruled --------------------------------------- */
+.md-typeset table:not([class]){
+  border:1px solid var(--dpd-rule);
+  border-radius:0;
+  box-shadow:none;
+  font-size:.72rem;
+}
+.md-typeset table:not([class]) th{
+  background:var(--dpd-sunk);
+  border:1px solid var(--dpd-rule);
+  font-family:"IBM Plex Mono",monospace;
+  font-size:.6rem; font-weight:500; letter-spacing:.13em; text-transform:uppercase;
+  color:var(--dpd-ink-mute);
+  padding:.42rem .6rem;
+}
+.md-typeset table:not([class]) td{
+  border:1px solid var(--dpd-rule-soft);
+  padding:.42rem .6rem;
+  vertical-align:top;
+}
+.md-typeset table:not([class]) tr:hover{ background:var(--dpd-brass-tint); }
+
+/* ---------- Squared corners throughout ------------------------------------- */
+.md-typeset .admonition,
+.md-typeset details,
+.md-typeset pre>code,
+.md-typeset .tabbed-set>.tabbed-content,
+.md-typeset code{
+  border-radius:1px;
+}
+
+/* ---------- Admonitions ----------------------------------------------------- */
+.md-typeset .admonition,
+.md-typeset details{
+  border:1px solid var(--dpd-rule);
+  border-left-width:4px;
+  background:var(--dpd-surface);
+  box-shadow:none;
+  font-size:.74rem;
+}
+.md-typeset .admonition-title,
+.md-typeset summary{
+  font-family:"Saira Condensed",sans-serif;
+  text-transform:uppercase; letter-spacing:.05em; font-weight:700;
+  background:transparent;
+  border-bottom:1px solid var(--dpd-rule-soft);
+}
+
+/* Custom "OPEN DECISION" type */
+:root{
+  --md-admonition-icon--decision: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2 2 7v10l10 5 10-5V7L12 2Zm0 2.3 7.5 3.75L12 11.8 4.5 8.05 12 4.3ZM4 9.7l7 3.5v6.6l-7-3.5V9.7Zm9 10.1v-6.6l7-3.5v6.6l-7 3.5Z"/></svg>');
+}
+.md-typeset .admonition.decision,
+.md-typeset details.decision{
+  border-color:var(--dpd-brass);
+  background:var(--dpd-brass-tint);
+}
+.md-typeset .decision>.admonition-title,
+.md-typeset .decision>summary{
+  background:transparent;
+  border-bottom-color:var(--dpd-brass);
+  color:var(--dpd-ink);
+}
+.md-typeset .decision>.admonition-title::before,
+.md-typeset .decision>summary::before{
+  background-color:var(--dpd-brass);
+  -webkit-mask-image:var(--md-admonition-icon--decision);
+          mask-image:var(--md-admonition-icon--decision);
+}
+
+/* ---------- Cards ----------------------------------------------------------- */
+.md-typeset .grid.cards>ul>li,
+.md-typeset .grid>.card{
+  border:1px solid var(--dpd-rule);
+  border-radius:0;
+  background:var(--dpd-surface);
+  box-shadow:none;
+  padding:.85rem 1rem;
+}
+.md-typeset .grid.cards>ul>li:hover{
+  border-color:var(--dpd-brass);
+  box-shadow:none;
+}
+
+/* ---------- Tabbed ---------------------------------------------------------- */
+.md-typeset .tabbed-labels>label{
+  font-family:"IBM Plex Mono",monospace; font-size:.62rem;
+  letter-spacing:.1em; text-transform:uppercase;
+}
+
+/* ---------- Prototype banner ------------------------------------------------ */
+.dpd-protobar{
+  background:var(--dpd-brass-tint);
+  border:1px solid var(--dpd-brass);
+  border-left-width:4px;
+  padding:.7rem .95rem;
+  font-size:.7rem; line-height:1.55;
+  margin-bottom:1.5rem;
+}
+
+/* ---------- Status pills ---------------------------------------------------- */
+.dpd-status{
+  display:inline-block;
+  font-family:"IBM Plex Mono",monospace;
+  font-size:.55rem; font-weight:600; letter-spacing:.12em; text-transform:uppercase;
+  padding:.16rem .42rem; border:1px solid; border-radius:0;
+  vertical-align:middle; margin-left:.4rem;
+}
+.dpd-status.ready{ color:var(--dpd-green); border-color:var(--dpd-green); background:var(--dpd-green-tint); }
+.dpd-status.stub { color:var(--dpd-brass); border-color:var(--dpd-brass); background:var(--dpd-brass-tint); }
+
+/* ---------- Hero ------------------------------------------------------------ */
+.dpd-hero{ text-align:left; padding:1.6rem 0 1rem; }
+.dpd-hero .dpd-kicker{
+  font-family:"IBM Plex Mono",monospace;
+  font-size:.62rem; letter-spacing:.18em; text-transform:uppercase;
+  font-weight:500; color:var(--dpd-brass); margin-bottom:.5rem;
+}
+.md-typeset .dpd-hero h1{
+  font-size:2.7rem; line-height:.98; font-weight:700;
+  border-bottom:3px solid var(--dpd-rule); padding-bottom:.3rem;
+  box-shadow:0 3px 0 -1px var(--dpd-paper), 0 4px 0 -1px var(--dpd-rule);
+  margin-bottom:.9rem;
+}
+.dpd-hero .dpd-sub{
+  font-size:.84rem; line-height:1.6; max-width:34rem; margin:0 0 1.4rem;
+  color:var(--dpd-ink-mid);
+}
+
+/* ---------- Dice strip ------------------------------------------------------ */
+.dpd-dice{ display:flex; flex-wrap:wrap; gap:.4rem; margin:1.4rem 0; }
+.dpd-die{
+  border:1.5px solid var(--dpd-rule); border-radius:0;
+  padding:.4rem .7rem; text-align:center; min-width:4.4rem;
+  background:transparent;
+}
+.dpd-die b{
+  display:block; font-family:"IBM Plex Mono",monospace;
+  font-size:.9rem; font-weight:600; color:var(--dpd-ink);
+}
+.dpd-die span{
+  display:block; font-family:"IBM Plex Mono",monospace;
+  font-size:.55rem; text-transform:uppercase; letter-spacing:.09em;
+  color:var(--dpd-ink-mute); margin-top:.1rem;
+}
+
+/* ---------- Character sheet ------------------------------------------------- */
+.dpd-sheet{
+  border:1px solid var(--dpd-rule); border-radius:0;
+  padding:1rem 1.2rem; margin:1.1rem 0; background:var(--dpd-surface);
+}
+.dpd-field{
+  border-bottom:1px solid var(--dpd-rule-soft);
+  min-height:1.6rem; margin:.4rem 0 .9rem;
+}
+.dpd-field-label{
+  font-family:"IBM Plex Mono",monospace;
+  font-size:.56rem; text-transform:uppercase; letter-spacing:.13em;
+  font-weight:500; color:var(--dpd-ink-mute);
+}
+
+/* ---------- Print ----------------------------------------------------------- */
+@media print{
+  .md-header,.md-tabs,.md-sidebar,.md-footer,
+  .dpd-protobar,.md-content__button{ display:none !important; }
+  .md-main__inner{ margin:0; }
+  .md-content{ max-width:100%; }
+}

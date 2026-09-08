@@ -10,7 +10,7 @@ previous is settled.
 
 ---
 
-## Test 1 &middot; Can a stranger start playing in 15 minutes?
+## Can a stranger start playing in 15 minutes?
 
 **Run it as:** hand them the table tent and the characters. Say almost nothing. Start the timer.
 
@@ -26,7 +26,7 @@ different tables stall in the same place, that sentence is the problem &mdash; n
 
 ---
 
-## Test 2 &middot; Does the tie rule land?
+## Does the tie rule land?
 
 Ties are the most distinctive thing in the game: **both sides get something.** You get through
 the door, and you hurt your shoulder doing it. It's also the easiest thing to fumble, because
@@ -47,7 +47,7 @@ examples, not rewording.
 
 ---
 
-## Test 3 &middot; Do people use all three Skills?
+## Do people use all three Skills?
 
 Every character has Physical, Mental and Social. The design promise is that there's more than one
 way past any obstacle.
@@ -67,7 +67,7 @@ challenges get written.
 
 ---
 
-## Test 4 &middot; Do the campaign rules break the one-page feel?
+## Do the campaign rules break the one-page feel?
 
 The whole promise of the game is that someone who read one page and someone who read everything
 can play at the same table. This is the first real test of that.
@@ -93,7 +93,7 @@ have known.
 
 ---
 
-## Test 5 &middot; Does a 40-minute convention slot work?
+## Does a 40-minute convention slot work?
 
 At a convention, people sit down cold, play, and leave. There is no teaching beforehand and no
 second session.

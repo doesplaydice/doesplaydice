@@ -17,8 +17,8 @@ theme:
   name: material
   language: en
   font:
-    text: Inter
-    code: JetBrains Mono
+    text: IBM Plex Sans
+    code: IBM Plex Mono
   icon:
     logo: material/dice-d20
     repo: fontawesome/brands/github
@@ -30,15 +30,15 @@ theme:
         name: Follow system theme
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: indigo
-      accent: amber
+      primary: custom
+      accent: custom
       toggle:
         icon: material/weather-sunny
         name: Switch to dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
-      primary: indigo
-      accent: amber
+      primary: custom
+      accent: custom
       toggle:
         icon: material/weather-night
         name: Switch to light mode
@@ -57,7 +57,7 @@ theme:
     - content.tooltips
 
 extra_css:
-  - assets/stylesheets/extra.css
+  - assets/stylesheets/extra.v2.css
 
 markdown_extensions:
   - abbr
