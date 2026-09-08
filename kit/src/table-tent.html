@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Table tent -- Does Play Dice</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:wght@400;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="_kit.css">
+<style>
+  .panel{
+    position:absolute; left:0; right:0; height:5.5in;
+    padding:.42in .5in;
+    display:flex; flex-direction:column;
+  }
+  .panel.top{ top:0; transform:rotate(180deg); }   /* reads upright once folded */
+  .panel.bottom{ top:5.5in; }
+
+  .brand{ display:flex; align-items:baseline; justify-content:space-between; }
+  .brand h1{
+    font-family:Spectral,Georgia,serif; font-size:23pt; font-weight:700;
+    margin:0; letter-spacing:-.01em;
+  }
+  .brand .url{ font-family:"IBM Plex Mono",monospace; font-size:8.5pt; color:var(--soft); }
+
+  .headline{
+    font-family:Spectral,Georgia,serif; font-size:13pt; font-style:italic;
+    margin:.06in 0 .16in; color:var(--ink);
+  }
+  .rule{ border-top:2pt solid var(--ink); margin-bottom:.16in; }
+
+  .cols{ display:grid; grid-template-columns:1.02fr 1fr; gap:.42in; flex:1; }
+
+  .ktable td.name{ font-weight:600; font-size:10pt; width:1in; }
+  .ktable td.desc{ font-size:8.5pt; color:#333; line-height:1.35; }
+  .ktable td.dcell{ width:.72in; padding-right:.1in; }
+  .ktable td.dname{ font-size:9.5pt; }
+
+  .foot{
+    display:flex; justify-content:space-between; align-items:flex-end;
+    border-top:1pt solid var(--ink); padding-top:.1in; margin-top:.14in;
+  }
+  .tie{ font-size:8.5pt; line-height:1.4; max-width:4.6in; }
+  .tie b{ font-weight:600; }
+</style>
+</head>
+<body>
+
+<div class="screen-only">
+  <b>Table tent.</b> Print single-sided on card stock, cut nothing, fold once along the dashed
+  centre line and stand it up. Both faces read upright, so players on either side of the table
+  can see the core mechanic without asking.
+</div>
+
+<div class="sheet">
+
+  <div class="fold" style="top:5.5in"></div>
+  <div class="foldnote" style="top:5.5in; transform:translateY(-50%)">fold here</div>
+
+  <!-- ============ PANEL (identical content, one rotated) ============ -->
+  <div class="panel top">
+    <div class="brand">
+      <h1>Does Play Dice</h1>
+      <span class="url">doesplaydice.com</span>
+    </div>
+    <p class="headline">Describe what you want to do. If it's hard, roll for it. Highest roll wins.</p>
+    <div class="rule"></div>
+
+    <div class="cols">
+      <div>
+        <span class="label">Your three skills</span>
+        <table class="ktable" style="margin-top:.07in">
+          <tr><td class="name">Physical</td><td class="desc">Strength, senses, fine motor skills, stamina</td></tr>
+          <tr><td class="name">Mental</td><td class="desc">Knowledge, memory, reasoning, aptitude</td></tr>
+          <tr><td class="name">Social</td><td class="desc">Intuition, influence, charisma, empathy</td></tr>
+        </table>
+        <p style="font-size:8.5pt;line-height:1.45;margin:.16in 0 0;color:#333">
+          You have one die for each. Pick the skill that fits how <em>you</em> want to solve it &mdash;
+          there's usually more than one way in.
+        </p>
+      </div>
+
+      <div>
+        <span class="label">What the Narrator rolls</span>
+        <table class="ktable" style="margin-top:.07in">
+          <tr><td class="dcell"><span class="die">d4</span></td><td class="dname">Easy</td></tr>
+          <tr><td class="dcell"><span class="die">d6</span></td><td class="dname">Moderate</td></tr>
+          <tr><td class="dcell"><span class="die">d8</span></td><td class="dname">Challenging</td></tr>
+          <tr><td class="dcell"><span class="die">d12</span></td><td class="dname">High difficulty</td></tr>
+          <tr><td class="dcell"><span class="die">d20</span></td><td class="dname">"Impossible"</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="foot">
+      <p class="tie"><b>Tie?</b> Both sides get something. You shoulder the door open &mdash; and
+      hurt your shoulder doing it.</p>
+      <span class="label" style="white-space:nowrap">Free &middot; open source</span>
+    </div>
+  </div>
+
+  <div class="panel bottom">
+    <div class="brand">
+      <h1>Does Play Dice</h1>
+      <span class="url">doesplaydice.com</span>
+    </div>
+    <p class="headline">Describe what you want to do. If it's hard, roll for it. Highest roll wins.</p>
+    <div class="rule"></div>
+
+    <div class="cols">
+      <div>
+        <span class="label">Your three skills</span>
+        <table class="ktable" style="margin-top:.07in">
+          <tr><td class="name">Physical</td><td class="desc">Strength, senses, fine motor skills, stamina</td></tr>
+          <tr><td class="name">Mental</td><td class="desc">Knowledge, memory, reasoning, aptitude</td></tr>
+          <tr><td class="name">Social</td><td class="desc">Intuition, influence, charisma, empathy</td></tr>
+        </table>
+        <p style="font-size:8.5pt;line-height:1.45;margin:.16in 0 0;color:#333">
+          You have one die for each. Pick the skill that fits how <em>you</em> want to solve it &mdash;
+          there's usually more than one way in.
+        </p>
+      </div>
+
+      <div>
+        <span class="label">What the Narrator rolls</span>
+        <table class="ktable" style="margin-top:.07in">
+          <tr><td class="dcell"><span class="die">d4</span></td><td class="dname">Easy</td></tr>
+          <tr><td class="dcell"><span class="die">d6</span></td><td class="dname">Moderate</td></tr>
+          <tr><td class="dcell"><span class="die">d8</span></td><td class="dname">Challenging</td></tr>
+          <tr><td class="dcell"><span class="die">d12</span></td><td class="dname">High difficulty</td></tr>
+          <tr><td class="dcell"><span class="die">d20</span></td><td class="dname">"Impossible"</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="foot">
+      <p class="tie"><b>Tie?</b> Both sides get something. You shoulder the door open &mdash; and
+      hurt your shoulder doing it.</p>
+      <span class="label" style="white-space:nowrap">Free &middot; open source</span>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

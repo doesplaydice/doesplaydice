@@ -1,0 +1,55 @@
+# The publishing machine.
+#
+# This is what makes "click the pencil, it's live in a minute" true. Without it
+# the CMS is just a nice text box.
+
+name: Publish site
+
+on:
+  push:
+    branches: [main]
+    paths: ["wiki/**", ".github/workflows/publish.yml"]
+  pull_request:
+    paths: ["wiki/**"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  # Every PR gets built. A contributor finds out their edit breaks the site
+  # before a reviewer has to notice it.
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Install
+        run: pip install mkdocs-material
+      - name: Build (strict -- broken links fail the build)
+        run: mkdocs build --strict --config-file wiki/mkdocs.yml
+      - name: Upload
+        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: wiki/site
+
+  deploy:
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - id: deploy
+        uses: actions/deploy-pages@v4

@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Pre-generated characters -- Does Play Dice</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,600;0,700;1,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="_kit.css">
+<style>
+  .grid{
+    position:absolute; inset:.42in .42in;
+    display:grid; grid-template-columns:1fr 1fr; grid-template-rows:repeat(3,1fr);
+    gap:.2in;
+  }
+  .card{
+    border:1pt solid var(--ink); border-radius:4pt;
+    padding:.17in .2in; display:flex; flex-direction:column; overflow:hidden;
+  }
+  .cardtop{ display:flex; align-items:center; justify-content:space-between; gap:.1in; }
+  .name{ font-size:17pt; font-weight:700; margin:0; letter-spacing:-.01em; }
+  .dice{ display:flex; gap:.07in; }
+  .dslot{ display:flex; flex-direction:column; align-items:center; gap:.02in; }
+  .dslot .die{ font-size:9.5pt; padding:.045in .075in; }
+  .dlabel{ font-family:"IBM Plex Mono",monospace; font-size:5.6pt; letter-spacing:.08em;
+           text-transform:uppercase; color:var(--soft); }
+
+  .hook{ font-family:Spectral,Georgia,serif; font-style:italic; font-size:9.5pt;
+         line-height:1.3; margin:.07in 0 .1in; padding-bottom:.09in;
+         border-bottom:1pt solid var(--ink); }
+
+  .facts{ margin:0; flex:1; }
+  .facts dt{ margin-top:.055in; }
+  .facts dd{ margin:0 0 0; font-size:8.2pt; line-height:1.32; }
+
+  .notes{ margin-top:.06in; }
+  .notes .lines{
+    display:block; height:.34in; margin-top:.03in;
+    background:repeating-linear-gradient(to bottom,transparent,transparent .16in,
+               var(--hair) .16in,var(--hair) calc(.16in + .5pt));
+  }
+</style>
+</head>
+<body>
+
+<div class="screen-only">
+  <b>Pre-generated characters.</b> Print, cut on the dashed lines, hand one to each player.
+  Ready to play with no character creation &mdash; useful when someone sits down mid-convention
+  and you have forty minutes.
+  <br><br>
+  <b>Why these six:</b> there are exactly six ways to deal three different dice across three
+  skills, and these are all six. Nobody at the table duplicates anybody, and every approach to a
+  problem has someone at the table who is good at it. Swap the trio (here <b>d4 / d6 / d12</b>)
+  and the same six shapes still hold.
+  <br><br>
+  <b>The names and backgrounds are samples.</b> They are deliberately setting-neutral, since the
+  setting question is still open. Replace them with your own &mdash; the structure is the part
+  that matters.
+</div>
+
+<div class="sheet">
+  <div class="cutgrid">
+    <div class="v" style="left:50%"></div>
+    <div class="h" style="top:33.333%"></div>
+    <div class="h" style="top:66.667%"></div>
+  </div>
+  <div class="grid">
+    <article class="card">
+      <div class="cardtop">
+        <h2 class="name display">Tam</h2>
+        <div class="dice">
+          <span class="dslot"><b class="die">d12</b><span class="dlabel">Phys</span></span>
+          <span class="dslot"><b class="die">d6</b><span class="dlabel">Ment</span></span>
+          <span class="dslot"><b class="die">d4</b><span class="dlabel">Soc</span></span>
+        </div>
+      </div>
+      <p class="hook">Hauled freight for a living, and it shows.</p>
+      <dl class="facts">
+        <dt class="label">Background</dt><dd>Twelve years moving other people's cargo. Never asked what was in it.</dd>
+        <dt class="label">Quirk</dt><dd>Cracks knuckles before doing anything difficult.</dd>
+        <dt class="label">You want</dt><dd>To clear a debt that isn't yours.</dd>
+      </dl>
+      <div class="notes"><span class="label">Notes</span><span class="lines"></span></div>
+    </article>
+    <article class="card">
+      <div class="cardtop">
+        <h2 class="name display">Rook</h2>
+        <div class="dice">
+          <span class="dslot"><b class="die">d12</b><span class="dlabel">Phys</span></span>
+          <span class="dslot"><b class="die">d4</b><span class="dlabel">Ment</span></span>
+          <span class="dslot"><b class="die">d6</b><span class="dlabel">Soc</span></span>
+        </div>
+      </div>
+      <p class="hook">Fought for money. Was good at it. Stopped.</p>
+      <dl class="facts">
+        <dt class="label">Background</dt><dd>Made a name somewhere loud, then left before the name caught up.</dd>
+        <dt class="label">Quirk</dt><dd>Won't step over a threshold left-foot first.</dd>
+        <dt class="label">You want</dt><dd>To have someone important owe you a favour.</dd>
+      </dl>
+      <div class="notes"><span class="label">Notes</span><span class="lines"></span></div>
+    </article>
+    <article class="card">
+      <div class="cardtop">
+        <h2 class="name display">Sol</h2>
+        <div class="dice">
+          <span class="dslot"><b class="die">d6</b><span class="dlabel">Phys</span></span>
+          <span class="dslot"><b class="die">d12</b><span class="dlabel">Ment</span></span>
+          <span class="dslot"><b class="die">d4</b><span class="dlabel">Soc</span></span>
+        </div>
+      </div>
+      <p class="hook">Fixes what other people break.</p>
+      <dl class="facts">
+        <dt class="label">Background</dt><dd>Apprenticed young to someone brilliant and impossible to please.</dd>
+        <dt class="label">Quirk</dt><dd>Narrates your own work out loud, whether or not anyone's listening.</dd>
+        <dt class="label">You want</dt><dd>To find out how the thing ends. Any thing.</dd>
+      </dl>
+      <div class="notes"><span class="label">Notes</span><span class="lines"></span></div>
+    </article>
+    <article class="card">
+      <div class="cardtop">
+        <h2 class="name display">Wren</h2>
+        <div class="dice">
+          <span class="dslot"><b class="die">d4</b><span class="dlabel">Phys</span></span>
+          <span class="dslot"><b class="die">d12</b><span class="dlabel">Ment</span></span>
+          <span class="dslot"><b class="die">d6</b><span class="dlabel">Soc</span></span>
+        </div>
+      </div>
+      <p class="hook">Has read about all of this. Done none of it.</p>
+      <dl class="facts">
+        <dt class="label">Background</dt><dd>Years of study, one very short and very abrupt departure.</dd>
+        <dt class="label">Quirk</dt><dd>Flinches at loud noises, then pretends you didn't see.</dd>
+        <dt class="label">You want</dt><dd>To be proved right in front of a witness.</dd>
+      </dl>
+      <div class="notes"><span class="label">Notes</span><span class="lines"></span></div>
+    </article>
+    <article class="card">
+      <div class="cardtop">
+        <h2 class="name display">Kit</h2>
+        <div class="dice">
+          <span class="dslot"><b class="die">d6</b><span class="dlabel">Phys</span></span>
+          <span class="dslot"><b class="die">d4</b><span class="dlabel">Ment</span></span>
+          <span class="dslot"><b class="die">d12</b><span class="dlabel">Soc</span></span>
+        </div>
+      </div>
+      <p class="hook">Talks first. Thinks about it later, sometimes.</p>
+      <dl class="facts">
+        <dt class="label">Background</dt><dd>Grew up somewhere crowded. Learned that being liked is a skill.</dd>
+        <dt class="label">Quirk</dt><dd>Cannot sit still. Always turning something over in your hands.</dd>
+        <dt class="label">You want</dt><dd>To win over the one person who can't stand you.</dd>
+      </dl>
+      <div class="notes"><span class="label">Notes</span><span class="lines"></span></div>
+    </article>
+    <article class="card">
+      <div class="cardtop">
+        <h2 class="name display">Maud</h2>
+        <div class="dice">
+          <span class="dslot"><b class="die">d4</b><span class="dlabel">Phys</span></span>
+          <span class="dslot"><b class="die">d6</b><span class="dlabel">Ment</span></span>
+          <span class="dslot"><b class="die">d12</b><span class="dlabel">Soc</span></span>
+        </div>
+      </div>
+      <p class="hook">Listens more than talks, and misses nothing.</p>
+      <dl class="facts">
+        <dt class="label">Background</dt><dd>Worked front-of-house somewhere everyone passed through eventually.</dd>
+        <dt class="label">Quirk</dt><dd>Remembers every name. Uses them deliberately.</dd>
+        <dt class="label">You want</dt><dd>To find someone who stopped writing.</dd>
+      </dl>
+      <div class="notes"><span class="label">Notes</span><span class="lines"></span></div>
+    </article>
+  </div>
+</div>
+</body>
+</html>

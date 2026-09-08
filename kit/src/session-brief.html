@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Playtest session brief -- Does Play Dice</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,600;0,700;1,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="_kit.css">
+<style>
+  .page{ position:absolute; inset:.45in .5in; display:flex; flex-direction:column; }
+  .head{ display:flex; align-items:baseline; justify-content:space-between;
+         border-bottom:2pt solid var(--ink); padding-bottom:.08in; }
+  .head h1{ font-family:Spectral,Georgia,serif; font-size:19pt; font-weight:700; margin:0; }
+  .head .url{ font-family:"IBM Plex Mono",monospace; font-size:8pt; color:var(--soft); }
+  .sub{ font-family:Spectral,Georgia,serif; font-style:italic; font-size:9.5pt;
+        color:#333; margin:.07in 0 .13in; }
+
+  .stamp{ display:grid; grid-template-columns:repeat(4,1fr); gap:.22in; margin-bottom:.15in; }
+  .stamp .f > .label{ display:block; margin-bottom:.02in; }
+  .stamp .fill{ border-bottom:.75pt solid var(--hair); height:.22in; }
+
+  .block{ margin-bottom:.14in; }
+  .block > .label{ display:block; margin-bottom:.045in; }
+  .prompt{ font-size:7.6pt; color:var(--soft); font-style:italic; line-height:1.3; margin:0 0 .05in; }
+  .fill{ border-bottom:.75pt solid var(--hair); height:.23in; }
+
+  /* focus picker -- tick the one this session is for */
+  .focus{ border:1pt solid var(--ink); border-radius:3pt; padding:.11in .14in; margin-bottom:.15in; }
+  .focus .row{ display:grid; grid-template-columns:.22in 1fr 1.9in; gap:.1in;
+               align-items:start; padding:.055in 0; border-top:.5pt solid var(--hair); }
+  .focus .row:first-of-type{ border-top:none; }
+  .box{ width:.15in; height:.15in; border:1.25pt solid var(--ink); border-radius:2pt; margin-top:.02in; }
+  .focus .q{ font-size:9pt; font-weight:600; line-height:1.3; }
+  .focus .w{ font-size:7.6pt; color:#444; line-height:1.32; }
+
+  .metrics{ display:grid; grid-template-columns:1fr 1fr; gap:0 .3in; }
+  .m{ padding:.07in 0; border-bottom:.5pt solid var(--hair); }
+  .m .k{ font-size:8.6pt; font-weight:600; }
+  .m .hint{ font-size:7.2pt; color:var(--soft); font-style:italic; }
+  .m .ans{ border-bottom:.75pt solid var(--hair); height:.2in; margin-top:.03in; }
+  .circle{ font-family:"IBM Plex Mono",monospace; font-size:8.5pt; letter-spacing:.06em; margin-top:.05in; }
+
+  .verbatim{ margin-top:.1in; }
+  .notesblock{ flex:1; display:flex; flex-direction:column; }
+  .ruled{ flex:1; min-height:.62in; margin-top:.04in;
+    background:repeating-linear-gradient(to bottom,transparent,transparent .21in,
+               var(--hair) .21in,var(--hair) calc(.21in + .5pt)); }
+
+  .foot{ margin-top:.06in; border-top:1pt solid var(--ink); padding-top:.09in;
+         display:flex; justify-content:space-between; align-items:flex-end; }
+  .foot p{ font-size:8pt; line-height:1.4; max-width:5.3in; margin:0; }
+</style>
+</head>
+<body>
+
+<div class="screen-only">
+  <b>Playtest session brief.</b> One per session. Tick the question tonight is testing, run the
+  game, then take two minutes at the end to fill in the bottom half. Photograph it before you
+  leave &mdash; that photo is the whole feedback loop.
+  <br><br>
+  Print a stack. Pair with the player feedback slips.
+</div>
+
+<div class="sheet">
+  <div class="page">
+
+    <div class="head">
+      <h1>Playtest session brief</h1>
+      <span class="url">doesplaydice.com</span>
+    </div>
+    <p class="sub">Open play tells you people had fun. This tells you what to change.</p>
+
+    <div class="stamp">
+      <div class="f"><span class="label">Date</span><div class="fill"></div></div>
+      <div class="f"><span class="label">Where</span><div class="fill"></div></div>
+      <div class="f"><span class="label">Narrator</span><div class="fill"></div></div>
+      <div class="f"><span class="label">No. of players</span><div class="fill"></div></div>
+    </div>
+
+    <span class="label">Tick the one thing tonight is testing</span>
+    <div class="focus">
+      <div class="row">
+        <div class="box"></div>
+        <div class="q">Can a stranger start playing in 15 minutes?</div>
+        <div class="w">Watch where they stall and which sentence they re-read.</div>
+      </div>
+      <div class="row">
+        <div class="box"></div>
+        <div class="q">Does the tie rule land?</div>
+        <div class="w">Most distinctive rule, easiest to fumble. Does the Narrator improvise or freeze?</div>
+      </div>
+      <div class="row">
+        <div class="box"></div>
+        <div class="q">Do people use all three Skills?</div>
+        <div class="w">If everything gets solved Physically, the obstacles aren't offering three routes.</div>
+      </div>
+      <div class="row">
+        <div class="box"></div>
+        <div class="q">Do the campaign rules break the one-page feel?</div>
+        <div class="w">Both are meant to work at one table. This is the real test of that promise.</div>
+      </div>
+      <div class="row">
+        <div class="box"></div>
+        <div class="q">Does a 40-minute convention slot work?</div>
+        <div class="w">Timed, with pregens and the real kit. No teaching beforehand.</div>
+      </div>
+    </div>
+
+    <span class="label">Fill in at the end &mdash; two minutes</span>
+    <div class="metrics">
+      <div class="m">
+        <div class="k">Time to first dice roll</div>
+        <div class="hint">from sitting down. The best single measure of "easy to start."</div>
+        <div class="ans"></div>
+      </div>
+      <div class="m">
+        <div class="k">Rules questions asked</div>
+        <div class="hint">just a tally is fine</div>
+        <div class="ans"></div>
+      </div>
+      <div class="m">
+        <div class="k">Did they finish?</div>
+        <div class="hint">if it fizzled, at what point</div>
+        <div class="circle">YES&nbsp;&nbsp;/&nbsp;&nbsp;NO&nbsp;&mdash;&nbsp;&nbsp;<span style="color:var(--hair)">___________________</span></div>
+      </div>
+      <div class="m">
+        <div class="k">Would they play again?</div>
+        <div class="hint">ask out loud, and watch the pause before the answer</div>
+        <div class="circle">ALL&nbsp;&nbsp;/&nbsp;&nbsp;MOST&nbsp;&nbsp;/&nbsp;&nbsp;SOME&nbsp;&nbsp;/&nbsp;&nbsp;NO</div>
+      </div>
+    </div>
+
+    <div class="verbatim">
+      <span class="label">The two questions they actually asked &mdash; word for word</span>
+      <p class="prompt">Exact wording matters more than your summary of it. It's usually the fix.</p>
+      <div class="fill"></div>
+      <div class="fill"></div>
+    </div>
+
+    <div class="block" style="margin-top:.1in">
+      <span class="label">The one thing you'd cut</span>
+      <p class="prompt">Not add. Cut. There is always something.</p>
+      <div class="fill"></div>
+    </div>
+
+    <div class="block notesblock">
+      <span class="label">Anything else worth remembering</span>
+      <div class="ruled"></div>
+    </div>
+
+    <div class="foot">
+      <p><b>Before you leave the table:</b> photograph this sheet and the feedback slips.
+      That's the whole loop &mdash; it doesn't work if the paper goes in a bag and stays there.</p>
+      <span class="label" style="white-space:nowrap">Free &middot; open source</span>
+    </div>
+
+  </div>
+</div>
+</body>
+</html>

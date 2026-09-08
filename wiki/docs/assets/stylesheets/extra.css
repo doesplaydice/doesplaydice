@@ -1,0 +1,154 @@
+/* ---------------------------------------------------------------
+   Does Play Dice — prototype styles
+   --------------------------------------------------------------- */
+
+:root {
+  --dpd-decision: #c77800;
+  --dpd-decision-tint: rgba(199, 120, 0, 0.1);
+}
+[data-md-color-scheme="slate"] {
+  --dpd-decision: #ffb300;
+  --dpd-decision-tint: rgba(255, 179, 0, 0.12);
+}
+
+/* --- Custom "OPEN DECISION" admonition ------------------------- */
+
+:root {
+  --md-admonition-icon--decision: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2 2 7v10l10 5 10-5V7L12 2Zm0 2.3 7.5 3.75L12 11.8 4.5 8.05 12 4.3ZM4 9.7l7 3.5v6.6l-7-3.5V9.7Zm9 10.1v-6.6l7-3.5v6.6l-7 3.5Z"/></svg>');
+}
+
+.md-typeset .admonition.decision,
+.md-typeset details.decision {
+  border-color: var(--dpd-decision);
+  background-color: var(--dpd-decision-tint);
+}
+.md-typeset .decision > .admonition-title,
+.md-typeset .decision > summary {
+  background-color: var(--dpd-decision-tint);
+  border-color: var(--dpd-decision);
+}
+.md-typeset .decision > .admonition-title::before,
+.md-typeset .decision > summary::before {
+  background-color: var(--dpd-decision);
+  -webkit-mask-image: var(--md-admonition-icon--decision);
+          mask-image: var(--md-admonition-icon--decision);
+}
+
+/* --- Hero on the home page ------------------------------------- */
+
+.dpd-hero {
+  text-align: center;
+  padding: 2.5rem 1rem 1.5rem;
+}
+.dpd-hero .dpd-kicker {
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--md-accent-fg-color);
+  margin-bottom: 0.6rem;
+}
+.md-typeset .dpd-hero h1 {
+  font-size: 2.6rem;
+  line-height: 1.1;
+  font-weight: 800;
+  margin: 0 0 0.6rem;
+  color: var(--md-default-fg-color);
+}
+.dpd-hero .dpd-sub {
+  font-size: 1.0rem;
+  line-height: 1.6;
+  max-width: 36rem;
+  margin: 0 auto 1.6rem;
+  color: var(--md-default-fg-color--light);
+}
+
+/* --- Dice strip ------------------------------------------------- */
+
+.dpd-dice {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  justify-content: center;
+  margin: 1.6rem 0;
+}
+.dpd-die {
+  border: 2px solid var(--md-default-fg-color--lightest);
+  border-radius: 0.5rem;
+  padding: 0.55rem 0.9rem;
+  text-align: center;
+  min-width: 5.2rem;
+  background: var(--md-default-bg-color);
+}
+.dpd-die b {
+  display: block;
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--md-primary-fg-color);
+}
+[data-md-color-scheme="slate"] .dpd-die b { color: var(--md-accent-fg-color); }
+.dpd-die span {
+  display: block;
+  font-size: 0.66rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--md-default-fg-color--light);
+  margin-top: 0.15rem;
+}
+
+/* --- Status pills ----------------------------------------------- */
+
+.dpd-status {
+  display: inline-block;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.2rem;
+  vertical-align: middle;
+  margin-left: 0.4rem;
+}
+.dpd-status.ready { background: #1b5e20; color: #fff; }
+.dpd-status.stub  { background: var(--dpd-decision); color: #fff; }
+
+/* --- Prototype banner ------------------------------------------- */
+
+.dpd-protobar {
+  background: var(--dpd-decision-tint);
+  border-left: 4px solid var(--dpd-decision);
+  padding: 0.7rem 1rem;
+  font-size: 0.74rem;
+  line-height: 1.5;
+  border-radius: 0.2rem;
+  margin-bottom: 1.5rem;
+}
+
+/* --- Printable character sheet ---------------------------------- */
+
+.dpd-sheet {
+  border: 2px solid var(--md-default-fg-color--lighter);
+  border-radius: 0.5rem;
+  padding: 1.2rem 1.4rem;
+  margin: 1.2rem 0;
+  background: var(--md-default-bg-color);
+}
+.dpd-field {
+  border-bottom: 1px solid var(--md-default-fg-color--lighter);
+  min-height: 1.7rem;
+  margin: 0.5rem 0 1rem;
+}
+.dpd-field-label {
+  font-size: 0.64rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  color: var(--md-default-fg-color--light);
+}
+
+@media print {
+  .md-header, .md-tabs, .md-sidebar, .md-footer,
+  .dpd-protobar, .md-content__button { display: none !important; }
+  .md-main__inner { margin: 0; }
+  .md-content { max-width: 100%; }
+}

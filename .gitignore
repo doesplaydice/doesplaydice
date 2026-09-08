@@ -1,0 +1,19 @@
+# --- Build output -----------------------------------------------------------
+.venv/
+wiki/site/
+kit/dist/          # regenerate with ./kit/build.sh
+
+# --- Jeff's private research ------------------------------------------------
+# EXCLUDED ON PURPOSE. Two reasons, both serious:
+#   1. It is ~295k words of Jeff's personal notes, not project source.
+#   2. Rules/Examples/ contains long verbatim passages from other publishers
+#      (Pathfinder 2e, D&D 4e, Lamentations of the Flame Princess). Fine as
+#      private research, absolutely not publishable.
+# This repo is intended to go public. Do not remove this line.
+files-from-jeff/
+
+# --- Client deliverables (not project source) -------------------------------
+does-play-dice-packet.html
+
+# --- OS ---------------------------------------------------------------------
+.DS_Store

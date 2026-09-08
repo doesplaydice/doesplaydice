@@ -1,0 +1,93 @@
+/* ===========================================================================
+   Does Play Dice -- convention kit, shared print styles
+
+   Designed for BLACK AND WHITE. Every piece must survive a home printer or a
+   copy shop. Colour is used only where losing it costs nothing: the one accent
+   drops to mid-grey and no information goes with it.
+   =========================================================================== */
+
+@page { size: letter; margin: 0; }
+
+:root{
+  --ink:#000;
+  --paper:#fff;
+  --accent:#8A5A00;      /* reads ~45% grey in B&W */
+  --soft:#666;
+  --hair:#bbb;
+  --fold:#c8c8c8;
+}
+
+*,*::before,*::after{ box-sizing:border-box; }
+
+html,body{ margin:0; padding:0; background:#e8e8e6; }
+body{
+  font-family:"IBM Plex Sans",system-ui,-apple-system,"Helvetica Neue",sans-serif;
+  color:var(--ink);
+  -webkit-print-color-adjust:exact;
+  print-color-adjust:exact;
+}
+
+.sheet{
+  width:8.5in; height:11in;
+  background:var(--paper);
+  position:relative;
+  overflow:hidden;
+  margin:0 auto 0.4in;
+  box-shadow:0 2px 14px rgba(0,0,0,.18);   /* screen only */
+}
+@media print{
+  html,body{ background:#fff; }
+  .sheet{ box-shadow:none; margin:0; page-break-after:always; }
+  .sheet:last-child{ page-break-after:auto; }
+  .screen-only{ display:none !important; }
+}
+
+/* -- Screen-only instruction bar ------------------------------------------ */
+.screen-only{
+  max-width:8.5in; margin:0.5in auto 0.25in;
+  font-size:12px; line-height:1.5; color:#333;
+  background:#fffbe9; border:1px solid #e0c56a; border-radius:4px; padding:.7rem .9rem;
+}
+.screen-only b{ color:#000; }
+
+/* -- Type ------------------------------------------------------------------ */
+.display{ font-family:Spectral,Georgia,"Times New Roman",serif; }
+.mono{ font-family:"IBM Plex Mono",ui-monospace,Menlo,monospace; }
+
+.label{
+  font-family:"IBM Plex Mono",monospace;
+  font-size:7pt; letter-spacing:.14em; text-transform:uppercase; color:var(--soft);
+}
+
+/* -- Dice chip ------------------------------------------------------------- */
+.die{
+  display:inline-flex; align-items:center; justify-content:center;
+  font-family:"IBM Plex Mono",monospace; font-weight:600;
+  border:1.5pt solid var(--ink); border-radius:3pt;
+  padding:.06in .13in; line-height:1;
+}
+.die.lg{ font-size:15pt; padding:.09in .17in; border-width:2pt; }
+
+/* -- Rules tables ---------------------------------------------------------- */
+.ktable{ width:100%; border-collapse:collapse; }
+.ktable th{
+  font-family:"IBM Plex Mono",monospace; font-size:7pt; font-weight:500;
+  letter-spacing:.12em; text-transform:uppercase; color:var(--soft);
+  text-align:left; padding:0 0 .04in; border-bottom:1pt solid var(--ink);
+}
+.ktable td{ padding:.055in 0; border-bottom:.5pt solid var(--hair); vertical-align:middle; }
+.ktable tr:last-child td{ border-bottom:none; }
+
+/* -- Cut and fold marks ---------------------------------------------------- */
+.fold{
+  position:absolute; left:0; right:0;
+  border-top:1pt dashed var(--fold);
+}
+.foldnote{
+  position:absolute; right:.22in; font-size:6.5pt; letter-spacing:.1em;
+  text-transform:uppercase; color:var(--fold);
+  font-family:"IBM Plex Mono",monospace; background:var(--paper); padding:0 .06in;
+}
+.cutgrid{ position:absolute; inset:0; pointer-events:none; }
+.cutgrid .v{ position:absolute; top:0; bottom:0; border-left:.5pt dashed var(--fold); }
+.cutgrid .h{ position:absolute; left:0; right:0; border-top:.5pt dashed var(--fold); }

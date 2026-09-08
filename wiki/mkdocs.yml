@@ -1,0 +1,108 @@
+# ---------------------------------------------------------------------------
+# PROTOTYPE — built for the Jeff Adams strategy call.
+# Everything marked "OPEN DECISION" in the content is deliberately unresolved.
+# ---------------------------------------------------------------------------
+
+site_name: Does Play Dice
+site_description: A story-telling game that's free to download, quick to learn, and only limited by your imagination.
+site_url: https://doesplaydice.com/
+
+# PLACEHOLDER — repo does not exist yet. Drives the "Edit this page" pencil,
+# which is the whole "Jeff can update it himself" story.
+repo_url: https://github.com/REPLACE-ME/does-play-dice
+repo_name: does-play-dice
+edit_uri: edit/main/wiki/docs/
+
+theme:
+  name: material
+  language: en
+  font:
+    text: Inter
+    code: JetBrains Mono
+  icon:
+    logo: material/dice-d20
+    repo: fontawesome/brands/github
+    edit: material/pencil
+  palette:
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: Follow system theme
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: amber
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: amber
+      toggle:
+        icon: material/weather-night
+        name: Switch to light mode
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - navigation.footer
+    - toc.follow
+    - search.suggest
+    - search.highlight
+    - search.share
+    - content.action.edit
+    - content.tooltips
+
+extra_css:
+  - assets/stylesheets/extra.css
+
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+plugins:
+  - search
+
+extra:
+  social:
+    - icon: material/web
+      link: https://doesplaydice.com
+      name: doesplaydice.com
+
+# OPEN DECISION — license goes here. Deliberately left unset.
+copyright: >
+  OPEN DECISION — license not yet chosen. See <a href="/contribute/">Contribute</a>.
+
+nav:
+  - Home: index.md
+  - The Rules:
+      - Basic Rules (complete): rules/index.md
+      - Character Vitae: rules/character-vitae.md
+      - Expanded Rules: rules/expanded.md
+  - The World:
+      - About the setting: world/index.md
+  - For Narrators:
+      - Running a game: narrators/index.md
+  - Community:
+      - Modules: community/index.md
+      - "Sample: The Long Way Round": community/modules/sample-module.md
+  - Contribute:
+      - How to contribute: contribute/index.md
+  - Download: downloads.md

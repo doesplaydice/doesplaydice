@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Edit content</title>
+  <style>
+    body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;}
+    #nocms,#isfile{
+      max-width:34rem;margin:12vh auto;padding:0 1.5rem;line-height:1.6;color:#3D3D48;
+    }
+    #nocms h1,#isfile h1{font-size:1.4rem;margin:0 0 .6rem;color:#17171C;}
+    #nocms code,#isfile code{background:#EFEEE9;padding:.1em .35em;border-radius:3px;font-size:.9em;}
+    #nocms .note,#isfile .note{border-left:3px solid #A66A00;padding-left:.9rem;margin:1.2rem 0;font-size:.94rem;}
+    @media (prefers-color-scheme:dark){
+      body{background:#121216;}
+      #nocms,#isfile{color:#C2C2CC;} #nocms h1,#isfile h1{color:#EAEAEF;} #nocms code,#isfile code{background:#23232B;}
+    }
+  </style>
+</head>
+<body>
+  <!-- Shown when the page is opened by double-clicking the file instead of via a server. -->
+  <div id="isfile" hidden>
+    <h1>Open this through the site, not the file</h1>
+    <p>You've opened this page directly from disk (<code>file://</code>). The editor refuses to
+    load its configuration over <code>file://</code> &mdash; browsers treat every local file as a
+    separate origin, so it can't safely fetch <code>config.yml</code>.</p>
+    <div class="note">
+      <strong>Start the site, then use the served address:</strong><br>
+      <code>.venv/bin/mkdocs serve -f wiki/mkdocs.yml -a 127.0.0.1:8777</code><br>
+      then open <code>http://127.0.0.1:8777/admin/</code>
+    </div>
+    <p>Once it's published, this page just lives at <code>/admin/</code> on the real site and
+    none of this applies.</p>
+  </div>
+
+  <!-- Shown only if the CMS bundle fails to load (offline, CDN blocked, etc.) -->
+  <div id="nocms" hidden>
+    <h1>The editor didn't load</h1>
+    <p>This page loads the Sveltia CMS bundle from a CDN. If you're offline or the CDN is
+    blocked, it won't appear.</p>
+    <div class="note">
+      <strong>To run the editor with no GitHub account at all:</strong> reload this page and
+      choose <em>Work with Local Repository</em>, then pick the project folder. Edits write
+      straight to the markdown files on disk. <code>local_backend</code> is already enabled in
+      <code>config.yml</code>.
+    </div>
+    <p>You can also always edit the markdown in <code>wiki/docs/</code> directly &mdash; the CMS
+    is a convenience layer over the same files, not a separate store.</p>
+  </div>
+
+  <script>
+    // Fail early and legibly instead of letting the CMS throw a config error.
+    if (location.protocol === 'file:') {
+      document.getElementById('isfile').hidden = false;
+    } else {
+      var t = document.createElement('script');
+      t.type = 'module';
+      t.src = 'https://unpkg.com/@sveltia/cms@0/dist/sveltia-cms.js';
+      t.onerror = function(){ document.getElementById('nocms').hidden = false; };
+      document.head.appendChild(t);
+    }
+  </script>
+  <noscript><p style="padding:2rem;font-family:system-ui">The editor needs JavaScript.</p></noscript>
+</body>
+</html>

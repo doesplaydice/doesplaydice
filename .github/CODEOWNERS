@@ -1,0 +1,16 @@
+# Governance lever for Q8 (who owns canon).
+#
+# This file -- not the CMS config -- is what makes the core "frozen" or "open".
+# Pair it with branch protection on main: require review from Code Owners.
+#
+# PLACEHOLDER handles. Replace before enabling branch protection.
+
+# --- Frozen core (default): the one page needs Jeff ------------------------
+/wiki/docs/rules/index.md      @REPLACE-ME-jeff
+
+# --- Everything else: any maintainer ---------------------------------------
+/wiki/docs/                    @REPLACE-ME-maintainers
+/wiki/mkdocs.yml               @REPLACE-ME-maintainers
+
+# --- The open front door: no code owner, merges on normal review -----------
+# /wiki/docs/community/        (intentionally unowned)

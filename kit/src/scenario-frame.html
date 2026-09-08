@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>One-shot frame -- Does Play Dice</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,600;0,700;1,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="_kit.css">
+<style>
+  .page{ position:absolute; inset:.5in .55in; display:flex; flex-direction:column; }
+  .head{ display:flex; align-items:baseline; justify-content:space-between;
+         border-bottom:2pt solid var(--ink); padding-bottom:.09in; }
+  .head h1{ font-family:Spectral,Georgia,serif; font-size:20pt; font-weight:700; margin:0; }
+  .head .url{ font-family:"IBM Plex Mono",monospace; font-size:8pt; color:var(--soft); }
+
+  .sub{ font-family:Spectral,Georgia,serif; font-style:italic; font-size:9.5pt;
+        color:#333; margin:.08in 0 .16in; }
+
+  .block{ margin-bottom:.15in; }
+  .block > .label{ display:block; margin-bottom:.035in; }
+  .prompt{ font-size:7.6pt; color:var(--soft); font-style:italic; line-height:1.3;
+           margin:0 0 .045in; }
+  .fill{ border-bottom:.75pt solid var(--hair); height:.24in; }
+  .fill.tall{ height:.48in; }
+
+  .ways th{ font-size:6.6pt; }
+  .ways td{ padding:.075in 0; }
+  .ways .approach{ width:3.5in; }
+  .ways td.skill{ width:1.05in; font-size:8.5pt; }
+  .ways th.skill{ width:1.05in; }
+  .ways .dc{ width:1in; }
+  .ways .fill{ height:.28in; margin-right:.2in; }
+
+  .twocol{ display:grid; grid-template-columns:1fr 1fr; gap:.32in; }
+
+  .afterblock{ flex:1; display:flex; flex-direction:column; }
+  .ruled{
+    flex:1; min-height:1.5in; margin-top:.04in;
+    background:repeating-linear-gradient(to bottom,transparent,transparent .26in,
+               var(--hair) .26in,var(--hair) calc(.26in + .5pt));
+  }
+  .foot{ margin-top:0; border-top:1pt solid var(--ink); padding-top:.1in;
+         display:flex; justify-content:space-between; align-items:flex-end; }
+  .reminder{ font-size:8pt; line-height:1.4; max-width:5.2in; }
+  .reminder b{ font-weight:600; }
+</style>
+</head>
+<body>
+
+<div class="screen-only">
+  <b>One-shot frame.</b> A single page for planning a convention session. This is
+  <b>structure, not content</b> &mdash; the scenario itself is the author's half, and it is
+  deliberately left blank. The prompts come from the published rules: three ways into every
+  problem, a difficulty die for each, and a tie that gives both sides something.
+  <br><br>
+  Print a stack. Fill one in per table.
+</div>
+
+<div class="sheet">
+  <div class="page">
+
+    <div class="head">
+      <h1>One-shot frame</h1>
+      <span class="url">doesplaydice.com</span>
+    </div>
+    <p class="sub">Everything a Narrator needs for one session, on one page. Fill in what you
+    know; improvise the rest.</p>
+
+    <div class="twocol">
+      <div class="block">
+        <span class="label">The premise, in one sentence</span>
+        <p class="prompt">What is happening, and why does the party care in the first two minutes?</p>
+        <div class="fill"></div><div class="fill"></div>
+      </div>
+      <div class="block">
+        <span class="label">Dice you hand out</span>
+        <p class="prompt">Three of the five. Smaller = less experienced.</p>
+        <div style="display:flex;gap:.14in;align-items:center;margin-top:.06in">
+          <span class="die lg">&nbsp;&nbsp;&nbsp;</span>
+          <span class="die lg">&nbsp;&nbsp;&nbsp;</span>
+          <span class="die lg">&nbsp;&nbsp;&nbsp;</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="block">
+      <span class="label">Opening scene</span>
+      <p class="prompt">What do they see, hear and smell? End on a question they have to answer.</p>
+      <div class="fill"></div><div class="fill"></div><div class="fill"></div>
+    </div>
+
+    <div class="block">
+      <span class="label">The obstacle, and three ways past it</span>
+      <p class="prompt">One route per skill. If you can only think of one route, the obstacle
+      isn't finished. Set each difficulty before anyone rolls.</p>
+      <table class="ktable ways">
+        <tr><th class="approach">Approach</th><th class="skill">Skill</th><th class="dc">Narrator rolls</th></tr>
+        <tr><td><div class="fill"></div></td><td class="skill">Physical</td><td><span class="die">&nbsp;&nbsp;&nbsp;</span></td></tr>
+        <tr><td><div class="fill"></div></td><td class="skill">Mental</td><td><span class="die">&nbsp;&nbsp;&nbsp;</span></td></tr>
+        <tr><td><div class="fill"></div></td><td class="skill">Social</td><td><span class="die">&nbsp;&nbsp;&nbsp;</span></td></tr>
+      </table>
+    </div>
+
+    <div class="twocol">
+      <div class="block">
+        <span class="label">The complication</span>
+        <p class="prompt">What changes once they commit to a plan?</p>
+        <div class="fill"></div><div class="fill"></div>
+      </div>
+      <div class="block">
+        <span class="label">How it ends</span>
+        <p class="prompt">What tells everyone the story is over?</p>
+        <div class="fill"></div><div class="fill"></div>
+      </div>
+    </div>
+
+    <div class="block">
+      <span class="label">Names to have ready</span>
+      <p class="prompt">Five is plenty. You will need one you didn't plan for.</p>
+      <div class="fill"></div><div class="fill"></div>
+    </div>
+
+    <div class="block afterblock">
+      <span class="label">After the session &mdash; what actually happened</span>
+      <p class="prompt">The most valuable half of the page. What confused people, what landed,
+      what you had to explain twice, what you'd cut. Photograph this before you throw it away.</p>
+      <div class="ruled"></div>
+    </div>
+
+    <div class="foot">
+      <p class="reminder">
+        <b>Roll only when failing would be interesting.</b> If they want to open an unlocked door,
+        just tell them what's inside.<br>
+        <b>On a tie, both sides get something.</b> They get through &mdash; and something it cost them.
+      </p>
+      <span class="label" style="white-space:nowrap">Free &middot; open source</span>
+    </div>
+
+  </div>
+</div>
+</body>
+</html>

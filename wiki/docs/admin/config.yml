@@ -1,0 +1,143 @@
+# ---------------------------------------------------------------------------
+# Contributor CMS configuration  (Sveltia CMS -- Decap/Netlify CMS compatible)
+#
+# DECISION-NEUTRAL BY DESIGN.
+# Every edit made here becomes a PULL REQUEST, never a direct commit to main.
+# That is what lets this config work under either answer to Q8 (who owns canon):
+#
+#   * Frozen core  -> protect docs/rules/index.md via CODEOWNERS; PRs against it
+#                     simply require Jeff's approval. Nothing here changes.
+#   * Open core    -> relax CODEOWNERS. Nothing here changes.
+#
+# The governance lever is branch protection + CODEOWNERS, NOT this file.
+# ---------------------------------------------------------------------------
+
+backend:
+  name: github
+  repo: REPLACE-ME/does-play-dice     # PLACEHOLDER -- repo does not exist yet
+  branch: main
+  base_url: https://REPLACE-ME.example # PLACEHOLDER -- OAuth broker
+  squash_merges: true
+
+# Every change opens a PR and lands in a review queue instead of publishing live.
+publish_mode: editorial_workflow
+
+# Lets the whole editor run against local files with no GitHub account:
+#   npx @sveltia/cms-proxy-server
+local_backend: true
+
+media_folder: "wiki/docs/assets/uploads"
+public_folder: "/assets/uploads"
+
+site_url: https://doesplaydice.com
+display_url: https://doesplaydice.com
+
+collections:
+
+  # -- The canonical rules -------------------------------------------------
+  - name: core
+    label: "Core rules"
+    description: >
+      The game itself. Changes here affect every table playing Does Play Dice,
+      so they go through review. If you want to add rather than change, write a
+      module instead.
+    files:
+      - name: basic
+        label: "Basic Rules (canon)"
+        file: "wiki/docs/rules/index.md"
+        description: >
+          The one page. This is the compatibility promise -- a change here can
+          break every existing character, module and adventure. Expect scrutiny.
+        fields:
+          - { name: body, label: "Rules text", widget: markdown }
+
+      - name: vitae
+        label: "Character Vitae"
+        file: "wiki/docs/rules/character-vitae.md"
+        fields:
+          - { name: body, label: "Sheet", widget: markdown }
+
+      - name: expanded
+        label: "Expanded Rules"
+        file: "wiki/docs/rules/expanded.md"
+        fields:
+          - { name: body, label: "Rules text", widget: markdown }
+
+  # -- Everything else on the site ----------------------------------------
+  - name: pages
+    label: "Site pages"
+    files:
+      - name: home
+        label: "Home"
+        file: "wiki/docs/index.md"
+        fields:
+          - { name: body, label: "Page", widget: markdown }
+      - name: world
+        label: "The World"
+        file: "wiki/docs/world/index.md"
+        fields:
+          - { name: body, label: "Page", widget: markdown }
+      - name: narrators
+        label: "For Narrators"
+        file: "wiki/docs/narrators/index.md"
+        fields:
+          - { name: body, label: "Page", widget: markdown }
+      - name: contribute
+        label: "Contribute"
+        file: "wiki/docs/contribute/index.md"
+        fields:
+          - { name: body, label: "Page", widget: markdown }
+      - name: downloads
+        label: "Download"
+        file: "wiki/docs/downloads.md"
+        fields:
+          - { name: body, label: "Page", widget: markdown }
+
+  # -- Where the community actually writes --------------------------------
+  - name: modules
+    label: "Community modules"
+    label_singular: "Module"
+    description: >
+      Adventures, settings, adversaries, optional rules. Anything that adds to
+      the game without changing the one page. This is the open front door.
+    folder: "wiki/docs/community/modules"
+    create: true
+    slug: "{{slug}}"
+    preview_path: "community/modules/{{slug}}"
+    summary: "{{title}} -- {{kind}} by {{author}}"
+    sortable_fields: [title, kind, date]
+    view_filters:
+      - { label: "Adventures", field: kind, pattern: "Adventure" }
+      - { label: "Settings",   field: kind, pattern: "Setting" }
+      - { label: "Rules",      field: kind, pattern: "Optional rules" }
+    fields:
+      - { name: title, label: "Title", widget: string }
+      - { name: author, label: "Your name or handle", widget: string }
+      - name: kind
+        label: "What is it?"
+        widget: select
+        options: ["Adventure", "Setting", "Adversaries", "Optional rules", "Tool", "Other"]
+      - { name: date, label: "Date", widget: datetime, date_format: "YYYY-MM-DD", time_format: false }
+      - name: players
+        label: "Party size"
+        widget: string
+        required: false
+        hint: "e.g. 3-5"
+      - name: length
+        label: "How long does it run?"
+        widget: select
+        required: false
+        options: ["One session", "A few sessions", "A campaign", "Not applicable"]
+      - name: dice
+        label: "Which three dice does the Narrator hand out?"
+        widget: string
+        required: false
+        hint: "e.g. d4, d6, d12 -- leave blank if it doesn't matter"
+      - name: license
+        label: "How can others use this?"
+        widget: select
+        required: false
+        options: ["Same as the core game", "CC BY", "CC BY-SA", "CC0 / public domain", "All rights reserved"]
+        hint: "OPEN DECISION -- align these options with Q6 once the core license is chosen."
+      - { name: summary, label: "One-line summary", widget: text }
+      - { name: body, label: "The module", widget: markdown }
