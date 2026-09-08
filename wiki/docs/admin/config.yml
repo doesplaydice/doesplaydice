@@ -14,9 +14,9 @@
 
 backend:
   name: github
-  repo: REPLACE-ME/does-play-dice     # PLACEHOLDER -- repo does not exist yet
+  repo: amatei/does-play-dice        # private for now; transfer before launch
   branch: main
-  base_url: https://REPLACE-ME.example # PLACEHOLDER -- OAuth broker
+  base_url: https://sveltia-cms-auth.REPLACE-ME.workers.dev # TODO: deploy the OAuth broker
   squash_merges: true
 
 # Every change opens a PR and lands in a review queue instead of publishing live.

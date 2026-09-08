@@ -1,7 +1,10 @@
 # --- Build output -----------------------------------------------------------
 .venv/
 wiki/site/
-kit/dist/          # regenerate with ./kit/build.sh
+
+# Note: kit/dist/*.pdf IS committed on purpose. They regenerate with
+# ./kit/build.sh, but keeping them in the repo means the download links work
+# immediately and Jeff can grab a printable file without running anything.
 
 # --- Jeff's private research ------------------------------------------------
 # EXCLUDED ON PURPOSE. Two reasons, both serious:

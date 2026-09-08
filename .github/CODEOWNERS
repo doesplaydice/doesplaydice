@@ -6,11 +6,11 @@
 # PLACEHOLDER handles. Replace before enabling branch protection.
 
 # --- Frozen core (default): the one page needs Jeff ------------------------
-/wiki/docs/rules/index.md      @REPLACE-ME-jeff
+/wiki/docs/rules/index.md      @REPLACE-ME-jeff   # TODO: Jeff's GitHub handle
 
 # --- Everything else: any maintainer ---------------------------------------
-/wiki/docs/                    @REPLACE-ME-maintainers
-/wiki/mkdocs.yml               @REPLACE-ME-maintainers
+/wiki/docs/                    @amatei
+/wiki/mkdocs.yml               @amatei
 
 # --- The open front door: no code owner, merges on normal review -----------
 # /wiki/docs/community/        (intentionally unowned)

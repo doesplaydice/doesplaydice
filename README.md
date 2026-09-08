@@ -81,7 +81,16 @@ To try it with no GitHub account: open `/admin/` and choose *Work with Local Rep
 `--strict` (so a broken link fails before review) and deploys `main` to GitHub Pages. This is
 what makes "click the pencil, it's live in a minute" true.
 
-### Still placeholder
+### Repository
 
-`REPLACE-ME` appears in `wiki/mkdocs.yml`, `wiki/docs/admin/config.yml`, `.github/CODEOWNERS`,
-and a couple of docs links. Grep for it before anything goes public.
+`amatei/does-play-dice`, **private** for now. Transfer to Jeff or a project org before launch;
+that changes `repo_url` in `wiki/mkdocs.yml`, `repo` in `wiki/docs/admin/config.yml`, and the
+handles in `.github/CODEOWNERS`.
+
+### Two real unknowns still marked REPLACE-ME
+
+- **Jeff's GitHub handle** in `.github/CODEOWNERS` — needed before branch protection can enforce
+  the frozen-core rule.
+- **The CMS OAuth broker URL** in `wiki/docs/admin/config.yml` — a small Cloudflare Worker that
+  has to be deployed before browser sign-in works. Until then, `/admin/` still works locally via
+  *Work with Local Repository*.
