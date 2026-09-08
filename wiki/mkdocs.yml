@@ -16,9 +16,9 @@ edit_uri: edit/main/wiki/docs/
 theme:
   name: material
   language: en
-  font:
-    text: Open Sans
-    code: IBM Plex Mono
+  # Fonts are self-hosted -- see assets/stylesheets/fonts.css.
+  # `false` stops Material requesting anything from Google.
+  font: false
   icon:
     logo: material/dice-d20
     repo: fontawesome/brands/github
@@ -57,6 +57,7 @@ theme:
     - content.tooltips
 
 extra_css:
+  - assets/stylesheets/fonts.css
   - assets/stylesheets/extra.v2.css
 
 markdown_extensions:
@@ -76,6 +77,10 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+# The fonts README is for people reading the repo, not a page on the site.
+exclude_docs: |
+  assets/fonts/README.md
 
 plugins:
   - search

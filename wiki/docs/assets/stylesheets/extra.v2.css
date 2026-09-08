@@ -12,6 +12,13 @@
    it still reads as blue rather than going muddy.
    =========================================================================== */
 
+/* Material composes its stacks from these two. Set because `font: false`
+   in mkdocs.yml stops it defining them itself. */
+:root{
+  --md-text-font:"Open Sans";
+  --md-code-font:"IBM Plex Mono";
+}
+
 /* ---------- Light ---------------------------------------------------------- */
 [data-md-color-scheme="default"]{
   --dpd-paper:#FAFAF8;
