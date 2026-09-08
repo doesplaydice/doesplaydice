@@ -1,6 +1,7 @@
 # --- Build output -----------------------------------------------------------
 .venv/
 wiki/site/
+.firebase/          # Firebase deploy cache, staging only
 
 # Note: kit/dist/*.pdf IS committed on purpose. They regenerate with
 # ./kit/build.sh, but keeping them in the repo means the download links work
