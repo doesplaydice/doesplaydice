@@ -53,7 +53,7 @@ survive black-and-white printing.
 
 <div class="grid cards" markdown>
 
--   :material-table-furniture: **Table tent**
+-   :material-table-furniture: [**Table tent**](downloads/table-tent.pdf)
 
     ---
 
@@ -81,6 +81,17 @@ survive black-and-white printing.
     Ten per sheet, business-card size, with a QR to this site. The whole game in three lines.
 
 </div>
+
+**Download the kit**
+
+| Piece | File |
+| --- | --- |
+| Table tent | [table-tent.pdf](downloads/table-tent.pdf) |
+| Six pre-generated characters | [pregens.pdf](downloads/pregens.pdf) |
+| One-shot frame | [scenario-frame.pdf](downloads/scenario-frame.pdf) |
+| Handout cards | [handout.pdf](downloads/handout.pdf) |
+| Playtest session brief | [session-brief.pdf](downloads/session-brief.pdf) |
+| Player feedback slips | [feedback-slips.pdf](downloads/feedback-slips.pdf) |
 
 *Sources and build script live in `kit/`. Run `./kit/build.sh` to regenerate.*
 
