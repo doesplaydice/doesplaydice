@@ -34,7 +34,7 @@ jobs:
           python-version: "3.12"
           cache: pip
       - name: Install
-        run: pip install mkdocs-material
+        run: pip install -r requirements.txt
       - name: Build (strict -- broken links fail the build)
         run: mkdocs build --strict --config-file wiki/mkdocs.yml
       - name: Upload
