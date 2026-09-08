@@ -40,10 +40,55 @@
       var root = document.documentElement;
       if (!root.classList.contains('dpd-locked')) return;
 
-      async function sha256(s) {
-        var buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(s));
-        return Array.from(new Uint8Array(buf))
-          .map(function (b) { return b.toString(16).padStart(2, '0'); }).join('');
+      // Minimal SHA-256, used only when crypto.subtle is unavailable (http contexts).
+      function dpdSha256(ascii){
+        function rr(n,x){return (x>>>n)|(x<<(32-n));}
+        var K=[],H=[],i,j,p=2,s;
+        for(i=0;i<64;){
+          for(j=2,s=1;j*j<=p;j++) if(p%j===0){s=0;break;}
+          if(s){
+            if(i<8) H[i]=Math.floor(Math.pow(p,0.5)*Math.pow(2,32))>>>0;
+            K[i]=Math.floor(Math.pow(p,1/3)*Math.pow(2,32))>>>0;
+            i++;
+          }
+          p++;
+        }
+        var utf=unescape(encodeURIComponent(ascii)), words=[], len=utf.length;
+        for(i=0;i<len;i++) words[i>>2]|=utf.charCodeAt(i)<<((3-i%4)*8);
+        words[len>>2]|=0x80<<((3-len%4)*8);
+        words[((len+8>>6)+1)*16-1]=len*8;
+        var w=[],a,b,c,d,e,f,g,h,t1,t2;
+        for(j=0;j<words.length;j+=16){
+          a=H[0];b=H[1];c=H[2];d=H[3];e=H[4];f=H[5];g=H[6];h=H[7];
+          for(i=0;i<64;i++){
+            if(i<16) w[i]=words[j+i]|0;
+            else{
+              var g0=w[i-15],g1=w[i-2];
+              w[i]=(w[i-16]+(rr(7,g0)^rr(18,g0)^(g0>>>3))+w[i-7]+(rr(17,g1)^rr(19,g1)^(g1>>>10)))|0;
+            }
+            t1=(h+(rr(6,e)^rr(11,e)^rr(25,e))+((e&f)^(~e&g))+K[i]+w[i])|0;
+            t2=((rr(2,a)^rr(13,a)^rr(22,a))+((a&b)^(a&c)^(b&c)))|0;
+            h=g;g=f;f=e;e=(d+t1)|0;d=c;c=b;b=a;a=(t1+t2)|0;
+          }
+          H[0]=(H[0]+a)|0;H[1]=(H[1]+b)|0;H[2]=(H[2]+c)|0;H[3]=(H[3]+d)|0;
+          H[4]=(H[4]+e)|0;H[5]=(H[5]+f)|0;H[6]=(H[6]+g)|0;H[7]=(H[7]+h)|0;
+        }
+        var out='';
+        for(i=0;i<8;i++) out+=('00000000'+(H[i]>>>0).toString(16)).slice(-8);
+        return out;
+      }
+
+      async function hashOf(s){
+        // crypto.subtle only exists in a secure context. Over plain http it is
+        // undefined, which would otherwise lock the site with no way in.
+        if (window.crypto && crypto.subtle) {
+          try {
+            var buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(s));
+            return Array.from(new Uint8Array(buf))
+              .map(function (b) { return b.toString(16).padStart(2, '0'); }).join('');
+          } catch (e) { /* fall through */ }
+        }
+        return dpdSha256(s);
       }
 
       var el = document.createElement('div');
@@ -67,7 +112,7 @@
       form.addEventListener('submit', async function (e) {
         e.preventDefault();
         var ok = false;
-        try { ok = (await sha256(input.value)) === HASH; } catch (x) { ok = false; }
+        try { ok = (await hashOf(input.value)) === HASH; } catch (x) { ok = false; }
         if (ok) {
           try { sessionStorage.setItem('dpd-gate', 'ok'); } catch (x) {}
           root.classList.remove('dpd-locked');
