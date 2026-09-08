@@ -16,6 +16,8 @@ edit_uri: edit/main/wiki/docs/
 theme:
   name: material
   language: en
+  # TEMPORARY: pre-launch gate. Remove custom_dir and wiki/overrides/ at go-live.
+  custom_dir: overrides
   # Fonts are self-hosted -- see assets/stylesheets/fonts.css.
   # `false` stops Material requesting anything from Google.
   font: false

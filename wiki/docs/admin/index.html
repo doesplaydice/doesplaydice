@@ -18,6 +18,16 @@
       #nocms,#isfile{color:#C2C2CC;} #nocms h1,#isfile h1{color:#EAEAEF;} #nocms code,#isfile code{background:#23232B;}
     }
   </style>
+  <!-- TEMPORARY pre-launch gate. This file is copied verbatim by MkDocs, so the
+       theme override in wiki/overrides/ does not reach it and it needs its own
+       copy. Remove both at go-live. -->
+  <style>html.dpd-locked body{visibility:hidden}</style>
+  <script>
+    (function(){
+      try{ if(sessionStorage.getItem('dpd-gate')==='ok') return; }catch(e){}
+      document.documentElement.classList.add('dpd-locked');
+    })();
+  </script>
 </head>
 <body>
   <!-- Shown when the page is opened by double-clicking the file instead of via a server. -->
@@ -63,5 +73,33 @@
     }
   </script>
   <noscript><p style="padding:2rem;font-family:system-ui">The editor needs JavaScript.</p></noscript>
+
+  <script>
+    (function(){
+      var HASH='6db171ebb2a69f147ae0ecba6569706d485052b22c676817b9057dd22fa6b7b7';
+      var root=document.documentElement;
+      if(!root.classList.contains('dpd-locked')) return;
+      async function sha256(x){
+        var b=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(x));
+        return Array.from(new Uint8Array(b)).map(function(n){return n.toString(16).padStart(2,'0');}).join('');
+      }
+      var d=document.createElement('div');
+      d.style.cssText='position:fixed;inset:0;z-index:9999;visibility:visible;display:grid;place-items:center;background:#FAFAF8;font-family:system-ui,sans-serif';
+      d.innerHTML='<form style="max-width:20rem;padding:1.8rem;border:1px solid #d9d9d9;border-top:3px solid #f7ba00;background:#fff">'
+        +'<h1 style="font-size:1.4rem;font-weight:300;color:#004d81;margin:0 0 .6rem">Not open yet</h1>'
+        +'<p style="font-size:.85rem;color:#33383c;margin:0 0 1rem">Enter the passphrase to continue.</p>'
+        +'<input type="password" placeholder="Passphrase" aria-label="Passphrase" autofocus style="width:100%;box-sizing:border-box;padding:.6rem;border:1px solid #d9d9d9;margin-bottom:.6rem">'
+        +'<button type="submit" style="width:100%;padding:.6rem;border:none;background:#004d81;color:#fff;font-weight:700;cursor:pointer">Enter</button>'
+        +'<p class="e" hidden style="font-size:.75rem;color:#9A3B25;margin:.7rem 0 0">That is not it.</p></form>';
+      document.body.appendChild(d);
+      var f=d.querySelector('form'), i=d.querySelector('input'), e=d.querySelector('.e');
+      f.addEventListener('submit', async function(ev){
+        ev.preventDefault();
+        var ok=false; try{ ok=(await sha256(i.value))===HASH; }catch(x){}
+        if(ok){ try{sessionStorage.setItem('dpd-gate','ok');}catch(x){} root.classList.remove('dpd-locked'); d.remove(); }
+        else { e.hidden=false; i.value=''; i.focus(); }
+      });
+    })();
+  </script>
 </body>
 </html>

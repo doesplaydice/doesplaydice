@@ -277,3 +277,48 @@
   .md-main__inner{ margin:0; }
   .md-content{ max-width:100%; }
 }
+
+/* ===========================================================================
+   TEMPORARY PRE-LAUNCH GATE -- delete this block at go-live, along with
+   wiki/overrides/ and the custom_dir line in mkdocs.yml.
+   =========================================================================== */
+#dpd-gate{
+  position:fixed; inset:0; z-index:9999; visibility:visible;
+  display:grid; place-items:center; padding:1.5rem;
+  background:var(--dpd-paper);
+}
+#dpd-gate form{
+  width:100%; max-width:22rem;
+  background:var(--dpd-surface);
+  border:1px solid var(--dpd-rule);
+  border-top:3px solid var(--dpd-gold);
+  border-radius:3px; padding:1.8rem 1.7rem;
+}
+#dpd-gate .dpd-gate-kicker{
+  font-size:.6rem; font-weight:700; letter-spacing:.18em; text-transform:uppercase;
+  color:var(--dpd-ink-mute); margin:0 0 .7rem;
+}
+#dpd-gate h1{
+  font-size:1.55rem; font-weight:300; letter-spacing:-.02em; line-height:1.15;
+  color:var(--dpd-blue); margin:0 0 .6rem;
+}
+#dpd-gate .dpd-gate-sub{
+  font-size:.8rem; line-height:1.6; color:var(--dpd-ink-mid); margin:0 0 1.2rem;
+}
+#dpd-gate input{
+  width:100%; box-sizing:border-box; font:inherit; font-size:.85rem;
+  padding:.6rem .7rem; border:1px solid var(--dpd-rule); border-radius:2px;
+  background:var(--dpd-paper); color:var(--dpd-ink); margin-bottom:.6rem;
+}
+#dpd-gate input:focus{ outline:2px solid var(--dpd-blue); outline-offset:1px; }
+#dpd-gate button{
+  width:100%; font:inherit; font-size:.82rem; font-weight:700;
+  letter-spacing:.06em; text-transform:uppercase;
+  padding:.6rem; border:none; border-radius:2px; cursor:pointer;
+  background:var(--dpd-blue); color:#fff;
+}
+#dpd-gate button:hover{ background:var(--dpd-ink); }
+#dpd-gate .dpd-gate-err{
+  font-size:.75rem; color:#9A3B25; margin:.7rem 0 0;
+}
+[data-md-color-scheme="slate"] #dpd-gate .dpd-gate-err{ color:#DE7A5F; }

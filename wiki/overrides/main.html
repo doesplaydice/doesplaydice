@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+
+{#
+  TEMPORARY PRE-LAUNCH GATE -- remove this whole file before go-live.
+
+  This is a speed bump, NOT security. The pages are still served in full; a
+  request with curl returns everything regardless of this gate. It exists only
+  to stop someone stumbling onto an unfinished site.
+
+  The passphrase is not stored here -- only its SHA-256 hash. That keeps the
+  passphrase itself out of the repository, but note the hash is public and can
+  be attacked offline, so do not reuse this passphrase anywhere that matters.
+
+  To remove: delete wiki/overrides/, drop custom_dir from mkdocs.yml, rebuild.
+#}
+
+{% block extrahead %}
+  {{ super() }}
+  <style>html.dpd-locked body{visibility:hidden}</style>
+  <script>
+    // Runs in <head>, before the body paints, so there is no flash of content.
+    (function () {
+      try {
+        if (sessionStorage.getItem('dpd-gate') === 'ok') return;
+      } catch (e) { /* private mode: fall through and prompt */ }
+      document.documentElement.classList.add('dpd-locked');
+    })();
+  </script>
+{% endblock %}
+
+{% block content %}
+  {{ super() }}
+{% endblock %}
+
+{% block scripts %}
+  {{ super() }}
+  <script>
+    (function () {
+      var HASH = '6db171ebb2a69f147ae0ecba6569706d485052b22c676817b9057dd22fa6b7b7';
+      var root = document.documentElement;
+      if (!root.classList.contains('dpd-locked')) return;
+
+      async function sha256(s) {
+        var buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(s));
+        return Array.from(new Uint8Array(buf))
+          .map(function (b) { return b.toString(16).padStart(2, '0'); }).join('');
+      }
+
+      var el = document.createElement('div');
+      el.id = 'dpd-gate';
+      el.innerHTML =
+        '<form>' +
+          '<p class="dpd-gate-kicker">Does Play Dice</p>' +
+          '<h1>Not open yet</h1>' +
+          '<p class="dpd-gate-sub">This site goes public in October. Until then it needs the passphrase Jeff or Andrei gave you.</p>' +
+          '<input type="password" autocomplete="current-password" aria-label="Passphrase" placeholder="Passphrase" autofocus>' +
+          '<button type="submit">Enter</button>' +
+          '<p class="dpd-gate-err" hidden>That is not it. Try again.</p>' +
+        '</form>';
+      document.body.appendChild(el);
+      el.style.visibility = 'visible';
+
+      var form = el.querySelector('form');
+      var input = el.querySelector('input');
+      var err = el.querySelector('.dpd-gate-err');
+
+      form.addEventListener('submit', async function (e) {
+        e.preventDefault();
+        var ok = false;
+        try { ok = (await sha256(input.value)) === HASH; } catch (x) { ok = false; }
+        if (ok) {
+          try { sessionStorage.setItem('dpd-gate', 'ok'); } catch (x) {}
+          root.classList.remove('dpd-locked');
+          el.remove();
+        } else {
+          err.hidden = false;
+          input.value = '';
+          input.focus();
+        }
+      });
+    })();
+  </script>
+{% endblock %}
