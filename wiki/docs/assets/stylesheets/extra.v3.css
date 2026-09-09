@@ -21,10 +21,12 @@
 [data-md-color-scheme="slate"]{        /* dark, default */
   --bg:#050505; --ink:#F4F2EC; --muted:#9A978E; --line:#2A2926;
   --accent:#E5484D; --die:#B42318; --pip:#FFFFFF; --card:#0F0E0D;
+  --icon:#C9C6BE;                      /* between muted and ink */
 }
 [data-md-color-scheme="default"]{      /* light, warm paper */
   --bg:#F4F2EC; --ink:#0A0A0A; --muted:#66645E; --line:#D9D5C9;
   --accent:#A11F16; --die:#B42318; --pip:#FFFFFF; --card:#FBFAF6;
+  --icon:#3E3C37;                      /* between muted and ink */
 }
 
 /* ---------- Map onto Material ----------------------------------------------- */
@@ -420,9 +422,17 @@ body{ transition:background-color .35s, color .35s; }
    magnifier ended up outside its field. Material's own layout is left alone;
    the search is only nudged down a little so it is less in-your-face.
    -------------------------------------------------------------------------- */
-.md-search__form{ height:36px; }
-.md-search__input{ font-family:var(--dpd-sans); font-size:14px; padding-left:38px; }
-.md-search__input::placeholder{ color:var(--muted); }
+/* The field sat on --card, a shade lighter than the header, which lowered the
+   contrast of text that was already the right colour. Put it on the same
+   ground as the menu; the border still reads it as a field. */
+.md-search__form{ height:36px; background:transparent; }
+.md-search__form:hover{ background:transparent; border-color:var(--muted); }
+
+/* The real cause of "search looks darker": the menu items are weight 500 and
+   the placeholder was 400. Same colour, lighter weight, so it read dimmer.
+   Both are now 500 and the identical --muted. */
+.md-search__input{ font-family:var(--dpd-sans); font-size:14px; font-weight:500; padding-left:38px; }
+.md-search__input::placeholder{ color:var(--muted); font-weight:500; }
 
 /* The magnifier was 24px inside a 36px field -- only 6px of air, so it read as
    oversized and dragged the field's optical centre down. Set all four values
@@ -431,7 +441,7 @@ body{ transition:background-color .35s, color .35s; }
 .md-search__icon[for="__search"]{
   /* top is 8 not 9: the field has a 1px border, and an absolutely positioned
      child is offset from the padding edge, inside that border. */
-  width:18px; height:18px; top:8px; left:12px; color:var(--muted);
+  width:18px; height:18px; top:8px; left:12px; color:var(--icon);
 }
 .md-search__icon[for="__search"] svg{ width:18px; height:18px; }
 .md-search__form:hover .md-search__icon[for="__search"]{ color:var(--ink); }
