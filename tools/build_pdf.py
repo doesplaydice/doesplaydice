@@ -306,6 +306,81 @@ img{ max-width:100%; }
 """
 
 
+# ---------------------------------------------------------------------------
+# The character sheet.
+#
+# The site page told people to print it from their browser, which is why it
+# "wasn't printing": a documentation page rendered through a browser's print
+# dialogue is not a character sheet, it is a documentation page with the
+# navigation hidden. This is a purpose-built sheet -- one side of one page,
+# fields big enough to actually write in with a pencil at a table, and the
+# difficulty ladder printed on it so a new player never has to look anything up
+# mid-game.
+# ---------------------------------------------------------------------------
+SHEET_CSS = """
+@page { size: Letter; margin: 13mm 14mm 11mm; }
+:root{
+  --ink:#0A0A0A; --muted:#55534E; --line:#B8B4A8; --accent:#A11F16;
+  --sans:"Familjen Grotesk",system-ui,sans-serif;
+  --display:"Archivo Black",Impact,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,monospace;
+}
+*{ box-sizing:border-box; }
+body{
+  margin:0; color:var(--ink); font-family:var(--sans); font-size:9.5pt;
+  -webkit-print-color-adjust:exact; print-color-adjust:exact;
+}
+.head{
+  display:flex; align-items:flex-end; justify-content:space-between; gap:14pt;
+  border-bottom:2px solid var(--ink); padding-bottom:6pt; margin-bottom:11pt;
+}
+.title{ font-family:var(--display); font-size:21pt; line-height:.95; }
+.sub{
+  font-family:var(--mono); font-size:6.6pt; letter-spacing:.15em;
+  text-transform:uppercase; color:var(--muted); text-align:right; line-height:1.6;
+}
+.lbl{
+  font-family:var(--mono); font-size:6.6pt; letter-spacing:.14em;
+  text-transform:uppercase; color:var(--accent); display:block; margin-bottom:2pt;
+}
+.lbl span{ color:var(--muted); letter-spacing:.06em; text-transform:none; }
+/* A ruled line with real room above it: people write with a pencil, and a 6mm
+   field is a field you cannot use. */
+.rule{ border-bottom:.75pt solid var(--line); height:9.5mm; }
+.rule.short{ height:8mm; }
+.row{ display:flex; gap:12pt; }
+.row > *{ flex:1; }
+.block{ margin-bottom:8pt; }
+
+table{ width:100%; border-collapse:collapse; margin:2pt 0 0; }
+th{
+  font-family:var(--mono); font-size:6.2pt; font-weight:500; letter-spacing:.13em;
+  text-transform:uppercase; color:var(--muted); text-align:left;
+  border-bottom:1pt solid var(--ink); padding:3pt 6pt 3pt 0;
+}
+td{ border-bottom:.5pt solid var(--line); padding:6.5pt 6pt 6.5pt 0; vertical-align:middle; }
+td b{ font-size:10pt; }
+td .hint{ color:var(--muted); font-size:8.4pt; }
+.die{ width:22mm; text-align:center; font-family:var(--mono); font-size:12pt; color:var(--line); }
+
+.two{ display:grid; grid-template-columns:1fr 62mm; gap:14pt; align-items:start; }
+.ref{ border:.75pt solid var(--line); padding:8pt 10pt; }
+.ref h3{
+  font-family:var(--mono); font-size:6.6pt; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--accent); margin:0 0 5pt; font-weight:500;
+}
+.ref table td{ padding:3.2pt 4pt 3.2pt 0; border-bottom:.4pt solid var(--line); }
+.ref .d{ font-family:var(--mono); font-weight:700; width:12mm; }
+.ref p{ margin:6pt 0 0; font-size:7.6pt; line-height:1.45; color:var(--muted); }
+.foot{
+  margin-top:9pt; padding-top:5pt; border-top:.75pt solid var(--line);
+  display:flex; justify-content:space-between; gap:12pt;
+  font-family:var(--mono); font-size:6pt; letter-spacing:.1em;
+  text-transform:uppercase; color:var(--muted);
+}
+"""
+
+
 def build_one_pager(site, chrome, out_dir):
     """The whole game on a single sheet."""
     body = article_of(os.path.join(site, "rules", "index.html"))
@@ -329,6 +404,78 @@ def build_one_pager(site, chrome, out_dir):
         ONE_PAGER_CSS,
     )
     return _render_in_site(site, chrome, page, out_dir, "does-play-dice-rules.pdf")
+
+
+
+def build_character_sheet(site, chrome, out_dir):
+    """A sheet someone can actually fill in at a table."""
+    page = shell(
+        '<link rel="stylesheet" href="assets/stylesheets/fonts.css">',
+        "Does Play Dice -- character vitae",
+        """
+<div class="head">
+  <div class="title">CHARACTER<br>VITAE</div>
+  <div class="sub">Does Play Dice<br>doesplaydice.com</div>
+</div>
+
+<div class="row block">
+  <div><span class="lbl">Character name</span><div class="rule"></div></div>
+  <div><span class="lbl">Played by</span><div class="rule"></div></div>
+</div>
+
+<div class="block">
+  <span class="lbl">Background <span>&mdash; where you're from, your place in the world</span></span>
+  <div class="rule"></div><div class="rule"></div>
+</div>
+
+<div class="row block">
+  <div><span class="lbl">School or job</span><div class="rule"></div></div>
+  <div><span class="lbl">Connections <span>&mdash; who you know in the Party</span></span><div class="rule"></div></div>
+</div>
+
+<div class="block">
+  <span class="lbl">Habits and quirks <span>&mdash; anything that makes you you</span></span>
+  <div class="rule"></div><div class="rule"></div>
+</div>
+
+<div class="two">
+  <div>
+    <span class="lbl">Your three Skills <span>&mdash; write in the die your Narrator gave you</span></span>
+    <table>
+      <tr><th>Skill</th><th>What it covers</th><th style="text-align:center">Die</th></tr>
+      <tr><td><b>Physical</b></td><td class="hint">Strength, senses, fine motor skills, stamina</td><td class="die">d&nbsp;&nbsp;&nbsp;</td></tr>
+      <tr><td><b>Mental</b></td><td class="hint">Knowledge, memory, reasoning, aptitude</td><td class="die">d&nbsp;&nbsp;&nbsp;</td></tr>
+      <tr><td><b>Social</b></td><td class="hint">Intuition, influence, charisma, empathy</td><td class="die">d&nbsp;&nbsp;&nbsp;</td></tr>
+    </table>
+  </div>
+  <div class="ref">
+    <h3>How hard is it?</h3>
+    <table>
+      <tr><td class="d">d4</td><td>Easy</td></tr>
+      <tr><td class="d">d6</td><td>Moderate</td></tr>
+      <tr><td class="d">d8</td><td>Challenging</td></tr>
+      <tr><td class="d">d12</td><td>High difficulty</td></tr>
+      <tr><td class="d">d20</td><td>&ldquo;Impossible&rdquo;</td></tr>
+    </table>
+    <p>You roll your Skill die, the Narrator rolls the Difficulty die.
+    Highest wins. <b>A tie means both sides get something.</b></p>
+  </div>
+</div>
+
+<div class="block" style="margin-top:9pt">
+  <span class="lbl">Notes <span>&mdash; what happened, what you're carrying, what you owe</span></span>
+  <div class="rule short"></div><div class="rule short"></div>
+  <div class="rule short"></div><div class="rule short"></div>
+</div>
+
+<div class="foot">
+  <span>Does Play Dice by Jeff Adams</span>
+  <span>Text licensed CC BY 4.0 &middot; name and logo excluded</span>
+</div>""",
+        SHEET_CSS,
+    )
+    return _render_in_site(site, chrome, page, out_dir,
+                           "does-play-dice-character-sheet.pdf")
 
 
 def build_book(site, chrome, out_dir):
@@ -416,6 +563,7 @@ def main():
     jobs = []
     if args.only != "book":
         jobs.append(("one-page rules", build_one_pager))
+        jobs.append(("character sheet", build_character_sheet))
     if args.only != "rules":
         jobs.append(("full book", build_book))
 

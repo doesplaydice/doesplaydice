@@ -175,6 +175,28 @@
           '<button type="submit">Enter</button>' +
           '<p class="dpd-gate-err" hidden>That is not it. Try again.</p>' +
         '</form>';
+      // Share-link unlock. Jeff needs to give a table of playtesters access
+      // without any of them typing a passphrase on a phone, and without
+      // weakening it to something guessable. A link carrying the same secret
+      // costs nothing extra: ?k=<passphrase> is checked against the same hash,
+      // and the parameter is stripped from the address bar immediately so it
+      // does not linger in history or end up in a screenshot.
+      (async function () {
+        var m = /[?&]k=([^&]+)/.exec(location.search);
+        if (!m) return;
+        var ok = false;
+        try { ok = (await hashOf(decodeURIComponent(m[1]))) === HASH; } catch (x) { ok = false; }
+        // Strip it whether or not it matched, so a wrong key is not left on screen.
+        try {
+          var q = location.search.replace(/([?&])k=[^&]*/, '$1').replace(/[?&]$/, '');
+          history.replaceState(null, '', location.pathname + (q === '?' ? '' : q) + location.hash);
+        } catch (x) {}
+        if (!ok) return;
+        try { sessionStorage.setItem('dpd-gate', 'ok'); } catch (x) {}
+        root.classList.remove('dpd-locked');
+        el.remove();
+      })();
+
       document.body.appendChild(el);
       el.style.visibility = 'visible';
 

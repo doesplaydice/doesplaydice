@@ -10,11 +10,12 @@
     the box with your dice.</span>
     <span class="dpd-dl-go">Download &rarr;</span>
   </a>
-  <a href="../rules/character-vitae/">
+  <a href="does-play-dice-character-sheet.pdf">
     <span class="dpd-kicker">PDF</span>
     <span class="dpd-dl-title">Character Vitae</span>
-    <span class="dpd-dl-desc">Printable and fillable character sheet.</span>
-    <span class="dpd-dl-go">Draft &rarr;</span>
+    <span class="dpd-dl-desc">One page, room to write, and the difficulty ladder printed on it
+    so nobody has to look anything up mid-game.</span>
+    <span class="dpd-dl-go">Download &rarr;</span>
   </a>
   <a href="does-play-dice-book.pdf">
     <span class="dpd-kicker">PDF</span>

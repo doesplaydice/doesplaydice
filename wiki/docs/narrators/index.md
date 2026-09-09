@@ -27,23 +27,19 @@ There's more finished thinking here than anywhere else in the rules material:
     3. **Canon of consistency** — outcomes should be predictable. Even if they aren't predicted.
     4. **Canon of universality** — whatever a player can do, all players can do. Corollary: whatever the players can do, enemies can do.
 
-!!! decision "OPEN DECISION — what is the Narrator even called?"
+!!! success "SETTLED — Narrator"
 
-    Jeff's notes are unresolved on this and he flagged it himself in `Playing the Game.md`:
-    *"Can't use DM; it's in sore need of an update, plus it's trademarked. (Is it?) So, the usual
-    alt is GM, but are there better options? Director? MC? Narrator? Conductor? Moderator?
-    Storyteller? Bard? The Voice?"*
+    Jeff, 9 September 2026: *"I like narrator... I'm gonna start out with narrator. I like it."*
 
-    The live one-pager already commits to **Narrator** — and it's good, because it says
-    story-telling rather than dungeon. But most of the notes still say GM or DM, so the
-    terminology needs a single pass before publication.
+    The live one-pager, the printed kit and this site all already said it. The older notes say
+    GM or DM; those are historical and stay as quotations where they appear, but Narrator is
+    the term from here.
+!!! success "SETTLED — yes, the Narrator's guide is free"
 
-!!! decision "OPEN DECISION — is this section free?"
+    Jeff, 9 September 2026, asked directly whether the Narrator's guide is free: *"Yes."*
 
-    Jeff's Actuator notebook draws the commercial line here explicitly: *"core player content
-    must be free (or open-sourced, which ends up being the same thing), while content developed
-    for a GM or a streamer can remain proprietary and be sold commercially."*
+    So everything in this repository is CC BY 4.0, this section included. That is the
+    irreversible one and it is now decided: nothing here can be un-licensed later.
 
-    **Question for Jeff:** does that mean the Narrator's guide is *outside* the free core? If
-    so, this section is a teaser and the real book is a product — which is a very different
-    site, and a very different licence boundary.
+    It does not close off selling anything. It means anything sold is built **on top of** this
+    and lives outside this repository, rather than being carved out of it.
