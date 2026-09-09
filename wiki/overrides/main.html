@@ -33,7 +33,7 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-title" content="Play Dice">
 
-  {# GATE START -- delete from here to GATE END at launch #}
+  {# PERMANENT: palette migration. Not part of the gate -- do not delete. #}
   <script>
     // One-time palette migration.
     //
@@ -52,6 +52,7 @@
       } catch (e) { /* private mode: nothing to migrate */ }
     })();
   </script>
+  {# GATE START (head) -- delete to GATE END (head) at launch #}
   <style>html.dpd-locked body{visibility:hidden}</style>
   <script>
     // Runs in <head>, before the body paints, so there is no flash of content.
@@ -62,7 +63,7 @@
       document.documentElement.classList.add('dpd-locked');
     })();
   </script>
-  {# GATE END #}
+  {# GATE END (head) #}
 {% endblock %}
 
 {% block content %}
@@ -71,6 +72,9 @@
 
 {% block scripts %}
   {{ super() }}
+  {# GATE START (scripts) -- this entire block is the gate. Delete to
+     GATE END (scripts) at launch, along with the #dpd-gate rules in
+     extra.v3.css and the duplicated hash in wiki/docs/admin/index.html. #}
   <script>
     (function () {
       var HASH = '6db171ebb2a69f147ae0ecba6569706d485052b22c676817b9057dd22fa6b7b7';
@@ -167,4 +171,5 @@
       });
     })();
   </script>
+{# GATE END (scripts) #}
 {% endblock %}

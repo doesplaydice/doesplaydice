@@ -74,15 +74,21 @@ self.addEventListener('fetch', (event) => {
   const url = new URL(request.url);
   if (url.origin !== self.location.origin) return;
 
-  // Never cache the search index or anything with a query string.
+  // Skip anything with a query string.
   if (url.search) return;
 
   if (request.mode === 'navigate') {
     event.respondWith(
       fetch(request)
         .then((response) => {
-          const copy = response.clone();
-          caches.open(CACHE).then((cache) => cache.put(request, copy));
+          // Only cache a good response. Caching a 404 or a 503 here would
+          // overwrite the working offline copy with an error page -- and the
+          // fallback below is exactly what someone on dead convention wifi
+          // depends on.
+          if (response && response.ok) {
+            const copy = response.clone();
+            caches.open(CACHE).then((cache) => cache.put(request, copy));
+          }
           return response;
         })
         .catch(() => caches.match(request).then((hit) => hit || caches.match('/')))

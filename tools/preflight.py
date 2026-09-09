@@ -58,10 +58,21 @@ def check_gate():
     would silently take offline support with it -- which is exactly the kind
     of quiet collateral damage this script exists to prevent.
     """
+    # The passphrase hash is the thing that actually has to be gone. Checking
+    # only for a comment marker was not enough: the markers were briefly in the
+    # wrong place and enclosed the palette migration instead of the gate, so
+    # this check would have reported "removed" while the hash and the
+    # passphrase form were still in every page.
+    HASH_PREFIX = "6db171ebb2a69f14"
     problems = []
     template = read("wiki", "overrides", "main.html") or ""
     if "GATE START" in template:
         problems.append("the gate block is still in overrides/main.html")
+    if HASH_PREFIX in template:
+        problems.append("the passphrase hash is still in overrides/main.html")
+    admin = read("wiki", "docs", "admin", "index.html") or ""
+    if HASH_PREFIX in admin:
+        problems.append("the passphrase hash is still in admin/index.html")
     css = read("wiki", "docs", "assets", "stylesheets", "extra.v3.css") or ""
     if "dpd-gate" in css:
         problems.append("the gate styling is still in extra.v3.css")

@@ -23,14 +23,19 @@ on:
       - "requirements.txt"
   workflow_dispatch:
 
+# Least privilege at the top; the deploy job re-grants what only it needs.
+# The build job runs pip installs and headless Chrome over PR-authored HTML,
+# so it should not be holding a token that can publish the site.
 permissions:
   contents: read
-  pages: write
-  id-token: write
 
 concurrency:
-  group: pages
-  cancel-in-progress: true
+  # Keyed by ref, not a single shared "pages" group. Sharing it meant a PR
+  # build could cancel an in-flight production deploy and leave the site
+  # silently on the previous version -- a cheap accident during launch
+  # weekend. Only PR builds are worth cancelling when superseded.
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 jobs:
   # Every PR gets built. A contributor finds out their edit breaks the site
@@ -45,6 +50,12 @@ jobs:
           cache: pip
       - name: Install
         run: pip install -r requirements.txt
+      # Runs before the build: Python-Markdown passes raw HTML straight through,
+      # and community modules are deliberately unowned, so a merged PR could
+      # otherwise put a <script> tag on the site's origin -- the same origin the
+      # CMS will hold a GitHub token on.
+      - name: Check for dangerous HTML in documentation
+        run: python3 tools/check-markup.py wiki/docs
       - name: Build (strict -- broken markdown links fail the build)
         run: mkdocs build --strict --config-file wiki/mkdocs.yml
       # The printable PDFs are generated from the built site rather than
@@ -71,6 +82,10 @@ jobs:
     if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
     needs: build
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
     environment:
       name: github-pages
       url: ${{ steps.deploy.outputs.page_url }}
