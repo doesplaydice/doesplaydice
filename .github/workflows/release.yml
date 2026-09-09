@@ -71,8 +71,13 @@ jobs:
         run: |
           # Pre-release for anything that is not a plain vX.Y.Z, so a tag like
           # v1.0.0-rc1 does not present itself as the canonical rules.
+          # The hyphen case has to come FIRST. Shell globs are greedy, so
+          # v1.0.0-rc1 matches v[0-9]*.[0-9]*.[0-9]* -- the trailing * happily
+          # swallows "-rc1" -- and a release candidate would have published
+          # itself as canon.
           FLAGS=""
           case "$TAG" in
+            *-*) FLAGS="--prerelease" ;;
             v[0-9]*.[0-9]*.[0-9]*) ;;
             *) FLAGS="--prerelease" ;;
           esac
