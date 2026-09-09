@@ -176,6 +176,17 @@ body{ transition:background-color .35s, color .35s; }
 .md-typeset table:not([class]) th:last-child,
 .md-typeset table:not([class]) td:last-child{ padding-right:0; }
 
+/* Material puts `overflow:hidden` on the table and nothing on its wrapper, so
+   a table wider than the screen is CLIPPED rather than scrolled. On a phone
+   the four-column decisions table runs 30px past a 375px viewport and its last
+   column -- the one saying when each decision is due -- simply disappears with
+   no way to reach it. Let the wrapper scroll instead.
+
+   Material's own padding on the wrapper is left alone: it is what lines the
+   table up with the text column, and zeroing it pulled every table 16px left
+   of the prose above it. */
+.md-typeset .md-typeset__table{ overflow-x:auto; max-width:100%; }
+
 /* ---------- Buttons --------------------------------------------------------- */
 .md-typeset .md-button{
   font-family:var(--dpd-sans); font-weight:600; font-size:15px;
