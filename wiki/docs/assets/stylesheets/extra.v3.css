@@ -323,9 +323,37 @@ body{ transition:background-color .35s, color .35s; }
 .md-typeset .grid.cards > ul > li > hr{ display:none; }
 
 /* ---------- Responsive --------------------------------------------------------- */
-@media screen and (max-width:76.1875em){ .dpd-hero{ grid-template-columns:1fr; } .dpd-hero-right{ align-items:flex-start; flex-direction:row; gap:40px; } }
+/* Below the two-column hero the solids have to stop being a vertical rail.
+   A stack of five is a composition for standing beside a tall wordmark. Once
+   the hero collapses to a single column that stack sits centred inside a
+   755px-wide, 470px-tall box with only about 74px of drawing in it -- which is
+   the large empty area that shows up on an iPad.
+
+   Turned horizontal it costs roughly a hundred pixels of height instead of
+   470, uses the width it is actually given, and reads as "five" at a glance,
+   which is the entire point of showing five solids next to a game about five
+   dice. */
+@media screen and (max-width:76.1875em){
+  .dpd-hero{ grid-template-columns:1fr; }
+  .dpd-hero-right{ flex-direction:column; align-items:flex-start; gap:26px; }
+  /* `figure.` for specificity: the alignment fix further down this file is
+     also (0,2,0) and comes later, so an equally-specific rule in here loses
+     the cascade. A media query adds no weight of its own. */
+  .md-typeset figure.dpd-solids{
+    flex-direction:row; flex-wrap:wrap; align-items:center;
+    justify-content:flex-start; gap:clamp(10px,2.6vw,24px); width:auto;
+  }
+  .dpd-solids svg{ width:clamp(44px,9vw,74px); height:auto; }
+  /* The caption is a flex item too. Give it the whole line so it sits under the
+     row instead of becoming a sixth object in it. */
+  .md-typeset figure.dpd-solids figcaption{
+    flex-basis:100%; text-align:left; max-width:none; margin:6px 0 0;
+  }
+}
 @media screen and (max-width:600px){
-  .dpd-hero-right{ flex-direction:column; align-items:flex-start; transform:scale(.8); transform-origin:left top; }
+  /* No scale() here any more. A scaled element keeps its original layout box,
+     so shrinking the whole group to .8 left a band of phantom space around it
+     that nothing could fill -- part of what made this area look broken. */
   .dpd-split,.dpd-rule{ margin-top:64px; }
 }
 
