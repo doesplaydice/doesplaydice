@@ -116,7 +116,12 @@
           '<p class="dpd-gate-kicker">Does Play Dice</p>' +
           '<h1>Not open yet</h1>' +
           '<p class="dpd-gate-sub">This site goes public in October. Until then it needs the passphrase Jeff or Andrei gave you.</p>' +
-          '<input type="password" autocomplete="current-password" aria-label="Passphrase" placeholder="Passphrase" autofocus>' +
+          // No autofocus: on a phone it opens the keyboard the instant the page
+          // loads and scrolls the field into view, leaving the page offset
+          // before anyone has touched it. The explicit focus() below still runs
+          // after a wrong passphrase, where it is a response to what the person
+          // just did rather than an ambush.
+          '<input type="password" autocomplete="current-password" aria-label="Passphrase" placeholder="Passphrase">' +
           '<button type="submit">Enter</button>' +
           '<p class="dpd-gate-err" hidden>That is not it. Try again.</p>' +
         '</form>';

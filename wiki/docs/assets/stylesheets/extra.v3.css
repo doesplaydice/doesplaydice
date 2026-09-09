@@ -405,7 +405,17 @@ body{ transition:background-color .35s, color .35s; }
   color:var(--muted); margin:0 0 28px;
 }
 #dpd-gate input{
-  width:100%; box-sizing:border-box; font-family:var(--dpd-sans); font-size:15px;
+  /* 16px is not a taste decision: iOS Safari automatically zooms the page in
+     when a text field smaller than that receives focus, and the zoom persists
+     after the gate is dismissed -- which is exactly the "page loads slightly
+     wider than the screen, pinch to fix" and "starts 40px down the page" that
+     showed up on real iPhones and never on an emulator, because Chrome does
+     not do focus-zoom.
+
+     The lazy fix is `maximum-scale=1, user-scalable=no` on the viewport meta.
+     That works by taking pinch-zoom away from everybody, including people who
+     need it to read. 16px costs nothing and breaks nothing. */
+  width:100%; box-sizing:border-box; font-family:var(--dpd-sans); font-size:16px;
   padding:14px 16px; border:1px solid var(--line); border-radius:0;
   background:transparent; color:var(--ink); margin-bottom:12px;
 }
