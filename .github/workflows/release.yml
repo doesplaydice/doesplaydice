@@ -1,0 +1,83 @@
+# Cut a versioned release of the rules.
+#
+# Jeff's governance decision was "frozen core": the one-page rules do not
+# change by edit, they change by a deliberate version event with a date. Until
+# now that was a statement with nothing behind it -- there were no tags and no
+# releases, so "v1.0 of the rules" was not a thing anyone could point at,
+# download, cite, or archive.
+#
+# This makes it real. Tag a commit and the PDFs built from exactly that commit
+# are attached to a GitHub Release, permanently, at a stable URL.
+#
+#   git tag -a v1.0.0 -m "The rules, as played at Carnage Con"
+#   git push origin v1.0.0
+#
+# Deliberately no marketplace actions beyond the first-party ones already in
+# use: the release is cut with the gh CLI, which is preinstalled on the runner.
+name: Release
+
+on:
+  push:
+    tags: ["v*"]
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Existing tag to build a release for"
+        required: true
+
+permissions:
+  contents: read
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write        # only this job, and only to create the release
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.inputs.tag || github.ref }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Install
+        run: pip install -r requirements.txt
+
+      - name: Build the site
+        run: mkdocs build --strict --config-file wiki/mkdocs.yml
+      - name: Build the PDFs
+        run: python3 tools/build_pdf.py --site wiki/site
+      - name: Check internal links
+        run: python3 tools/check-links.py wiki/site
+
+      # A release whose one-page rules are not one page is not the artefact we
+      # said we were shipping, so prove it before publishing rather than after.
+      - name: Verify the one-page rules are one page
+        run: |
+          python3 - <<'PY'
+          import re, sys
+          blob = open("wiki/site/downloads/does-play-dice-rules.pdf", "rb").read()
+          pages = len(re.findall(rb"/Type\s*/Page[^s]", blob))
+          print(f"one-page rules: {pages} page(s)")
+          sys.exit(0 if pages == 1 else "expected exactly 1 page, got %d" % pages)
+          PY
+
+      - name: Publish the release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ github.event.inputs.tag || github.ref_name }}
+        run: |
+          # Pre-release for anything that is not a plain vX.Y.Z, so a tag like
+          # v1.0.0-rc1 does not present itself as the canonical rules.
+          FLAGS=""
+          case "$TAG" in
+            v[0-9]*.[0-9]*.[0-9]*) ;;
+            *) FLAGS="--prerelease" ;;
+          esac
+          gh release create "$TAG" $FLAGS \
+            --title "Does Play Dice $TAG" \
+            --generate-notes \
+            "wiki/site/downloads/does-play-dice-rules.pdf#The one-page rules (PDF)" \
+            "wiki/site/downloads/does-play-dice-book.pdf#The full book (PDF)"

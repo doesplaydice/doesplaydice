@@ -45,6 +45,13 @@
   --md-typeset-a-color:var(--ink);
   --md-accent-fg-color:var(--accent);
   --md-primary-fg-color:var(--bg);
+  /* Material paints .md-nav__source -- the repository block at the top of the
+     mobile drawer -- with --md-primary-fg-color--dark, and its default is
+     indigo #303fa1. Mapping only the base colour left that one block bright
+     blue in every scheme, which is what showed on a phone. --light is used for
+     muted primary text and had the same problem. */
+  --md-primary-fg-color--dark:var(--card);
+  --md-primary-fg-color--light:var(--muted);
   --md-primary-bg-color:var(--ink);
   --md-primary-bg-color--light:var(--muted);
   --md-code-bg-color:var(--card);
