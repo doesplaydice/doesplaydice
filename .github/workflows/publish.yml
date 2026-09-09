@@ -35,8 +35,15 @@ jobs:
           cache: pip
       - name: Install
         run: pip install -r requirements.txt
-      - name: Build (strict -- broken links fail the build)
+      - name: Build (strict -- broken markdown links fail the build)
         run: mkdocs build --strict --config-file wiki/mkdocs.yml
+      # --strict only validates links MkDocs resolves itself, which means
+      # markdown links and nothing else. Several pages are hand-written HTML
+      # blocks, and every href in those is invisible to it -- that is how the
+      # download links shipped pointing at /downloads/downloads/*.pdf. This
+      # checks the built HTML, so raw hrefs are covered too.
+      - name: Check internal links
+        run: python3 tools/check-links.py wiki/site
       - name: Upload
         if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
         uses: actions/upload-pages-artifact@v3

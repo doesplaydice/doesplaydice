@@ -130,7 +130,13 @@ body{ transition:background-color .35s, color .35s; }
 .md-nav__link{ font-size:14px; color:var(--muted); }
 .md-nav__link:hover{ color:var(--accent); }
 .md-nav__link--active,.md-nav__link--active:hover{ color:var(--ink); font-weight:600; }
-.md-search__form{ background:var(--card); border:1px solid var(--line); border-radius:0; }
+.md-search__form{
+  background:var(--card); border-radius:0;
+  /* An inset shadow, not a border: it draws the same 1px rule but occupies no
+     layout space, so Material's full-height input still fills the form exactly
+     and the placeholder centres. A real border shifted the text down a pixel. */
+  box-shadow:inset 0 0 0 1px var(--line);
+}
 .md-search__input{ font-family:var(--dpd-sans); }
 .md-search__input::placeholder{ color:var(--muted); }
 .md-footer{ border-top:1px solid var(--line); }
@@ -414,3 +420,14 @@ body{ transition:background-color .35s, color .35s; }
 .md-typeset .dpd-split > div > h2:first-child{ margin-top:0; }
 .dpd-split{ margin-top:88px; }
 @media screen and (max-width:1219px){ .dpd-split{ gap:20px; margin-top:64px; } }
+
+/* Two download cards describe things that do not exist yet. They used to be
+   <a href="#">, which looks clickable and does nothing. They are now <span>,
+   so they need the card layout without the link affordance -- and they are
+   dimmed, so the eye sorts available from not-yet before the cursor does. */
+.dpd-dlcards > *{
+  display:flex; flex-direction:column; padding:28px 0;
+  border-bottom:1px solid var(--line); text-decoration:none; border-top:0;
+}
+.dpd-dl-soon{ opacity:.45; }
+.dpd-dl-soon .dpd-dl-go{ font-weight:400; color:var(--muted); font-style:italic; }

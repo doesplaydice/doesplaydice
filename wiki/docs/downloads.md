@@ -3,25 +3,25 @@
 <p class="dpd-lede-sm">Everything here is free. No account, no email address, no cart.</p>
 
 <div class="dpd-dlcards">
-  <a href="#">
+  <span class="dpd-dl-soon">
     <span class="dpd-kicker">PDF</span>
     <span class="dpd-dl-title">The one-page rules</span>
     <span class="dpd-dl-desc">The complete game on a single sheet. Print it, fold it, put it in
     the box with your dice.</span>
     <span class="dpd-dl-go">Not yet generated</span>
-  </a>
-  <a href="rules/character-vitae/">
+  </span>
+  <a href="../rules/character-vitae/">
     <span class="dpd-kicker">PDF</span>
     <span class="dpd-dl-title">Character Vitae</span>
     <span class="dpd-dl-desc">Printable and fillable character sheet.</span>
     <span class="dpd-dl-go">Draft &rarr;</span>
   </a>
-  <a href="#">
+  <span class="dpd-dl-soon">
     <span class="dpd-kicker">PDF &middot; EPUB</span>
     <span class="dpd-dl-title">The full book</span>
     <span class="dpd-dl-desc">Everything on this site, as one document.</span>
     <span class="dpd-dl-go">Blocked on the table of contents</span>
-  </a>
+  </span>
   <a href="https://github.com/doesplaydice/doesplaydice">
     <span class="dpd-kicker">Git</span>
     <span class="dpd-dl-title">The source</span>
@@ -45,7 +45,7 @@ Session brief and feedback slips on plain paper; the rest on card stock.
 </div>
 
 <div class="dpd-filelist">
-  <a href="downloads/table-tent.pdf">
+  <a href="table-tent.pdf">
     <span class="dpd-file-main">
       <b>Table tent</b>
       <span>The core mechanic standing on the table. Fold once &mdash; both faces read upright,
@@ -53,7 +53,7 @@ Session brief and feedback slips on plain paper; the rest on card stock.
     </span>
     <span class="dpd-file-name">table-tent.pdf</span>
   </a>
-  <a href="downloads/pregens.pdf">
+  <a href="pregens.pdf">
     <span class="dpd-file-main">
       <b>Six pre-generated characters</b>
       <span>Ready to play with no character creation. The six cover every possible spread of
@@ -61,7 +61,7 @@ Session brief and feedback slips on plain paper; the rest on card stock.
     </span>
     <span class="dpd-file-name">pregens.pdf</span>
   </a>
-  <a href="downloads/scenario-frame.pdf">
+  <a href="scenario-frame.pdf">
     <span class="dpd-file-main">
       <b>One-shot frame</b>
       <span>A Narrator's single-page planning sheet, with a second half for recording what
@@ -69,7 +69,7 @@ Session brief and feedback slips on plain paper; the rest on card stock.
     </span>
     <span class="dpd-file-name">scenario-frame.pdf</span>
   </a>
-  <a href="downloads/handout.pdf">
+  <a href="handout.pdf">
     <span class="dpd-file-main">
       <b>Handout cards</b>
       <span>Ten per sheet, business-card size, with a QR to this site. The whole game in three
@@ -77,7 +77,7 @@ Session brief and feedback slips on plain paper; the rest on card stock.
     </span>
     <span class="dpd-file-name">handout.pdf</span>
   </a>
-  <a href="downloads/session-brief.pdf">
+  <a href="session-brief.pdf">
     <span class="dpd-file-main">
       <b>Playtest session brief</b>
       <span>Tick the one question the session exists to answer, then two minutes of notes at the
@@ -85,7 +85,7 @@ Session brief and feedback slips on plain paper; the rest on card stock.
     </span>
     <span class="dpd-file-name">session-brief.pdf</span>
   </a>
-  <a href="downloads/feedback-slips.pdf">
+  <a href="feedback-slips.pdf">
     <span class="dpd-file-main">
       <b>Player feedback slips</b>
       <span>Eight per sheet. Three questions, about thirty seconds, no phone required.</span>
