@@ -11,14 +11,21 @@
  *              and sees the new version -- a cache-first shell would show him
  *              yesterday's text and he would reasonably conclude the site was
  *              broken. Offline, the cached copy is served instead.
- *   assets     cache first. Fonts, stylesheets, scripts and images are either
- *              fingerprinted by Material or versioned by hand (extra.v3.css),
- *              so a stale one is a bug we would have caused on purpose.
+ *   assets     stale-while-revalidate. Served from cache instantly, then
+ *              refetched in the background so the next load is current.
+ *
+ *              This started as plain cache-first, which was wrong and I caught
+ *              it by shipping it: extra.v3.css is versioned by hand rather than
+ *              fingerprinted, so cache-first pinned one copy permanently. The
+ *              terminal palette went live and every browser that had already
+ *              visited kept rendering the old stylesheet -- silently, with no
+ *              way for a visitor to know or fix it. Staleness is now bounded to
+ *              a single page view.
  *
  * Bump CACHE when the precache list changes. Everything else self-heals,
  * because documents are always tried over the network first.
  */
-const CACHE = 'dpd-v1';
+const CACHE = 'dpd-v2';
 
 // The smallest set that makes the game usable with no network at all.
 const SHELL = [
@@ -82,14 +89,23 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
+  // Stale-while-revalidate: answer from cache if we have it, and refresh in
+  // the background either way.
   event.respondWith(
-    caches.match(request).then((hit) => hit || fetch(request).then((response) => {
-      // Opaque and error responses are not worth keeping.
-      if (response && response.status === 200 && response.type === 'basic') {
-        const copy = response.clone();
-        caches.open(CACHE).then((cache) => cache.put(request, copy));
-      }
-      return response;
-    }).catch(() => hit))
+    caches.match(request).then((hit) => {
+      const network = fetch(request).then((response) => {
+        // Opaque and error responses are not worth keeping.
+        if (response && response.status === 200 && response.type === 'basic') {
+          const copy = response.clone();
+          caches.open(CACHE).then((cache) => cache.put(request, copy));
+        }
+        return response;
+      }).catch(() => hit);
+      // Keep the worker alive long enough for the background refresh to land,
+      // otherwise it can be killed before the cache is updated and the asset
+      // stays stale for another visit.
+      if (hit) event.waitUntil(network.catch(() => {}));
+      return hit || network;
+    })
   );
 });

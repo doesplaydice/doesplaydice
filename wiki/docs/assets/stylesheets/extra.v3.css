@@ -28,8 +28,14 @@
 }
 
 /* ---------- Map onto Material ----------------------------------------------- */
+/* Every scheme has to be listed here. Material only ships `default` and
+   `slate`; an unrecognised scheme name gets no variables of its own, so it
+   silently falls back to Material's light defaults -- which is exactly what
+   `terminal` did on its first run: the attribute flipped, the toggle icon
+   changed, and the page stayed white. */
 [data-md-color-scheme="slate"],
-[data-md-color-scheme="default"]{
+[data-md-color-scheme="default"],
+[data-md-color-scheme="terminal"]{
   --md-default-bg-color:var(--bg);
   --md-default-fg-color:var(--ink);
   --md-default-fg-color--light:var(--muted);
@@ -733,3 +739,79 @@ body{ transition:background-color .35s, color .35s; }
   .dpd-odds{ overflow-x:auto; }
   .md-typeset table.dpd-odds-grid{ min-width:560px; }
 }
+
+/* ---------- Terminal: the third palette -----------------------------------------
+   Phosphor CRT. Not a gimmick bolted on the side -- it reuses the same tokens
+   as the other two schemes, so every component follows without special cases.
+   -------------------------------------------------------------------------- */
+[data-md-color-scheme="terminal"]{
+  --bg:#050A06; --ink:#3BFF74; --muted:#1D9445; --line:#0F3D1E;
+  --accent:#9CFFBB; --die:#0C6E2C; --pip:#050A06; --card:#08150B;
+  color-scheme:dark;
+}
+
+/* A terminal has one typeface. Forcing it everywhere is the whole joke, and it
+   costs nothing because the layout is driven by the grid, not the face. */
+[data-md-color-scheme="terminal"] body,
+[data-md-color-scheme="terminal"] .md-typeset,
+[data-md-color-scheme="terminal"] .md-typeset h1,
+[data-md-color-scheme="terminal"] .md-typeset h2,
+[data-md-color-scheme="terminal"] .md-typeset h3,
+[data-md-color-scheme="terminal"] .md-typeset p,
+[data-md-color-scheme="terminal"] .md-typeset li,
+[data-md-color-scheme="terminal"] .md-typeset td,
+[data-md-color-scheme="terminal"] .md-header__title,
+[data-md-color-scheme="terminal"] .dpd-ladder b,
+[data-md-color-scheme="terminal"] .dpd-roller-num,
+[data-md-color-scheme="terminal"] .dpd-tl-num{
+  font-family:var(--dpd-mono) !important;
+  letter-spacing:0;
+}
+/* Mono is much wider than Archivo Black, so the display sizes have to come
+   down or the wordmark runs off the page. */
+[data-md-color-scheme="terminal"] .md-typeset .dpd-hero h1{
+  font-size:clamp(38px,7.4vw,86px); line-height:1.02; letter-spacing:-.02em;
+}
+[data-md-color-scheme="terminal"] .md-typeset h1{ font-size:clamp(26px,3.6vw,44px); }
+
+/* Phosphor bloom. Small -- enough to read as glow, not enough to smear text. */
+[data-md-color-scheme="terminal"] .md-typeset,
+[data-md-color-scheme="terminal"] .md-header__title{
+  text-shadow:0 0 6px rgba(59,255,116,.32);
+}
+
+/* Scanlines and a vignette, painted over everything and click-through. Fixed,
+   so they stay put while the page scrolls, exactly like a real screen. */
+[data-md-color-scheme="terminal"] body::after{
+  content:""; position:fixed; inset:0; z-index:9998; pointer-events:none;
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      rgba(0,0,0,.26) 0px, rgba(0,0,0,.26) 1px,
+      transparent 1px, transparent 3px
+    ),
+    radial-gradient(120% 100% at 50% 50%, transparent 58%, rgba(0,0,0,.55) 100%);
+}
+
+/* The barely-there mains hum of a CRT. Suppressed entirely for anyone who has
+   asked for less motion -- a full-screen brightness oscillation is exactly the
+   kind of thing that setting exists for. */
+@media (prefers-reduced-motion: no-preference){
+  [data-md-color-scheme="terminal"] body::before{
+    content:""; position:fixed; inset:0; z-index:9997; pointer-events:none;
+    background:rgba(59,255,116,.028);
+    animation:dpd-flicker 5.5s infinite steps(1);
+  }
+  @keyframes dpd-flicker{
+    0%,96%,100%{ opacity:.25; }
+    97%{ opacity:.7; }
+    98%{ opacity:.1; }
+    99%{ opacity:.5; }
+  }
+}
+
+/* The dice are physical objects, not phosphor; drop them to the same palette
+   so the scene stays monochrome rather than one red die shouting in a green
+   room. */
+[data-md-color-scheme="terminal"] .dpd-die{ box-shadow:0 0 0 1px var(--line); }
+[data-md-color-scheme="terminal"] .md-header{ border-bottom:1px solid var(--line); }

@@ -43,7 +43,7 @@
     // the wrong scheme -- anyone who visited earlier gets light instead of the
     // intended dark default. Clear the stale value once, then leave it alone.
     (function () {
-      var MARK = 'dpd-palette-gen', GEN = '2';
+      var MARK = 'dpd-palette-gen', GEN = '3';
       try {
         if (localStorage.getItem(MARK) !== GEN) {
           localStorage.removeItem('__palette');
