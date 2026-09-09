@@ -36,6 +36,40 @@ included, with no other change.
 `tools/preflight.py` reports this bypass every time it runs, so it cannot go
 quiet.
 
+## 1b. HTTPS enforcement — WAITING ON GITHUB, not on us
+
+Everything on our side and Jeff's side is correct. GitHub has not reissued the
+certificate. Checked 2026-09-09, roughly six hours after the DNS fix:
+
+```
+apex A       185.199.108.153 .109.153 .110.153 .111.153   (correct)
+www CNAME    doesplaydice.github.io.                       (correct, added by Jeff)
+CAA          none on apex; www inherits GitHub's, which permits letsencrypt.org
+AAAA         none on apex; www inherits GitHub's IPv6
+Pages cname  doesplaydice.com
+cert state   dns_changed
+cert covers  ["doesplaydice.com"]     <- no www SAN, which is what blocks enforcement
+```
+
+Ruled out as causes: a CAA record forbidding Let's Encrypt, a stray IPv6 answer,
+the ACME challenge path being unreachable, and the old wildcard shadowing `www`.
+`www` itself works -- it 301s to the apex over http and lands on 200. It simply
+has no certificate of its own.
+
+**Do not remove and re-add the custom domain again.** That was done twice on
+2026-09-09; each attempt restarts GitHub's own clock rather than advancing it.
+
+**If it is still `dns_changed` after 24 hours from 2026-09-09 12:45 CDT**, open a
+GitHub Support ticket and paste the block above. Then:
+
+```sh
+gh api -X PUT repos/doesplaydice/doesplaydice/pages -F https_enforced=true
+```
+
+Impact while it waits: none for visitors. `https://doesplaydice.com` serves
+normally with a valid certificate. What is missing is the `www` variant over TLS
+and the automatic http-to-https redirect.
+
 ## 2. The pre-launch passphrase gate — REMOVE AT LAUNCH
 
 Bracketed with `GATE START` / `GATE END` markers in
