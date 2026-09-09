@@ -22,6 +22,15 @@ from urllib.parse import urljoin, urlparse
 
 SKIP_SCHEMES = ("http:", "https:", "mailto:", "tel:", "data:", "javascript:")
 
+# Files that are generated into the build output rather than committed. If one
+# of these is missing the link is not wrong -- the build step just has not run.
+# `mkdocs build` cleans the output directory, so running it after build_pdf.py
+# deletes these and this check fails in a way that looks like a broken link.
+GENERATED = {
+    "/downloads/does-play-dice-rules.pdf": "python3 tools/build_pdf.py",
+    "/downloads/does-play-dice-book.pdf": "python3 tools/build_pdf.py",
+}
+
 
 def page_urls(root):
     """Yield (file path, the URL path the file is served at)."""
@@ -70,12 +79,20 @@ def main(root):
 
     if broken:
         print(f"{len(broken)} broken internal link(s):\n")
-        current = None
+        current, hints = None, set()
         for served, attr, target in sorted(broken):
             if served != current:
                 print(f"  page {served}")
                 current = served
-            print(f'    href="{attr}"  ->  {target}  (does not exist)')
+            if target in GENERATED:
+                print(f'    href="{attr}"  ->  {target}')
+                print("        not broken -- this file is generated, and the "
+                      "build step has not run")
+                hints.add(GENERATED[target])
+            else:
+                print(f'    href="{attr}"  ->  {target}  (does not exist)')
+        for hint in sorted(hints):
+            print(f"\n  Generate the missing files with:  {hint}")
         print(f"\nChecked {checked} internal links.")
         return 1
 
