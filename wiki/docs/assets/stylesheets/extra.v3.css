@@ -165,8 +165,32 @@ body{ transition:background-color .35s, color .35s; }
 .md-copyright a{ color:var(--ink); }
 .md-footer__link{ font-family:var(--dpd-sans); }
 
-/* Sticky secondary TOC */
-.md-sidebar--secondary .md-nav__title{ margin-bottom:8px; }
+/* ---------- The two sidebars ---------------------------------------------------
+   They do different jobs and were not saying so. The right one had a proper
+   label ("Table of contents", 11px mono caps); the left had none, because
+   Material hides .md-nav__title on desktop -- so the section name sat in the
+   list at 14px/700 while its own children sat at 14px/600. One weight step
+   apart, same face, same size. It read as a slightly bolder sibling rather
+   than a heading.
+
+   Both now carry the same kind of label, with a rule beneath it that groups
+   the label to its list. Left names the section you are in; right says what
+   it is. -------------------------------------------------------------- */
+.md-sidebar--primary .md-nav__item--section > label.md-nav__link,
+.md-sidebar--secondary .md-nav__title{
+  font-family:var(--dpd-mono); font-size:11px; font-weight:500;
+  letter-spacing:.15em; text-transform:uppercase; color:var(--muted);
+  padding-bottom:9px; margin-bottom:10px;
+  border-bottom:1px solid var(--line);
+}
+/* The section label is not a destination -- it opens nothing on desktop -- so
+   it should not offer a hover state that suggests otherwise. */
+.md-sidebar--primary .md-nav__item--section > label.md-nav__link{
+  cursor:default;
+}
+.md-sidebar--primary .md-nav__item--section > label.md-nav__link:hover{
+  color:var(--muted);
+}
 .md-sidebar--secondary .md-nav__link{ font-size:14px; }
 
 /* ---------- Tables: rule-lines, not boxes ----------------------------------- */

@@ -89,6 +89,9 @@ markdown_extensions:
   - md_in_html
   - tables
   - toc:
+      # Material renders this as the right sidebar's heading.
+      # "On this page" contrasts with the section name on the left.
+      title: On this page
       permalink: true
   - pymdownx.details
   - pymdownx.superfences
