@@ -14,6 +14,8 @@ of 5 dice, one each with the following number of sides: 4, 6, 8, 12, and 20.
 
 ## Gather Your Party
 
+<div class="dpd-steps" markdown>
+
 **1.** You can play with any number of people, but the ideal group is between 5 and 7 players.
 Most of the players will create a Character and come together to form a Party. As a Party,
 they'll work together towards a common goal.
@@ -22,7 +24,11 @@ they'll work together towards a common goal.
 with the challenges the Party will face. The Narrator also calls for Skill Checks as needed to
 determine an Outcome.
 
+</div>
+
 ## Set the Scene (for the Narrator)
+
+<div class="dpd-steps" markdown>
 
 **3.** First, you want to create the overall story for the Party. It might be a Hollywood
 movie-style heist, a murder mystery dinner party, or a fantasy-based dungeon crawl with
@@ -38,7 +44,11 @@ dice to choose from for their Skills. Of the 5 dice in a set, choose 3, keeping 
 smaller dice represent less experience, while larger dice represent more. (When making a Skill
 Check, the highest roll wins.)
 
+</div>
+
 ## Get Into Character (for the Party)
+
+<div class="dpd-steps" markdown>
 
 **5.** For each Character, decide who you are and your place in the world. If you like, you can
 collaborate with other players to create Characters with shared backgrounds or experiences, but
@@ -51,6 +61,8 @@ or job, habits, quirks ... anything that makes you you.
 Physical, Mental, and Social. We'll see how they're used below. For now, just know that higher
 numbers are better.
 
+</div>
+
 | Skill | When it's used |
 | --- | --- |
 | **Physical** | Strength, senses, fine motor skills, stamina |
@@ -58,6 +70,8 @@ numbers are better.
 | **Social** | Intuition, influence, charisma, empathy |
 
 ## Roll Some Dice
+
+<div class="dpd-steps" markdown>
 
 **8.** Ok, let's play! The Narrator will describe what's around you. If you have questions, ask.
 Talk to your Party. Talk to the people around you. (Anyone your Narrator describes that isn't
@@ -82,6 +96,8 @@ attempting to shoulder check the door and the Narrator knows the door is pretty 
 lock sturdy. Despite what we see in the movies, knocking down a door isn't an easy thing to do,
 so the Narrator decides in this case that it's a Highly Difficult challenge, or a d12.
 
+</div>
+
 | Die | Abbreviated | Challenge Difficulty |
 | --- | --- | --- |
 | 4-sided | **d4** | Easy |
@@ -89,6 +105,8 @@ so the Narrator decides in this case that it's a Highly Difficult challenge, or 
 | 8-sided | **d8** | Challenging |
 | 12-sided | **d12** | High difficulty |
 | 20-sided | **d20** | "Impossible" |
+
+<div class="dpd-steps" markdown>
 
 **11.** Now, both of you roll. The Character rolls the die assigned to the Skill; let's assume
 that's a d6. The Narrator rolls the die corresponding to the Difficulty, which we determined
@@ -99,6 +117,8 @@ immediately), and anyone on the other side is now alerted to the Party's presenc
 it's a tie? In that case, both sides should get something out of it. Maybe the Character knocks
 down the door, surprising everyone inside, but they injure their shoulder in the process and
 suffer some minor or temporary setback as a result.
+
+</div>
 
 <div class="dpd-roller" data-roller>
   <span class="dpd-roller-kicker">Try it</span>
@@ -131,13 +151,18 @@ together! #winning
 
 ---
 
-!!! decision "OPEN DECISION — is this page frozen?"
+!!! success "SETTLED — this page is frozen canon"
 
-    Everything else on this site is designed to expand. This page is the promise that the game
-    stays learnable in one sitting, which only holds if it stops changing.
+    Confirmed by Jeff on **24 August 2026**: frozen core, with a path to stewarded
+    governance later.
 
-    **Question for Jeff:** once v1 ships, does the basic ruleset become **frozen canon** — where
-    changes need a deliberate versioning event — or does it stay editable like every other page?
+    These rules do not change by edit. Changing them takes a deliberate version event with
+    a date, so that anyone who builds on this version knows the ground will not move under
+    them. That is what makes "backwards compatible forever" a promise rather than a hope,
+    and it is what makes the game safe to fork.
 
-    This is the load-bearing question for the whole "backwards compatible forever" thesis, and
-    it also determines what the community can and can't send pull requests against.
+    It is already enforced rather than merely stated: `.github/CODEOWNERS` routes any change
+    to this page to the maintainers team for review.
+
+    Everything else on this site is designed to expand. This page is the part that holds
+    still.

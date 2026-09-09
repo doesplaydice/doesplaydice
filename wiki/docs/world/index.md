@@ -23,18 +23,15 @@ the system to the setting in a way most games never manage.
 The material is early: mostly outlines, fragments, to-do lists, and AI co-writing sessions
 rather than finished prose.
 
-!!! decision "OPEN DECISION — Timaeus or Prota?"
+!!! success "SETTLED — the setting is Timaeus"
 
-    There are **two setting names** in the source material, and they appear to describe the
-    same kind of place:
+    Confirmed by Jeff on **24 August 2026**. *Prota* was the working name for the same
+    world and is retired; nothing should refer to it going forward.
 
-    - **Timaeus** — the folder, 33 files, 91k words. One table of contents reads *"The World of Timaeus."*
-    - **Prota** — named in `What is Free Worlds.md`: *"Prota, the first setting for Free Worlds which is included here"*
+    The name earns its place: Plato's *Timaeus* is the dialogue that assigns the five
+    Platonic solids to the five elements, so the five dice and the cosmology are the same
+    five objects. That is why the solids appear on the home page.
 
-    **Questions for Jeff:** which is it? Are they the same world renamed, or two different
-    settings? Is either one shipping with v1 — or does v1 stay rules-only, with the setting
-    following later?
-
-    There's a real argument for rules-only at launch: it keeps v1 small enough to actually
-    finish before November, and it makes the "any genre" promise concrete rather than
-    theoretical. But it means showing up at a convention without a world to demo.
+    **Still open, and a different question:** whether any of the setting ships with v1.
+    The v1 scope agreed on the same day was two rule sets only — the one-pager and the
+    campaign rules — with the world explicitly post-launch.

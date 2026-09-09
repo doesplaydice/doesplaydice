@@ -48,15 +48,16 @@ Cleared ahead of the schedule below, so none of it needs discussing on a Thursda
 
 **The job:** clear everything that's blocking, so nothing waits on a question.
 
-The [open decisions](../decisions.md) page is the agenda. There are six, and four of them are
-Jeff's alone.
+The [open decisions](../decisions.md) page is the agenda. Four are open; two more turned out to
+have been settled back on 24 August and had been sitting on the site as questions Jeff had
+already answered.
 
 | Jeff | Llamassist |
 | --- | --- |
 | Confirm the Carnage Con registration actually went through | Walk through the site together, first look |
 | ~~Make the licence call~~ &mdash; **done, CC BY 4.0** | ~~Apply the licence~~ &mdash; **done** |
 | Agree the campaign rules table of contents &mdash; **structure only, not content** | Rob's answer on the writing pipeline |
-| Settle the naming questions: Narrator vs GM, Timaeus vs Prota | Ten minutes of practice editing a page together |
+| Settle the naming question: Narrator vs GM (Timaeus is already settled) | Ten minutes of practice editing a page together |
 | Print the kit and take it to the next library night | |
 
 **True by the end:** convention registration confirmed, the six open decisions are closed or

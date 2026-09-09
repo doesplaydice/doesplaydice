@@ -3,15 +3,16 @@ hide:
   - toc
 ---
 
-# Open decisions <span class="dpd-status stub">6 open</span>
+# Open decisions <span class="dpd-status stub">4 open</span>
 
 <div class="dpd-protobar" markdown>
 **This page is the agenda, not the game.** Every unresolved question on the site is collected
 here so nobody has to tour the whole thing to find them. It comes down before launch.
 </div>
 
-Six decisions are open. Four are Jeff's alone, and two of them should be closed on **Thursday 10
-September** because other work is waiting behind them.
+Four decisions are open. Two more were already settled on **24 August** and had been sitting
+here as questions Jeff had answered months ago &mdash; they are recorded at the bottom rather
+than deleted, so it is clear what moved.
 
 Each one below says what it blocks and what we'd recommend. The recommendation is a starting
 position to argue with, not a conclusion.
@@ -21,11 +22,9 @@ position to argue with, not a conclusion.
 | # | Decision | Blocks | Decide by |
 | --- | --- | --- | --- |
 | 1 | [Is the Narrator's guide free?](#1-is-the-narrators-guide-free) | The licence boundary, permanently | **Before Jeff writes it** |
-| 2 | [What is the Narrator called?](#2-what-is-the-narrator-called) | Terminology pass, printed kit | **10 Sep** |
-| 3 | [Timaeus or Prota?](#3-timaeus-or-prota) | The World section, con demo | **10 Sep** |
-| 4 | [Is the one-page ruleset frozen?](#4-is-the-one-page-ruleset-frozen) | What contributors may change | 17 Sep |
-| 5 | [How far does the character sheet go?](#5-how-far-does-the-character-sheet-go) | Print order | 24 Sep |
-| 6 | [Which expansions matter first?](#6-which-expansions-matter-first) | Nothing for launch | 24 Sep |
+| 2 | [What is the Narrator called?](#2-what-is-the-narrator-called) | Terminology pass, printed kit | **Next session** |
+| 3 | [How far does the character sheet go?](#3-how-far-does-the-character-sheet-go) | Print order | 24 Sep |
+| 4 | [Which expansions matter first?](#4-which-expansions-matter-first) | Nothing for launch | 24 Sep |
 
 ---
 
@@ -75,49 +74,7 @@ older notes still say GM or DM, so what remains is one terminology pass, not a d
 
 ---
 
-## 3. Timaeus or Prota?
-
-There are two setting names in the source material and they appear to describe the same kind of
-place. **Timaeus** is the folder &mdash; 33 files, about 91,000 words. **Prota** is named in
-`What is Free Worlds.md`: *"Prota, the first setting for Free Worlds which is included here."*
-
-**Our recommendation: keep the name Timaeus, and ship v1 rules-only.**
-
-Two separate calls, and they pull in different directions, so they're worth taking separately:
-
-- **The name.** Timaeus is the Plato dialogue that assigns the Platonic solids to the elements.
-  That means the five dice *are* the five elements &mdash; the mechanic and the cosmology are
-  the same object. That is a genuinely good piece of design, it is already the best visual idea
-  on the home page, and Prota does not do any of that work.
-- **The scope.** 91,000 words of outlines and fragments is not five weeks of work. Shipping
-  rules-only keeps v1 finishable, and it makes the "runs any genre" promise concrete rather than
-  theoretical. The cost is showing up at a convention with no world to demo &mdash; which is
-  survivable, because the one-shot scenario does that job instead.
-
-**What we need from Jeff:** are they the same world? If yes, the name question is easy. If
-they're two different settings, that's a longer conversation and it should not happen before
-October.
-
----
-
-## 4. Is the one-page ruleset frozen?
-
-Everything else on this site is designed to expand. The one page is the promise that the game
-stays learnable in one sitting &mdash; which only holds if it stops changing.
-
-**Our recommendation: freeze it at v1.0, with explicit versioning.** Changes require a
-deliberate version event with a date, not an edit. Expansions stay editable; the core does not.
-
-This is what makes "backwards compatible forever" mean something rather than sound nice. It is
-also what makes the game safe to fork: someone can build on v1.0 knowing the ground will not
-move. And it gives contributors a clear answer about what they may send a pull request against
-&mdash; which `CONTRIBUTING.md` currently cannot tell them.
-
-**Blocked behind it:** the contributor guidance, and the versioning note on the rules page.
-
----
-
-## 5. How far does the character sheet go?
+## 3. How far does the character sheet go?
 
 The current draft covers exactly what the one-page rules require and no more. Jeff's
 `Character resume.md` runs to 30,000 characters and describes a much richer document &mdash;
@@ -127,6 +84,10 @@ point-buy, training, backgrounds-as-organizations.
 one-page rules exactly, and a convention player fills it in during the first two minutes of a
 40-minute slot. The full CV is a v2 document that belongs with the expanded rules it depends on.
 
+The v1 scope agreed on 24 August already points the same way: two rule sets only, with
+character templates listed as post-launch. What is left to confirm is whether the blank sheet
+that ships alongside them is this minimal one.
+
 **A fillable PDF is explicitly a nice-to-have.** If the schedule allows it in early October,
 good; if not, nothing is lost. It should not be on the critical path.
 
@@ -134,7 +95,7 @@ good; if not, nothing is lost. It should not be on the critical path.
 
 ---
 
-## 6. Which expansions matter first?
+## 4. Which expansions matter first?
 
 There are roughly 295,000 words of design notes across Jeff's folder and they disagree with each
 other. `RPG dev notes.md` alone contains around fifteen different attribute schemes &mdash;
@@ -157,7 +118,20 @@ the first six months?
 
 ---
 
+---
+
+## Already settled
+
+Both of these were answered by Jeff on **24 August 2026** and stayed on the site as open
+questions for weeks afterwards. The answers now live on the pages they belong to.
+
+| Decision | Answer | Where it lives now |
+| --- | --- | --- |
+| Timaeus or Prota? | **Timaeus.** Prota was the working name for the same world, and is retired. | [The World](world/index.md) |
+| Is the one-page ruleset frozen? | **Yes &mdash; frozen canon**, with a path to stewarded governance. Enforced by `CODEOWNERS`. | [Basic Rules](rules/index.md) |
+
 ## Closing a decision
 
-When one is settled, it comes off this page and the answer goes into the page it came from. The
-count in the title above should reach zero before the passphrase gate comes off.
+When one is settled it comes off the list above, the answer goes into the page it came from, and
+it gets a row down here. The count in the title should reach zero before the passphrase gate
+comes off.

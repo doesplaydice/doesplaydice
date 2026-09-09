@@ -87,8 +87,15 @@ body{ transition:background-color .35s, color .35s; }
 .md-typeset strong{ font-weight:600; color:var(--ink); }
 .md-typeset em{ font-style:italic; }
 
-/* Numbered rules: **1.** at the start of a paragraph becomes a mono accent number */
-.md-typeset p > strong:first-child{
+/* Numbered rules: **1.** at the start of a paragraph becomes a mono accent
+   number. Scoped to .dpd-steps, and it has to be: `p > strong:first-child`
+   looks like it means "a paragraph that begins with bold", but :first-child
+   ignores text nodes, so it also matches bold appearing anywhere in a
+   paragraph as long as no element precedes it. That styled about 85 runs of
+   ordinary prose as mono accent numerals, and the 10px margin-right left a
+   visible gap before the following punctuation -- "the text ." on the
+   Contribute page. Twenty-five paragraphs wanted this; the rest did not. */
+.md-typeset .dpd-steps p > strong:first-child{
   font-family:var(--dpd-mono); font-weight:500; font-size:13px;
   color:var(--accent); margin-right:10px;
 }

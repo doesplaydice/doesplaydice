@@ -32,7 +32,11 @@ of remembering it fondly afterwards.
 
 ## Before: about ten minutes
 
+<div class="dpd-steps" markdown>
+
 **1. Print what you need.** Everything is on the [Download](../downloads.md) page.
+
+</div>
 
 | Print | How many | On what |
 | --- | --- | --- |
@@ -42,6 +46,8 @@ of remembering it fondly afterwards.
 | Feedback slips | 1 sheet per 8 players | Plain paper |
 | One-shot frame | 1 per session | Plain paper |
 
+<div class="dpd-steps" markdown>
+
 **2. Pick tonight's test.** One, not five. Go to [the five tests](tests.md), start at number one,
 and only move on once it's answered. Tick it on the session brief.
 
@@ -50,9 +56,13 @@ difficulty for each. Ten minutes is plenty. It's meant to be thin &mdash; you im
 
 **4. Bring dice.** Five per player if you have them: 4, 6, 8, 12 and 20-sided.
 
+</div>
+
 ---
 
 ## During: the actual session
+
+<div class="dpd-steps" markdown>
 
 **5. Put the table tent up where everyone can see it.** Don't explain the rules first. Let them
 read it. Whether they can is literally test number one.
@@ -70,6 +80,8 @@ make a light game feel heavy.
 
 **10. Write things down as they happen.** Two things, in the moment:
 
+</div>
+
 - Every time somebody asks a rules question, make a mark. Just a tally.
 - When a question comes up twice, **write it down word for word.** The exact wording is usually
   the fix.
@@ -86,11 +98,15 @@ make a light game feel heavy.
 
 ## After: about five minutes, before anyone leaves
 
+<div class="dpd-steps" markdown>
+
 **11. Hand out a feedback slip to each player.** Three questions, thirty seconds. Ask them to be
 blunt. Say out loud that unhelpful praise is worse than useless &mdash; people need permission
 to criticise something you made.
 
 **12. Fill in the bottom of the session brief.** Five things:
+
+</div>
 
 - Time to first roll
 - How many rules questions
@@ -98,14 +114,22 @@ to criticise something you made.
 - Would they play again &mdash; **ask out loud, and watch the pause before the answer**
 - The one thing you'd cut
 
+<div class="dpd-steps" markdown>
+
 **13. Photograph everything before you leave.** The session brief and all the slips.
+
+</div>
 
 !!! danger "This is the step that gets skipped"
 
     Paper that goes into a bag stays in the bag. A photograph takes ten seconds and it is the
     only thing that turns an evening into data.
 
+<div class="dpd-steps" markdown>
+
 **14. Add a row to the [progress log](progress.md).**
+
+</div>
 
 ---
 
