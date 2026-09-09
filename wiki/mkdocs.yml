@@ -10,7 +10,7 @@ site_url: https://doesplaydice.com/
 # PLACEHOLDER — repo does not exist yet. Drives the "Edit this page" pencil,
 # which is the whole "Jeff can update it himself" story.
 repo_url: https://github.com/doesplaydice/doesplaydice
-repo_name: GitHub
+repo_name: doesplaydice/doesplaydice
 edit_uri: edit/main/wiki/docs/
 
 theme:
@@ -32,13 +32,13 @@ theme:
       primary: custom
       accent: custom
       toggle:
-        icon: material/circle
+        icon: material/weather-night
         name: Switch to light
     - scheme: default
       primary: custom
       accent: custom
       toggle:
-        icon: material/circle-outline
+        icon: material/weather-sunny
         name: Switch to dark
   features:
     - navigation.instant

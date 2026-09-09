@@ -378,58 +378,6 @@ body{ transition:background-color .35s, color .35s; }
 /* The status pill should sit on its own line rather than stretch the title. */
 .md-typeset h1 .dpd-status{ margin-left:0; margin-top:14px; display:inline-block; }
 
-/* ===========================================================================
-   HEADER -- quieten Material's default chrome so it stops fighting the design.
-   Partials overridden: logo.html (DPD wordmark), palette.html (pill toggle).
-   =========================================================================== */
-
-/* DPD wordmark, replacing the d20 icon that read as a stray "20" */
-.dpd-wordmark{
-  font-family:var(--dpd-display); font-size:14px; letter-spacing:.08em;
-  text-transform:uppercase; color:var(--ink); line-height:1;
-}
-.md-header__button.md-logo{ padding:0; margin:0 .4rem 0 0; }
-.md-header__button.md-logo :is(img,svg){ width:auto; height:auto; }
-
-/* The site title duplicated the wordmark; the wordmark alone is enough. */
-.md-header__title{ display:none; }
-
-/* Search: the default is far too large for this header. */
-.md-search__form{ height:34px; background:transparent; border:1px solid var(--line); }
-.md-search__form:hover{ background:transparent; border-color:var(--muted); }
-.md-search__input{ font-family:var(--dpd-sans); font-size:13px; height:34px; padding-left:2.2rem; }
-.md-search__input::placeholder{ color:var(--muted); font-size:13px; }
-.md-search__icon[for="__search"]{ width:16px; height:16px; top:.45rem; left:.6rem; }
-.md-search__options{ top:.2rem; }
-[dir=ltr] .md-search__output{ font-family:var(--dpd-sans); }
-
-/* Repo link: keep it, drop the star/fork counters and the heavy treatment. */
-.md-header__source{ max-width:11rem; }
-.md-source__repository{ font-family:var(--dpd-mono); font-size:11px; letter-spacing:.06em;
-  text-transform:uppercase; color:var(--muted); font-weight:400; }
-.md-source:hover .md-source__repository{ color:var(--accent); }
-.md-source__facts{ display:none; }          /* the "0 stars 0 forks" clutter */
-.md-source__icon svg{ width:16px; height:16px; }
-
-/* Theme toggle rendered as the pill from the design */
-.dpd-palette{ display:flex; align-items:center; }
-.dpd-pill{
-  display:inline-flex; align-items:center; gap:8px;
-  border:1px solid var(--line); border-radius:999px;
-  padding:5px 12px 5px 10px; cursor:pointer; user-select:none;
-  font-family:var(--dpd-sans); font-size:12px; color:var(--muted);
-  transition:border-color .15s, color .15s;
-}
-.dpd-pill:hover{ border-color:var(--muted); color:var(--ink); }
-/* Material hides the inactive label with [hidden]; our display rule was
-   overriding that, so both pills showed at once. */
-.dpd-pill[hidden]{ display:none; }
-.dpd-pill__dot{ width:12px; height:12px; border-radius:50%; background:var(--die); flex:0 0 auto; }
-.dpd-pill__label{ line-height:1; }
-
-/* Slightly shorter header so it sits lighter above the huge display type */
-.md-header__inner{ padding:.2rem .4rem; }
-
 /* ---------- Download page ------------------------------------------------------ */
 .md-typeset .dpd-lede-sm{
   font-family:var(--dpd-serif); font-size:20px; line-height:1.5;
@@ -466,3 +414,13 @@ body{ transition:background-color .35s, color .35s; }
 .md-typeset .dpd-split > div > h2:first-child{ margin-top:0; }
 .dpd-split{ margin-top:88px; }
 @media screen and (max-width:1219px){ .dpd-split{ gap:20px; margin-top:64px; } }
+
+/* ---------- Header: light touch only -------------------------------------------
+   An earlier attempt rebuilt this wholesale and broke the search box -- the
+   magnifier ended up outside its field. Material's own layout is left alone;
+   the search is only nudged down a little so it is less in-your-face.
+   -------------------------------------------------------------------------- */
+.md-search__form{ height:36px; }
+.md-search__input{ font-family:var(--dpd-sans); font-size:14px; }
+.md-search__input::placeholder{ color:var(--muted); }
+.md-header__title{ font-family:var(--dpd-sans); font-weight:600; letter-spacing:.01em; }
