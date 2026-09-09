@@ -189,6 +189,36 @@ def check_pdfs():
     return True, "both PDFs present in the build output"
 
 
+def check_canon_bypass():
+    """Is anyone still exempt from the canon-review rule?
+
+    The `build-phase` team lets Andrei push straight to main while the site is
+    being built. That is deliberate and documented in HANDOFF.md -- but a
+    temporary exception nobody can see becomes the permanent state, which is
+    exactly how CODEOWNERS spent weeks describing a rule that enforced nothing.
+    So it is reported on every run until the team is gone.
+    """
+    try:
+        out = subprocess.run(
+            ["gh", "api", "orgs/doesplaydice/teams/build-phase/members"],
+            capture_output=True, text=True, timeout=25,
+        )
+        if out.returncode:
+            return True, "no build-phase bypass team (canon review applies to everyone)"
+        members = [m.get("login") for m in json.loads(out.stdout)]
+    except Exception as exc:                      # noqa: BLE001
+        return None, "could not check the bypass team: %s" % exc
+
+    if not members:
+        return True, "the bypass team is empty"
+    return False, (
+        "%s can still push straight to main, bypassing canon review.\n"
+        "         Intended during the build; see HANDOFF.md. To end it:\n"
+        "         gh api -X DELETE orgs/doesplaydice/teams/build-phase"
+        % ", ".join(members)
+    )
+
+
 CHECKS = [
     ("robots.txt does not block indexing", check_robots, BLOCKER),
     ("passphrase gate removed", check_gate, BLOCKER),
@@ -196,6 +226,7 @@ CHECKS = [
     ("admin page has no scripts", check_admin_scripts, WARNING),
     ("planning pages out of the nav", check_plan_section, WARNING),
     ("open decisions resolved", check_open_decisions, WARNING),
+    ("canon review applies to everyone", check_canon_bypass, WARNING),
     ("printable PDFs build", check_pdfs, WARNING),
 ]
 
