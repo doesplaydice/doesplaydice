@@ -89,10 +89,10 @@ markdown. Nothing points back at us.
 
 The licence does not require a GitHub account.
 
-- [Download the full book as a PDF](../downloads/does-play-dice-book.pdf) &mdash; rules, character
-  sheet, expansions, setting and narrator guidance in one document.
-- [Download the one-page rules](../downloads/does-play-dice-rules.pdf) &mdash; the complete game on
-  a single sheet.
+- <a href="../downloads/does-play-dice-book.pdf">Download the full book as a PDF</a> &mdash; rules,
+  character sheet, expansions, setting and narrator guidance in one document.
+- <a href="../downloads/does-play-dice-rules.pdf">Download the one-page rules</a> &mdash; the
+  complete game on a single sheet.
 - Print either one, photocopy it, hand it out. That is a fork too. It is just made of paper.
 
 ## We would like to know, but you do not owe us that
