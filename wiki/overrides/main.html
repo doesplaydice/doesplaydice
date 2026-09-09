@@ -16,6 +16,24 @@
 
 {% block extrahead %}
   {{ super() }}
+  <script>
+    // One-time palette migration.
+    //
+    // Material stores the chosen palette as an INDEX into the palette list.
+    // The list changed from three entries (auto / light / dark) to two
+    // (dark / light), so a stored index from before the change now points at
+    // the wrong scheme -- anyone who visited earlier gets light instead of the
+    // intended dark default. Clear the stale value once, then leave it alone.
+    (function () {
+      var MARK = 'dpd-palette-gen', GEN = '2';
+      try {
+        if (localStorage.getItem(MARK) !== GEN) {
+          localStorage.removeItem('__palette');
+          localStorage.setItem(MARK, GEN);
+        }
+      } catch (e) { /* private mode: nothing to migrate */ }
+    })();
+  </script>
   <style>html.dpd-locked body{visibility:hidden}</style>
   <script>
     // Runs in <head>, before the body paints, so there is no flash of content.
