@@ -16,7 +16,7 @@ it gets asked for. Built for a phone propped behind a screen. Works with no sign
 
 <div class="dpd-quickroll" data-quickroll>
   <div class="dpd-quickroll-picks"></div>
-  <div class="dpd-quickroll-out"><span class="dpd-quickroll-num">&mdash;</span><span class="dpd-quickroll-die"></span></div>
+  <div class="dpd-quickroll-out" role="status" aria-live="polite"><span class="dpd-quickroll-num">&mdash;</span><span class="dpd-quickroll-die"></span></div>
 </div>
 </section>
 

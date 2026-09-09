@@ -1,4 +1,4 @@
-# The World <span class="dpd-status stub">Not written</span>
+# The world <span class="dpd-status stub">Not written</span>
 
 <div class="dpd-protobar" markdown>
 **Container only.** The name of this section is itself an open question — see below.

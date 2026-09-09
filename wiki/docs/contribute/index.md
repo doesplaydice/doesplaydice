@@ -59,7 +59,7 @@ If you changed things, say so. That's the whole obligation.
 
 ### Why this one
 
-The Open Gaming Licence turned out to be revocable, and the 2023 attempt to revoke it nearly
+The Open Game License turned out to be revocable, and the 2023 attempt to revoke it nearly
 took a twenty-year ecosystem down with it. **CC BY cannot be revoked** &mdash; not by Jeff, not
 by anyone who acquires this project later, not by anyone at all. That is the entire point.
 

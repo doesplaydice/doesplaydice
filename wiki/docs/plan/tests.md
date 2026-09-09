@@ -33,7 +33,7 @@ the door, and you hurt your shoulder doing it. It's also the easiest thing to fu
 the Narrator has to invent the complication on the spot.
 
 **Run it as:** normal play, but set at least two challenges where a tie is likely &mdash; match
-the difficulty die to the players' skill die.
+the Difficulty die to the players' Skill die.
 
 **Write down:** what the Narrator did on each tie. Did they improvise something good, freeze, or
 quietly ignore it and just let the player win?

@@ -35,8 +35,9 @@
         var value = roll(sides);
         num.textContent = value;
         label.textContent = 'd' + sides;
-        // Re-announce even when the same number comes up twice in a row.
-        root.setAttribute('aria-label', 'Rolled ' + value + ' on a d' + sides);
+        // The result box is role="status" aria-live="polite", so changing its
+        // text is what announces the roll. Setting an aria-label here as well
+        // would compete with that and get read instead of the number.
         root.classList.remove('is-hit');
         void root.offsetWidth;
         root.classList.add('is-hit');

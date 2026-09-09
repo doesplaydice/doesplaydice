@@ -46,4 +46,4 @@ There's more finished thinking here than anywhere else in the rules material:
 
     **Question for Jeff:** does that mean the Narrator's guide is *outside* the free core? If
     so, this section is a teaser and the real book is a product — which is a very different
-    site, and a very different license boundary.
+    site, and a very different licence boundary.

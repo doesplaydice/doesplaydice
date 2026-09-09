@@ -118,8 +118,6 @@ the first six months?
 
 ---
 
----
-
 ## Already settled
 
 Both of these were answered by Jeff on **24 August 2026** and stayed on the site as open

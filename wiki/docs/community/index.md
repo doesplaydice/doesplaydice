@@ -40,5 +40,17 @@ Add freely. Just don't make someone re-learn the basics to use what you made.
 
 ## Modules
 
-*Nothing published yet &mdash; the sample below exists to show the shape.*
+*Nothing published yet.* One worked sample exists to show the shape a module takes:
+
+<div class="dpd-dlcards" markdown>
+  <a href="modules/sample-module/">
+    <span class="dpd-kicker">Sample</span>
+    <span class="dpd-dl-title">The Long Way Round</span>
+    <span class="dpd-dl-desc">A short module written to demonstrate the format &mdash; setup,
+    scenes, and the shape of a session. Not canon, and not part of the game.</span>
+    <span class="dpd-dl-go">Read it &rarr;</span>
+  </a>
+</div>
+
+Yours goes next to it. See [how to contribute](../contribute/index.md).
 

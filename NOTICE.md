@@ -38,7 +38,7 @@ the game and something that merely resembles it.
 
 ## Why CC BY
 
-The Open Gaming Licence turned out to be revocable, and in 2023 an attempt to revoke it nearly
+The Open Game License turned out to be revocable, and in 2023 an attempt to revoke it nearly
 took a twenty-year ecosystem with it.
 
 **CC BY cannot be revoked.** Not by Jeff, not by anyone who acquires this project later, not by

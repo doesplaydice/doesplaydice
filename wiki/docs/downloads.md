@@ -19,7 +19,7 @@
   <a href="does-play-dice-book.pdf">
     <span class="dpd-kicker">PDF</span>
     <span class="dpd-dl-title">The full book</span>
-    <span class="dpd-dl-desc">Rules, character sheet, expansions, setting and narrator
+    <span class="dpd-dl-desc">Rules, character sheet, expansions, setting and Narrator
     guidance, as one document.</span>
     <span class="dpd-dl-go">Download &rarr;</span>
   </a>

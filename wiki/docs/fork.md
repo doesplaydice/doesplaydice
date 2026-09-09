@@ -10,8 +10,8 @@ form, and it is meant to be used.</p>
 
 ## Why this page is here
 
-In January 2023, Wizards of the Coast attempted to revoke the Open Gaming Licence &mdash; the
-agreement the tabletop industry had built on for twenty years. Games that thousands of people
+In January 2023, Wizards of the Coast attempted to revoke the Open Game License &mdash; the
+OGL, the agreement the tabletop industry had built on for twenty years. Games that thousands of people
 were actively playing were, briefly, at the mercy of a decision made in a boardroom.
 
 Does Play Dice is Jeff Adams's answer to that. The point is not that the rules are free to read.
@@ -90,7 +90,7 @@ markdown. Nothing points back at us.
 The licence does not require a GitHub account.
 
 - <a href="../downloads/does-play-dice-book.pdf">Download the full book as a PDF</a> &mdash; rules,
-  character sheet, expansions, setting and narrator guidance in one document.
+  character sheet, expansions, setting and Narrator guidance in one document.
 - <a href="../downloads/does-play-dice-rules.pdf">Download the one-page rules</a> &mdash; the
   complete game on a single sheet.
 - Print either one, photocopy it, hand it out. That is a fork too. It is just made of paper.
