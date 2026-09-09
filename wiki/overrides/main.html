@@ -1,21 +1,39 @@
 {% extends "base.html" %}
 
 {#
-  TEMPORARY PRE-LAUNCH GATE -- remove this whole file before go-live.
+  This template holds two unrelated things. Keep them straight when tearing
+  down for launch.
 
-  This is a speed bump, NOT security. The pages are still served in full; a
-  request with curl returns everything regardless of this gate. It exists only
-  to stop someone stumbling onto an unfinished site.
+  PERMANENT -- the installable/offline head tags below (manifest, theme colour,
+  apple-touch-icon). These stay forever.
 
-  The passphrase is not stored here -- only its SHA-256 hash. That keeps the
-  passphrase itself out of the repository, but note the hash is public and can
-  be attacked offline, so do not reuse this passphrase anywhere that matters.
+  TEMPORARY -- the pre-launch passphrase gate, marked GATE START / GATE END.
+  Delete only those blocks at go-live, plus the #dpd-gate rules in
+  extra.v3.css. Do NOT delete this file or drop custom_dir; that would take
+  offline support with it. tools/preflight.py checks for the gate markers
+  rather than the file, for exactly this reason.
 
-  To remove: delete wiki/overrides/, drop custom_dir from mkdocs.yml, rebuild.
+  On the gate: it is a speed bump, NOT security. Pages are still served in
+  full, and curl returns everything regardless. It exists only to stop someone
+  stumbling onto an unfinished site. The passphrase is not stored here, only
+  its SHA-256 hash -- which keeps the passphrase out of the repository, but the
+  hash is public and can be attacked offline, so it must not be reused
+  anywhere that matters.
 #}
 
 {% block extrahead %}
   {{ super() }}
+
+  {# PERMANENT: installable / offline. Not part of the gate. #}
+  <link rel="manifest" href="{{ 'manifest.webmanifest' | url }}">
+  <link rel="apple-touch-icon" href="{{ 'assets/img/icon-180.png' | url }}">
+  {# Matches the dark palette, which is the default. Safari paints the status
+     bar and the standalone splash from this. #}
+  <meta name="theme-color" content="#050505">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Play Dice">
+
+  {# GATE START -- delete from here to GATE END at launch #}
   <script>
     // One-time palette migration.
     //
@@ -44,6 +62,7 @@
       document.documentElement.classList.add('dpd-locked');
     })();
   </script>
+  {# GATE END #}
 {% endblock %}
 
 {% block content %}

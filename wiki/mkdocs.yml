@@ -63,6 +63,9 @@ extra_javascript:
   - assets/js/timeline.js
   # The try-it roller on the rules page.
   - assets/js/dice.js
+  # Registers the service worker. Kept out of the template so it survives the
+  # pre-launch teardown -- offline support is permanent, the gate is not.
+  - assets/js/offline.js
 
 markdown_extensions:
   - abbr

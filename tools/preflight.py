@@ -50,12 +50,18 @@ def check_robots():
 
 
 def check_gate():
+    """Is the pre-launch passphrase gate still in place?
+
+    This deliberately looks for the gate itself rather than for
+    wiki/overrides/ or custom_dir. That template also carries the permanent
+    installable/offline head tags now, so deleting the directory at launch
+    would silently take offline support with it -- which is exactly the kind
+    of quiet collateral damage this script exists to prevent.
+    """
     problems = []
-    if os.path.isdir(os.path.join(ROOT, "wiki", "overrides")):
-        problems.append("wiki/overrides/ still exists")
-    config = read("wiki", "mkdocs.yml") or ""
-    if re.search(r"^\s*custom_dir:", config, re.M):
-        problems.append("mkdocs.yml still sets custom_dir")
+    template = read("wiki", "overrides", "main.html") or ""
+    if "GATE START" in template:
+        problems.append("the gate block is still in overrides/main.html")
     css = read("wiki", "docs", "assets", "stylesheets", "extra.v3.css") or ""
     if "dpd-gate" in css:
         problems.append("the gate styling is still in extra.v3.css")
@@ -63,8 +69,10 @@ def check_gate():
         return False, (
             "the pre-launch passphrase gate is still active: "
             + "; ".join(problems)
-            + "\n         Fix: rm -rf wiki/overrides, drop custom_dir from "
-              "mkdocs.yml, remove the gate block from extra.v3.css"
+            + "\n         Fix: delete everything between GATE START and GATE END "
+              "in wiki/overrides/main.html, and the #dpd-gate rules in "
+              "extra.v3.css.\n         Do NOT delete overrides/ or custom_dir -- "
+              "the manifest and offline tags live there too."
         )
     return True, "the passphrase gate is removed"
 
