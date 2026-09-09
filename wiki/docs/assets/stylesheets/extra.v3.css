@@ -815,3 +815,95 @@ body{ transition:background-color .35s, color .35s; }
    room. */
 [data-md-color-scheme="terminal"] .dpd-die{ box-shadow:0 0 0 1px var(--line); }
 [data-md-color-scheme="terminal"] .md-header{ border-bottom:1px solid var(--line); }
+
+/* ---------- The Narrator's screen -----------------------------------------------
+   Read at a table, in bad light, while talking. Bigger type than the rest of
+   the site, blocks that can be found by shape rather than by reading, and
+   nothing that needs two hands.
+   -------------------------------------------------------------------------- */
+.dpd-screen{ margin-top:8px; }
+.md-typeset .dpd-screen-block{
+  border-top:1px solid var(--line); padding:22px 0 6px; margin:0;
+}
+.md-typeset .dpd-screen-block:first-of-type{ border-top:2px solid var(--ink); }
+.dpd-screen-label{
+  display:block; font-family:var(--dpd-mono); font-size:11px; letter-spacing:.16em;
+  text-transform:uppercase; color:var(--accent); margin-bottom:14px;
+}
+.md-typeset .dpd-screen-block p,
+.md-typeset .dpd-screen-block li{ font-size:16.5px; line-height:1.55; }
+.md-typeset .dpd-screen-block table{ font-size:16px; }
+.md-typeset .dpd-screen-todo{ opacity:.6; }
+
+/* Quick roller: one tap, one big number. */
+.dpd-quickroll{ visibility:hidden; display:flex; align-items:center; gap:18px; flex-wrap:wrap; }
+.dpd-quickroll.is-ready{ visibility:visible; }
+.dpd-quickroll-picks{ display:flex; gap:8px; flex-wrap:wrap; flex:1 1 auto; }
+.dpd-quickroll-btn{
+  flex:1 1 auto; min-width:58px; min-height:52px;   /* thumb-sized on purpose */
+  background:transparent; border:1px solid var(--line); border-radius:0;
+  font-family:var(--dpd-mono); font-size:15px; color:var(--ink);
+  cursor:pointer; transition:border-color .12s, color .12s;
+}
+.dpd-quickroll-btn:hover{ border-color:var(--accent); color:var(--accent); }
+.dpd-quickroll-btn:active{ background:var(--card); }
+.dpd-quickroll-out{
+  min-width:104px; min-height:96px; border:1px solid var(--line);
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+}
+.dpd-quickroll-num{
+  font-family:var(--dpd-display); font-size:44px; line-height:1; color:var(--ink);
+}
+.dpd-quickroll-die{
+  font-family:var(--dpd-mono); font-size:11px; letter-spacing:.12em; color:var(--muted);
+  margin-top:6px; min-height:13px;
+}
+/* A single frame of acknowledgement, so a repeated number still reads as a new
+   roll. Skipped for anyone who has asked for less motion. */
+@media (prefers-reduced-motion: no-preference){
+  .dpd-quickroll.is-hit .dpd-quickroll-out{ animation:dpd-hit .34s ease-out; }
+  @keyframes dpd-hit{
+    0%{ border-color:var(--accent); transform:scale(1.03); }
+    100%{ border-color:var(--line); transform:scale(1); }
+  }
+}
+@media screen and (max-width:520px){
+  .dpd-quickroll{ flex-direction:column; align-items:stretch; }
+  .dpd-quickroll-out{ min-height:112px; }
+}
+
+/* ---------- Take it (the fork page) ---------------------------------------------
+   Two columns of permissions, then numbered steps. The "may" column is the
+   generous one and gets the accent; the "must" column is the short one, and
+   deliberately does not read as a warning -- there are only two obligations
+   and neither is onerous.
+   -------------------------------------------------------------------------- */
+.dpd-fork-grid{
+  display:grid; grid-template-columns:1fr 1fr; gap:36px;
+  border-top:2px solid var(--ink); padding-top:26px; margin:26px 0 34px;
+}
+.md-typeset .dpd-fork-grid h3{
+  font-family:var(--dpd-mono); font-size:11px; font-weight:500; letter-spacing:.16em;
+  text-transform:uppercase; margin:0 0 14px;
+}
+.md-typeset .dpd-fork-yes h3{ color:var(--accent); }
+.md-typeset .dpd-fork-no h3{ color:var(--muted); }
+.md-typeset .dpd-fork-grid ul{ margin:0; padding-left:18px; }
+.md-typeset .dpd-fork-grid li{ margin-bottom:9px; line-height:1.5; }
+
+.dpd-forksteps{
+  border-top:1px solid var(--line); margin:26px 0 30px; padding-top:8px;
+}
+.md-typeset .dpd-forksteps > p{
+  border-bottom:1px solid var(--line); padding:18px 0; margin:0;
+}
+.md-typeset .dpd-forksteps > p:last-child{ border-bottom:0; }
+/* Same numeral treatment as the rules page, scoped the same careful way. */
+.md-typeset .dpd-forksteps p > strong:first-child{
+  font-family:var(--dpd-mono); font-weight:500; font-size:13px;
+  color:var(--accent); margin-right:10px;
+}
+
+@media screen and (max-width:720px){
+  .dpd-fork-grid{ grid-template-columns:1fr; gap:26px; }
+}

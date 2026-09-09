@@ -77,6 +77,8 @@ extra_javascript:
   # Registers the service worker. Kept out of the template so it survives the
   # pre-launch teardown -- offline support is permanent, the gate is not.
   - assets/js/offline.js
+  # The quick roller on the Narrator's screen.
+  - assets/js/screen.js
 
 markdown_extensions:
   - abbr
@@ -127,6 +129,7 @@ nav:
       - About the setting: world/index.md
   - For Narrators:
       - Running a game: narrators/index.md
+      - The screen: narrators/screen.md
   - Launch plan:
       - Overview: plan/index.md
       - Open decisions: decisions.md
@@ -138,6 +141,7 @@ nav:
   - Community:
       - Modules: community/index.md
       - "Sample: The Long Way Round": community/modules/sample-module.md
+  - Take it: fork.md
   - Contribute:
       - How to contribute: contribute/index.md
   - Download: downloads.md

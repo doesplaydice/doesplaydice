@@ -25,13 +25,14 @@
  * Bump CACHE when the precache list changes. Everything else self-heals,
  * because documents are always tried over the network first.
  */
-const CACHE = 'dpd-v2';
+const CACHE = 'dpd-v3';
 
 // The smallest set that makes the game usable with no network at all.
 const SHELL = [
   '/',
   '/rules/',
   '/rules/odds/',
+  '/narrators/screen/',
   '/downloads/',
   '/assets/stylesheets/extra.v3.css',
   '/assets/stylesheets/fonts.css',
