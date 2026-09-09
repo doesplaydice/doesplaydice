@@ -141,10 +141,22 @@ def check_https():
     if data.get("https_enforced"):
         return True, "HTTPS is enforced"
     state = (data.get("https_certificate") or {}).get("state", "unknown")
+    extra = ""
+    if state == "dns_changed":
+        extra = (
+            "\n         Stuck here since 2026-09-09. Diagnosed: the apex certificate "
+            "covers\n         doesplaydice.com only, and www.doesplaydice.com is a CNAME to "
+            "the APEX\n         rather than to doesplaydice.github.io, so GitHub cannot "
+            "finish\n         provisioning and TLS to www fails outright.\n"
+            "         Jeff must change ONE DNS record at Fastmail:\n"
+            "           www  CNAME  doesplaydice.github.io.\n"
+            "         (or delete the www record entirely). This does NOT touch MX --"
+            "\n         his email is unaffected."
+        )
     return False, (
-        "HTTPS is not enforced (certificate state: %s).\n"
-        "         Fix, once the certificate is issued:\n"
-        "         gh api -X PUT repos/%s/pages -F https_enforced=true" % (state, REPO)
+        "HTTPS is not enforced (certificate state: %s).%s\n"
+        "         Then:  gh api -X PUT repos/%s/pages -F https_enforced=true"
+        % (state, extra, REPO)
     )
 
 
