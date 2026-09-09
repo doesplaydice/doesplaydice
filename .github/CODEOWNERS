@@ -1,17 +1,28 @@
 # Governance lever for "who owns canon".
 #
 # This file -- not the CMS config -- is what makes the core frozen or open.
-# Pair it with branch protection on main: require review from Code Owners.
+# It is paired with the "Canon review" ruleset on main, which requires a code
+# owner's approval for anything listed here. Without that ruleset this file is
+# only a description.
+#
+# ORDER MATTERS, AND BACKWARDS. CODEOWNERS uses LAST-match-wins, unlike almost
+# every other path-matching system in git. The specific rules therefore go at
+# the BOTTOM. Written the intuitive way round -- specific first, general after
+# -- the broad `/wiki/docs/` line silently overrode the frozen-rules line, and
+# the one page ended up owned by whoever owned everything else. It looked
+# correct and did nothing.
 #
 # Jeff has two accounts, both org admins. Either can approve.
 
-# --- Frozen core: the one page needs Jeff -------------------------------------
-/wiki/docs/rules/index.md      @doesplaydice-user @thoughtsfired
-
-# --- Everything else: any maintainer ------------------------------------------
+# --- Everything in the site: any maintainer -----------------------------------
 /wiki/docs/                    @doesplaydice/maintainers
 /wiki/mkdocs.yml               @doesplaydice/maintainers
 /kit/                          @doesplaydice/maintainers
 
 # --- The open front door: no code owner, merges on normal review --------------
-# /wiki/docs/community/        (intentionally unowned)
+# Community modules are other people's work. Deliberately unowned so a
+# contributor is not waiting on us to publish their own module.
+/wiki/docs/community/
+
+# --- Frozen core: the one page needs Jeff himself. LAST, so it wins. ----------
+/wiki/docs/rules/index.md      @doesplaydice-user @thoughtsfired
