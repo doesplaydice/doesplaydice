@@ -1,7 +1,9 @@
 # --- Build output -----------------------------------------------------------
 .venv/
 wiki/site/
-# Firebase deploy cache (staging only)
+# Firebase deploy cache. Staging was retired on 2026-09-09 -- it was serving a
+# fully ungated copy of the site, which defeated the pre-launch passphrase.
+# GitHub Pages is the only host now.
 .firebase/
 
 # Note: kit/dist/*.pdf IS committed on purpose. They regenerate with
