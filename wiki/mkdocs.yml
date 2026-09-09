@@ -61,6 +61,8 @@ extra_javascript:
   # Marks the plan timeline and computes the day count in the browser, so the
   # countdown cannot go stale the way a written-in number does.
   - assets/js/timeline.js
+  # The try-it roller on the rules page.
+  - assets/js/dice.js
 
 markdown_extensions:
   - abbr

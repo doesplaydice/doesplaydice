@@ -100,6 +100,29 @@ it's a tie? In that case, both sides should get something out of it. Maybe the C
 down the door, surprising everyone inside, but they injure their shoulder in the process and
 suffer some minor or temporary setback as a result.
 
+<div class="dpd-roller" data-roller>
+  <span class="dpd-roller-kicker">Try it</span>
+  <p class="dpd-roller-lede">Pick your Skill die and the difficulty the Narrator sets, then roll.
+  Highest wins. A tie means both sides get something.</p>
+
+  <div class="dpd-roller-grid">
+    <div class="dpd-roller-side" data-side="you">
+      <span class="dpd-roller-label">Your Skill die</span>
+      <div class="dpd-roller-picks"></div>
+      <div class="dpd-roller-result"><span class="dpd-roller-num">&mdash;</span></div>
+    </div>
+    <div class="dpd-roller-vs">vs</div>
+    <div class="dpd-roller-side" data-side="narrator">
+      <span class="dpd-roller-label">The challenge</span>
+      <div class="dpd-roller-picks"></div>
+      <div class="dpd-roller-result"><span class="dpd-roller-num">&mdash;</span></div>
+    </div>
+  </div>
+
+  <button type="button" class="dpd-roller-go">Roll</button>
+  <p class="dpd-roller-outcome" role="status" aria-live="polite"></p>
+</div>
+
 ## Winning the Game
 
 The Narrator may set up a winning condition: completing the heist, solving the murder, or

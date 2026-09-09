@@ -500,3 +500,94 @@ body{ transition:background-color .35s, color .35s; }
 .dpd-tl-steps li.dpd-tl-con b,
 .dpd-tl-steps li.dpd-tl-con span{ color:var(--ink); font-weight:600; }
 .dpd-tl-steps li.dpd-tl-con.is-past{ opacity:.5; }
+
+/* ---------- The try-it dice roller ---------------------------------------------
+   Sits on the rules page directly after the mechanic is explained. Hidden until
+   dice.js has built the controls, so nobody sees an empty frame.
+   -------------------------------------------------------------------------- */
+.dpd-roller{ visibility:hidden; border-top:2px solid var(--ink); margin:40px 0 8px; padding-top:20px; }
+.dpd-roller.is-ready{ visibility:visible; }
+
+.dpd-roller-kicker{
+  font-family:var(--dpd-mono); font-size:11px; letter-spacing:.18em;
+  text-transform:uppercase; color:var(--accent); display:block; margin-bottom:8px;
+}
+.md-typeset .dpd-roller-lede{
+  font-size:15px; color:var(--muted); margin:0 0 22px; max-width:52ch;
+}
+
+.dpd-roller-grid{
+  display:grid; grid-template-columns:1fr auto 1fr; gap:20px; align-items:start;
+}
+.dpd-roller-vs{
+  font-family:var(--dpd-mono); font-size:11px; letter-spacing:.16em;
+  text-transform:uppercase; color:var(--muted); padding-top:34px;
+}
+.dpd-roller-label{
+  font-family:var(--dpd-mono); font-size:10px; letter-spacing:.15em;
+  text-transform:uppercase; color:var(--muted); display:block; margin-bottom:10px;
+}
+
+.dpd-roller-picks{ display:flex; gap:4px; flex-wrap:wrap; margin-bottom:14px; }
+.dpd-roller-pick{
+  flex:1 1 0; min-width:44px; background:transparent; border:1px solid var(--line);
+  border-radius:0; padding:8px 2px 6px; cursor:pointer; color:var(--muted);
+  display:flex; flex-direction:column; align-items:center; gap:4px;
+  transition:border-color .15s, color .15s;
+}
+.dpd-roller-pick:hover{ border-color:var(--muted); color:var(--ink); }
+.dpd-roller-pick.is-on{ border-color:var(--accent); color:var(--accent); }
+
+/* The solids are injected as inline SVG by dice.js. Not a CSS mask -- that
+   renders nothing at all in headless Chrome, so the icons would be missing
+   from every screenshot and PDF -- and not an <img>, which cannot inherit
+   currentColor and would leave black wireframes in dark mode.
+
+   Inline also means the drawing can be tuned for this size: these are 120-unit
+   drawings with 1.05 strokes, which at 26px works out to about a quarter of a
+   pixel and simply disappears. Thicker strokes and flat opacity make them
+   legible small; the delicate original stays on the home page at full size. */
+.dpd-roller-solid{ width:26px; height:26px; display:block; color:inherit; }
+.dpd-roller-solid svg{ width:100%; height:100%; display:block; }
+.dpd-roller-solid svg line{ stroke-width:3.4; opacity:1 !important; }
+.dpd-roller-solid svg circle{ display:none; }
+.dpd-roller-dname{ font-family:var(--dpd-mono); font-size:10px; letter-spacing:.05em; }
+
+.dpd-roller-result{
+  border:1px solid var(--line); min-height:96px;
+  display:flex; align-items:center; justify-content:center;
+}
+.dpd-roller-num{
+  font-family:var(--dpd-display); font-size:52px; line-height:1; color:var(--ink);
+}
+.dpd-roller.is-rolling .dpd-roller-num{ color:var(--muted); }
+
+/* The winning side is the only accent once a roll lands; a tie lights both,
+   which is the point of the tie rule. */
+.dpd-roller[data-result="you"] [data-side="you"] .dpd-roller-result,
+.dpd-roller[data-result="narrator"] [data-side="narrator"] .dpd-roller-result,
+.dpd-roller[data-result="tie"] .dpd-roller-result{ border-color:var(--accent); }
+.dpd-roller[data-result="you"] [data-side="you"] .dpd-roller-num,
+.dpd-roller[data-result="narrator"] [data-side="narrator"] .dpd-roller-num,
+.dpd-roller[data-result="tie"] .dpd-roller-num{ color:var(--accent); }
+
+.dpd-roller-go{
+  margin-top:18px; background:var(--ink); color:var(--bg); border:1px solid var(--ink);
+  border-radius:0; font-family:var(--dpd-sans); font-size:15px; font-weight:600;
+  padding:11px 26px; cursor:pointer; transition:opacity .15s;
+}
+.dpd-roller-go:hover{ opacity:.82; }
+.dpd-roller-go:disabled{ opacity:.45; cursor:default; }
+
+.md-typeset .dpd-roller-outcome{
+  min-height:52px; margin:16px 0 0; font-size:15px; line-height:1.5;
+  color:var(--muted); max-width:56ch;
+}
+.dpd-roller-outcome strong{ color:var(--ink); }
+
+@media screen and (max-width:560px){
+  .dpd-roller-grid{ grid-template-columns:1fr; gap:14px; }
+  .dpd-roller-vs{ padding-top:0; }
+  .dpd-roller-num{ font-size:42px; }
+  .dpd-roller-result{ min-height:76px; }
+}

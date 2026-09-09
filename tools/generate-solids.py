@@ -111,9 +111,14 @@ def svg_for(name, ax_deg, ay_deg, size=120, pad=9):
         parts.append('<line x1="%.2f" y1="%.2f" x2="%.2f" y2="%.2f" stroke="currentColor" '
                      'stroke-width="1.05" stroke-linecap="round" opacity="%.2f"/>'
                      % (x1, y1, x2, y2, op))
-    return ('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 %d %d" role="img" '
+    # width/height as well as viewBox: an SVG with no intrinsic size renders as
+    # nothing when used as a CSS mask-image in Chrome, which is how the dice
+    # roller draws these. The viewBox alone is enough for inline use but not
+    # for a referenced file.
+    return ('<svg xmlns="http://www.w3.org/2000/svg" width="%d" height="%d" '
+            'viewBox="0 0 %d %d" role="img" '
             'aria-label="%s, one of the five Platonic solids">%s</svg>'
-            % (size, size, name.capitalize(), "".join(parts)))
+            % (size, size, size, size, name.capitalize(), "".join(parts)))
 
 VIEWS = {  # tuned so each solid reads clearly rather than edge-on
     "tetrahedron":  (-14, 28),

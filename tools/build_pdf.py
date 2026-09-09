@@ -58,6 +58,7 @@ STRIP_CLASSES = [
     "md-content__button",
     "headerlink",
     "dpd-timeline",
+    "dpd-roller",       # an interactive widget means nothing on paper
 ]
 
 
