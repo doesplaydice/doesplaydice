@@ -59,3 +59,5 @@ launched site is invisible to every search engine and nothing looks broken.
 
 Run `python3 tools/preflight.py` before going public. It checks all of the
 above and exits non-zero while any blocker remains.
+
+# note
