@@ -3,25 +3,26 @@
 <p class="dpd-lede-sm">Everything here is free. No account, no email address, no cart.</p>
 
 <div class="dpd-dlcards">
-  <span class="dpd-dl-soon">
+  <a href="does-play-dice-rules.pdf">
     <span class="dpd-kicker">PDF</span>
     <span class="dpd-dl-title">The one-page rules</span>
     <span class="dpd-dl-desc">The complete game on a single sheet. Print it, fold it, put it in
     the box with your dice.</span>
-    <span class="dpd-dl-go">Not yet generated</span>
-  </span>
+    <span class="dpd-dl-go">Download &rarr;</span>
+  </a>
   <a href="../rules/character-vitae/">
     <span class="dpd-kicker">PDF</span>
     <span class="dpd-dl-title">Character Vitae</span>
     <span class="dpd-dl-desc">Printable and fillable character sheet.</span>
     <span class="dpd-dl-go">Draft &rarr;</span>
   </a>
-  <span class="dpd-dl-soon">
-    <span class="dpd-kicker">PDF &middot; EPUB</span>
+  <a href="does-play-dice-book.pdf">
+    <span class="dpd-kicker">PDF</span>
     <span class="dpd-dl-title">The full book</span>
-    <span class="dpd-dl-desc">Everything on this site, as one document.</span>
-    <span class="dpd-dl-go">Blocked on the table of contents</span>
-  </span>
+    <span class="dpd-dl-desc">Rules, character sheet, expansions, setting and narrator
+    guidance, as one document.</span>
+    <span class="dpd-dl-go">Download &rarr;</span>
+  </a>
   <a href="https://github.com/doesplaydice/doesplaydice">
     <span class="dpd-kicker">Git</span>
     <span class="dpd-dl-title">The source</span>
