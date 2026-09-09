@@ -32,13 +32,13 @@ theme:
       primary: custom
       accent: custom
       toggle:
-        icon: material/weather-night
+        icon: material/moon-waning-crescent
         name: Switch to light
     - scheme: default
       primary: custom
       accent: custom
       toggle:
-        icon: material/weather-sunny
+        icon: material/white-balance-sunny
         name: Switch to dark
   features:
     - navigation.instant

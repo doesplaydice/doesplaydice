@@ -421,6 +421,32 @@ body{ transition:background-color .35s, color .35s; }
    the search is only nudged down a little so it is less in-your-face.
    -------------------------------------------------------------------------- */
 .md-search__form{ height:36px; }
-.md-search__input{ font-family:var(--dpd-sans); font-size:14px; }
+.md-search__input{ font-family:var(--dpd-sans); font-size:14px; padding-left:38px; }
 .md-search__input::placeholder{ color:var(--muted); }
-.md-header__title{ font-family:var(--dpd-sans); font-weight:600; letter-spacing:.01em; }
+
+/* The magnifier was 24px inside a 36px field -- only 6px of air, so it read as
+   oversized and dragged the field's optical centre down. Set all four values
+   together (size, both offsets, colour) rather than nudging one, which is what
+   knocked it out of its box last time. 18px in 36px centres at top:9px. */
+.md-search__icon[for="__search"]{
+  /* top is 8 not 9: the field has a 1px border, and an absolutely positioned
+     child is offset from the padding edge, inside that border. */
+  width:18px; height:18px; top:8px; left:12px; color:var(--muted);
+}
+.md-search__icon[for="__search"] svg{ width:18px; height:18px; }
+.md-search__form:hover .md-search__icon[for="__search"]{ color:var(--ink); }
+
+/* Material's icons are solid fills, so there is no stroke weight to reduce --
+   lighter has to come from a simpler glyph, a smaller size and a muted colour.
+   The glyphs themselves changed in mkdocs.yml: a plain crescent instead of
+   moon-plus-star, and a simpler sun. */
+.md-header__option label svg{ width:20px; height:20px; }
+.md-header__option label{ color:var(--muted); }
+.md-header__option label:hover{ color:var(--ink); }
+
+/* The wordmark: back to the display face, which read better, but smaller and
+   with more tracking so it sits as a mark rather than a slab of black. */
+.md-header__title{
+  font-family:var(--dpd-display); font-size:12.5px; font-weight:400;
+  letter-spacing:.14em; text-transform:uppercase;
+}
