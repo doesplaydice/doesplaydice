@@ -161,8 +161,11 @@ together! #winning
     them. That is what makes "backwards compatible forever" a promise rather than a hope,
     and it is what makes the game safe to fork.
 
-    It is already enforced rather than merely stated: `.github/CODEOWNERS` routes any change
-    to this page to the maintainers team for review.
+    `.github/CODEOWNERS` names who owns this page &mdash; either of Jeff's accounts must
+    approve a change to it. That is currently a **declaration, not an enforcement**: it only
+    takes effect once branch protection on `main` requires code-owner review, and that has
+    not been switched on yet. Until it is, anyone with push access can change this page
+    directly.
 
     Everything else on this site is designed to expand. This page is the part that holds
     still.

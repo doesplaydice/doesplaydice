@@ -60,8 +60,15 @@ already answered.
 | Settle the naming question: Narrator vs GM (Timaeus is already settled) | Ten minutes of practice editing a page together |
 | Print the kit and take it to the next library night | |
 
-**True by the end:** convention registration confirmed, the six open decisions are closed or
+**True by the end:** convention registration confirmed, the open decisions are closed or
 consciously deferred, and playtesting has started.
+
+!!! warning "One setting still to turn on"
+
+    The frozen-core governance is agreed but not yet enforced. `CODEOWNERS` names Jeff as the
+    owner of the one-page rules, and that only binds once branch protection on `main` requires
+    code-owner review. Worth deciding together, because switching it on also stops direct
+    pushes to `main` &mdash; which is how the site is currently updated.
 
 ---
 

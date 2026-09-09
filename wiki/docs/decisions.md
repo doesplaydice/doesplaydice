@@ -128,7 +128,7 @@ questions for weeks afterwards. The answers now live on the pages they belong to
 | Decision | Answer | Where it lives now |
 | --- | --- | --- |
 | Timaeus or Prota? | **Timaeus.** Prota was the working name for the same world, and is retired. | [The World](world/index.md) |
-| Is the one-page ruleset frozen? | **Yes &mdash; frozen canon**, with a path to stewarded governance. Enforced by `CODEOWNERS`. | [Basic Rules](rules/index.md) |
+| Is the one-page ruleset frozen? | **Yes &mdash; frozen canon**, with a path to stewarded governance. `CODEOWNERS` names the owners, but branch protection is not on yet, so it is not enforced. | [Basic Rules](rules/index.md) |
 
 ## Closing a decision
 
