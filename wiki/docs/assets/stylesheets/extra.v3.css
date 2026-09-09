@@ -783,6 +783,23 @@ body{ transition:background-color .35s, color .35s; }
   font-family:var(--dpd-mono) !important;
   letter-spacing:0;
 }
+/* Archivo Black is a single very heavy weight, so swapping it for mono at 400
+   visibly thins the wordmark -- the mark looked lighter in this scheme than in
+   the other two. The self-hosted mono is a variable face spanning 400-700, so
+   the display roles take the bold end and keep their presence. A terminal
+   renders emphasis as bold anyway, which is the honest way to fix this without
+   putting a non-terminal typeface back into a terminal. */
+[data-md-color-scheme="terminal"] .md-header__title,
+[data-md-color-scheme="terminal"] .md-typeset .dpd-hero h1,
+[data-md-color-scheme="terminal"] .md-typeset h1,
+[data-md-color-scheme="terminal"] .md-typeset h2,
+[data-md-color-scheme="terminal"] .dpd-ladder b,
+[data-md-color-scheme="terminal"] .dpd-roller-num,
+[data-md-color-scheme="terminal"] .dpd-quickroll-num,
+[data-md-color-scheme="terminal"] .dpd-tl-num{
+  font-weight:700;
+}
+
 /* Mono is much wider than Archivo Black, so the display sizes come down or the
    wordmark runs off the page. */
 [data-md-color-scheme="terminal"] .md-typeset .dpd-hero h1{
