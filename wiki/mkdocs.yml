@@ -77,6 +77,8 @@ markdown_extensions:
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
 
 # The fonts README is for people reading the repo, not a page on the site.
+# CNAME must reach the built site, so it is NOT excluded -- GitHub Pages reads
+# it from the deployed artifact, and without it a deploy clears the custom domain.
 exclude_docs: |
   assets/fonts/README.md
 
