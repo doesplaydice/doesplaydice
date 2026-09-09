@@ -240,9 +240,14 @@ body{ transition:background-color .35s, color .35s; }
    and its gap applies to nothing. Inline, a whitespace node hides that; once
    they stack on a narrow screen the buttons sit flush and read as a glitch.
    Style the paragraph as the flex row too, so the gap lands on the buttons
-   whether or not markdown wraps them. */
+   whether or not markdown wraps them.
+
+   Margin is deliberately left alone. Zeroing it here also removed Material's
+   18px top margin on the paragraph, which pulled the buttons up under the lede
+   and lost the air that framed the hero. Only the flex behaviour was ever
+   needed; the spacing was already right. */
 .md-typeset .dpd-actions > p{
-  display:flex; flex-wrap:wrap; gap:14px; margin:0;
+  display:flex; flex-wrap:wrap; gap:14px;
 }
 
 /* ---------- Entry cards ------------------------------------------------------- */
