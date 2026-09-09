@@ -776,7 +776,6 @@ body{ transition:background-color .35s, color .35s; }
 [data-md-color-scheme="terminal"] .md-typeset p,
 [data-md-color-scheme="terminal"] .md-typeset li,
 [data-md-color-scheme="terminal"] .md-typeset td,
-[data-md-color-scheme="terminal"] .md-header__title,
 [data-md-color-scheme="terminal"] .dpd-ladder b,
 [data-md-color-scheme="terminal"] .dpd-roller-num,
 [data-md-color-scheme="terminal"] .dpd-tl-num{
@@ -789,8 +788,6 @@ body{ transition:background-color .35s, color .35s; }
    the display roles take the bold end and keep their presence. A terminal
    renders emphasis as bold anyway, which is the honest way to fix this without
    putting a non-terminal typeface back into a terminal. */
-[data-md-color-scheme="terminal"] .md-header__title,
-[data-md-color-scheme="terminal"] .md-typeset .dpd-hero h1,
 [data-md-color-scheme="terminal"] .md-typeset h1,
 [data-md-color-scheme="terminal"] .md-typeset h2,
 [data-md-color-scheme="terminal"] .dpd-ladder b,
@@ -806,6 +803,20 @@ body{ transition:background-color .35s, color .35s; }
   font-size:clamp(38px,7.4vw,86px); line-height:1.02; letter-spacing:-.02em;
 }
 [data-md-color-scheme="terminal"] .md-typeset h1{ font-size:clamp(26px,3.6vw,44px); }
+
+/* The wordmark keeps Archivo Black here. Everything else is mono -- that is
+   still the joke -- but the mark is the mark, and mono at 700 reads visibly
+   thinner than a face that has no lighter weight at all. The glow and the
+   scanlines are what say "screen"; the logo does not have to. */
+[data-md-color-scheme="terminal"] .md-header__title,
+[data-md-color-scheme="terminal"] .md-typeset .dpd-hero h1{
+  font-family:var(--dpd-display) !important;
+  font-weight:400;
+}
+[data-md-color-scheme="terminal"] .md-typeset .dpd-hero h1{
+  font-size:clamp(84px,14vw,168px); line-height:.86; letter-spacing:normal;
+}
+[data-md-color-scheme="terminal"] .md-header__title{ letter-spacing:.08em; }
 
 /* Phosphor bloom. Amber glows warmer and wider than green. */
 [data-md-color-scheme="terminal"] .md-typeset,
@@ -833,15 +844,19 @@ body[data-md-color-scheme="terminal"]::after{
      is fractionally out of sync rolls. This is the detail that sells it --
      static scanlines alone read as a texture rather than a screen. */
   body[data-md-color-scheme="terminal"]::before{
-    content:""; position:fixed; left:0; right:0; top:0; height:140px;
+    content:""; position:fixed; left:0; right:0; top:0; height:190px;
     z-index:9997; pointer-events:none;
     background:linear-gradient(
       to bottom,
-      rgba(255,176,0,0), rgba(255,176,0,.055), rgba(255,176,0,0));
+      rgba(255,176,0,0)    0%,
+      rgba(255,176,0,.05)  38%,
+      rgba(255,190,60,.16) 52%,
+      rgba(255,176,0,.05)  66%,
+      rgba(255,176,0,0)    100%);
     animation:dpd-crt-roll 7.5s linear infinite;
   }
   @keyframes dpd-crt-roll{
-    0%{ transform:translateY(-140px); }
+    0%{ transform:translateY(-190px); }
     100%{ transform:translateY(100vh); }
   }
 
