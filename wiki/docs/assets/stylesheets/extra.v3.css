@@ -748,12 +748,21 @@ body{ transition:background-color .35s, color .35s; }
 }
 
 /* ---------- Terminal: the third palette -----------------------------------------
-   Phosphor CRT. Not a gimmick bolted on the side -- it reuses the same tokens
-   as the other two schemes, so every component follows without special cases.
+   Amber phosphor CRT. Not a gimmick bolted on the side -- it reuses the same
+   tokens as the other two schemes, so every component follows without special
+   cases.
+
+   NOTE ON SELECTORS. Material sets data-md-color-scheme on <body> ITSELF, so
+   the overlays must be written `body[data-md-color-scheme="terminal"]::after`.
+   Written as a descendant selector -- `[data-md-color-scheme="terminal"] body`
+   -- it matches nothing at all, because there is no body inside a body. That
+   is why the scanlines and the flicker silently never rendered in the first
+   version: the colours worked, because those rules target the attribute
+   directly, and every effect did not.
    -------------------------------------------------------------------------- */
 [data-md-color-scheme="terminal"]{
-  --bg:#050A06; --ink:#3BFF74; --muted:#1D9445; --line:#0F3D1E;
-  --accent:#9CFFBB; --die:#0C6E2C; --pip:#050A06; --card:#08150B;
+  --bg:#0C0700; --ink:#F0A500; --muted:#9A6A00; --line:#3A2800;
+  --accent:#FFC533; --die:#7A4A00; --pip:#0C0700; --card:#160D00;
   color-scheme:dark;
 }
 
@@ -774,51 +783,71 @@ body{ transition:background-color .35s, color .35s; }
   font-family:var(--dpd-mono) !important;
   letter-spacing:0;
 }
-/* Mono is much wider than Archivo Black, so the display sizes have to come
-   down or the wordmark runs off the page. */
+/* Mono is much wider than Archivo Black, so the display sizes come down or the
+   wordmark runs off the page. */
 [data-md-color-scheme="terminal"] .md-typeset .dpd-hero h1{
   font-size:clamp(38px,7.4vw,86px); line-height:1.02; letter-spacing:-.02em;
 }
 [data-md-color-scheme="terminal"] .md-typeset h1{ font-size:clamp(26px,3.6vw,44px); }
 
-/* Phosphor bloom. Small -- enough to read as glow, not enough to smear text. */
+/* Phosphor bloom. Amber glows warmer and wider than green. */
 [data-md-color-scheme="terminal"] .md-typeset,
 [data-md-color-scheme="terminal"] .md-header__title{
-  text-shadow:0 0 6px rgba(59,255,116,.32);
+  text-shadow:0 0 6px rgba(255,176,0,.45), 0 0 22px rgba(255,120,0,.18);
 }
 
-/* Scanlines and a vignette, painted over everything and click-through. Fixed,
-   so they stay put while the page scrolls, exactly like a real screen. */
-[data-md-color-scheme="terminal"] body::after{
+/* Scanlines and vignette, painted over everything and click-through.
+   multiply rather than a flat overlay: it darkens the lit phosphor instead of
+   greying it out, which is what a real shadow mask does to the picture. */
+body[data-md-color-scheme="terminal"]::after{
   content:""; position:fixed; inset:0; z-index:9998; pointer-events:none;
   background:
     repeating-linear-gradient(
       to bottom,
-      rgba(0,0,0,.26) 0px, rgba(0,0,0,.26) 1px,
-      transparent 1px, transparent 3px
+      rgba(0,0,0,0) 0 2px,
+      rgba(0,0,0,.30) 2px 4px
     ),
-    radial-gradient(120% 100% at 50% 50%, transparent 58%, rgba(0,0,0,.55) 100%);
+    radial-gradient(ellipse at center, rgba(0,0,0,0) 55%, rgba(0,0,0,.62) 100%);
+  mix-blend-mode:multiply;
 }
 
-/* The barely-there mains hum of a CRT. Suppressed entirely for anyone who has
-   asked for less motion -- a full-screen brightness oscillation is exactly the
-   kind of thing that setting exists for. */
 @media (prefers-reduced-motion: no-preference){
-  [data-md-color-scheme="terminal"] body::before{
-    content:""; position:fixed; inset:0; z-index:9997; pointer-events:none;
-    background:rgba(59,255,116,.028);
-    animation:dpd-flicker 5.5s infinite steps(1);
+  /* The tracking bar: a faint band drifting down the screen the way a CRT that
+     is fractionally out of sync rolls. This is the detail that sells it --
+     static scanlines alone read as a texture rather than a screen. */
+  body[data-md-color-scheme="terminal"]::before{
+    content:""; position:fixed; left:0; right:0; top:0; height:140px;
+    z-index:9997; pointer-events:none;
+    background:linear-gradient(
+      to bottom,
+      rgba(255,176,0,0), rgba(255,176,0,.055), rgba(255,176,0,0));
+    animation:dpd-crt-roll 7.5s linear infinite;
   }
-  @keyframes dpd-flicker{
-    0%,96%,100%{ opacity:.25; }
-    97%{ opacity:.7; }
-    98%{ opacity:.1; }
-    99%{ opacity:.5; }
+  @keyframes dpd-crt-roll{
+    0%{ transform:translateY(-140px); }
+    100%{ transform:translateY(100vh); }
+  }
+
+  /* Power-on surge, once. Switching into this scheme newly matches the rule,
+     so the animation starts fresh -- far better than a permanent hum, which is
+     charming for four seconds and then just makes the page hard to read. */
+  body[data-md-color-scheme="terminal"]{
+    animation:dpd-crt-on .62s steps(1,end) 1;
+  }
+  @keyframes dpd-crt-on{
+    0%{ filter:brightness(2.4) contrast(1.5); }
+    10%{ filter:brightness(.15); }
+    22%{ filter:brightness(1.7); }
+    36%{ filter:brightness(.5); }
+    52%{ filter:brightness(1.25); }
+    70%{ filter:brightness(.85); }
+    86%{ filter:brightness(1.08); }
+    100%{ filter:none; }
   }
 }
 
-/* The dice are physical objects, not phosphor; drop them to the same palette
-   so the scene stays monochrome rather than one red die shouting in a green
+/* The dice are physical objects, not phosphor; drop them to the same palette so
+   the scene stays monochrome rather than one red die shouting in an amber
    room. */
 [data-md-color-scheme="terminal"] .dpd-die{ box-shadow:0 0 0 1px var(--line); }
 [data-md-color-scheme="terminal"] .md-header{ border-bottom:1px solid var(--line); }
