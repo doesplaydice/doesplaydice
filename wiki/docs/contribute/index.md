@@ -13,7 +13,7 @@ back as marks, and the one-page rules are frozen canon. The reasoning is below.
 The point of this project is that the game belongs to the people who play it. Write rules,
 settings, adversaries, adventures, art — and keep what you make.
 
-## How editing actually works
+## How editing actually works {.dpd-display}
 
 Two doors, which is what Jeff asked for on the call: *"go to the website and click a download
 link, or if they are savvy, go to the GitHub site and mirror or fork."*
@@ -44,7 +44,7 @@ link, or if they are savvy, go to the GitHub site and mirror or fork."*
 
 ---
 
-## The licence: CC BY 4.0
+## The licence: CC BY 4.0 {.dpd-display}
 
 **You may copy it, change it, translate it, print it, and sell what you make** &mdash; including
 commercially, and including work you keep closed. No permission needed, nothing to share back.
@@ -70,7 +70,7 @@ Share-alike was considered and rejected. It would have forced anyone building on
 open their own work too &mdash; which sounds protective, but would have blocked exactly the
 thing this project wants: people earning a living from what they make.
 
-## The name is not part of the licence
+## The name is not part of the licence {.dpd-display}
 
 The licence covers the **text**. It does not grant rights to the name **Does Play Dice** or the
 logo.
@@ -82,7 +82,7 @@ That separation is deliberate and it's the standard arrangement: **the work is f
 name stays accountable.** It's how a stranger tells the difference between the game and
 something that merely resembles it.
 
-## Who owns canon
+## Who owns canon {.dpd-display}
 
 The **one-page rules are frozen**. Changes there need Jeff's approval, because a change to the
 core can invalidate every character, module and adventure anyone has already made.

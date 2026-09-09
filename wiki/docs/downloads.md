@@ -1,122 +1,106 @@
-# Download <span class="dpd-status stub">Wired, not filled</span>
+# Download
 
-<div class="dpd-protobar" markdown>
-**The plumbing works; the files aren't generated yet.** This page exists because Jeff named it
-specifically on the call — *"go to the website and click a download link"* — and because a URL
-on a sticker needs somewhere to land.
+<p class="dpd-lede-sm">Everything here is free. No account, no email address, no cart.</p>
+
+<div class="dpd-dlcards">
+  <a href="#">
+    <span class="dpd-kicker">PDF</span>
+    <span class="dpd-dl-title">The one-page rules</span>
+    <span class="dpd-dl-desc">The complete game on a single sheet. Print it, fold it, put it in
+    the box with your dice.</span>
+    <span class="dpd-dl-go">Not yet generated</span>
+  </a>
+  <a href="rules/character-vitae/">
+    <span class="dpd-kicker">PDF</span>
+    <span class="dpd-dl-title">Character Vitae</span>
+    <span class="dpd-dl-desc">Printable and fillable character sheet.</span>
+    <span class="dpd-dl-go">Draft &rarr;</span>
+  </a>
+  <a href="#">
+    <span class="dpd-kicker">PDF &middot; EPUB</span>
+    <span class="dpd-dl-title">The full book</span>
+    <span class="dpd-dl-desc">Everything on this site, as one document.</span>
+    <span class="dpd-dl-go">Blocked on the table of contents</span>
+  </a>
+  <a href="https://github.com/doesplaydice/doesplaydice">
+    <span class="dpd-kicker">Git</span>
+    <span class="dpd-dl-title">The source</span>
+    <span class="dpd-dl-desc">Every page here as markdown, in git. Fork it, mirror it, make it
+    yours.</span>
+    <span class="dpd-dl-go">View the repository &rarr;</span>
+  </a>
 </div>
 
-Everything here is free. No account, no email address, no cart.
-
-<div class="grid cards" markdown>
-
--   :material-file-pdf-box: **The one-page rules** — PDF
-
-    ---
-
-    The complete game on a single sheet. Print it, fold it, put it in the box with your dice.
-
-    *Not yet generated.*
-
--   :material-clipboard-account: **Character Vitae** — PDF
-
-    ---
-
-    Printable and fillable character sheet.
-
-    *Draft exists — see [Character Vitae](rules/character-vitae.md).*
-
--   :material-book-open-page-variant: **The full book** — PDF / EPUB
-
-    ---
-
-    Everything on this site, as one document.
-
-    *Blocked on the table of contents decision.*
-
--   :material-github: **The source**
-
-    ---
-
-    Every page here as markdown, in git. Fork it, mirror it, make it yours.
-
-    *Repo not created yet.*
-
+<div class="dpd-split" markdown>
+<div markdown>
+## Convention kit {.dpd-display}
 </div>
-
----
-
-## Convention kit <span class="dpd-status ready">Built</span>
-
+<div markdown>
 Print-ready pieces for running a table at a convention, a library, or a coffee shop. Designed to
-survive black-and-white printing.
+survive black-and-white printing, because that is what actually happens the morning of the
+event.
 
-<div class="grid cards" markdown>
-
--   :material-table-furniture: [**Table tent**](downloads/table-tent.pdf)
-
-    ---
-
-    The core mechanic standing on the table. Fold once; both faces read upright, so players on
-    either side can see it without asking.
-
--   :material-account-group: **Six pre-generated characters**
-
-    ---
-
-    Ready to play with no character creation. The six cover every possible spread of three dice
-    across three Skills, so no two players are alike.
-
--   :material-clipboard-text-outline: **One-shot frame**
-
-    ---
-
-    A Narrator's single-page planning sheet, with a post-session half for capturing what actually
-    happened at the table.
-
--   :material-card-account-details-outline: **Handout cards**
-
-    ---
-
-    Ten per sheet, business-card size, with a QR to this site. The whole game in three lines.
-
+Session brief and feedback slips on plain paper; the rest on card stock.
+</div>
 </div>
 
-**Download the kit**
+<div class="dpd-filelist">
+  <a href="downloads/table-tent.pdf">
+    <span class="dpd-file-main">
+      <b>Table tent</b>
+      <span>The core mechanic standing on the table. Fold once &mdash; both faces read upright,
+      so players on either side can see it without asking.</span>
+    </span>
+    <span class="dpd-file-name">table-tent.pdf</span>
+  </a>
+  <a href="downloads/pregens.pdf">
+    <span class="dpd-file-main">
+      <b>Six pre-generated characters</b>
+      <span>Ready to play with no character creation. The six cover every possible spread of
+      three dice across three Skills, so no two players are alike.</span>
+    </span>
+    <span class="dpd-file-name">pregens.pdf</span>
+  </a>
+  <a href="downloads/scenario-frame.pdf">
+    <span class="dpd-file-main">
+      <b>One-shot frame</b>
+      <span>A Narrator's single-page planning sheet, with a second half for recording what
+      actually happened at the table.</span>
+    </span>
+    <span class="dpd-file-name">scenario-frame.pdf</span>
+  </a>
+  <a href="downloads/handout.pdf">
+    <span class="dpd-file-main">
+      <b>Handout cards</b>
+      <span>Ten per sheet, business-card size, with a QR to this site. The whole game in three
+      lines.</span>
+    </span>
+    <span class="dpd-file-name">handout.pdf</span>
+  </a>
+  <a href="downloads/session-brief.pdf">
+    <span class="dpd-file-main">
+      <b>Playtest session brief</b>
+      <span>Tick the one question the session exists to answer, then two minutes of notes at the
+      end.</span>
+    </span>
+    <span class="dpd-file-name">session-brief.pdf</span>
+  </a>
+  <a href="downloads/feedback-slips.pdf">
+    <span class="dpd-file-main">
+      <b>Player feedback slips</b>
+      <span>Eight per sheet. Three questions, about thirty seconds, no phone required.</span>
+    </span>
+    <span class="dpd-file-name">feedback-slips.pdf</span>
+  </a>
+</div>
 
-| Piece | File |
-| --- | --- |
-| Table tent | [table-tent.pdf](downloads/table-tent.pdf) |
-| Six pre-generated characters | [pregens.pdf](downloads/pregens.pdf) |
-| One-shot frame | [scenario-frame.pdf](downloads/scenario-frame.pdf) |
-| Handout cards | [handout.pdf](downloads/handout.pdf) |
-| Playtest session brief | [session-brief.pdf](downloads/session-brief.pdf) |
-| Player feedback slips | [feedback-slips.pdf](downloads/feedback-slips.pdf) |
-
-*Sources and build script live in `kit/`. Run `./kit/build.sh` to regenerate.*
-
----
-
-## How this works once it's live
-
+<div class="dpd-split dpd-split--tight" markdown>
+<div markdown>
+## How this works once it's live {.dpd-display}
+</div>
+<div markdown>
 The PDFs are **built from the same markdown as the website**, automatically, every time a page
-changes. There's no separate document to maintain and no way for the printed rules to drift out
+changes. There is no separate document to maintain and no way for the printed rules to drift out
 of sync with the site. Jeff edits one place.
-
-!!! decision "OPEN DECISION — what does the sticker point at?"
-
-    Jeff has business cards and stickers, and wants to hand people a URL that says *"it's ready
-    to play and ready to contribute."*
-
-    **Questions for Jeff:** should that URL land here, on the [rules](rules/index.md), or on the
-    home page? Should there be a short memorable path — `doesplaydice.com/play` — that's easy
-    to say out loud across a convention table? And is a QR code on the sticker worth it?
-
-!!! decision "OPEN DECISION — Foundry and virtual tabletops"
-
-    Jeff plays on **Foundry VTT** and said he eventually wants the rules built there so people
-    can play online. He also said advanced players will look for the game *"on platforms that
-    they're already familiar with."*
-
-    That's a real piece of software — a Foundry system module, not a document — and it's a
-    separate phase with its own cost. Worth scoping separately once v1 is out.
+</div>
+</div>

@@ -429,3 +429,40 @@ body{ transition:background-color .35s, color .35s; }
 
 /* Slightly shorter header so it sits lighter above the huge display type */
 .md-header__inner{ padding:.2rem .4rem; }
+
+/* ---------- Download page ------------------------------------------------------ */
+.md-typeset .dpd-lede-sm{
+  font-family:var(--dpd-serif); font-size:20px; line-height:1.5;
+  color:var(--muted); max-width:560px; margin:0 0 48px;
+}
+.dpd-dlcards{
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  column-gap:48px; border-top:1px solid var(--line);
+}
+.dpd-dlcards a{
+  display:flex; flex-direction:column; padding:28px 0;
+  border-bottom:1px solid var(--line); text-decoration:none; border-top:0;
+}
+.dpd-dlcards a:hover .dpd-dl-title{ color:var(--accent); }
+.dpd-dl-title{ font-family:var(--dpd-sans); font-weight:600; font-size:22px; color:var(--ink); margin:12px 0 8px; }
+.dpd-dl-desc{ font-family:var(--dpd-sans); font-size:15px; line-height:1.5; color:var(--muted); }
+.dpd-dl-go{ font-family:var(--dpd-sans); font-size:14px; font-weight:600; color:var(--ink); margin-top:auto; padding-top:18px; }
+
+.dpd-filelist{ border-top:2px solid var(--ink); margin-top:24px; }
+.dpd-filelist a{
+  display:grid; grid-template-columns:1fr auto; gap:24px; align-items:start;
+  padding:20px 0; border-bottom:1px solid var(--line); text-decoration:none; border-top:0;
+}
+.dpd-filelist a:hover b{ color:var(--accent); }
+.dpd-file-main b{ font-family:var(--dpd-sans); font-weight:600; font-size:17px; color:var(--ink); display:block; margin-bottom:5px; }
+.dpd-file-main span{ font-family:var(--dpd-sans); font-size:15px; line-height:1.5; color:var(--muted); display:block; max-width:52ch; }
+.dpd-file-name{ font-family:var(--dpd-mono); font-size:12px; color:var(--muted); white-space:nowrap; padding-top:3px; }
+@media screen and (max-width:600px){
+  .dpd-filelist a{ grid-template-columns:1fr; gap:8px; }
+}
+
+/* The split is two columns when there is room and stacks when there isn't.
+   When stacked, the h2's own top margin doubled up with the grid gap. */
+.md-typeset .dpd-split > div > h2:first-child{ margin-top:0; }
+.dpd-split{ margin-top:88px; }
+@media screen and (max-width:1219px){ .dpd-split{ gap:20px; margin-top:64px; } }
