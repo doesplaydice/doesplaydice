@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&family=Familjen+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Archivo+Black&display=swap">
+<style>
+body{margin:0;--bg:#050505;--ink:#F4F2EC;--muted:#9A978E;--line:#2A2926;--accent:#E5484D;--die:#B42318;--pip:#fff;--card:#0F0E0D;background:var(--bg);color:var(--ink);font-family:"Familjen Grotesk",system-ui,sans-serif;-webkit-font-smoothing:antialiased;transition:background .35s,color .35s}
+body[data-theme="light"]{--bg:#F4F2EC;--ink:#0A0A0A;--muted:#66645E;--line:#D9D5C9;--accent:#A11F16;--card:#FBFAF6}
+a{color:var(--ink)}a:hover{color:var(--accent)}
+</style>
+</helmet>
+<div style="max-width:1120px;margin:0 auto;padding:28px 40px 48px;display:flex;flex-direction:column;min-height:100vh;box-sizing:border-box">
+  <nav style="display:flex;justify-content:space-between;align-items:center;font-size:14px;color:var(--muted);flex-wrap:wrap;gap:12px">
+    <a href="Does Play Dice — Ink.dc.html" style="font-family:'Archivo Black',sans-serif;font-size:14px;letter-spacing:.08em;color:var(--ink);text-decoration:none">DPD</a>
+    <div style="display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+      <a href="Does Play Dice — Rules.dc.html" style="text-decoration:none">Rules</a><a href="Does Play Dice — Ink.dc.html#narrators" style="text-decoration:none">Narrators</a><a href="Does Play Dice — Ink.dc.html#contribute" style="text-decoration:none">Contribute</a><a href="Does Play Dice — Download.dc.html" style="text-decoration:none;color:var(--ink);font-weight:600">Download</a>
+      <button onClick="{{ toggleTheme }}" title="Switch light / dark" style="display:flex;align-items:center;gap:8px;background:none;border:1px solid var(--line);border-radius:999px;padding:6px 12px 6px 8px;color:var(--ink);font:inherit;font-size:12px;cursor:pointer"><span style="width:12px;height:12px;border-radius:50%;background:var(--die);display:inline-block"></span>{{ themeLabel }}</button>
+    </div>
+  </nav>
+
+  <header style="margin-top:80px;display:flex;flex-direction:column;gap:18px;border-bottom:1px solid var(--line);padding-bottom:40px">
+    <h1 style="margin:0;font-family:'Archivo Black',sans-serif;font-size:clamp(56px,9vw,112px);line-height:.88;letter-spacing:-.04em;text-transform:uppercase">Download</h1>
+    <p style="margin:6px 0 0;font-family:Literata,serif;font-size:20px;line-height:1.5;color:var(--muted);max-width:520px;text-wrap:pretty">Everything here is free. No account, no email address, no cart.</p>
+  </header>
+
+  <section style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));column-gap:48px">
+    <a href="#" style="padding:32px 0;display:flex;flex-direction:column;gap:10px;text-decoration:none;border-bottom:1px solid var(--line)"><span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)">PDF</span><span style="font-size:22px;font-weight:600;letter-spacing:-.01em">The one-page rules</span><span style="font-size:15px;line-height:1.5;color:var(--muted)">The complete game on a single sheet. Print it, fold it, put it in the box with your dice.</span><span style="font-size:14px;font-weight:600;margin-top:auto;padding-top:8px">Download →</span></a>
+    <a href="#" style="padding:32px 0;display:flex;flex-direction:column;gap:10px;text-decoration:none;border-bottom:1px solid var(--line)"><span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)">PDF</span><span style="font-size:22px;font-weight:600;letter-spacing:-.01em">Character Vitae</span><span style="font-size:15px;line-height:1.5;color:var(--muted)">Printable and fillable character sheet.</span><span style="font-size:14px;font-weight:600;margin-top:auto;padding-top:8px">Download →</span></a>
+    <a href="#" style="padding:32px 0;display:flex;flex-direction:column;gap:10px;text-decoration:none;border-bottom:1px solid var(--line)"><span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)">PDF / EPUB</span><span style="font-size:22px;font-weight:600;letter-spacing:-.01em">The full book</span><span style="font-size:15px;line-height:1.5;color:var(--muted)">Everything on this site, as one document.</span><span style="font-size:14px;font-weight:600;margin-top:auto;padding-top:8px">Download →</span></a>
+    <a href="https://github.com/doesplaydice/doesplaydice" style="padding:32px 0;display:flex;flex-direction:column;gap:10px;text-decoration:none;border-bottom:1px solid var(--line)"><span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)">Git</span><span style="font-size:22px;font-weight:600;letter-spacing:-.01em">The source</span><span style="font-size:15px;line-height:1.5;color:var(--muted)">Every page here as markdown, in git. Fork it, mirror it, make it yours.</span><span style="font-size:14px;font-weight:600;margin-top:auto;padding-top:8px">GitHub ↗</span></a>
+  </section>
+
+  <section style="margin-top:96px;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:48px;align-items:start">
+    <div style="display:flex;flex-direction:column;gap:16px">
+      <h2 style="margin:0;font-family:'Archivo Black',sans-serif;font-size:clamp(36px,4.5vw,52px);line-height:.95;letter-spacing:-.03em;text-transform:uppercase">Convention kit</h2>
+      <p style="margin:0;font-family:Literata,serif;font-size:18px;line-height:1.6;text-wrap:pretty">Print-ready pieces for running a table at a convention, a library, or a coffee shop. Designed to survive black-and-white printing.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;border-top:2px solid var(--ink);font-size:15px">
+      <a href="#" style="display:grid;grid-template-columns:minmax(0,1fr) auto;gap:16px;padding:16px 0;border-bottom:1px solid var(--line);text-decoration:none"><span><b style="font-weight:600">Table tent</b><span style="color:var(--muted)"> · the core mechanic standing on the table</span></span><span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--muted)">table-tent.pdf</span></a>
+      <a href="#" style="display:grid;grid-template-columns:minmax(0,1fr) auto;gap:16px;padding:16px 0;border-bottom:1px solid var(--line);text-decoration:none"><span><b style="font-weight:600">Six pre-generated characters</b><span style="color:var(--muted)"> · every spread of three dice across three Skills</span></span><span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--muted)">pregens.pdf</span></a>
+      <a href="#" style="display:grid;grid-template-columns:minmax(0,1fr) auto;gap:16px;padding:16px 0;border-bottom:1px solid var(--line);text-decoration:none"><span><b style="font-weight:600">One-shot frame</b><span style="color:var(--muted)"> · a Narrator's single-page planning sheet</span></span><span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--muted)">scenario-frame.pdf</span></a>
+      <a href="#" style="display:grid;grid-template-columns:minmax(0,1fr) auto;gap:16px;padding:16px 0;border-bottom:1px solid var(--line);text-decoration:none"><span><b style="font-weight:600">Handout cards</b><span style="color:var(--muted)"> · ten per sheet, with a QR to this site</span></span><span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--muted)">handout.pdf</span></a>
+      <a href="#" style="display:grid;grid-template-columns:minmax(0,1fr) auto;gap:16px;padding:16px 0;border-bottom:1px solid var(--line);text-decoration:none"><span><b style="font-weight:600">Playtest session brief</b></span><span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--muted)">session-brief.pdf</span></a>
+      <a href="#" style="display:grid;grid-template-columns:minmax(0,1fr) auto;gap:16px;padding:16px 0;border-bottom:1px solid var(--line);text-decoration:none"><span><b style="font-weight:600">Player feedback slips</b></span><span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--muted)">feedback-slips.pdf</span></a>
+    </div>
+  </section>
+
+  <section style="margin-top:96px;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:48px;align-items:start">
+    <h2 style="margin:0;font-family:'Archivo Black',sans-serif;font-size:clamp(28px,3.5vw,40px);line-height:.95;letter-spacing:-.03em;text-transform:uppercase">How this works once it's live</h2>
+    <p style="margin:0;font-family:Literata,serif;font-size:18px;line-height:1.6;color:var(--muted);text-wrap:pretty">The PDFs are <b style="color:var(--ink)">built from the same markdown as the website</b>, automatically, every time a page changes. There's no separate document to maintain and no way for the printed rules to drift out of sync with the site. Jeff edits one place.</p>
+  </section>
+
+  <footer style="margin-top:auto;padding-top:112px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;font-size:13px;color:var(--muted)"><span>Does Play Dice by Jeff Adams · text licensed <a href="https://creativecommons.org/licenses/by/4.0/" style="color:var(--ink)">CC BY 4.0</a> · the name and logo are excluded</span><span>doesplaydice.com</span></footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;theme&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;dark&quot;,&quot;light&quot;],&quot;default&quot;:&quot;dark&quot;,&quot;tsType&quot;:&quot;'dark'|'light'&quot;,&quot;section&quot;:&quot;Theme&quot;}}">
+class Component extends DCLogic {
+  state = { theme: localStorage.getItem('dpd-ink-theme') || null };
+  apply() { document.body.dataset.theme = this.state.theme || this.props.theme || 'dark'; }
+  componentDidMount() { this.apply(); }
+  componentDidUpdate() { this.apply(); }
+  renderVals() {
+    const t = this.state.theme || this.props.theme || 'dark';
+    return {
+      themeLabel: t === 'dark' ? 'Dark' : 'Light',
+      toggleTheme: () => { const n = t === 'dark' ? 'light' : 'dark'; localStorage.setItem('dpd-ink-theme', n); this.setState({ theme: n }); }
+    };
+  }
+}
+</script>
+</body>
+</html>

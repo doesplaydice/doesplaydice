@@ -1,0 +1,81 @@
+/* Does Play Dice — "Ink" tokens. Paste into wiki/docs/assets/stylesheets/extra.css */
+
+:root{
+  --md-text-font:"Familjen Grotesk";
+  --md-code-font:"JetBrains Mono";
+  --dpd-display:"Archivo Black",sans-serif;
+  --dpd-serif:"Literata",Georgia,serif;
+  --dpd-sans:"Familjen Grotesk",system-ui,sans-serif;
+  --dpd-mono:"JetBrains Mono",ui-monospace,monospace;
+}
+
+/* Dark (default) */
+[data-md-color-scheme="slate"]{
+  --bg:#050505; --ink:#F4F2EC; --muted:#9A978E; --line:#2A2926;
+  --accent:#E5484D; --die:#B42318; --pip:#FFFFFF; --card:#0F0E0D;
+}
+/* Light (warm paper) */
+[data-md-color-scheme="default"]{
+  --bg:#F4F2EC; --ink:#0A0A0A; --muted:#66645E; --line:#D9D5C9;
+  --accent:#A11F16; --die:#B42318; --pip:#FFFFFF; --card:#FBFAF6;
+}
+/* Optional amber accent */
+[data-dpd-accent="amber"][data-md-color-scheme="slate"]{ --accent:#FFB000; --die:#FFB000; --pip:#050505; }
+[data-dpd-accent="amber"][data-md-color-scheme="default"]{ --accent:#B86E00; --die:#FFB000; --pip:#050505; }
+
+/* Map onto Material */
+[data-md-color-scheme="slate"],[data-md-color-scheme="default"]{
+  --md-default-bg-color:var(--bg);
+  --md-default-fg-color:var(--ink);
+  --md-default-fg-color--light:var(--muted);
+  --md-default-fg-color--lighter:var(--line);
+  --md-default-fg-color--lightest:var(--line);
+  --md-typeset-color:var(--ink);
+  --md-typeset-a-color:var(--ink);
+  --md-accent-fg-color:var(--accent);
+  --md-primary-fg-color:var(--bg);
+  --md-primary-bg-color:var(--ink);
+  --md-code-bg-color:var(--card);
+  --md-code-fg-color:var(--ink);
+  --md-footer-bg-color:var(--bg);
+  --md-footer-bg-color--dark:var(--bg);
+  --md-footer-fg-color:var(--muted);
+}
+body{ transition:background-color .35s, color .35s; }
+
+/* Type scale */
+.md-typeset h1{ font-family:var(--dpd-display); font-weight:400; text-transform:uppercase; font-size:clamp(56px,9vw,112px); line-height:.88; letter-spacing:-.04em; margin:0 0 18px; }
+.md-typeset h2{ font-family:var(--dpd-sans); font-weight:600; font-size:28px; line-height:1.2; letter-spacing:-.02em; margin:56px 0 16px; border:0; }
+.md-typeset h2.dpd-display{ font-family:var(--dpd-display); font-weight:400; text-transform:uppercase; font-size:clamp(36px,4.5vw,52px); line-height:.95; letter-spacing:-.03em; }
+.md-typeset p{ font-family:var(--dpd-serif); font-size:18px; line-height:1.65; max-width:680px; text-wrap:pretty; }
+.md-typeset p > strong:first-child{ font-family:var(--dpd-mono); font-weight:500; font-size:13px; color:var(--accent); margin-right:10px; }
+.dpd-kicker{ font-family:var(--dpd-mono); font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:var(--accent); }
+.md-typeset a:hover{ color:var(--accent); }
+
+/* Tables: rule-lines, not boxes */
+.md-typeset table:not([class]){ border:0; box-shadow:none; border-top:2px solid var(--ink); font-family:var(--dpd-sans); font-size:15px; }
+.md-typeset table:not([class]) th{ background:transparent; border:0; border-bottom:1px solid var(--line); font-family:var(--dpd-mono); font-size:11px; font-weight:500; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); padding:14px 0; }
+.md-typeset table:not([class]) td{ border:0; border-bottom:1px solid var(--line); padding:14px 0; }
+
+/* Buttons */
+.md-typeset .md-button{ font-family:var(--dpd-sans); font-weight:600; font-size:15px; border-radius:0; border:1px solid var(--line); color:var(--ink); padding:14px 24px; }
+.md-typeset .md-button--primary{ background:var(--ink); color:var(--bg); border-color:var(--ink); }
+
+/* Dice (CSS only) */
+.dpd-die{ display:grid; grid-template-columns:repeat(3,1fr); gap:7px; padding:20px; width:112px; height:112px; box-sizing:border-box; border-radius:24px; background:var(--die); box-shadow:0 28px 44px -20px rgba(0,0,0,.65); transform:rotate(12deg); }
+.dpd-die span{ border-radius:50%; background:var(--pip); }
+.dpd-die--small{ width:76px; height:76px; padding:14px; gap:5px; border-radius:16px; background:var(--ink); transform:rotate(-17deg); box-shadow:0 18px 30px -16px rgba(0,0,0,.6); }
+.dpd-die--small span{ background:var(--bg); }
+
+/* Difficulty ladder */
+.dpd-ladder{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:12px; }
+.dpd-ladder > div{ border:1px solid var(--line); padding:22px 20px; display:flex; flex-direction:column; gap:10px; }
+.dpd-ladder b{ font-family:var(--dpd-display); font-weight:400; font-size:40px; line-height:1; letter-spacing:-.03em; }
+.dpd-ladder span{ font-family:var(--dpd-sans); font-size:14px; color:var(--muted); }
+.dpd-ladder > div.is-accent{ border-color:var(--accent); } .dpd-ladder > div.is-accent b{ color:var(--accent); }
+
+@media print{
+  .md-header,.md-tabs,.md-sidebar,.md-footer{ display:none !important; }
+  :root{ --bg:#fff; --ink:#000; --muted:#444; --line:#bbb; --accent:#A11F16; }
+  .md-typeset p{ font-size:12pt; }
+}

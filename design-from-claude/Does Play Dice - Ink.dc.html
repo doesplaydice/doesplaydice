@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&family=Familjen+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Archivo+Black&display=swap">
+<style>
+body{margin:0;--bg:#050505;--ink:#F4F2EC;--muted:#9A978E;--line:#2A2926;--accent:#E5484D;--die:#B42318;--pip:#fff;--card:#0F0E0D;background:var(--bg);color:var(--ink);font-family:"Familjen Grotesk",system-ui,sans-serif;-webkit-font-smoothing:antialiased;transition:background .35s,color .35s}
+body[data-theme="light"]{--bg:#F4F2EC;--ink:#0A0A0A;--muted:#66645E;--line:#D9D5C9;--accent:#A11F16;--die:#B42318;--pip:#fff;--card:#FBFAF6}
+body[data-accent="amber"]{--accent:#FFB000;--die:#FFB000;--pip:#050505}
+body[data-accent="amber"][data-theme="light"]{--accent:#B86E00}
+a{color:var(--ink)}a:hover{color:var(--accent)}
+</style>
+</helmet>
+<div style="max-width:1120px;margin:0 auto;padding:28px 40px 48px;display:flex;flex-direction:column;min-height:100vh;box-sizing:border-box">
+  <nav style="display:flex;justify-content:space-between;align-items:center;font-size:14px;color:var(--muted);flex-wrap:wrap;gap:12px">
+    <a href="#top" style="font-family:'Archivo Black',sans-serif;font-size:14px;letter-spacing:.08em;color:var(--ink);text-decoration:none">DPD</a>
+    <div style="display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+      <a href="Does Play Dice — Rules.dc.html" style="text-decoration:none">Rules</a><a href="#narrators" style="text-decoration:none">Narrators</a><a href="#contribute" style="text-decoration:none">Contribute</a><a href="Does Play Dice — Download.dc.html" style="text-decoration:none">Download</a>
+      <button onClick="{{ toggleTheme }}" title="Switch light / dark" style="display:flex;align-items:center;gap:8px;background:none;border:1px solid var(--line);border-radius:999px;padding:6px 12px 6px 8px;color:var(--ink);font:inherit;font-size:12px;cursor:pointer"><span style="width:12px;height:12px;border-radius:50%;background:var(--die);display:inline-block"></span>{{ themeLabel }}</button>
+    </div>
+  </nav>
+
+  <header id="top" style="margin-top:88px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:32px;align-items:start">
+    <h1 style="margin:0;font-family:'Archivo Black',sans-serif;font-size:clamp(84px,14vw,168px);line-height:.86;letter-spacing:-.04em;text-transform:uppercase">Does<br>Play<br>Dice</h1>
+    <div style="position:relative;width:180px;height:190px;margin-top:6px">
+      <div style="position:absolute;right:104px;top:78px;width:76px;height:76px;border-radius:16px;background:var(--ink);display:grid;grid-template-columns:repeat(3,1fr);padding:14px;gap:5px;transform:rotate(-17deg);box-shadow:0 18px 30px -16px rgba(0,0,0,.6)"><span style="border-radius:50%;background:var(--bg)"></span><span></span><span></span><span></span><span style="border-radius:50%;background:var(--bg)"></span><span></span><span></span><span></span><span style="border-radius:50%;background:var(--bg)"></span></div>
+      <div style="position:absolute;right:0;top:0;width:112px;height:112px;border-radius:24px;background:var(--die);display:grid;grid-template-columns:repeat(3,1fr);padding:20px;gap:7px;transform:rotate(12deg);box-shadow:0 28px 44px -20px rgba(0,0,0,.65)"><span style="border-radius:50%;background:var(--pip)"></span><span></span><span style="border-radius:50%;background:var(--pip)"></span><span></span><span style="border-radius:50%;background:var(--pip)"></span><span></span><span style="border-radius:50%;background:var(--pip)"></span><span></span><span style="border-radius:50%;background:var(--pip)"></span></div>
+    </div>
+  </header>
+  <span style="margin-top:40px;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent)">Five dice. Fifteen minutes. A night out.</span>
+  <p style="margin:18px 0 0;font-family:Literata,serif;font-size:clamp(20px,2.4vw,26px);line-height:1.45;max-width:640px;text-wrap:pretty">A story-telling game that's free to download, quick to learn, and only limited by your imagination. It gives you the creative outlet of a role-playing game — without the learning curve, or the shelf of rulebooks.</p>
+  <div style="display:flex;flex-wrap:wrap;gap:14px;margin-top:36px;font-size:15px;font-weight:600">
+    <a href="Does Play Dice — Rules.dc.html" style="background:var(--ink);color:var(--bg);padding:15px 24px;text-decoration:none">Read the rules</a>
+    <a href="Does Play Dice — Download.dc.html" style="border:1px solid var(--line);padding:14px 24px;text-decoration:none">Download and play</a>
+  </div>
+
+  <section style="margin-top:112px;border-top:1px solid var(--line);padding-top:28px;display:flex;flex-direction:column;gap:20px">
+    <span style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)">The Narrator rolls against you. Highest roll wins.</span>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px">
+      <div style="border:1px solid var(--line);padding:22px 20px;display:flex;flex-direction:column;gap:10px"><span style="font-family:'Archivo Black',sans-serif;font-size:40px;line-height:1;letter-spacing:-.03em">d4</span><span style="font-size:14px;color:var(--muted)">Easy</span></div>
+      <div style="border:1px solid var(--line);padding:22px 20px;display:flex;flex-direction:column;gap:10px"><span style="font-family:'Archivo Black',sans-serif;font-size:40px;line-height:1;letter-spacing:-.03em">d6</span><span style="font-size:14px;color:var(--muted)">Moderate</span></div>
+      <div style="border:1px solid var(--line);padding:22px 20px;display:flex;flex-direction:column;gap:10px"><span style="font-family:'Archivo Black',sans-serif;font-size:40px;line-height:1;letter-spacing:-.03em">d8</span><span style="font-size:14px;color:var(--muted)">Challenging</span></div>
+      <div style="border:1px solid var(--line);padding:22px 20px;display:flex;flex-direction:column;gap:10px"><span style="font-family:'Archivo Black',sans-serif;font-size:40px;line-height:1;letter-spacing:-.03em">d12</span><span style="font-size:14px;color:var(--muted)">High difficulty</span></div>
+      <div style="border:1px solid var(--accent);padding:22px 20px;display:flex;flex-direction:column;gap:10px"><span style="font-family:'Archivo Black',sans-serif;font-size:40px;line-height:1;letter-spacing:-.03em;color:var(--accent)">d20</span><span style="font-size:14px;color:var(--muted)">“Impossible”</span></div>
+    </div>
+  </section>
+
+  <section style="margin-top:112px;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:48px;align-items:start">
+    <h2 style="margin:0;font-family:'Archivo Black',sans-serif;font-size:clamp(36px,4.5vw,52px);line-height:.95;letter-spacing:-.03em;text-transform:uppercase;text-wrap:balance">The whole game fits on one page</h2>
+    <div style="display:flex;flex-direction:column;gap:18px;font-family:Literata,serif;font-size:18px;line-height:1.6">
+      <p style="margin:0;text-wrap:pretty">Most role-playing games ask you to buy a shelf of books before you can sit down. This one doesn't. The complete rules are <b>one page</b>, they're free, and you can read them in the time it takes to make coffee.</p>
+      <p style="margin:0;text-wrap:pretty;color:var(--muted)">If you want more later, there's more — expanded rules, settings, adversaries, adventures. But the person who learned the one page and the person who's been playing for ten years can sit at the same table and play the same game. That's the whole design.</p>
+    </div>
+  </section>
+
+  <section style="margin-top:96px;border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));column-gap:48px">
+    <a href="Does Play Dice — Rules.dc.html" style="padding:28px 0;border-bottom:1px solid var(--line);display:flex;flex-direction:column;gap:8px;text-decoration:none"><span style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.14em;color:var(--accent)">01</span><span style="font-size:20px;font-weight:600">Start here</span><span style="font-size:15px;line-height:1.5;color:var(--muted)">The complete basic rules. Everything you need to play tonight.</span><span style="font-size:14px;font-weight:600;margin-top:6px">Basic Rules →</span></a>
+    <a href="#top" style="padding:28px 0;border-bottom:1px solid var(--line);display:flex;flex-direction:column;gap:8px;text-decoration:none"><span style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.14em;color:var(--accent)">02</span><span style="font-size:20px;font-weight:600">Make a character</span><span style="font-size:15px;line-height:1.5;color:var(--muted)">Name, background, three dice. That's a character.</span><span style="font-size:14px;font-weight:600;margin-top:6px">Character Vitae →</span></a>
+    <a id="narrators" href="#top" style="padding:28px 0;border-bottom:1px solid var(--line);display:flex;flex-direction:column;gap:8px;text-decoration:none"><span style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.14em;color:var(--accent)">03</span><span style="font-size:20px;font-weight:600">Run a game</span><span style="font-size:15px;line-height:1.5;color:var(--muted)">Guidance for Narrators: setting scenes, calling checks, pacing a night.</span><span style="font-size:14px;font-weight:600;margin-top:6px">For Narrators →</span></a>
+    <a id="contribute" href="#top" style="padding:28px 0;border-bottom:1px solid var(--line);display:flex;flex-direction:column;gap:8px;text-decoration:none"><span style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.14em;color:var(--accent)">04</span><span style="font-size:20px;font-weight:600">Make it yours</span><span style="font-size:15px;line-height:1.5;color:var(--muted)">Write rules, settings, adversaries, adventures. Keep what you make.</span><span style="font-size:14px;font-weight:600;margin-top:6px">Contribute →</span></a>
+  </section>
+
+  <section style="margin-top:96px;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:48px;align-items:start">
+    <h2 style="margin:0;font-family:'Archivo Black',sans-serif;font-size:clamp(36px,4.5vw,52px);line-height:.95;letter-spacing:-.03em;text-transform:uppercase">What you need</h2>
+    <p style="margin:0;font-family:Literata,serif;font-size:18px;line-height:1.6;text-wrap:pretty">Pencil, paper, friends, and a set of five dice: <b>4, 6, 8, 12, and 20 sides.</b> That's it. Nothing to buy, nothing to install, no account to create.</p>
+  </section>
+
+  <footer style="margin-top:auto;padding-top:112px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;font-size:13px;color:var(--muted)"><span>Does Play Dice by Jeff Adams · text licensed <a href="https://creativecommons.org/licenses/by/4.0/" style="color:var(--ink)">CC BY 4.0</a> · the name and logo are excluded</span><span>doesplaydice.com</span></footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;theme&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;dark&quot;,&quot;light&quot;],&quot;default&quot;:&quot;dark&quot;,&quot;tsType&quot;:&quot;'dark'|'light'&quot;,&quot;section&quot;:&quot;Theme&quot;},&quot;accent&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;red&quot;,&quot;amber&quot;],&quot;default&quot;:&quot;red&quot;,&quot;tsType&quot;:&quot;'red'|'amber'&quot;,&quot;section&quot;:&quot;Theme&quot;}}">
+class Component extends DCLogic {
+  state = { theme: localStorage.getItem('dpd-ink-theme') || null };
+  apply() {
+    document.body.dataset.theme = this.state.theme || this.props.theme || 'dark';
+    document.body.dataset.accent = this.props.accent || 'red';
+  }
+  componentDidMount() { this.apply(); }
+  componentDidUpdate() { this.apply(); }
+  renderVals() {
+    const t = this.state.theme || this.props.theme || 'dark';
+    return {
+      themeLabel: t === 'dark' ? 'Dark' : 'Light',
+      toggleTheme: () => { const n = t === 'dark' ? 'light' : 'dark'; localStorage.setItem('dpd-ink-theme', n); this.setState({ theme: n }); }
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -26,24 +26,20 @@ theme:
     repo: fontawesome/brands/github
     edit: material/pencil
   palette:
-    - media: "(prefers-color-scheme)"
-      toggle:
-        icon: material/brightness-auto
-        name: Follow system theme
-    - media: "(prefers-color-scheme: light)"
-      scheme: default
+    # Dark first and no media query, so dark is the default with no stored
+    # preference. The design is dark-first by intent.
+    - scheme: slate
       primary: custom
       accent: custom
       toggle:
-        icon: material/weather-sunny
-        name: Switch to dark mode
-    - media: "(prefers-color-scheme: dark)"
-      scheme: slate
+        icon: material/circle
+        name: Switch to light
+    - scheme: default
       primary: custom
       accent: custom
       toggle:
-        icon: material/weather-night
-        name: Switch to light mode
+        icon: material/circle-outline
+        name: Switch to dark
   features:
     - navigation.instant
     - navigation.tracking
@@ -60,7 +56,7 @@ theme:
 
 extra_css:
   - assets/stylesheets/fonts.css
-  - assets/stylesheets/extra.v2.css
+  - assets/stylesheets/extra.v3.css
 
 markdown_extensions:
   - abbr

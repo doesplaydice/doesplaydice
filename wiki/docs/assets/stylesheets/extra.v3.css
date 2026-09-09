@@ -1,0 +1,354 @@
+/* ===========================================================================
+   DOES PLAY DICE -- "INK"
+
+   Bold black-and-paper typographic theme with one red accent, implemented as
+   a Material for MkDocs skin. Two deliberate palettes, not an inversion.
+
+   Implemented from the Claude Design handoff (design-from-claude/
+   design_handoff_ink_theme/README.md). Dark is the default.
+   =========================================================================== */
+
+:root{
+  --dpd-display:"Archivo Black",Impact,sans-serif;
+  --dpd-serif:"Literata",Georgia,serif;
+  --dpd-sans:"Familjen Grotesk",system-ui,sans-serif;
+  --dpd-mono:"JetBrains Mono",ui-monospace,monospace;
+  --md-text-font:"Familjen Grotesk";
+  --md-code-font:"JetBrains Mono";
+}
+
+/* ---------- Palettes -------------------------------------------------------- */
+[data-md-color-scheme="slate"]{        /* dark, default */
+  --bg:#050505; --ink:#F4F2EC; --muted:#9A978E; --line:#2A2926;
+  --accent:#E5484D; --die:#B42318; --pip:#FFFFFF; --card:#0F0E0D;
+}
+[data-md-color-scheme="default"]{      /* light, warm paper */
+  --bg:#F4F2EC; --ink:#0A0A0A; --muted:#66645E; --line:#D9D5C9;
+  --accent:#A11F16; --die:#B42318; --pip:#FFFFFF; --card:#FBFAF6;
+}
+
+/* ---------- Map onto Material ----------------------------------------------- */
+[data-md-color-scheme="slate"],
+[data-md-color-scheme="default"]{
+  --md-default-bg-color:var(--bg);
+  --md-default-fg-color:var(--ink);
+  --md-default-fg-color--light:var(--muted);
+  --md-default-fg-color--lighter:var(--line);
+  --md-default-fg-color--lightest:var(--line);
+  --md-typeset-color:var(--ink);
+  --md-typeset-a-color:var(--ink);
+  --md-accent-fg-color:var(--accent);
+  --md-primary-fg-color:var(--bg);
+  --md-primary-bg-color:var(--ink);
+  --md-primary-bg-color--light:var(--muted);
+  --md-code-bg-color:var(--card);
+  --md-code-fg-color:var(--ink);
+  --md-footer-bg-color:var(--bg);
+  --md-footer-bg-color--dark:var(--bg);
+  --md-footer-fg-color:var(--ink);
+  --md-footer-fg-color--light:var(--muted);
+  --md-footer-fg-color--lighter:var(--muted);
+}
+body{ transition:background-color .35s, color .35s; }
+
+/* ---------- Type ------------------------------------------------------------ */
+.md-typeset{ font-family:var(--dpd-sans); font-size:.8rem; line-height:1.55; }
+
+.md-typeset h1{
+  font-family:var(--dpd-display); font-weight:400; text-transform:uppercase;
+  font-size:clamp(56px,9vw,112px); line-height:.88; letter-spacing:-.04em;
+  color:var(--ink); margin:0 0 18px; text-wrap:balance;
+}
+.md-typeset h2{
+  font-family:var(--dpd-sans); font-weight:600; font-size:28px; line-height:1.2;
+  letter-spacing:-.02em; color:var(--ink); margin:56px 0 16px; border:0;
+  text-wrap:balance;
+}
+.md-typeset h2.dpd-display{
+  font-family:var(--dpd-display); font-weight:400; text-transform:uppercase;
+  font-size:clamp(36px,4.5vw,52px); line-height:.95; letter-spacing:-.03em;
+}
+.md-typeset h3{
+  font-family:var(--dpd-sans); font-weight:600; font-size:19px;
+  letter-spacing:-.01em; color:var(--ink); margin:36px 0 10px;
+}
+.md-typeset h4{
+  font-family:var(--dpd-mono); font-size:11px; font-weight:500;
+  letter-spacing:.15em; text-transform:uppercase; color:var(--muted);
+  margin:28px 0 8px;
+}
+.md-typeset p,
+.md-typeset li{
+  font-family:var(--dpd-serif); font-size:18px; line-height:1.65;
+  color:var(--ink); text-wrap:pretty;
+}
+.md-typeset p{ max-width:680px; }
+.md-typeset li{ font-size:17px; }
+.md-typeset strong{ font-weight:600; color:var(--ink); }
+.md-typeset em{ font-style:italic; }
+
+/* Numbered rules: **1.** at the start of a paragraph becomes a mono accent number */
+.md-typeset p > strong:first-child{
+  font-family:var(--dpd-mono); font-weight:500; font-size:13px;
+  color:var(--accent); margin-right:10px;
+}
+.md-typeset a{ color:var(--ink); text-decoration:none; border-bottom:1px solid var(--line); }
+.md-typeset a:hover{ color:var(--accent); border-bottom-color:var(--accent); }
+.md-typeset code{
+  font-family:var(--dpd-mono); font-size:.82em; background:var(--card);
+  border:1px solid var(--line); border-radius:0; padding:.1em .35em; color:var(--ink);
+}
+.dpd-kicker{
+  font-family:var(--dpd-mono); font-size:12px; letter-spacing:.16em;
+  text-transform:uppercase; color:var(--accent); display:block;
+}
+.dpd-kicker--muted{ color:var(--muted); }
+
+/* ---------- Chrome ---------------------------------------------------------- */
+.md-header{
+  background:var(--bg); color:var(--ink);
+  box-shadow:none; border-bottom:1px solid var(--line);
+}
+.md-header__title{
+  font-family:var(--dpd-display); font-size:14px; letter-spacing:.08em;
+  text-transform:uppercase;
+}
+.md-header__title .md-header__topic:first-child{ font-weight:400; }
+.md-tabs{ background:var(--bg); border-bottom:1px solid var(--line); }
+.md-tabs__link{
+  font-family:var(--dpd-sans); font-size:14px; font-weight:500;
+  color:var(--muted); opacity:1; text-transform:none; letter-spacing:0;
+}
+.md-tabs__link:hover{ color:var(--accent); }
+.md-tabs__link--active{ color:var(--ink); }
+.md-nav{ font-family:var(--dpd-sans); }
+.md-nav__title{
+  font-family:var(--dpd-mono); font-size:11px; font-weight:500;
+  letter-spacing:.15em; text-transform:uppercase; color:var(--muted);
+  background:transparent; box-shadow:none;
+}
+.md-nav__link{ font-size:14px; color:var(--muted); }
+.md-nav__link:hover{ color:var(--accent); }
+.md-nav__link--active,.md-nav__link--active:hover{ color:var(--ink); font-weight:600; }
+.md-search__form{ background:var(--card); border:1px solid var(--line); border-radius:0; }
+.md-search__input{ font-family:var(--dpd-sans); }
+.md-search__input::placeholder{ color:var(--muted); }
+.md-footer{ border-top:1px solid var(--line); }
+.md-footer-meta{ background:var(--bg); }
+.md-copyright{ font-family:var(--dpd-sans); font-size:13px; color:var(--muted); }
+.md-copyright a{ color:var(--ink); }
+.md-footer__link{ font-family:var(--dpd-sans); }
+
+/* Sticky secondary TOC */
+.md-sidebar--secondary .md-nav__title{ margin-bottom:8px; }
+.md-sidebar--secondary .md-nav__link{ font-size:14px; }
+
+/* ---------- Tables: rule-lines, not boxes ----------------------------------- */
+.md-typeset table:not([class]){
+  border:0; box-shadow:none; border-radius:0;
+  border-top:2px solid var(--ink);
+  font-family:var(--dpd-sans); font-size:15px; display:table; width:100%;
+}
+.md-typeset table:not([class]) th{
+  background:transparent; border:0; border-bottom:1px solid var(--line);
+  font-family:var(--dpd-mono); font-size:11px; font-weight:500;
+  letter-spacing:.14em; text-transform:uppercase; color:var(--muted);
+  padding:14px 0; text-align:left;
+}
+.md-typeset table:not([class]) td{
+  border:0; border-bottom:1px solid var(--line); padding:14px 0;
+  font-family:var(--dpd-sans); font-size:15px; color:var(--ink);
+  vertical-align:top;
+}
+.md-typeset table:not([class]) tbody tr:hover{ background:transparent; }
+.md-typeset table:not([class]) td:first-child{ font-weight:600; padding-right:24px; }
+
+/* ---------- Buttons --------------------------------------------------------- */
+.md-typeset .md-button{
+  font-family:var(--dpd-sans); font-weight:600; font-size:15px;
+  border-radius:0; border:1px solid var(--line); color:var(--ink);
+  padding:14px 24px; transition:opacity .15s;
+}
+.md-typeset .md-button:hover{ background:transparent; color:var(--accent); border-color:var(--accent); }
+.md-typeset .md-button--primary{
+  background:var(--ink); color:var(--bg); border-color:var(--ink); padding:15px 24px;
+}
+.md-typeset .md-button--primary:hover{ background:var(--ink); color:var(--bg); opacity:.85; border-color:var(--ink); }
+
+/* ---------- Dice (pure CSS) -------------------------------------------------- */
+.dpd-dicecluster{ position:relative; width:180px; height:190px; }
+.dpd-die{
+  display:grid; grid-template-columns:repeat(3,1fr); gap:7px; padding:20px;
+  width:112px; height:112px; box-sizing:border-box; border-radius:24px;
+  background:var(--die); box-shadow:0 28px 44px -20px rgba(0,0,0,.65);
+  transform:rotate(12deg); position:absolute; right:0; top:0;
+}
+.dpd-die span{ border-radius:50%; background:var(--pip); }
+.dpd-die span.is-blank{ background:transparent; }
+.dpd-die--small{
+  width:76px; height:76px; padding:14px; gap:5px; border-radius:16px;
+  background:var(--ink); transform:rotate(-17deg);
+  box-shadow:0 18px 30px -16px rgba(0,0,0,.6); right:104px; top:78px;
+}
+.dpd-die--small span{ background:var(--bg); }
+
+/* ---------- Difficulty ladder ------------------------------------------------ */
+.dpd-ladder{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:12px; margin:20px 0 0; }
+.dpd-ladder > div{ border:1px solid var(--line); padding:22px 20px; display:flex; flex-direction:column; gap:10px; }
+.dpd-ladder b{ font-family:var(--dpd-display); font-weight:400; font-size:40px; line-height:1; letter-spacing:-.03em; color:var(--ink); }
+.dpd-ladder span{ font-family:var(--dpd-sans); font-size:14px; color:var(--muted); }
+.dpd-ladder > div.is-accent{ border-color:var(--accent); }
+.dpd-ladder > div.is-accent b{ color:var(--accent); }
+
+/* ---------- The five Platonic solids ----------------------------------------- */
+.dpd-solids{ display:flex; flex-direction:column; align-items:center; gap:10px; color:var(--ink); }
+.dpd-solids svg{ width:74px; height:74px; display:block; opacity:.75; }
+.dpd-solids svg:nth-child(1){ opacity:.42; }
+.dpd-solids svg:nth-child(2){ opacity:.54; }
+.dpd-solids svg:nth-child(3){ opacity:.66; }
+.dpd-solids svg:nth-child(4){ opacity:.78; }
+.dpd-solids svg:nth-child(5){ opacity:.9; }
+.dpd-solids figcaption{
+  font-family:var(--dpd-mono); font-size:10px; letter-spacing:.15em;
+  text-transform:uppercase; color:var(--muted); margin-top:14px; text-align:center;
+  max-width:150px; line-height:1.6;
+}
+
+/* ---------- Hero -------------------------------------------------------------- */
+.dpd-hero{ display:grid; grid-template-columns:1fr auto; gap:32px; align-items:start; margin:40px 0 0; }
+.md-typeset .dpd-hero h1{ font-size:clamp(84px,14vw,168px); line-height:.86; margin:0; }
+.dpd-hero-right{ display:flex; flex-direction:column; align-items:center; gap:26px; }
+.dpd-lede{
+  font-family:var(--dpd-serif); font-size:clamp(20px,2.4vw,26px); line-height:1.45;
+  max-width:640px; color:var(--ink); margin:18px 0 28px;
+}
+.dpd-actions{ display:flex; flex-wrap:wrap; gap:14px; margin-bottom:8px; }
+
+/* ---------- Entry cards ------------------------------------------------------- */
+.dpd-cards{ display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); column-gap:48px; border-top:1px solid var(--line); margin-top:24px; }
+.dpd-cards a{ display:block; padding:28px 0; border-bottom:1px solid var(--line); text-decoration:none; border-top:0; }
+.dpd-cards a:hover .dpd-card-title{ color:var(--accent); }
+.dpd-card-num{ font-family:var(--dpd-mono); font-size:12px; letter-spacing:.14em; color:var(--accent); display:block; margin-bottom:12px; }
+.dpd-card-title{ font-family:var(--dpd-sans); font-weight:600; font-size:20px; color:var(--ink); display:block; margin-bottom:8px; }
+.dpd-card-desc{ font-family:var(--dpd-sans); font-size:15px; line-height:1.5; color:var(--muted); display:block; margin-bottom:14px; }
+.dpd-card-go{ font-family:var(--dpd-sans); font-size:14px; font-weight:600; color:var(--ink); }
+
+/* Two-column display section */
+.dpd-split{ display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:48px; margin:112px 0 0; }
+.dpd-split--tight{ margin-top:96px; }
+.dpd-rule{ border-top:1px solid var(--line); margin:112px 0 0; padding-top:28px; }
+
+/* ---------- Admonitions ------------------------------------------------------- */
+.md-typeset .admonition,
+.md-typeset details{
+  border:0; border-left:2px solid var(--line); border-radius:0;
+  background:transparent; box-shadow:none; font-size:16px; padding-left:20px;
+}
+.md-typeset .admonition-title,
+.md-typeset summary{
+  background:transparent; border:0; padding-left:0;
+  font-family:var(--dpd-mono); font-size:11px; font-weight:500;
+  letter-spacing:.14em; text-transform:uppercase; color:var(--muted);
+}
+.md-typeset .admonition-title::before,
+.md-typeset summary::before{ display:none; }
+.md-typeset .admonition > p,
+.md-typeset details > p{ font-family:var(--dpd-serif); font-size:16px; }
+.md-typeset .admonition.quote,.md-typeset .admonition.note{ border-left-color:var(--accent); }
+.md-typeset .admonition.warning,.md-typeset .admonition.danger,
+.md-typeset .admonition.decision{ border-left-color:var(--accent); }
+.md-typeset .admonition.decision .admonition-title{ color:var(--accent); }
+
+/* ---------- Preserved utility classes ----------------------------------------- */
+.dpd-protobar{
+  border:0; border-left:2px solid var(--accent); background:transparent;
+  padding:2px 0 2px 20px; margin-bottom:32px;
+  font-family:var(--dpd-sans); font-size:14px; line-height:1.55; color:var(--muted);
+}
+.dpd-protobar strong{ color:var(--ink); }
+.dpd-status{
+  display:inline-block; font-family:var(--dpd-mono); font-size:10px; font-weight:500;
+  letter-spacing:.14em; text-transform:uppercase; padding:3px 8px;
+  border:1px solid currentColor; border-radius:0; vertical-align:middle; margin-left:12px;
+}
+.dpd-status.ready{ color:var(--muted); }
+.dpd-status.stub{ color:var(--accent); }
+.dpd-sheet{ border:1px solid var(--line); border-radius:0; padding:28px 30px; margin:24px 0; background:transparent; }
+.dpd-field{ border-bottom:1px solid var(--line); min-height:30px; margin:6px 0 22px; }
+.dpd-field-label{ font-family:var(--dpd-mono); font-size:10px; text-transform:uppercase; letter-spacing:.15em; color:var(--muted); }
+
+/* Material grid cards -> rule-line cards */
+.md-typeset .grid.cards > ul > li{
+  border:0; border-top:1px solid var(--line); border-radius:0;
+  background:transparent; box-shadow:none; padding:24px 0 8px; margin:0;
+}
+.md-typeset .grid.cards > ul > li:hover{ box-shadow:none; border-color:var(--line); }
+.md-typeset .grid.cards > ul > li > hr{ display:none; }
+
+/* ---------- Responsive --------------------------------------------------------- */
+@media screen and (max-width:76.1875em){ .dpd-hero{ grid-template-columns:1fr; } .dpd-hero-right{ align-items:flex-start; flex-direction:row; gap:40px; } }
+@media screen and (max-width:600px){
+  .dpd-hero-right{ flex-direction:column; align-items:flex-start; transform:scale(.8); transform-origin:left top; }
+  .dpd-split,.dpd-rule{ margin-top:64px; }
+}
+
+/* ---------- Print --------------------------------------------------------------- */
+@media print{
+  .md-header,.md-tabs,.md-sidebar,.md-footer,.dpd-protobar,.md-content__button,
+  .dpd-solids,.dpd-dicecluster{ display:none !important; }
+  [data-md-color-scheme]{ --bg:#fff; --ink:#000; --muted:#444; --line:#bbb; --accent:#A11F16; }
+  .md-typeset p{ font-size:12pt; }
+  .md-main__inner{ margin:0; } .md-content{ max-width:100%; }
+}
+
+/* ===========================================================================
+   TEMPORARY PRE-LAUNCH GATE -- delete at go-live along with wiki/overrides/,
+   the custom_dir line in mkdocs.yml, and the scripts in docs/admin/index.html.
+   =========================================================================== */
+#dpd-gate{
+  position:fixed; inset:0; z-index:9999; visibility:visible;
+  display:grid; place-items:center; padding:24px; background:var(--bg);
+}
+#dpd-gate form{ width:100%; max-width:420px; }
+#dpd-gate .dpd-gate-kicker{
+  font-family:var(--dpd-mono); font-size:12px; letter-spacing:.16em;
+  text-transform:uppercase; color:var(--accent); margin:0 0 20px;
+}
+#dpd-gate h1{
+  font-family:var(--dpd-display); font-weight:400; text-transform:uppercase;
+  font-size:clamp(48px,9vw,84px); line-height:.88; letter-spacing:-.04em;
+  color:var(--ink); margin:0 0 18px;
+}
+#dpd-gate .dpd-gate-sub{
+  font-family:var(--dpd-serif); font-size:18px; line-height:1.55;
+  color:var(--muted); margin:0 0 28px;
+}
+#dpd-gate input{
+  width:100%; box-sizing:border-box; font-family:var(--dpd-sans); font-size:15px;
+  padding:14px 16px; border:1px solid var(--line); border-radius:0;
+  background:transparent; color:var(--ink); margin-bottom:12px;
+}
+#dpd-gate input::placeholder{ color:var(--muted); }
+#dpd-gate input:focus{ outline:0; border-color:var(--accent); }
+#dpd-gate button{
+  font-family:var(--dpd-sans); font-size:15px; font-weight:600;
+  padding:15px 24px; border:1px solid var(--ink); border-radius:0; cursor:pointer;
+  background:var(--ink); color:var(--bg);
+}
+#dpd-gate button:hover{ opacity:.85; }
+#dpd-gate .dpd-gate-err{
+  font-family:var(--dpd-sans); font-size:14px; color:var(--accent); margin:16px 0 0;
+}
+
+/* --- fixes found on first render -------------------------------------------- */
+/* Material styles figcaption; ours needs to win. */
+.md-typeset .dpd-solids figcaption{
+  font-family:var(--dpd-mono); font-size:10px; font-style:normal;
+  letter-spacing:.15em; text-transform:uppercase; color:var(--muted);
+  margin:16px 0 0; text-align:center; max-width:150px; line-height:1.7;
+}
+/* Give the wordmark its own column so it can never collide with the dice. */
+.dpd-hero > div:first-child{ min-width:0; }
+.md-typeset .dpd-hero h1{ overflow-wrap:normal; }
+/* Home page has no sidebars, so let the container breathe to the design width. */
+.md-main__inner.md-grid{ max-width:1120px; }
