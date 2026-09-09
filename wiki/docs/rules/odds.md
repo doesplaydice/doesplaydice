@@ -12,13 +12,13 @@ across the rows, the Narrator's Difficulty die across the columns.</p>
 
 <table class="dpd-odds-grid">
   <thead>
-    <tr><th scope="col"><span class="odds-corner">skill \ challenge</span></th><th scope="col">d4<span>Easy</span></th><th scope="col">d6<span>Moderate</span></th><th scope="col">d8<span>Challenging</span></th><th scope="col">d12<span>High</span></th><th scope="col">d20<span>"Impossible"</span></th></tr>
+    <tr><th scope="col"><span class="odds-corner">skill \ challenge</span></th><th scope="col">d4<span>Easy</span></th><th scope="col">d6<span>Moderate</span></th><th scope="col">d8<span>Challenging</span></th><th scope="col">d12<span>High difficulty</span></th><th scope="col">d20<span>"Impossible"</span></th></tr>
   </thead>
   <tbody>
-  <tr><th scope="row">d4</th><td><span class="odds-w">37.5</span><span class="odds-t">25</span><span class="odds-l">37.5</span></td><td><span class="odds-w">25</span><span class="odds-t">16.7</span><span class="odds-l">58.3</span></td><td><span class="odds-w">18.8</span><span class="odds-t">12.5</span><span class="odds-l">68.8</span></td><td><span class="odds-w">12.5</span><span class="odds-t">8.3</span><span class="odds-l">79.2</span></td><td><span class="odds-w">7.5</span><span class="odds-t">5</span><span class="odds-l">87.5</span></td></tr>
-  <tr><th scope="row">d6</th><td><span class="odds-w">58.3</span><span class="odds-t">16.7</span><span class="odds-l">25</span></td><td><span class="odds-w">41.7</span><span class="odds-t">16.7</span><span class="odds-l">41.7</span></td><td><span class="odds-w">31.2</span><span class="odds-t">12.5</span><span class="odds-l">56.2</span></td><td><span class="odds-w">20.8</span><span class="odds-t">8.3</span><span class="odds-l">70.8</span></td><td><span class="odds-w">12.5</span><span class="odds-t">5</span><span class="odds-l">82.5</span></td></tr>
-  <tr><th scope="row">d8</th><td><span class="odds-w">68.8</span><span class="odds-t">12.5</span><span class="odds-l">18.8</span></td><td><span class="odds-w">56.2</span><span class="odds-t">12.5</span><span class="odds-l">31.2</span></td><td><span class="odds-w">43.8</span><span class="odds-t">12.5</span><span class="odds-l">43.8</span></td><td><span class="odds-w">29.2</span><span class="odds-t">8.3</span><span class="odds-l">62.5</span></td><td><span class="odds-w">17.5</span><span class="odds-t">5</span><span class="odds-l">77.5</span></td></tr>
-  <tr><th scope="row">d12</th><td><span class="odds-w">79.2</span><span class="odds-t">8.3</span><span class="odds-l">12.5</span></td><td><span class="odds-w">70.8</span><span class="odds-t">8.3</span><span class="odds-l">20.8</span></td><td><span class="odds-w">62.5</span><span class="odds-t">8.3</span><span class="odds-l">29.2</span></td><td><span class="odds-w">45.8</span><span class="odds-t">8.3</span><span class="odds-l">45.8</span></td><td><span class="odds-w">27.5</span><span class="odds-t">5</span><span class="odds-l">67.5</span></td></tr>
+  <tr><th scope="row">d4</th><td><span class="odds-w">37.5</span><span class="odds-t">25</span><span class="odds-l">37.5</span></td><td><span class="odds-w">25</span><span class="odds-t">16.7</span><span class="odds-l">58.3</span></td><td><span class="odds-w">18.8</span><span class="odds-t">12.5</span><span class="odds-l">68.7</span></td><td><span class="odds-w">12.5</span><span class="odds-t">8.3</span><span class="odds-l">79.2</span></td><td><span class="odds-w">7.5</span><span class="odds-t">5</span><span class="odds-l">87.5</span></td></tr>
+  <tr><th scope="row">d6</th><td><span class="odds-w">58.3</span><span class="odds-t">16.7</span><span class="odds-l">25</span></td><td><span class="odds-w">41.7</span><span class="odds-t">16.7</span><span class="odds-l">41.6</span></td><td><span class="odds-w">31.2</span><span class="odds-t">12.5</span><span class="odds-l">56.3</span></td><td><span class="odds-w">20.8</span><span class="odds-t">8.3</span><span class="odds-l">70.9</span></td><td><span class="odds-w">12.5</span><span class="odds-t">5</span><span class="odds-l">82.5</span></td></tr>
+  <tr><th scope="row">d8</th><td><span class="odds-w">68.8</span><span class="odds-t">12.5</span><span class="odds-l">18.7</span></td><td><span class="odds-w">56.2</span><span class="odds-t">12.5</span><span class="odds-l">31.3</span></td><td><span class="odds-w">43.8</span><span class="odds-t">12.5</span><span class="odds-l">43.7</span></td><td><span class="odds-w">29.2</span><span class="odds-t">8.3</span><span class="odds-l">62.5</span></td><td><span class="odds-w">17.5</span><span class="odds-t">5</span><span class="odds-l">77.5</span></td></tr>
+  <tr><th scope="row">d12</th><td><span class="odds-w">79.2</span><span class="odds-t">8.3</span><span class="odds-l">12.5</span></td><td><span class="odds-w">70.8</span><span class="odds-t">8.3</span><span class="odds-l">20.9</span></td><td><span class="odds-w">62.5</span><span class="odds-t">8.3</span><span class="odds-l">29.2</span></td><td><span class="odds-w">45.8</span><span class="odds-t">8.3</span><span class="odds-l">45.9</span></td><td><span class="odds-w">27.5</span><span class="odds-t">5</span><span class="odds-l">67.5</span></td></tr>
   <tr><th scope="row">d20</th><td><span class="odds-w">87.5</span><span class="odds-t">5</span><span class="odds-l">7.5</span></td><td><span class="odds-w">82.5</span><span class="odds-t">5</span><span class="odds-l">12.5</span></td><td><span class="odds-w">77.5</span><span class="odds-t">5</span><span class="odds-l">17.5</span></td><td><span class="odds-w">67.5</span><span class="odds-t">5</span><span class="odds-l">27.5</span></td><td><span class="odds-w">47.5</span><span class="odds-t">5</span><span class="odds-l">47.5</span></td></tr>
   </tbody>
 </table>
@@ -61,9 +61,9 @@ middle first:
 | Matched pair | Win | Tie | Lose |
 | --- | --- | --- | --- |
 | d4 vs d4 | 37.5% | 25% | 37.5% |
-| d6 vs d6 | 41.7% | 16.7% | 41.7% |
-| d8 vs d8 | 43.8% | 12.5% | 43.8% |
-| d12 vs d12 | 45.8% | 8.3% | 45.8% |
+| d6 vs d6 | 41.7% | 16.7% | 41.6% |
+| d8 vs d8 | 43.8% | 12.5% | 43.7% |
+| d12 vs d12 | 45.8% | 8.3% | 45.9% |
 | d20 vs d20 | 47.5% | 5% | 47.5% |
 
 The tie is a real third outcome, not a rounding error. At the bottom of the

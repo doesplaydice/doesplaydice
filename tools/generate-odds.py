@@ -15,7 +15,8 @@ the final format.
 from fractions import Fraction
 
 DICE = [4, 6, 8, 12, 20]
-DIFFICULTY = {4: "Easy", 6: "Moderate", 8: "Challenging", 12: "High", 20: '"Impossible"'}
+DIFFICULTY = {4: "Easy", 6: "Moderate", 8: "Challenging", 12: "High difficulty",
+              20: '"Impossible"'}
 OUT = "wiki/docs/rules/odds.md"
 
 
@@ -32,6 +33,11 @@ def outcomes(skill, challenge):
     w = Fraction(win, total)
     t = Fraction(tie, total)
     return w, t, 1 - w - t
+
+
+def fmt(value):
+    """Format a number the way pct() formats a fraction."""
+    return f"{value:.0f}" if abs(value - round(value)) < 0.05 else f"{value:.1f}"
 
 
 def pct(fraction):
@@ -54,11 +60,18 @@ def main():
         cells = []
         for challenge in DICE:
             w, t, l = outcomes(skill, challenge)
+            # Round win and tie, then DERIVE lose from them. Rounding all
+            # three independently made nine of the 25 cells display as 99.9 or
+            # 100.1 -- while the page's own key promised "every column adds to
+            # 100". The underlying fractions were always exact; only the
+            # display lied.
+            w_s, t_s = pct(w), pct(t)
+            l_s = fmt(100 - float(w_s) - float(t_s))
             cells.append(
                 '<td><span class="odds-w">%s</span>'
                 '<span class="odds-t">%s</span>'
                 '<span class="odds-l">%s</span></td>'
-                % (pct(w), pct(t), pct(l))
+                % (w_s, t_s, l_s)
             )
         rows.append(
             '  <tr><th scope="row">d%d</th>%s</tr>' % (skill, "".join(cells))
@@ -147,8 +160,10 @@ range it is a quarter of all play.
     simulation. The generator is `tools/generate-odds.py`, and it asserts the
     1 &divide; larger-die rule for all 25 pairings every time it runs.
 ''' % (head, "\n".join(rows), "\n".join(
-        "| d%d vs d%d | %s%% | %s%% | %s%% |"
-        % ((d, d) + tuple(pct(x) for x in outcomes(d, d)))
+        "| d%d vs d%d | %s%% | %s%% | %s%% |" % (
+            d, d, pct(outcomes(d, d)[0]), pct(outcomes(d, d)[1]),
+            fmt(100 - float(pct(outcomes(d, d)[0])) - float(pct(outcomes(d, d)[1]))),
+        )
         for d in DICE
     ))
 

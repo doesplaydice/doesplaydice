@@ -112,16 +112,32 @@ def check_plan_section():
 
 
 def check_open_decisions():
+    """Count every unresolved decision on the site, wherever it lives.
+
+    This deliberately matches `decision "OPEN` rather than the full
+    `decision "OPEN DECISION` string. The narrower match missed two live
+    decisions in the Taking Actions draft, which used a slightly different
+    title -- so the script reported "4 open" while the site carried 6. A
+    launch check that silently undercounts is worse than no check, because it
+    is trusted.
+    """
     docs = os.path.join(ROOT, "wiki", "docs")
-    count = 0
+    found = {}
     for dirpath, _, filenames in os.walk(docs):
-        for name in filenames:
-            if name.endswith(".md"):
-                with open(os.path.join(dirpath, name), encoding="utf-8") as handle:
-                    count += len(re.findall(r'decision "OPEN DECISION', handle.read()))
-    if count:
-        return False, "%d open decision%s still unresolved (see decisions.md)" % (
-            count, "" if count == 1 else "s"
+        for name in sorted(filenames):
+            if not name.endswith(".md"):
+                continue
+            path = os.path.join(dirpath, name)
+            with open(path, encoding="utf-8") as handle:
+                hits = len(re.findall(r'decision "OPEN', handle.read()))
+            if hits:
+                found[os.path.relpath(path, docs)] = hits
+
+    total = sum(found.values())
+    if total:
+        where = ", ".join("%s (%d)" % (k, v) for k, v in sorted(found.items()))
+        return False, "%d open decision%s still unresolved: %s" % (
+            total, "" if total == 1 else "s", where
         )
     return True, "no open decisions left on the site"
 

@@ -68,7 +68,7 @@ On your turn you may **act** or **hold**.
 Speaking costs nothing. Neither does noticing something obvious, or dropping something you
 are holding.
 
-!!! decision "OPEN &mdash; three, or as many as your stamina allows?"
+!!! decision "OPEN DECISION — three, or as many as your stamina allows?"
 
     Jeff's notes point two ways and never resolve it.
 
@@ -156,7 +156,7 @@ Physical and a d4 Social is a fighter who can be talked out of the fight in four
     It removes hit points from the game without removing danger, it makes a social or mental
     defeat mechanically as real as a physical one, and it costs a single number per Skill.
 
-!!! decision "OPEN &mdash; Social or Spiritual?"
+!!! decision "OPEN DECISION — Social or Spiritual?"
 
     The frozen one page says the three Skills are **Physical, Mental, Social**. Most of the
     design notes say **Physical, Mental, Spiritual** (or Body / Mind / Soul).

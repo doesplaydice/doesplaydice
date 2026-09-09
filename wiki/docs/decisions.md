@@ -10,9 +10,13 @@ hide:
 here so nobody has to tour the whole thing to find them. It comes down before launch.
 </div>
 
-Four decisions are open. Two more were already settled on **24 August** and had been sitting
-here as questions Jeff had answered months ago &mdash; they are recorded at the bottom rather
-than deleted, so it is clear what moved.
+Four decisions are open here. Two more were already settled on **24 August** and had been
+sitting as questions Jeff had answered months ago &mdash; they are recorded at the bottom
+rather than deleted, so it is clear what moved.
+
+The [Taking actions draft](rules/taking-actions.md) carries **two further questions** of its
+own. They are deliberately not on this list: they only matter if that draft is accepted, and
+this page tracks what blocks the launch.
 
 Each one below says what it blocks and what we'd recommend. The recommendation is a starting
 position to argue with, not a conclusion.

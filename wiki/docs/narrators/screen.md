@@ -12,7 +12,7 @@ it gets asked for. Built for a phone propped behind a screen. Works with no sign
 <div class="dpd-screen" markdown>
 
 <section class="dpd-screen-block" markdown>
-<span class="dpd-screen-label">Roll</span>
+<h2 class="dpd-screen-label">Roll</h2>
 
 <div class="dpd-quickroll" data-quickroll>
   <div class="dpd-quickroll-picks"></div>
@@ -21,7 +21,7 @@ it gets asked for. Built for a phone propped behind a screen. Works with no sign
 </section>
 
 <section class="dpd-screen-block" markdown>
-<span class="dpd-screen-label">How hard is it?</span>
+<h2 class="dpd-screen-label">How hard is it?</h2>
 
 | Die | Difficulty |
 | --- | --- |
@@ -37,19 +37,22 @@ high end. [The full odds &rarr;](../rules/odds.md)
 </section>
 
 <section class="dpd-screen-block" markdown>
-<span class="dpd-screen-label">The four Canons</span>
+<h2 class="dpd-screen-label">The four Canons</h2>
 
-When a call is genuinely unclear, these decide it. They are Jeff's, verbatim.
+When a call is genuinely unclear, these decide it. Jeff's four, shortened for the table.
 
-1. **Finality** &mdash; the GM is the final arbiter.
+1. **Finality** &mdash; the Narrator is the final arbiter.
 2. **Fun** &mdash; seek collaborative and fun solutions.
 3. **Consistency** &mdash; outcomes should be predictable. Even if they aren't predicted.
 4. **Universality** &mdash; whatever a player can do, all players can do. Corollary: whatever
    the players can do, enemies can do.
+
+*Jeff's original says "the GM". The full wording is on [For Narrators](index.md); which word
+is canon is still [open](../decisions.md).*
 </section>
 
 <section class="dpd-screen-block" markdown>
-<span class="dpd-screen-label">The three Skills</span>
+<h2 class="dpd-screen-label">The three Skills</h2>
 
 | Skill | Reach for it when |
 | --- | --- |
@@ -62,7 +65,7 @@ That is the Canon of fun doing its job.
 </section>
 
 <section class="dpd-screen-block" markdown>
-<span class="dpd-screen-label">When you are stuck</span>
+<h2 class="dpd-screen-label">When you are stuck</h2>
 
 - **Say what they see, not what it means.** Description before interpretation.
 - **Ask a player.** "What does your character notice first?" costs nothing and buys a minute.
@@ -72,7 +75,7 @@ That is the Canon of fun doing its job.
 </section>
 
 <section class="dpd-screen-block dpd-screen-todo" markdown>
-<span class="dpd-screen-label">Warm-up questions</span>
+<h2 class="dpd-screen-label">Warm-up questions</h2>
 
 **Jeff's section.** `100 Warmup Questions.md` in his notes is already table-ready and belongs
 here, one at a time, on a tap. It is not published yet, so this is a placeholder rather than
