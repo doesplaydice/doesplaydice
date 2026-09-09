@@ -668,3 +668,68 @@ body{ transition:background-color .35s, color .35s; }
   .dpd-roller-num{ font-size:42px; }
   .dpd-roller-result{ min-height:76px; }
 }
+
+/* ---------- The odds grid -------------------------------------------------------
+   25 pairings, three numbers each. Dense by nature, so the hierarchy does the
+   work: the win figure is the one you read, the other two sit under it quietly.
+   -------------------------------------------------------------------------- */
+.md-typeset table.dpd-odds-grid{
+  width:100%; border-collapse:collapse; margin:8px 0 10px;
+  border-top:2px solid var(--ink); font-family:var(--dpd-sans); display:table;
+}
+.md-typeset .dpd-odds-grid th,
+.md-typeset .dpd-odds-grid td{
+  border:0; border-bottom:1px solid var(--line); padding:12px 6px; text-align:center;
+}
+.md-typeset .dpd-odds-grid thead th{
+  font-family:var(--dpd-mono); font-size:12px; font-weight:500; letter-spacing:.1em;
+  text-transform:uppercase; color:var(--ink); border-bottom:1px solid var(--line);
+}
+/* The difficulty word under each die label, so the grid can be read without
+   flipping back to the difficulty table. */
+.dpd-odds-grid thead th span{
+  display:block; font-size:9px; letter-spacing:.08em; color:var(--muted);
+  margin-top:3px; text-transform:none; font-weight:400;
+}
+.dpd-odds-grid .odds-corner{
+  font-size:9px; letter-spacing:.06em; color:var(--muted); text-transform:none;
+  font-weight:400; white-space:nowrap;
+}
+.md-typeset .dpd-odds-grid tbody th{
+  font-family:var(--dpd-mono); font-size:13px; font-weight:500; color:var(--accent);
+  text-align:left; width:1%; white-space:nowrap; padding-right:14px;
+}
+.dpd-odds-grid td{ line-height:1.25; }
+.dpd-odds-grid .odds-w{
+  display:block; font-family:var(--dpd-display); font-size:19px; color:var(--ink);
+}
+.dpd-odds-grid .odds-t{
+  display:block; font-family:var(--dpd-mono); font-size:10.5px; color:var(--accent);
+  margin-top:3px;
+}
+.dpd-odds-grid .odds-l{
+  display:block; font-family:var(--dpd-mono); font-size:10.5px; color:var(--muted);
+}
+/* The diagonal is the even contest, and the most interesting line in the grid. */
+.dpd-odds-grid tbody tr:nth-child(1) td:nth-child(2),
+.dpd-odds-grid tbody tr:nth-child(2) td:nth-child(3),
+.dpd-odds-grid tbody tr:nth-child(3) td:nth-child(4),
+.dpd-odds-grid tbody tr:nth-child(4) td:nth-child(5),
+.dpd-odds-grid tbody tr:nth-child(5) td:nth-child(6){
+  background:color-mix(in srgb, var(--accent) 8%, transparent);
+}
+.md-typeset .dpd-odds-key{
+  font-family:var(--dpd-mono); font-size:11px; letter-spacing:.08em;
+  color:var(--muted); margin:0 0 34px;
+}
+.dpd-odds-key span{ margin-right:4px; }
+.dpd-odds-key .odds-w{ color:var(--ink); }
+.dpd-odds-key .odds-t{ color:var(--accent); }
+.dpd-odds-key .odds-l{ color:var(--muted); }
+
+/* Below about 700px the grid stops fitting; let it scroll inside its own
+   container rather than shrinking the numbers into illegibility. */
+@media screen and (max-width:700px){
+  .dpd-odds{ overflow-x:auto; }
+  .md-typeset table.dpd-odds-grid{ min-width:560px; }
+}

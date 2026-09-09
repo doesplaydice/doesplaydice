@@ -106,6 +106,7 @@ nav:
   - Home: index.md
   - The Rules:
       - Basic Rules (complete): rules/index.md
+      - The odds: rules/odds.md
       - Character Vitae: rules/character-vitae.md
       - Expanded Rules: rules/expanded.md
   - The World:
