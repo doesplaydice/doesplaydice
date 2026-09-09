@@ -57,6 +57,10 @@ theme:
 extra_css:
   - assets/stylesheets/fonts.css
   - assets/stylesheets/extra.v3.css
+extra_javascript:
+  # Marks the plan timeline and computes the day count in the browser, so the
+  # countdown cannot go stale the way a written-in number does.
+  - assets/js/timeline.js
 
 markdown_extensions:
   - abbr
@@ -108,6 +112,7 @@ nav:
       - Running a game: narrators/index.md
   - Launch plan:
       - Overview: plan/index.md
+      - Open decisions: decisions.md
       - Week by week: plan/weeks.md
       - How to run a playtest: plan/playtesting.md
       - The five tests: plan/tests.md

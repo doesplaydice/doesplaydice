@@ -159,15 +159,22 @@ body{ transition:background-color .35s, color .35s; }
   background:transparent; border:0; border-bottom:1px solid var(--line);
   font-family:var(--dpd-mono); font-size:11px; font-weight:500;
   letter-spacing:.14em; text-transform:uppercase; color:var(--muted);
-  padding:14px 0; text-align:left;
+  /* Right gutter only. The table's left and right edges stay flush with the
+     text column -- that alignment is the point of the design -- but every
+     column needs air after it or the cells read as one run-on line. */
+  padding:14px 24px 14px 0; text-align:left;
 }
 .md-typeset table:not([class]) td{
-  border:0; border-bottom:1px solid var(--line); padding:14px 0;
+  border:0; border-bottom:1px solid var(--line); padding:14px 24px 14px 0;
   font-family:var(--dpd-sans); font-size:15px; color:var(--ink);
   vertical-align:top;
 }
 .md-typeset table:not([class]) tbody tr:hover{ background:transparent; }
-.md-typeset table:not([class]) td:first-child{ font-weight:600; padding-right:24px; }
+.md-typeset table:not([class]) td:first-child{ font-weight:600; }
+/* The last column has nothing after it, so its gutter would push the table's
+   right edge in and break the alignment with the text column above. */
+.md-typeset table:not([class]) th:last-child,
+.md-typeset table:not([class]) td:last-child{ padding-right:0; }
 
 /* ---------- Buttons --------------------------------------------------------- */
 .md-typeset .md-button{
@@ -439,3 +446,57 @@ body{ transition:background-color .35s, color .35s; }
 }
 .dpd-dl-soon{ opacity:.45; }
 .dpd-dl-soon .dpd-dl-go{ font-weight:400; color:var(--muted); font-style:italic; }
+
+/* ---------- The plan timeline strip --------------------------------------------
+   Six Thursdays and the convention, with a live day count. Steps are marked by
+   assets/js/timeline.js; before it runs the strip is hidden, so a reader never
+   sees an unmarked row or a placeholder count.
+   -------------------------------------------------------------------------- */
+.dpd-timeline{ visibility:hidden; margin:0 0 48px; }
+.dpd-timeline.is-ready{ visibility:visible; }
+
+.dpd-tl-count{
+  display:flex; align-items:baseline; gap:12px;
+  border-top:2px solid var(--ink); padding-top:16px; margin-bottom:22px;
+}
+.dpd-tl-num{
+  font-family:var(--dpd-display); font-size:clamp(44px,7vw,68px);
+  line-height:.9; color:var(--accent);
+}
+.dpd-tl-num.is-word{ font-size:clamp(30px,4.5vw,44px); }
+.dpd-tl-label{
+  font-family:var(--dpd-mono); font-size:12px; letter-spacing:.14em;
+  text-transform:uppercase; color:var(--muted);
+}
+
+/* Material sets `.md-typeset ol:not([hidden]){display:flow-root}` at (0,2,1),
+   which outranks a plain `.md-typeset .dpd-tl-steps` at (0,2,0) -- the grid
+   never applied and all seven steps stacked. Same trap as `.md-typeset figure`
+   caught on the solids. Qualify with the tag and :not() to clear it.
+
+   auto-fit rather than a fixed seven: the strip sits in a 578px content column
+   on the plan pages and a wider one elsewhere, and container width has nothing
+   to do with viewport width once the sidebars are involved. This adapts to the
+   space it is actually given -- seven across when they fit, fewer when not. */
+.md-typeset ol.dpd-tl-steps:not([hidden]){
+  list-style:none; margin:0; padding:0;
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(78px,1fr));
+  column-gap:0; row-gap:18px;
+}
+.md-typeset ol.dpd-tl-steps > li{
+  margin:0; padding:12px 10px 0 0; border-top:3px solid var(--line);
+  font-family:var(--dpd-sans); line-height:1.3;
+}
+.dpd-tl-steps b{ display:block; font-size:13px; font-weight:600; color:var(--muted); }
+.dpd-tl-steps span{ display:block; font-size:13px; color:var(--muted); margin-top:2px; }
+
+/* Past: the bar fills, the text recedes. Done is not the same as important. */
+.dpd-tl-steps li.is-past{ border-top-color:var(--muted); opacity:.5; }
+/* Now: the only accent on the strip, so the eye lands there first. */
+.dpd-tl-steps li.is-now{ border-top-color:var(--accent); }
+.dpd-tl-steps li.is-now b{ color:var(--accent); }
+.dpd-tl-steps li.is-now span{ color:var(--ink); font-weight:500; }
+.dpd-tl-steps li.dpd-tl-con{ border-top-color:var(--ink); }
+.dpd-tl-steps li.dpd-tl-con b,
+.dpd-tl-steps li.dpd-tl-con span{ color:var(--ink); font-weight:600; }
+.dpd-tl-steps li.dpd-tl-con.is-past{ opacity:.5; }
