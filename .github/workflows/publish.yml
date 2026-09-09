@@ -6,11 +6,21 @@
 name: Publish site
 
 on:
+  # tools/** and requirements.txt are in here because the build RUNS them.
+  # Without that, a change breaking build_pdf.py or check-links.py would sit
+  # undetected until somebody happened to edit a page under wiki/.
   push:
     branches: [main]
-    paths: ["wiki/**", ".github/workflows/publish.yml"]
+    paths:
+      - "wiki/**"
+      - "tools/**"
+      - "requirements.txt"
+      - ".github/workflows/publish.yml"
   pull_request:
-    paths: ["wiki/**"]
+    paths:
+      - "wiki/**"
+      - "tools/**"
+      - "requirements.txt"
   workflow_dispatch:
 
 permissions:
