@@ -229,6 +229,14 @@ body{ transition:background-color .35s, color .35s; }
   max-width:640px; color:var(--ink); margin:18px 0 28px;
 }
 .dpd-actions{ display:flex; flex-wrap:wrap; gap:14px; margin-bottom:8px; }
+/* Markdown wraps the two buttons in a <p>, so .dpd-actions has a single child
+   and its gap applies to nothing. Inline, a whitespace node hides that; once
+   they stack on a narrow screen the buttons sit flush and read as a glitch.
+   Style the paragraph as the flex row too, so the gap lands on the buttons
+   whether or not markdown wraps them. */
+.md-typeset .dpd-actions > p{
+  display:flex; flex-wrap:wrap; gap:14px; margin:0;
+}
 
 /* ---------- Entry cards ------------------------------------------------------- */
 .dpd-cards{ display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); column-gap:48px; border-top:1px solid var(--line); margin-top:24px; }
