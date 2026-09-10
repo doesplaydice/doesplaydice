@@ -1032,15 +1032,33 @@ body[data-md-color-scheme="terminal"]::after{
 /* The die cell. There are five dice and there will only ever be five, so this
    is a chooser -- but it has to look like the rest of the sheet rather than like
    a browser form control, which is what appearance:none is doing here. */
+/* The die column takes only the room it needs. It was claiming 100px for three
+   characters, which pushed "Strength, senses, fine motor skills, stamina" one
+   pixel past its column and wrapped it onto a second line.
+   Two things are needed, and only one of them is obvious. width:1% is the old
+   auto-layout trick for "shrink this column to its contents" -- but on its own
+   it does nothing here, because Material puts min-width:5rem on every th, which
+   at its 125% root is a hard 100px floor per column. Clear that first. */
+/* Material wraps tables in a shrink-to-fit inline-block, so once the columns
+   stopped being padded out the Skills table pulled 91px narrower than the ruled
+   lines above it and stopped looking like part of the same sheet. Let it fill
+   the sheet; the slack goes to "what it covers", which is what wants it. */
+.md-typeset .dpd-sheet .md-typeset__table{ display:block; width:100%; }
+.md-typeset .dpd-sheet table{ width:100%; }
+.md-typeset .dpd-sheet table th{ min-width:0; }
+.md-typeset .dpd-sheet table th:last-child,
+.md-typeset .dpd-sheet table td:last-child{
+  width:1%; white-space:nowrap; padding-right:0;
+}
 .md-typeset .dpd-sheet td.is-die{
-  text-align:center; padding:4px 6px; min-width:70px;
+  text-align:center; padding-left:8px; min-width:0;
 }
 .dpd-die-select{
   appearance:none; -webkit-appearance:none;
   font-family:var(--dpd-mono); font-size:16px; line-height:1.4;
   color:var(--ink); background:transparent;
   border:0; border-bottom:1px solid var(--line); border-radius:0;
-  padding:3px 2px 5px; width:100%;
+  padding:3px 2px 5px; width:auto; min-width:46px;
   text-align:center; text-align-last:center;
   cursor:pointer; transition:border-color .12s, background-color .12s;
 }
