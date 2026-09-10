@@ -116,15 +116,25 @@ plugins:
   - search
 
 extra:
+  # The "Made with Material for MkDocs" line moves to the licence page, where
+  # the rest of the credits live. Material is MIT; the footer notice is a
+  # courtesy, not a condition, and the footer had grown too long to read.
+  generator: false
   social:
     - icon: material/web
       link: https://doesplaydice.com
       name: doesplaydice.com
 
+# Two short lines rather than one long one. The excluded-marks wording that used
+# to live here is the sort of thing you read once, so it moved to /licence/.
 copyright: >
-  Does Play Dice by Jeff Adams &middot; text licensed
-  <a href="https://creativecommons.org/licenses/by/4.0/" rel="license">CC BY 4.0</a>
-  &middot; &ldquo;Does Play Dice&rdquo; and the &ldquo;Does Play Dice&rdquo; logo are excluded
+  <span class="dpd-colophon">
+  <span>Does Play Dice by Jeff Adams &middot; 2026 &middot;
+  <a href="/licence/" rel="license">CC BY 4.0</a></span>
+  <span class="dpd-colophon-by">Made with
+  <span class="dpd-heart" role="img" aria-label="love">&#9829;</span>
+  by <a href="https://llamassist.ai">Llamassist</a></span>
+  </span>
 
 nav:
   - Home: index.md
@@ -157,6 +167,7 @@ nav:
       - Modules: community/index.md
       - "Sample: The Long Way Round": community/modules/sample-module.md
   - Take it: fork.md
+  - Licence: licence.md
   - Contribute:
       - How to contribute: contribute/index.md
   - Download: downloads.md

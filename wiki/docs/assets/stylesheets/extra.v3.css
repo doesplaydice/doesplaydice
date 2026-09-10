@@ -417,6 +417,19 @@ body{ transition:background-color .35s, color .35s; }
   }
 }
 
+/* ---------- The colophon in the footer --------------------------------------------
+   Two short lines instead of one long one: who wrote it and under what, then who
+   built it. The heart is the only piece of accent colour down here. */
+.md-copyright .dpd-colophon{
+  display:flex; flex-direction:column; align-items:flex-start; gap:3px;
+}
+.md-copyright .dpd-colophon-by{ opacity:.72; }
+.md-copyright .dpd-heart{
+  color:var(--accent); font-style:normal; line-height:1;
+}
+.md-copyright a{ color:inherit; }
+.md-copyright a:hover{ color:var(--accent); }
+
 /* ---------- Print --------------------------------------------------------------- */
 @media print{
   .md-header,.md-tabs,.md-sidebar,.md-footer,.dpd-protobar,.md-content__button,
