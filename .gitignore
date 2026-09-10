@@ -21,6 +21,10 @@ files-from-jeff/
 
 # --- Client deliverables (not project source) -------------------------------
 does-play-dice-packet.html
+# Drafts and one-pagers written for Jeff and for Andrei's own use: the explainer
+# script, the review brief, the briefing sheet. Kept on disk so they survive a
+# new chat session, out of git because they are not the game.
+deliverables/
 
 # --- OS ---------------------------------------------------------------------
 .DS_Store
