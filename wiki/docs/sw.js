@@ -25,7 +25,7 @@
  * Bump CACHE when the precache list changes. Everything else self-heals,
  * because documents are always tried over the network first.
  */
-const CACHE = 'dpd-v4';
+const CACHE = 'dpd-v5';
 
 // The smallest set that makes the game usable with no network at all.
 const SHELL = [
@@ -43,6 +43,10 @@ const SHELL = [
   // cached or the Download button is a promise the site cannot keep offline.
   '/assets/js/sheet.js',
   '/assets/js/sheet-pdf.js',
+  // The Download button writes onto this exact file, so without it cached the
+  // button cannot work offline -- and filling a sheet in is something people do
+  // at a table, which is precisely where there is no signal.
+  '/downloads/does-play-dice-character-sheet.pdf',
   '/assets/img/solid-tetrahedron.svg',
   '/assets/img/solid-hexahedron.svg',
   '/assets/img/solid-octahedron.svg',

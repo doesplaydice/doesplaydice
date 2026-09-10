@@ -70,6 +70,12 @@ jobs:
       # blocks, and every href in those is invisible to it -- that is how the
       # download links shipped pointing at /downloads/downloads/*.pdf. This
       # checks the built HTML, so raw hrefs are covered too.
+      # The Download button on the character vitae writes onto the PDF built
+      # above, at fixed coordinates. Nudge that sheet's CSS and the answers land
+      # in the wrong place with nothing to say so. This reads the ruled lines
+      # back out of the built file and fails if they have moved.
+      - name: Check the character sheet field positions
+        run: python3 tools/check-sheet-fields.py --site wiki/site
       - name: Check internal links
         run: python3 tools/check-links.py wiki/site
       - name: Upload

@@ -49,6 +49,12 @@ jobs:
         run: mkdocs build --strict --config-file wiki/mkdocs.yml
       - name: Build the PDFs
         run: python3 tools/build_pdf.py --site wiki/site
+      # The Download button on the character vitae writes onto the PDF built
+      # above, at fixed coordinates. Nudge that sheet's CSS and the answers land
+      # in the wrong place with nothing to say so. This reads the ruled lines
+      # back out of the built file and fails if they have moved.
+      - name: Check the character sheet field positions
+        run: python3 tools/check-sheet-fields.py --site wiki/site
       - name: Check internal links
         run: python3 tools/check-links.py wiki/site
 

@@ -1056,6 +1056,8 @@ body[data-md-color-scheme="terminal"]::after{
 /* Downloading is the thing you came here to do; clearing is the way out. */
 .dpd-sheet-get{ background:var(--accent); border-color:var(--accent); color:var(--bg); }
 .dpd-sheet-get:hover{ background:var(--ink); border-color:var(--ink); }
+.dpd-sheet-get[disabled]{ opacity:.6; cursor:default; }
+.dpd-sheet-error{ display:block; margin-top:8px; color:var(--accent); }
 
 @media print{
   /* The note and the button are for the screen. The typed text is the point. */

@@ -45,9 +45,16 @@
         current.values.push(textOf(node));
         return;
       }
-      if (node.tagName === 'TABLE') {
+      /* Material wraps every table in a scrolling div AT RUNTIME, so the child
+         here is that wrapper and not the table -- which is why looking only for
+         a TABLE child silently dropped the three Skill dice from the PDF. Check
+         the built HTML all you like; this only shows up in a live page. */
+      var table = node.tagName === 'TABLE'
+        ? node
+        : (node.querySelector && node.querySelector('table'));
+      if (table) {
         var rows = [];
-        [].forEach.call(node.querySelectorAll('tbody tr'), function (tr) {
+        [].forEach.call(table.querySelectorAll('tbody tr'), function (tr) {
           var cells = tr.children;
           if (cells.length < 3) return;
           rows.push({
@@ -144,15 +151,33 @@
       get.remove();
       return;
     }
+    /* The PDF is the designed sheet fetched and written onto, so this is a
+       network round trip the first time. Say so, and say it plainly if it
+       fails, rather than leaving a button that looks broken. */
     get.addEventListener('click', function () {
       var groups = describe(sheet);
       var named = groups.filter(function (g) { return !g.kind && g.values.some(Boolean); });
       var name = named.length ? named[0].values.filter(Boolean)[0] : '';
-      window.dpdSheetPDF({
-        groups: groups,
-        date: new Date().toLocaleDateString(undefined,
-          { year: 'numeric', month: 'long', day: 'numeric' })
-      }, 'does-play-dice-' + slug(name) + '.pdf');
+      var label = get.textContent;
+      get.disabled = true;
+      get.textContent = 'Building\u2026';
+      Promise.resolve(window.dpdSheetPDF({ groups: groups },
+        'does-play-dice-' + slug(name) + '.pdf'))
+        .catch(function (err) {
+          var note = bar.querySelector('.dpd-sheet-error');
+          if (!note) {
+            note = document.createElement('span');
+            note.className = 'dpd-sheet-error';
+            bar.appendChild(note);
+          }
+          note.textContent = ' The sheet could not be built \u2014 ' +
+            (err && err.message ? err.message : 'something went wrong') +
+            '. You can still print this page.';
+        })
+        .then(function () {
+          get.disabled = false;
+          get.textContent = label;
+        });
     });
   }
 
