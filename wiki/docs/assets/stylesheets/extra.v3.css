@@ -1031,13 +1031,18 @@ body[data-md-color-scheme="terminal"]::after{
   font-size:14px; color:var(--muted); line-height:1.55;
   border-left:2px solid var(--line); padding-left:16px; margin:0 0 22px;
 }
+.dpd-sheet-get,
 .dpd-sheet-clear{
   font-family:var(--dpd-mono); font-size:11px; letter-spacing:.1em;
   text-transform:uppercase; background:transparent; color:var(--muted);
   border:1px solid var(--line); border-radius:0; padding:5px 10px;
-  margin-left:4px; cursor:pointer; transition:color .12s, border-color .12s;
+  margin:0 0 0 6px; cursor:pointer;
+  transition:color .12s, border-color .12s, background-color .12s;
 }
 .dpd-sheet-clear:hover{ color:var(--accent); border-color:var(--accent); }
+/* Downloading is the thing you came here to do; clearing is the way out. */
+.dpd-sheet-get{ background:var(--accent); border-color:var(--accent); color:var(--bg); }
+.dpd-sheet-get:hover{ background:var(--ink); border-color:var(--ink); }
 
 @media print{
   /* The note and the button are for the screen. The typed text is the point. */

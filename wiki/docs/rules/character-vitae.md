@@ -56,8 +56,9 @@ experience.
     browser &mdash; there is no account and nothing is sent anywhere &mdash; and it will
     still be there when you come back on the same device.
 
-    **Or print it.** Use your browser's print or "Save as PDF" and the site navigation
-    drops away, leaving just the sheet. For a cleaner one built for paper, take the
+    **Then download it.** The Download button builds a one-page PDF of what you wrote,
+    on your own machine &mdash; nothing is uploaded, and it works with the network off.
+    You can also just print the page. For a blank one to fill in with a pencil, take the
     <a href="../../downloads/does-play-dice-character-sheet.pdf">printable character sheet</a>.
 
 !!! decision "OPEN DECISION — how far does the sheet go?"
