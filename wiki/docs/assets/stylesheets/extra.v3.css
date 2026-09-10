@@ -999,3 +999,49 @@ body[data-md-color-scheme="terminal"]::after{
 @media screen and (max-width:720px){
   .dpd-fork-grid{ grid-template-columns:1fr; gap:26px; }
 }
+
+/* ---------- The character sheet, when it is fillable -----------------------------
+   The fields stay ruled lines rather than becoming inputs: no browser form
+   chrome, and it still prints like paper. All these rules do is make it
+   obvious you can type, and give focus somewhere to land.
+   -------------------------------------------------------------------------- */
+.dpd-field.is-fillable{
+  font-family:var(--dpd-sans); font-size:16px; line-height:1.5;
+  color:var(--ink); padding:2px 2px 4px; cursor:text;
+  transition:border-color .12s, background-color .12s;
+}
+.dpd-field.is-fillable:hover{ border-bottom-color:var(--muted); }
+.dpd-field.is-fillable:focus{
+  outline:none; border-bottom-color:var(--accent);
+  background:color-mix(in srgb, var(--accent) 5%, transparent);
+}
+/* The die cell in the Skills table. Centred, mono, and wide enough for "d12". */
+.md-typeset .dpd-sheet td.is-fillable{
+  font-family:var(--dpd-mono); font-size:15px; color:var(--ink);
+  text-align:center; min-width:56px; cursor:text;
+}
+.md-typeset .dpd-sheet td.is-fillable:focus{
+  outline:none; background:color-mix(in srgb, var(--accent) 7%, transparent);
+}
+.md-typeset .dpd-sheet td.is-fillable:empty::before{
+  content:"d__"; color:var(--line);
+}
+
+.md-typeset .dpd-sheet-note{
+  font-size:14px; color:var(--muted); line-height:1.55;
+  border-left:2px solid var(--line); padding-left:16px; margin:0 0 22px;
+}
+.dpd-sheet-clear{
+  font-family:var(--dpd-mono); font-size:11px; letter-spacing:.1em;
+  text-transform:uppercase; background:transparent; color:var(--muted);
+  border:1px solid var(--line); border-radius:0; padding:5px 10px;
+  margin-left:4px; cursor:pointer; transition:color .12s, border-color .12s;
+}
+.dpd-sheet-clear:hover{ color:var(--accent); border-color:var(--accent); }
+
+@media print{
+  /* The note and the button are for the screen. The typed text is the point. */
+  .dpd-sheet-note{ display:none !important; }
+  .dpd-field.is-fillable:focus{ background:none; }
+  .md-typeset .dpd-sheet td.is-fillable:empty::before{ content:""; }
+}

@@ -50,10 +50,15 @@ experience.
 
 </div>
 
-!!! tip "Printing"
+!!! tip "Two ways to use this"
 
-    This page is print-styled: use your browser's print or "Save as PDF" and the site
-    navigation drops away, leaving just the sheet.
+    **Type into it.** The fields above are editable. What you write stays in your own
+    browser &mdash; there is no account and nothing is sent anywhere &mdash; and it will
+    still be there when you come back on the same device.
+
+    **Or print it.** Use your browser's print or "Save as PDF" and the site navigation
+    drops away, leaving just the sheet. For a cleaner one built for paper, take the
+    <a href="../../downloads/does-play-dice-character-sheet.pdf">printable character sheet</a>.
 
 !!! decision "OPEN DECISION — how far does the sheet go?"
 

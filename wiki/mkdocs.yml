@@ -79,6 +79,8 @@ extra_javascript:
   - assets/js/offline.js
   # The quick roller on the Narrator's screen.
   - assets/js/screen.js
+  # Makes the character sheet typeable in the browser.
+  - assets/js/sheet.js
 
 markdown_extensions:
   - abbr
