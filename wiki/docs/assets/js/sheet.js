@@ -57,10 +57,13 @@
         [].forEach.call(table.querySelectorAll('tbody tr'), function (tr) {
           var cells = tr.children;
           if (cells.length < 3) return;
+          var chooser = cells[2].querySelector('select');
           rows.push({
             skill: textOf(cells[0]),
             covers: textOf(cells[1]),
-            die: textOf(cells[2])
+            /* textContent of a cell holding a <select> is every option at once,
+               which is not what anybody picked. */
+            die: chooser ? chooser.value : textOf(cells[2])
           });
         });
         if (rows.length) { groups.push({ kind: 'skills', rows: rows }); current = null; }
@@ -75,44 +78,89 @@
     return s || 'character-vitae';
   }
 
+  /* There are five dice and there will only ever be five: the game is built on
+     the five Platonic solids, and a sixth would not be a house rule, it would be
+     a different cosmology. So the die cell is a chooser rather than somewhere to
+     type -- you cannot put "BS" in it, and on a phone you get the native picker
+     instead of a keyboard. */
+  var DICE = ['d4', 'd6', 'd8', 'd12', 'd20'];
+
+  function makeDieChooser(cell, label) {
+    var select = document.createElement('select');
+    select.className = 'dpd-die-select';
+    select.setAttribute('aria-label', label ? label + ' die' : 'Die');
+    [''].concat(DICE).forEach(function (d) {
+      var option = document.createElement('option');
+      option.value = d;
+      option.textContent = d || 'd\u2014';   /* the empty state still reads as a die */
+      select.appendChild(option);
+    });
+    select.value = '';
+    /* An unchosen die is a prompt, not an answer, and should look like the
+       ruled lines do before anyone writes on them. */
+    select.sync = function () {
+      select.classList.toggle('is-empty', !select.value);
+    };
+    select.addEventListener('change', select.sync);
+    select.sync();
+    cell.textContent = '';
+    cell.appendChild(select);
+    return select;
+  }
+
   function build(sheet) {
-    /* Ruled lines, plus the die cell at the end of each Skills row. The order
-       here is what the saved values are keyed on -- leave it alone. */
-    var fields = [].slice.call(sheet.querySelectorAll('.dpd-field'));
+    /* Ruled lines, then the die cell at the end of each Skills row. The order
+       here is what the saved values are keyed on -- leave it alone. Each entry
+       knows how to read and write itself, because the dice are a <select> and
+       everything else is contenteditable. */
+    var cells = [].slice.call(sheet.querySelectorAll('.dpd-field')).map(function (el) {
+      return { el: el, text: true };
+    });
     sheet.querySelectorAll('table tr').forEach(function (row) {
       var last = row.lastElementChild;
-      if (last && last.tagName === 'TD') fields.push(last);
+      if (!last || last.tagName !== 'TD') return;
+      var name = row.firstElementChild ? row.firstElementChild.textContent.trim() : '';
+      cells.push({ el: last, text: false, label: name });
     });
 
     var data = load();
     var pending = null;
 
-    fields.forEach(function (field, i) {
-      var id = 'f' + i;
-      field.setAttribute('contenteditable', 'plaintext-only');
-      field.setAttribute('role', 'textbox');
-      field.setAttribute('spellcheck', 'false');
-      field.classList.add('is-fillable');
+    function queueSave() {
+      clearTimeout(pending);
+      pending = setTimeout(function () {
+        var out = {};
+        cells.forEach(function (c, j) {
+          var v = c.get();
+          if (v) out['f' + j] = v;
+        });
+        save(out);
+      }, 400);
+    }
 
-      // A die cell ships with a placeholder glyph; clear it so it does not have
-      // to be deleted before typing.
-      if (field.tagName === 'TD' && field.textContent.trim() === '▢') {
-        field.textContent = '';
-        field.dataset.hint = 'die';
+    cells.forEach(function (cell, i) {
+      var el = cell.el;
+      if (cell.text) {
+        el.setAttribute('contenteditable', 'plaintext-only');
+        el.setAttribute('role', 'textbox');
+        el.setAttribute('spellcheck', 'false');
+        el.classList.add('is-fillable');
+        cell.get = function () { return el.textContent.trim(); };
+        cell.set = function (v) { el.textContent = v; };
+        el.addEventListener('input', queueSave);
+      } else {
+        var select = makeDieChooser(el, cell.label);
+        el.classList.add('is-die');
+        cell.get = function () { return select.value; };
+        /* Anything that is not one of the five is simply not restored, which is
+           how the free-text answers people typed before now fall away. */
+        cell.set = function (v) {
+          select.value = DICE.indexOf(v) === -1 ? '' : v;
+          select.sync();
+        };
+        select.addEventListener('change', queueSave);
       }
-      if (typeof data[id] === 'string') field.textContent = data[id];
-
-      field.addEventListener('input', function () {
-        clearTimeout(pending);
-        pending = setTimeout(function () {
-          var out = {};
-          fields.forEach(function (f, j) {
-            var v = f.textContent.trim();
-            if (v) out['f' + j] = v;
-          });
-          save(out);
-        }, 400);
-      });
+      if (typeof data['f' + i] === 'string') cell.set(data['f' + i]);
     });
 
     /* Chrome's print preview opens and then closes again on a page that is in
@@ -123,10 +171,14 @@
       if (document.activeElement && document.activeElement.blur) {
         document.activeElement.blur();
       }
-      fields.forEach(function (f) { f.removeAttribute('contenteditable'); });
+      cells.forEach(function (c) {
+        if (c.text) c.el.removeAttribute('contenteditable');
+      });
     });
     window.addEventListener('afterprint', function () {
-      fields.forEach(function (f) { f.setAttribute('contenteditable', 'plaintext-only'); });
+      cells.forEach(function (c) {
+        if (c.text) c.el.setAttribute('contenteditable', 'plaintext-only');
+      });
     });
 
     // Somewhere to say what this does, and a way out of it.
@@ -136,13 +188,15 @@
       'Type straight into the sheet &mdash; it saves in this browser only, and is ' +
       'never sent anywhere. When you are done, download it as a PDF, or ' +
       '<a href="../../downloads/does-play-dice-character-sheet.pdf">take the blank one</a> ' +
-      'to fill in with a pencil. ' +
+      'to fill in with a pencil.' +
+      '<span class="dpd-sheet-actions">' +
       '<button type="button" class="dpd-sheet-get">Download PDF</button>' +
-      '<button type="button" class="dpd-sheet-clear">Clear the sheet</button>';
+      '<button type="button" class="dpd-sheet-clear">Clear the sheet</button>' +
+      '</span>';
     sheet.parentNode.insertBefore(bar, sheet);
 
     bar.querySelector('.dpd-sheet-clear').addEventListener('click', function () {
-      fields.forEach(function (f) { f.textContent = ''; });
+      cells.forEach(function (c) { c.set(''); });
       save({});
     });
 

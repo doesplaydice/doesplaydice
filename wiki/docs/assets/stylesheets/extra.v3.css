@@ -1029,21 +1029,38 @@ body[data-md-color-scheme="terminal"]::after{
   background:color-mix(in srgb, var(--accent) 5%, transparent);
 }
 /* The die cell in the Skills table. Centred, mono, and wide enough for "d12". */
-.md-typeset .dpd-sheet td.is-fillable{
-  font-family:var(--dpd-mono); font-size:15px; color:var(--ink);
-  text-align:center; min-width:56px; cursor:text;
+/* The die cell. There are five dice and there will only ever be five, so this
+   is a chooser -- but it has to look like the rest of the sheet rather than like
+   a browser form control, which is what appearance:none is doing here. */
+.md-typeset .dpd-sheet td.is-die{
+  text-align:center; padding:4px 6px; min-width:70px;
 }
-.md-typeset .dpd-sheet td.is-fillable:focus{
-  outline:none; background:color-mix(in srgb, var(--accent) 7%, transparent);
+.dpd-die-select{
+  appearance:none; -webkit-appearance:none;
+  font-family:var(--dpd-mono); font-size:16px; line-height:1.4;
+  color:var(--ink); background:transparent;
+  border:0; border-bottom:1px solid var(--line); border-radius:0;
+  padding:3px 2px 5px; width:100%;
+  text-align:center; text-align-last:center;
+  cursor:pointer; transition:border-color .12s, background-color .12s;
 }
-.md-typeset .dpd-sheet td.is-fillable:empty::before{
-  content:"d__"; color:var(--line);
+.dpd-die-select:hover{ border-bottom-color:var(--muted); }
+.dpd-die-select:focus{
+  outline:none; border-bottom-color:var(--accent);
+  background:color-mix(in srgb, var(--accent) 7%, transparent);
 }
+.dpd-die-select.is-empty{ color:var(--line); }
+/* The dropdown itself is drawn by the browser, so it needs real colours. */
+.dpd-die-select option{ color:var(--ink); background:var(--bg); }
 
 .md-typeset .dpd-sheet-note{
   font-size:14px; color:var(--muted); line-height:1.55;
   border-left:2px solid var(--line); padding-left:16px; margin:0 0 22px;
 }
+/* The buttons are a different kind of thing from the sentence above them, and
+   were reading as part of it. Give them their own line and room to breathe. */
+.md-typeset .dpd-sheet-actions{ display:block; margin-top:16px; }
+.md-typeset .dpd-sheet-actions .dpd-sheet-get{ margin-left:0; }
 .dpd-sheet-get,
 .dpd-sheet-clear{
   font-family:var(--dpd-mono); font-size:11px; letter-spacing:.1em;
@@ -1063,5 +1080,7 @@ body[data-md-color-scheme="terminal"]::after{
   /* The note and the button are for the screen. The typed text is the point. */
   .dpd-sheet-note{ display:none !important; }
   .dpd-field.is-fillable:focus{ background:none; }
-  .md-typeset .dpd-sheet td.is-fillable:empty::before{ content:""; }
+  /* On paper the chooser is just the letters someone picked. */
+  .dpd-die-select{ background:none; border-bottom:0; color:var(--ink); }
+  .dpd-die-select.is-empty{ color:transparent; }
 }
