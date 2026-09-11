@@ -430,6 +430,60 @@ body{ transition:background-color .35s, color .35s; }
 .md-copyright a{ color:inherit; }
 .md-copyright a:hover{ color:var(--accent); }
 
+/* ---------- The five solids, as a cosmology ---------------------------------------
+   Five cards that have to read as one row of objects rather than five boxes, so
+   there is no border and no fill -- the wireframes carry it, and each one leans
+   a little brighter than the last, the way they do on the home page. */
+.dpd-cosmos{
+  display:grid; grid-template-columns:repeat(5,1fr); gap:clamp(6px,1.4vw,18px);
+  margin:34px 0 40px; align-items:start;
+}
+.dpd-solid{ display:flex; flex-direction:column; align-items:center; text-align:center; }
+.dpd-solid-fig{ color:var(--ink); line-height:0; }
+.dpd-solid-fig svg{ width:100%; max-width:104px; height:auto; display:block; }
+/* A gentler ramp than the home page's. There the solids are 74px in a stack and
+   the fade reads as depth; here they are the subject, and starting at .5 just
+   made the tetrahedron look unfinished. */
+.dpd-cosmos .dpd-solid:nth-child(1) .dpd-solid-fig{ opacity:.7; }
+.dpd-cosmos .dpd-solid:nth-child(2) .dpd-solid-fig{ opacity:.78; }
+.dpd-cosmos .dpd-solid:nth-child(3) .dpd-solid-fig{ opacity:.85; }
+.dpd-cosmos .dpd-solid:nth-child(4) .dpd-solid-fig{ opacity:.93; }
+.dpd-cosmos .dpd-solid:nth-child(5) .dpd-solid-fig{ opacity:1; }
+.md-typeset .dpd-solid-die{
+  font-family:var(--dpd-display); font-size:clamp(20px,3vw,30px); line-height:1;
+  color:var(--accent); margin-top:12px; font-weight:400;
+}
+.dpd-solid-el{
+  font-family:var(--dpd-sans); font-size:clamp(13px,1.5vw,16px); color:var(--ink);
+  margin-top:7px;
+}
+/* Name, faces and planet each get their own line. Run them together and
+   "dodecahedron - 12 faces" wraps while "tetrahedron - 4 faces" does not, which
+   leaves the five solids sitting at five different heights. */
+.dpd-solid-name,.dpd-solid-meta,.dpd-solid-planet{
+  font-family:var(--dpd-mono); font-size:10px; letter-spacing:.08em;
+  text-transform:uppercase; color:var(--muted); line-height:1.7;
+  white-space:nowrap;
+}
+.dpd-solid-name{ margin-top:6px; color:var(--ink); opacity:.7; }
+.dpd-solid-planet{ color:var(--accent); opacity:.75; margin-top:3px; }
+
+/* Kepler's nesting reads as one line of objects, so let it. */
+.md-typeset .dpd-kepler{
+  font-family:var(--dpd-mono); font-size:13px; line-height:2.1;
+  border-left:2px solid var(--accent); padding:4px 0 4px 16px;
+  margin:22px 0 26px; color:var(--muted);
+}
+.md-typeset .dpd-kepler strong{ color:var(--ink); font-weight:500; }
+
+/* Five across is only legible while there is room for five. */
+@media screen and (max-width:820px){
+  .dpd-cosmos{ grid-template-columns:repeat(3,1fr); row-gap:26px; }
+}
+@media screen and (max-width:440px){
+  .dpd-cosmos{ grid-template-columns:repeat(2,1fr); }
+}
+
 /* ---------- Print --------------------------------------------------------------- */
 @media print{
   .md-header,.md-tabs,.md-sidebar,.md-footer,.dpd-protobar,.md-content__button,
