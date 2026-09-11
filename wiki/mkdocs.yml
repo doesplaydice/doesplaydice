@@ -140,6 +140,7 @@ nav:
   - Home: index.md
   - The Rules:
       - Basic Rules (complete): rules/index.md
+      - "At the table (draft)": rules/at-the-table.md
       - The odds: rules/odds.md
       - "Taking actions (draft)": rules/taking-actions.md
       - "Combat (draft)": rules/combat.md

@@ -484,6 +484,65 @@ body{ transition:background-color .35s, color .35s; }
   .dpd-cosmos{ grid-template-columns:repeat(2,1fr); }
 }
 
+/* ---------- A game, played -------------------------------------------------------
+   A transcript, not a rules example. The speech is set like prose so it reads at
+   reading speed; the rolls interrupt it as objects, because at a table that is
+   exactly what they do. */
+.dpd-play{ margin:32px 0 40px; }
+.md-typeset .dpd-say{
+  font-family:var(--dpd-serif); font-size:17px; line-height:1.62;
+  margin:0 0 14px; padding-left:16px; border-left:2px solid transparent;
+  color:var(--ink);
+}
+.md-typeset .dpd-say b{
+  font-family:var(--dpd-mono); font-weight:500; font-size:11px; letter-spacing:.14em;
+  text-transform:uppercase; color:var(--muted); margin-right:10px;
+  white-space:nowrap;
+}
+/* The Narrator is the one voice that is not a player, so it gets the rule --
+   but not a dimmer colour. The Narrator is doing the actual scene-writing here,
+   and greying out the best prose on a page whose whole job is to make you feel
+   the fiction is the wrong trade for a bit of extra contrast. */
+.md-typeset .dpd-say--nar{ border-left-color:var(--line); }
+.md-typeset .dpd-say--nar b{ color:var(--accent); }
+
+.dpd-roll{
+  border:1px solid var(--line); padding:14px 16px 12px; margin:20px 0 22px;
+  display:grid; gap:6px;
+}
+.dpd-roll-line{
+  display:grid; grid-template-columns:1fr auto auto; align-items:baseline; gap:12px;
+}
+.dpd-roll-who{
+  font-family:var(--dpd-mono); font-size:11px; letter-spacing:.12em;
+  text-transform:uppercase; color:var(--muted);
+}
+.md-typeset .dpd-roll-line b{
+  font-family:var(--dpd-mono); font-size:13px; font-weight:500; color:var(--muted);
+  min-width:34px; text-align:right;
+}
+.dpd-roll-num{
+  font-family:var(--dpd-display); font-size:26px; line-height:1; color:var(--ink);
+  min-width:38px; text-align:right;
+}
+.md-typeset .dpd-roll-out{
+  font-family:var(--dpd-mono); font-size:11px; letter-spacing:.12em;
+  text-transform:uppercase; margin:8px 0 0; padding-top:10px;
+  border-top:1px solid var(--line); color:var(--muted);
+}
+/* The tie is the one the page is about, so it is the only one wearing colour. */
+.dpd-roll[data-outcome="tie"]{ border-color:var(--accent); }
+.dpd-roll[data-outcome="tie"] .dpd-roll-num{ color:var(--accent); }
+.md-typeset .dpd-roll[data-outcome="tie"] .dpd-roll-out{
+  color:var(--accent); border-top-color:var(--accent);
+}
+
+@media screen and (max-width:600px){
+  .dpd-roll-line{ grid-template-columns:1fr auto auto; gap:8px; }
+  .dpd-roll-who{ font-size:10px; }
+  .dpd-roll-num{ font-size:22px; }
+}
+
 /* ---------- Print --------------------------------------------------------------- */
 @media print{
   .md-header,.md-tabs,.md-sidebar,.md-footer,.dpd-protobar,.md-content__button,
