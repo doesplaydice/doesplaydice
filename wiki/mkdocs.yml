@@ -1,14 +1,8 @@
-# ---------------------------------------------------------------------------
-# PROTOTYPE — built for the Jeff Adams strategy call.
-# Everything marked "OPEN DECISION" in the content is deliberately unresolved.
-# ---------------------------------------------------------------------------
-
 site_name: Does Play Dice
 site_description: A story-telling game that's free to download, quick to learn, and only limited by your imagination.
 site_url: https://doesplaydice.com/
 
-# PLACEHOLDER — repo does not exist yet. Drives the "Edit this page" pencil,
-# which is the whole "Jeff can update it himself" story.
+# Drives the "Edit this page" pencil.
 repo_url: https://github.com/doesplaydice/doesplaydice
 repo_name: doesplaydice/doesplaydice
 edit_uri: edit/main/wiki/docs/
@@ -69,9 +63,6 @@ extra_css:
   - assets/stylesheets/fonts.css
   - assets/stylesheets/extra.v3.css
 extra_javascript:
-  # Marks the plan timeline and computes the day count in the browser, so the
-  # countdown cannot go stale the way a written-in number does.
-  - assets/js/timeline.js
   # The try-it roller on the rules page.
   - assets/js/dice.js
   # Registers the service worker. Kept out of the template so it survives the
@@ -138,7 +129,7 @@ copyright: >
 
 nav:
   - Home: index.md
-  - The Rules:
+  - For Players:
       - Basic Rules (complete): rules/index.md
       - "At the table (draft)": rules/at-the-table.md
       - The odds: rules/odds.md
@@ -151,25 +142,16 @@ nav:
       - "Effects (draft)": rules/effects.md
       - Character Vitae: rules/character-vitae.md
       - Expanded Rules: rules/expanded.md
-  - The World:
-      - About the setting: world/index.md
-      - "The five (draft)": world/cosmology.md
+      - The World:
+          - About the setting: world/index.md
+          - "The five (draft)": world/cosmology.md
   - For Narrators:
       - Running a game: narrators/index.md
       - The screen: narrators/screen.md
-  - Launch plan:
-      - Overview: plan/index.md
-      - Open decisions: decisions.md
-      - Week by week: plan/weeks.md
-      - How to run a playtest: plan/playtesting.md
-      - The five tests: plan/tests.md
-      - Is the test any good?: plan/validity.md
-      - Progress log: plan/progress.md
-  - Community:
-      - Modules: community/index.md
-      - "Sample: The Long Way Round": community/modules/sample-module.md
-  - Take it: fork.md
-  - Licence: licence.md
-  - Contribute:
+  - For Builders:
       - How to contribute: contribute/index.md
+      - Take it: fork.md
+      - Licence: licence.md
+      - Community modules: community/index.md
+      - "Sample: The Long Way Round": community/modules/sample-module.md
   - Download: downloads.md

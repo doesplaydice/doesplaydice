@@ -10,8 +10,7 @@
   TEMPORARY -- the pre-launch passphrase gate, marked GATE START / GATE END.
   Delete only those blocks at go-live, plus the #dpd-gate rules in
   extra.v3.css. Do NOT delete this file or drop custom_dir; that would take
-  offline support with it. tools/preflight.py checks for the gate markers
-  rather than the file, for exactly this reason.
+  offline support with it.
 
   On the gate: it is a speed bump, NOT security. Pages are still served in
   full, and curl returns everything regardless. It exists only to stop someone
@@ -91,6 +90,16 @@
     })();
   </script>
   {# GATE END (head) #}
+{% endblock %}
+
+{# PERMANENT: the masthead. The Set wordmark on its dice backdrop, dark
+   version, as a band above the sticky header. It scrolls away; the header
+   (with the tabs) stays. #}
+{% block header %}
+  <a class="dpd-masthead" href="{{ nav.homepage.url | url }}" aria-label="Does Play Dice, home">
+    <img src="{{ 'assets/img/masthead-dark.svg' | url }}" alt="Does Play Dice" width="1200" height="200">
+  </a>
+  {{ super() }}
 {% endblock %}
 
 {% block content %}

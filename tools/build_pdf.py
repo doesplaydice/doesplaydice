@@ -10,9 +10,8 @@ Two artefacts, and they are deliberately different things:
                             being a screenshot of the web page.
 
   does-play-dice-book.pdf   The game content as one document: rules, character
-                            sheet, expansions, setting, narrator guidance.
-                            Project-planning pages are excluded; they come down
-                            at launch and were never part of the book.
+                            sheet, expansions and setting. The Narrator section
+                            joins it once it has content of its own.
 
 Rendering is done by headless Chrome rather than a Python PDF library because
 this design leans on CSS grid and self-hosted woff2 faces, and Chrome is the
@@ -47,7 +46,6 @@ BOOK_PAGES = [
     ("rules/character-vitae/index.html", "Character Vitae"),
     ("rules/expanded/index.html", "Expanded Rules"),
     ("world/index.html", "The World"),
-    ("narrators/index.html", "For Narrators"),
 ]
 
 # Classes stripped from every page before printing. These are scaffolding for
