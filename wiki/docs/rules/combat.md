@@ -75,33 +75,6 @@ The Narrator decides what it costs &mdash; the thing you came for, the ground yo
 person you were carrying &mdash; but not whether it works. Nobody gets a free swing at your
 back. A losing fight is a decision, not a trap.
 
-## Weapons
-
-A weapon doesn't change the roll. It changes **what winning looks like.**
-
-| | |
-| --- | --- |
-| **Slashing** &mdash; sword, axe | On a win, you may move the hit to a second enemy within reach |
-| **Piercing** &mdash; spear, arrow, dagger | They lose one further stamina at the end of the round unless someone tends to it |
-| **Crushing** &mdash; hammer, club, staff | Armour does not help them &mdash; see below |
-
-Armour isn't a number. It's already in your Body die: a knight in good plate and a
-halfling who is impossible to catch can both be a d12, and each explains it their own way.
-**Crushing weapons ignore that explanation** &mdash; against a hammer, roll the die you would
-have had without the armour.
-
-## Hitting someone who can't fight back
-
-Not everything is a contest. When they can't meaningfully resist, the Narrator rolls a
-Difficulty die instead of a Skill die:
-
-| Situation | Narrator rolls |
-| --- | --- |
-| Asleep, bound, or unaware | d4 |
-| Distracted but able to move | d6 |
-| Moving, but not defending against you | d8 |
-| Actually defending themselves | their Skill die |
-
 ---
 
 ## What being out means
