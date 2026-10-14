@@ -48,7 +48,8 @@ table, there's a way to try again &mdash; the stakes just go up.
 
 **You can push your luck: reroll the attempt you just failed.** It costs one action, the same as
 any second try, plus one stamina in the Skill you're rolling (see [Stamina](combat.md#stamina)).
-If you succeed, that's all it costs. **If you fail, it's a critical failure**: worse than an ordinary
+It's the same check again, with the same die you just rolled: a push never steps down. If you
+succeed, that's all it costs. **If you fail, it's a critical failure**: worse than an ordinary
 failure, and often double its effect.
 
 - **Defusing the bomb.** If the bomb would cost each of you one stamina, a failed push costs
