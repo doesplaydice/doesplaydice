@@ -1,10 +1,4 @@
-# Example of play <span class="dpd-status stub">Draft</span>
-
-<div class="dpd-protobar" markdown>
-**Written for the site, not from a transcript.** The people are invented; the rolls are not.
-Every die below is one the <a href="../">Basic Rules</a> would actually call for, and the
-results are what they are. Nothing was nudged to make the point.
-</div>
+# Example of play
 
 The rules take ten minutes to read. This takes two, and it is probably the faster way in.
 
