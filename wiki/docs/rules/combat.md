@@ -124,7 +124,7 @@ Difficulty die instead of a Skill die, and Jeff's own ladder applies:
 
 ## What this chapter does not do
 
-**No initiative beyond what [Taking actions](taking-actions.md) already sets out.** No grid, no
+**No initiative beyond what [Taking turns](taking-actions.md) already sets out.** No grid, no
 flanking rules, no attacks of opportunity, no called shots, no critical-hit deck. All of those
 appear in his notes as things he was reading about rather than things he had decided, and every
 one of them adds a table to a game whose whole promise is that there are none.

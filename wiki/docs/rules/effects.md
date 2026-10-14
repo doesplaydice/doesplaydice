@@ -36,7 +36,7 @@ Anything that helps you, anywhere, does one of two things:
 Nothing modifies a number. Nothing stacks into a calculation. If two things help and one
 hinders, you are helped &mdash; **count the directions, not the sources.**
 
-This is already how the one page works, and how [Taking actions](taking-actions.md) spends
+This is already how the one page works, and how [Taking turns](taking-actions.md) spends
 extra effort. There was never a second system to build.
 
 ## The one place it is more than flavour
