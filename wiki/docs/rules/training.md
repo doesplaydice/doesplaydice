@@ -72,7 +72,7 @@ weighed two costings and did not choose:
 Training does not make your ceiling higher. **It stops you falling all the way down.** A trained
 d20 and an untrained d20 have the same best day; only one of them has bad ones.
 
-That pairs exactly with stamina from [Taking turns](taking-actions.md): **training is a floor,
+That pairs exactly with stamina from [Combat](combat.md#stamina): **training is a floor,
 exhaustion is a ceiling, and they close on you from both ends.** A tired expert and a fresh
 amateur can end up rolling in the same narrow band, for opposite reasons. That is a genuinely
 elegant piece of design and it is entirely his.

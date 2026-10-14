@@ -5,83 +5,67 @@ hide:
 
 # Taking turns
 
-The [Basic Rules](index.md) answer *how do I find out whether something works.* They do not
-answer *how much can I do before someone else gets a turn* &mdash; and that question only shows
-up once a fight starts or a scene gets crowded.
+For long stretches of a game you may never think about turns at all, especially when there's
+no fight and nothing is racing the clock. As a player, keep an eye on the people around the
+table and make sure you're not hogging the spotlight. Everyone should get a chance to take
+part. If you're the Narrator, you can help with that too. (There's more on running the table in
+the [For Narrators](../narrators/index.md) section.)
 
-That is the entire job of this chapter. It adds nothing to the Basic Rules and changes nothing
-in them. A table that has read only the Basic Rules and a table that has read both are playing
-the same game.
+You're still taking turns in those moments. You're just not keeping track.
 
----
+## When seconds matter
 
-## The turn
+**When seconds matter, the Narrator may decide it's time to track turns closely.** Whoever sets
+things in motion acts first. Everyone else rolls their **Soul** die for order, and the highest
+roll goes next.
 
-**Everyone rolls a die for order. Highest goes first.** Roll the Skill die that fits how you
-are entering the scene &mdash; Physical if you are already moving, Mental if you saw it
-coming, Spiritual if you are talking your way in.
+Once everyone has had a turn, everyone's actions refresh and the order starts again from the
+top.
 
-That is the whole of initiative, and it reuses the dice already in your hand.
+## The action pool
 
-On your turn you may **act** or **hold**.
+**You get three actions to spend on your turn.** Anything you want to do costs at least one.
+Throwing a punch is one action. So is running for the door.
 
-- Your actions may be spent on your turn, or at any point before your next turn.
-- Actions may be split. Move, look, then move again.
-- Any action you have not spent when your next turn arrives is **lost**. Nothing carries over.
+Some things cost nothing. Speaking is free. So is noticing something obvious (asking the
+Narrator what's around you), or dropping something you're holding.
 
-## Three actions
+Some things cost more. A complicated task may take two or three actions to pull off; the
+Narrator will tell you when that's the case, or the description of an ability will.
 
-**You get three actions on your turn.** Anything you want to do costs at least one.
+## Trying again, and pushing your luck
 
-Speaking costs nothing. Neither does noticing something obvious, or dropping something you
-are holding.
+**If you fail a check and still have actions left, you can usually try again.** If that punch
+misses, you can throw a second, or even a third.
 
-## Spending more than one
+But some failures are final. Think of the classic movie scene where the hero has to defuse the
+bomb. Cut the wrong wire and it goes off. No second chance.
 
-You may spend **two or three actions on a single attempt.** Each extra action past the first
-lets you **roll an additional die and keep the best result.**
+We like good stories, though. And second chances. So even in the direst situation there's a
+way to try again &mdash; the stakes just go up.
 
-One action, a d8 Skill against a d12 door: roll one d8. Three actions: roll three d8s and take
-the highest.
+**When a failure has consequences, you can push your luck.** It costs one action and one
+stamina in the Skill you're rolling (see [Stamina](combat.md#stamina)).
+If you succeed, that's all it costs. **If you fail, it's a critical failure**,
+and something bad happens.
 
-This is the same machinery as advantage: roll more than once and keep the better result. No
-math. Effort buys dice, not bonuses.
+- **Defusing the bomb.** Fail the push, and the blast does double damage to you and your
+  allies.
+- **Throwing your only grenade** into a crowd of enemies. Once it's thrown there's nothing left
+  for a normal second try, so the throw itself is a push. Fail it, and the grenade slips out
+  of your hand and goes off at your feet.
 
-The Narrator may rule that some things cannot be hurried or repeated. Picking one lock harder
-is reasonable. Persuading the same guard three times in ten seconds is not.
+What a critical failure means is always up to the Narrator. Just know that it always means
+something bad. That's what keeps it exciting.
 
 ## Reacting
 
-You may spend an action **out of turn** to respond to what someone else does.
+**You don't have to spend all your actions on your turn.** You can hold any of them back to use
+as a reaction after someone else's turn.
 
-A reaction resolves **after** the thing that triggered it. It does not interrupt and it does
-not undo. If someone swings at you and you react, their swing happens, then yours.
+Say your name is Eleven and you have telekinetic powers. You might hold an action, just in
+case. Then if a bully drives your friend Mike off the edge of a cliff, you can spend it to catch
+him in mid-air, and save him from what looked like a certain fall.
 
-You may also **change an action you have declared but not yet taken**, if the situation moves
-underneath you. You do not have to say what you are doing instead until you do it.
-
----
-
-## Stamina
-
-**Stamina is a ceiling on what you can roll.** It is not hit points and there is nothing to
-subtract.
-
-You have a stamina track for each Skill: Body, Mind and Soul. It starts equal to the
-number of sides on that Skill's die.
-
-When something costs you &mdash; a blow landed, an argument lost, a horror witnessed &mdash;
-you take **one point of stamina in the Skill that suffered**. Nothing else happens.
-
-A stamina penalty caps your roll on that Skill. **Roll higher than your ceiling and the result
-becomes your ceiling.**
-
-| Your Body die | Stamina lost | Ceiling | You roll a 6, you get |
-| --- | --- | --- | --- |
-| d8 | 0 | 8 | 6 |
-| d8 | 2 | 6 | 6 |
-| d8 | 4 | 4 | 4 |
-| d8 | 7 | 1 | 1 |
-
-**At zero stamina in any Skill you are out.** Not dead &mdash; out. A fighter with a d20
-Body and a d4 Soul is a fighter who can be talked out of the fight in four sentences.
+**A reaction usually comes after the other person's whole turn.** Some reactions can interrupt
+a turn, and when they can, their description says so.

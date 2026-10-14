@@ -34,6 +34,30 @@ What follows only answers the questions a fight raises that a locked door does n
 
     That is the design. It is his, it is coherent, and everything below is built on it.
 
+## Stamina
+
+**Stamina is a ceiling on what you can roll.** It is not hit points and there is nothing to
+subtract.
+
+You have a stamina track for each Skill: Body, Mind and Soul. It starts equal to the
+number of sides on that Skill's die.
+
+When something costs you &mdash; a blow landed, an argument lost, a horror witnessed &mdash;
+you take **one point of stamina in the Skill that suffered**. Nothing else happens.
+
+A stamina penalty caps your roll on that Skill. **Roll higher than your ceiling and the result
+becomes your ceiling.**
+
+| Your Body die | Stamina lost | Ceiling | You roll a 6, you get |
+| --- | --- | --- | --- |
+| d8 | 0 | 8 | 6 |
+| d8 | 2 | 6 | 6 |
+| d8 | 4 | 4 | 4 |
+| d8 | 7 | 1 | 1 |
+
+**At zero stamina in any Skill you are out.** Not dead &mdash; out. A fighter with a d20
+Body and a d4 Soul is a fighter who can be talked out of the fight in four sentences.
+
 ## Attacking
 
 **Both of you roll.** You roll the Skill die that fits how you are fighting; they roll theirs.
@@ -124,7 +148,7 @@ Difficulty die instead of a Skill die, and Jeff's own ladder applies:
 
 ## What this chapter does not do
 
-**No initiative beyond what [Taking turns](taking-actions.md) already sets out.** No grid, no
+**No turn order beyond what [Taking turns](taking-actions.md) already sets out.** No grid, no
 flanking rules, no attacks of opportunity, no called shots, no critical-hit deck. All of those
 appear in his notes as things he was reading about rather than things he had decided, and every
 one of them adds a table to a game whose whole promise is that there are none.

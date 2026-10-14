@@ -25,7 +25,7 @@ whether hit points are meat or morale:
     character grows exhausted."*
 
 That is the whole system. **Stamina is the only track**, it is the same one described in
-[Taking turns](taking-actions.md), and it is a ceiling rather than a pool. There is nothing to
+[Combat](combat.md#stamina), and it is a ceiling rather than a pool. There is nothing to
 subtract, and no second number to keep.
 
 ## Going down
