@@ -112,7 +112,7 @@ complicated solid there is.
 
 ## Where it reaches the table
 
-The [arcane path](../rules/paths.md) maps a school of magic to each element, which means a
+The [arcane path](../rules/training.md#arcane) maps a school of magic to each element, which means a
 character who works in fire is rolling a tetrahedron because it is fire, not because a table said
 so. The [odds page](../rules/odds.md) has what each die does against each other die.
 

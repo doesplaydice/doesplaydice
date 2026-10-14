@@ -87,8 +87,8 @@ changes it. That is reference material rather than a rules system, and it is gen
 
 !!! decision "OPEN DECISION — does travel cost anything?"
 
-    [Getting better](training.md) proposes the smallest possible version: a hard day's travel
-    costs a point of Physical stamina, and a night without food does not give it back. No new
+    The smallest possible version: a hard day's travel costs a point of Body stamina, and a
+    night without food does not give it back. No new
     track, no supply units, no inventory.
 
     **Question for Jeff:** is that enough, or does exploration want a system of its own? And
