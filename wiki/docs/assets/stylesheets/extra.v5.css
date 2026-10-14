@@ -149,7 +149,7 @@ body{ transition:background-color .35s, color .35s; }
    and the tabs; the dice run the full width and fade out at both ends. */
 .dpd-masthead{
   --mh-d4:#c4553f; --mh-d8:#3f7aa3; --mh-d12:#5b8f62; --mh-d20:#f7ba00;
-  --mh-dice:#f7ba00; --mh-dice-op:.32;
+  --mh-dice:#f7ba00; --mh-dice-op:.45;   /* fainter goes olive on black */
   position:relative; overflow:hidden; background:var(--bg);
 }
 [data-md-color-scheme="default"] .dpd-masthead{ --mh-d20:#e0a800; --mh-dice:#c48f00; --mh-dice-op:.38; }
