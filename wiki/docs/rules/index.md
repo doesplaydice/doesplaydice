@@ -1,10 +1,4 @@
-# Basic Rules <span class="dpd-status ready">Complete</span>
-
-<div class="dpd-protobar" markdown>
-**This page is Jeff's finished text, reproduced verbatim from doesplaydice.com.**
-It is the one part of the project that is genuinely done and shippable today. Nothing
-below has been rewritten, reworded, or "improved" — only formatted.
-</div>
+# Basic Rules
 
 ## Introduction
 
@@ -58,16 +52,16 @@ everyone will work within the guidelines provided by your Narrator.
 or job, habits, quirks ... anything that makes you you.
 
 **7.** Last, assign one die of the three chosen by the Narrator to each of your Skills:
-Physical, Mental, and Social. We'll see how they're used below. For now, just know that higher
+Body, Mind, and Soul. Checks on them are called Physical, Mental, and Spiritual. We'll see how they're used below. For now, just know that higher
 numbers are better.
 
 </div>
 
-| Skill | When it's used |
-| --- | --- |
-| **Physical** | Strength, senses, fine motor skills, stamina |
-| **Mental** | Knowledge, memory, reasoning, aptitude |
-| **Social** | Intuition, influence, charisma, empathy |
+| Skill | Check | When it's used |
+| --- | --- | --- |
+| **Body** | Physical | Strength, senses, fine motor skills, stamina |
+| **Mind** | Mental | Knowledge, memory, reasoning, aptitude |
+| **Soul** | Spiritual | Connection: intuition, empathy, persuasion, deception, nature |
 
 ## Roll Some Dice
 
@@ -86,9 +80,9 @@ roll for it!
 try force open a locked door, a Physical challenge. Or you can search the area around the door
 for a hidden key or a secret latch. Searching is a Mental challenge. Alternatively, if there's
 a particularly smooth talker in the Party, they might have learned about a secret knock from
-one of the guards. Learning that valuable tidbit would most likely involve a Social Challenge.
+one of the guards. Learning that valuable tidbit would most likely involve a Spiritual Challenge.
 Whichever you choose, when the Narrator calls for a Skill Check, you'll roll the die that you
-assigned to the applicable Skill: Physical, Mental, or Social.
+assigned to the applicable Skill: Body, Mind, or Soul.
 
 **10.** The Narrator rolls against you. They decide how difficult the challenge you're
 attempting is and roll the corresponding die according to the table below. Let's assume you're
@@ -148,24 +142,3 @@ suffer some minor or temporary setback as a result.
 The Narrator may set up a winning condition: completing the heist, solving the murder, or
 slaying the dragon. But keep in mind that the real goal is having fun and telling a story
 together! #winning
-
----
-
-!!! success "SETTLED — this page is frozen canon"
-
-    Confirmed by Jeff on **24 August 2026**: frozen core, with a path to stewarded
-    governance later.
-
-    These rules do not change by edit. Changing them takes a deliberate version event with
-    a date, so that anyone who builds on this version knows the ground will not move under
-    them. That is what makes "backwards compatible forever" a promise rather than a hope,
-    and it is what makes the game safe to fork.
-
-    `.github/CODEOWNERS` names who owns this page &mdash; either of Jeff's accounts must
-    approve a change to it. That is currently a **declaration, not an enforcement**: it only
-    takes effect once branch protection on `main` requires code-owner review, and that has
-    not been switched on yet. Until it is, anyone with push access can change this page
-    directly.
-
-    Everything else on this site is designed to expand. This page is the part that holds
-    still.

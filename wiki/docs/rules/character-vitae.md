@@ -1,11 +1,4 @@
-# Character Vitae <span class="dpd-status stub">Draft</span>
-
-<div class="dpd-protobar" markdown>
-**Drafted from the basic rules only.** Every field below comes directly from steps 5–7 of the
-<a href="../">Basic Rules</a> — nothing has been invented. The name "Character Vitae" is Jeff's
-own, from <code>Rules/Rules/Character resume.md</code>: *"actually call it the 'character resume.'
-UPDATE: character vitae, or CV."*
-</div>
+# Character Vitae
 
 Your character is a résumé. Not a stat block — a short account of who someone is, what they've
 done, and what they're good at. Fill in what matters and leave the rest blank.
@@ -39,9 +32,9 @@ experience.
 
 | Skill | What it covers | Your die |
 | --- | --- | :---: |
-| **Physical** | Strength, senses, fine motor skills, stamina | ▢ |
-| **Mental** | Knowledge, memory, reasoning, aptitude | ▢ |
-| **Social** | Intuition, influence, charisma, empathy | ▢ |
+| **Body** (Physical) | Strength, senses, fine motor skills, stamina | ▢ |
+| **Mind** (Mental) | Knowledge, memory, reasoning, aptitude | ▢ |
+| **Soul** (Spiritual) | Connection: intuition, empathy, persuasion, deception, nature | ▢ |
 
 <span class="dpd-field-label">Notes — what happened, what you're carrying, what you owe</span>
 <div class="dpd-field"></div>
@@ -61,12 +54,56 @@ experience.
     You can also just print the page. For a blank one to fill in with a pencil, take the
     <a href="../../downloads/does-play-dice-character-sheet.pdf">printable character sheet</a>.
 
-!!! decision "OPEN DECISION — how far does the sheet go?"
+---
 
-    This draft covers exactly what the one-page rules require, and no more. Jeff's
-    `Character resume.md` runs to 30,000 characters and describes a much richer document —
-    point-buy, training, backgrounds-as-organizations.
+## Your three core stats
 
-    **Questions for Jeff:** does v1 ship this minimal sheet, or the full CV? Should there be
-    two — a beginner sheet and an expanded one? And is a fillable PDF part of v1, or a
-    nice-to-have for later?
+Every character has three core stats: **Body**, **Mind** and **Soul**. A roll on one of them is
+a **Physical**, **Mental** or **Spiritual** check. Your Narrator chooses three of the five dice
+for the game, and you give one to each stat. A bigger die means more experience, and higher
+rolls are better.
+
+Which stat you roll depends on **how you go about something**, not on what you're trying to
+do. Faced with a locked door, you can put your shoulder into it (Physical), hunt for a hidden
+key or a secret latch (Mental), or remember the guard who mentioned a secret knock (Spiritual).
+Same door, three ways through it. If you can describe it, the Narrator can tell you which stat
+it takes.
+
+### Body &mdash; Physical checks
+
+**Strength, senses, fine motor skills, stamina.** Body is everything your physical self can do:
+how strong, how quick, how sharp-eyed, how steady-handed, and how long you can keep going.
+
+Reach for Body when you're forcing, lifting, climbing, running, swimming, fighting, or dodging.
+It's also the steady hand that picks a lock or stitches a wound, and the sharp eye that catches
+a glint in the grass or the creak of a floorboard. And it's the stamina to march all night or
+hold your breath that little bit longer.
+
+### Mind &mdash; Mental checks
+
+**Knowledge, memory, reasoning, aptitude.** Mind is what you know, what you can remember, and
+how well you can work something out.
+
+Reach for Mind when you're recalling a name, a history or a rumour, reading a map or an old
+language, solving a puzzle, working out how a mechanism fits together, spotting the number that
+doesn't add up in a ledger, planning a route, or picking up something new in a hurry.
+
+### Soul &mdash; Spiritual checks
+
+**Connection: intuition, empathy, persuasion, deception, nature.** Soul is how you connect with
+everything outside yourself: people, animals, the land and the weather.
+
+Reach for Soul when you're talking someone round, telling a convincing lie, reading the mood of
+a room, sensing that something is wrong before you can say why, or comforting someone who is
+frightened. It's also calming a spooked horse, finding your way by the feel of the land,
+coaxing something to grow, or reading the sky for the storm that's coming. Some characters draw
+on it as a kind of divine intuition.
+
+Soul or Spirit: say whichever you like at the table. They mean the same thing.
+
+### When a stat runs low
+
+Each stat has its own stamina, and it runs out in its own way: a Body pushed too far drops, a
+Mind overwhelmed can't think, and a Soul worn down can't face the room. See
+[Combat, harm and recovery](combat.md) for how that works, and
+[Skills and training](training.md) for how a stat gets better.

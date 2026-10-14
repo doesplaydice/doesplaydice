@@ -57,12 +57,6 @@ collections:
         fields:
           - { name: body, label: "Sheet", widget: markdown }
 
-      - name: expanded
-        label: "Expanded Rules"
-        file: "wiki/docs/rules/expanded.md"
-        fields:
-          - { name: body, label: "Rules text", widget: markdown }
-
   # -- Everything else on the site ----------------------------------------
   - name: pages
     label: "Site pages"
@@ -70,11 +64,6 @@ collections:
       - name: home
         label: "Home"
         file: "wiki/docs/index.md"
-        fields:
-          - { name: body, label: "Page", widget: markdown }
-      - name: world
-        label: "The World"
-        file: "wiki/docs/world/index.md"
         fields:
           - { name: body, label: "Page", widget: markdown }
       - name: narrators

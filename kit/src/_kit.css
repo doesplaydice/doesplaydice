@@ -4,6 +4,12 @@
    Designed for BLACK AND WHITE. Every piece must survive a home printer or a
    copy shop. Colour is used only where losing it costs nothing: the one accent
    drops to mid-grey and no information goes with it.
+
+   Same type and palette as the website (Oct 2026): Archivo Black headlines,
+   Familjen Grotesk text, Literata for the italic asides, JetBrains Mono for
+   labels, all self-hosted from wiki/docs/assets/fonts. Gold accent; each die
+   in its masthead colour, d6 in ink. Every colour reads as a mid-to-dark grey
+   in black and white, so the pieces still survive a photocopier.
    =========================================================================== */
 
 @page { size: letter; margin: 0; }
@@ -11,7 +17,8 @@
 :root{
   --ink:#000;
   --paper:#fff;
-  --accent:#8A5A00;      /* reads ~45% grey in B&W */
+  --accent:#8C6900;      /* the site's d20 gold, text weight; ~45% grey in B&W */
+  --d4:#A14431; --d8:#346587; --d12:#436A48; --d20:var(--accent);
   --soft:#666;
   --hair:#bbb;
   --fold:#c8c8c8;
@@ -21,7 +28,7 @@
 
 html,body{ margin:0; padding:0; background:#e8e8e6; }
 body{
-  font-family:"IBM Plex Sans",system-ui,-apple-system,"Helvetica Neue",sans-serif;
+  font-family:"Familjen Grotesk",system-ui,-apple-system,"Helvetica Neue",sans-serif;
   color:var(--ink);
   -webkit-print-color-adjust:exact;
   print-color-adjust:exact;
@@ -51,27 +58,31 @@ body{
 .screen-only b{ color:#000; }
 
 /* -- Type ------------------------------------------------------------------ */
-.display{ font-family:Spectral,Georgia,"Times New Roman",serif; }
-.mono{ font-family:"IBM Plex Mono",ui-monospace,Menlo,monospace; }
+.display{ font-family:"Archivo Black",Impact,sans-serif; font-weight:400; text-transform:uppercase; }
+.mono{ font-family:"JetBrains Mono",ui-monospace,Menlo,monospace; }
 
 .label{
-  font-family:"IBM Plex Mono",monospace;
-  font-size:7pt; letter-spacing:.14em; text-transform:uppercase; color:var(--soft);
+  font-family:"JetBrains Mono",monospace;
+  font-size:7pt; letter-spacing:.14em; text-transform:uppercase; color:var(--accent);
 }
 
 /* -- Dice chip ------------------------------------------------------------- */
 .die{
   display:inline-flex; align-items:center; justify-content:center;
-  font-family:"IBM Plex Mono",monospace; font-weight:600;
+  font-family:"JetBrains Mono",monospace; font-weight:600;
   border:1.5pt solid var(--ink); border-radius:3pt;
   padding:.06in .13in; line-height:1;
 }
+.die.d4{ color:var(--d4); border-color:var(--d4); }
+.die.d8{ color:var(--d8); border-color:var(--d8); }
+.die.d12{ color:var(--d12); border-color:var(--d12); }
+.die.d20{ color:var(--d20); border-color:var(--d20); }
 .die.lg{ font-size:15pt; padding:.09in .17in; border-width:2pt; }
 
 /* -- Rules tables ---------------------------------------------------------- */
 .ktable{ width:100%; border-collapse:collapse; }
 .ktable th{
-  font-family:"IBM Plex Mono",monospace; font-size:7pt; font-weight:500;
+  font-family:"JetBrains Mono",monospace; font-size:7pt; font-weight:500;
   letter-spacing:.12em; text-transform:uppercase; color:var(--soft);
   text-align:left; padding:0 0 .04in; border-bottom:1pt solid var(--ink);
 }
@@ -86,7 +97,7 @@ body{
 .foldnote{
   position:absolute; right:.22in; font-size:6.5pt; letter-spacing:.1em;
   text-transform:uppercase; color:var(--fold);
-  font-family:"IBM Plex Mono",monospace; background:var(--paper); padding:0 .06in;
+  font-family:"JetBrains Mono",monospace; background:var(--paper); padding:0 .06in;
 }
 .cutgrid{ position:absolute; inset:0; pointer-events:none; }
 .cutgrid .v{ position:absolute; top:0; bottom:0; border-left:.5pt dashed var(--fold); }

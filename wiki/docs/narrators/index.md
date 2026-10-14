@@ -8,5 +8,11 @@ None of it is published yet. Until it is, everything you need to run a table is 
 [the rules](../rules/index.md), and [the screen](screen.md) puts the parts you reach for
 mid-game on one page.
 
+## Any world you like
+
+Does Play Dice is setting-agnostic: the rules don't assume a genre. You can run a heist, a
+dinner-party murder, a dungeon, a haunted colony ship. But a game ships better with one setting
+in the box, so a new Narrator has somewhere to start.
+
 Written something that would help other Narrators? [Community modules](../community/index.md)
 are open to anyone.

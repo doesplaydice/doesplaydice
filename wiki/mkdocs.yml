@@ -61,7 +61,7 @@ theme:
 
 extra_css:
   - assets/stylesheets/fonts.css
-  - assets/stylesheets/extra.v4.css
+  - assets/stylesheets/extra.v5.css
 extra_javascript:
   # The try-it roller on the rules page.
   - assets/js/dice.js
@@ -130,21 +130,13 @@ copyright: >
 nav:
   - Home: index.md
   - For Players:
-      - Basic Rules (complete): rules/index.md
-      - "At the table (draft)": rules/at-the-table.md
-      - The odds: rules/odds.md
-      - "Taking actions (draft)": rules/taking-actions.md
-      - "Combat (draft)": rules/combat.md
-      - "Harm and recovery (draft)": rules/harm.md
-      - "Getting better (draft)": rules/training.md
-      - "Paths (draft)": rules/paths.md
-      - "The three kinds of play (draft)": rules/pillars.md
-      - "Effects (draft)": rules/effects.md
       - Character Vitae: rules/character-vitae.md
-      - Expanded Rules: rules/expanded.md
-      - The World:
-          - About the setting: world/index.md
-          - "The five (draft)": world/cosmology.md
+      - Basic Rules: rules/index.md
+      - "Example of play": rules/at-the-table.md
+      - The odds: rules/odds.md
+      - Taking turns: rules/taking-actions.md
+      - "Combat, harm and recovery": rules/combat.md
+      - "Skills and training": rules/training.md
   - For Narrators:
       - Running a game: narrators/index.md
       - The screen: narrators/screen.md

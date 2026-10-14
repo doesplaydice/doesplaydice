@@ -3,105 +3,106 @@ hide:
   - toc
 ---
 
-# Getting better <span class="dpd-status stub">Draft proposal</span>
+# Skills and training
 
-<div class="dpd-protobar" markdown>
-**A proposal for Jeff to react to, not canon, and not his writing.** Built from
-`Using Resources.md`. **Confidence: high** &mdash; his notes state a clear position here, and
-it is an unusual one worth protecting.
-
-Nothing from `Rules/Examples/` was read.
-</div>
+Your three Skills &mdash; Body, Mind and Soul &mdash; say what you're like. Training says what
+you've learned, and it's how you get better.
 
 ## There are no levels
 
-!!! quote "From `Using Resources.md`"
+Nobody levels up. The Narrator decides how many **training points** each character starts with,
+and hands out more as the game goes on. Points are a reserve to spend on training &mdash; but you
+still have to find a chance to train, in the story. **You don't just wake up one day more
+powerful.**
 
-    *"The DM decides how many points characters start with. Throughout the game, the DM decides
-    how many additional points to give the players. **There is no leveling up.** Points are a
-    reserve to be spent on training, but the players still must look for opportunities to
-    receive training in the game. **They don't just wake up one day more powerful.**"*
-
-That last sentence is the design, and it is the most distinctive thing in the folder. In most
-games improvement is an accounting event that happens between sessions. Here it is **something
-that happens in the story**: you find a teacher, you earn access, you put in the work, and
-*then* you are better.
-
-Everything below is machinery for that one idea.
+In most games, getting better is bookkeeping between sessions. Here it's **something that
+happens in the story**: you find a teacher, you earn access, you put in the work, and *then*
+you're better.
 
 ## Training points
 
-You earn **training points** for what you did, not for what you killed. The Narrator hands them
-out &mdash; Jeff's note suggests roughly one a session, more at a moment that mattered.
+You earn training points for what you did, not for what you defeated. As a rough guide, the
+Narrator gives about one a session, and more for a moment that mattered.
 
-Points sit unspent until you find somewhere to spend them. **You cannot spend them alone in a
+Points sit unspent until you find somewhere to spend them. **You can't spend them alone in a
 field.** You need a person who knows the thing, a book that teaches it, a place that trains, or
 a situation that forces it.
 
-That constraint is the whole point. It turns "I want to get better at this" from a spreadsheet
-entry into a reason to go somewhere.
+That turns "I want to get better at this" into a reason to go somewhere.
 
 ## What points buy
 
-**A bigger die** &mdash; moving a Skill up the ladder, d4 to d6 to d8 to d12 to d20. Jeff
-weighed two costings and did not choose:
+**A bigger die.** Move a Skill up the ladder: d4 to d6 to d8 to d12 to d20. It costs the
+difference between the two dice &mdash; 2 points from d4 to d6, 8 points from d12 to d20.
 
-!!! decision "OPEN DECISION — what does a bigger die cost?"
+**A step back down.** Characters change: age, maturity, wisdom, injury, a new focus, a tragedy.
+If the story earns it, you may drop a Skill one step and get those points back.
 
-    *"First idea: new ability die costs training points equal to the die sides, i.e. 6 points
-    for a d6, 20 points for a d20. Second idea: the cost is equal to the difference in die, i.e.
-    2 points to go from a d4 to a d6, 8 points to go from a d12 to a d20."*
+**A floor.** Training doesn't raise your best roll; **it stops you falling all the way down.**
+With 5 points of training on a d20, your highest roll is still 20, but your lowest is 5. A
+trained d20 and an untrained d20 have the same best day. Only one of them has bad ones.
 
-    **This draft takes the second**, because the first makes the last step cost twenty sessions
-    and nobody will ever see a d20. The second still makes the top of the ladder expensive
-    &mdash; d12 to d20 is eight points, most of a season &mdash; without putting it out of
-    reach.
-
-    He also floats trading a die *down* for points back, *"representing changes in your
-    character over time whether through old age, maturity, wisdom, deterioration, changed
-    focus, or driven by a tragic event or injury."* That is a lovely idea and this draft keeps
-    it: **you may drop a Skill one step to recover the points**, if the story earns it.
-
-**A floor** &mdash; his other idea, and the more interesting one:
-
-!!! quote "From `Summary (April 2024).md`"
-
-    *"Bonuses are a floor. If you have 5 training points on a d20, for example, your max roll is
-    still 20, but your min roll is 5."*
-
-Training does not make your ceiling higher. **It stops you falling all the way down.** A trained
-d20 and an untrained d20 have the same best day; only one of them has bad ones.
-
-That pairs exactly with stamina from [Taking actions](taking-actions.md): **training is a floor,
-exhaustion is a ceiling, and they close on you from both ends.** A tired expert and a fresh
-amateur can end up rolling in the same narrow band, for opposite reasons. That is a genuinely
-elegant piece of design and it is entirely his.
+That pairs with [stamina](combat.md#stamina): **training is a floor, exhaustion is a ceiling,
+and they close in on you from both ends.** A tired expert and a fresh amateur can end up rolling
+in the same narrow band, for opposite reasons.
 
 ## What everyone can already do
 
-!!! quote "From `Classes and training paths.md`"
+Everyone can swing a sword. They may not be any good with it, and they may be as much danger to
+themselves and the people nearby as to the enemy, but they can swing it. The same goes for
+everything else, magic included.
 
-    *"Everyone can swing a sword. They may not be skilled with it, and they may be of equal
-    danger themselves, innocent bystanders, and enemies alike, but they can swing it. So why
-    can't everyone learn to cast spells? The commitment and sacrifice of learning something is
-    learning how to do it well."*
+**Nothing on your sheet is a permission slip.** Anyone can try anything. Training isn't access,
+it's reliability: the difference between having a go and being someone the party can depend on.
+An untrained attempt is never refused. It's just a roll with no floor under it.
 
-**Nothing on your sheet is a permission slip.** Anyone can try anything. Training is not
-access, it is reliability &mdash; the difference between having a go and being depended upon.
+---
 
-Which means an untrained attempt is never refused. It is just a roll with no floor under it.
+## Paths
 
-## Supplies, and why they are not here
+**A class is simply a training path.** You don't pick Warrior and become one. You spend your
+training on martial things, and people start calling you a warrior. The label describes what
+you've done, after you've done it.
 
-His notes contain a supplies-and-havens system &mdash; abstract units of food and firewood,
-safe places you can only recover at, exploration challenges rated like monsters.
+So there are no rules for multiclassing, because there's no class to multiply. There's only
+where your points went. Everything relevant to you, even a hybrid, is an option on your own
+path.
 
-**It is not proposed here, and that is deliberate.** Reading it closely, that passage is
-transcribed from another game's design writing rather than written by Jeff: it says *"one
-mechanic we're adding"* and refers to *"the core rulebook"* as something other than this one.
-It is research, not a draft.
+### What a path costs
 
-The underlying idea &mdash; that travel should cost something &mdash; is worth keeping. It
-needs an original design, and probably a smaller one: **stamina already does this job.** A day's
-hard travel costs a point. A night without food does not give it back. That is a supply system
-with nothing new to track.
+Breadth isn't free. **The deep end of any path needs most of your points to have gone there.**
+Nothing forbids you from dipping into something else; you just can't dip in and come out with
+its best tricks.
+
+A hybrid will never fight as well as a pure fighter. But a hybrid isn't a worse version of
+either specialist: there's always something they can do better than anyone else, the thing that
+sits between the two.
+
+### Martial
+
+Unarmed, then melee or ranged, then a specific family of weapons: swords, hammers, bows, thrown.
+
+### Arcane
+
+The five schools of magic are the five dice, which are the five Platonic solids, which are the
+five elements &mdash; and each carries a planet. The dice on the table are the cosmology of
+the world.
+
+| School | Die | Planet |
+| --- | --- | --- |
+| Fire | d4 | Mars |
+| Earth | d6 | Jupiter |
+| Air | d8 | Mercury |
+| Aether | d12 | Earth |
+| Water | d20 | Venus |
+
+### General
+
+Everything that's neither martial nor arcane: subterfuge, performing arts, medicine, survival,
+languages, engineering, riding, boating, swimming.
+
+### Naming what you do
+
+Your path names what you produce. A wizard casts spells. A cleric offers prayers. A bard gives
+performances. Orders, songs, stories: mechanically they're identical, and the name tells
+everyone at the table who your character is before you describe anything.

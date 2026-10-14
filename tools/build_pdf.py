@@ -44,8 +44,6 @@ BOOK_PAGES = [
     ("rules/index.html", "Basic Rules"),
     ("rules/odds/index.html", "The Odds"),
     ("rules/character-vitae/index.html", "Character Vitae"),
-    ("rules/expanded/index.html", "Expanded Rules"),
-    ("world/index.html", "The World"),
 ]
 
 # Classes stripped from every page before printing. These are scaffolding for
@@ -166,7 +164,8 @@ def render(chrome, html_path, pdf_path):
 ONE_PAGER_CSS = """
 @page { size: Letter; margin: 12mm 12mm 10mm; }
 :root{
-  --ink:#0A0A0A; --muted:#55534E; --line:#C9C5B9; --accent:#A11F16;
+  --ink:#0A0A0A; --muted:#55534E; --line:#C9C5B9; --accent:#8C6900;
+  --d4:#A14431; --d8:#346587; --d12:#436A48; --d20:var(--accent);
   --sans:"Familjen Grotesk",system-ui,sans-serif;
   --display:"Archivo Black",Impact,sans-serif;
   --mono:"JetBrains Mono",ui-monospace,monospace;
@@ -238,7 +237,8 @@ BOOK_CSS = """
   @bottom-center { content: counter(page); }
 }
 :root{
-  --ink:#0A0A0A; --muted:#55534E; --line:#C9C5B9; --accent:#A11F16;
+  --ink:#0A0A0A; --muted:#55534E; --line:#C9C5B9; --accent:#8C6900;
+  --d4:#A14431; --d8:#346587; --d12:#436A48; --d20:var(--accent);
   --sans:"Familjen Grotesk",system-ui,sans-serif;
   --serif:"Literata",Georgia,serif;
   --display:"Archivo Black",Impact,sans-serif;
@@ -301,6 +301,13 @@ blockquote{ margin:8pt 0; padding-left:10pt; border-left:2px solid var(--accent)
   color:var(--muted); font-style:italic; }
 hr{ border:0; border-top:1px solid var(--line); margin:12pt 0; }
 img{ max-width:100%; }
+
+/* The odds grid keeps the site's dice colours: d4, d6, d8, d12, d20 in order,
+   d6 in ink. */
+.dpd-odds-grid tbody tr:nth-child(1) th,.dpd-odds-grid thead th:nth-child(2){ color:var(--d4); }
+.dpd-odds-grid tbody tr:nth-child(3) th,.dpd-odds-grid thead th:nth-child(4){ color:var(--d8); }
+.dpd-odds-grid tbody tr:nth-child(4) th,.dpd-odds-grid thead th:nth-child(5){ color:var(--d12); }
+.dpd-odds-grid tbody tr:nth-child(5) th,.dpd-odds-grid thead th:nth-child(6){ color:var(--d20); }
 """
 
 
@@ -318,7 +325,8 @@ img{ max-width:100%; }
 SHEET_CSS = """
 @page { size: Letter; margin: 13mm 14mm 11mm; }
 :root{
-  --ink:#0A0A0A; --muted:#55534E; --line:#B8B4A8; --accent:#A11F16;
+  --ink:#0A0A0A; --muted:#55534E; --line:#B8B4A8; --accent:#8C6900;
+  --d4:#A14431; --d8:#346587; --d12:#436A48; --d20:var(--accent);
   --sans:"Familjen Grotesk",system-ui,sans-serif;
   --display:"Archivo Black",Impact,sans-serif;
   --mono:"JetBrains Mono",ui-monospace,monospace;
@@ -369,6 +377,12 @@ td .hint{ color:var(--muted); font-size:8.4pt; }
 }
 .ref table td{ padding:3.2pt 4pt 3.2pt 0; border-bottom:.4pt solid var(--line); }
 .ref .d{ font-family:var(--mono); font-weight:700; width:12mm; }
+
+/* The site's dice colours: each die in its masthead colour, d6 in ink. */
+.ref tr:nth-child(1) .d{ color:var(--d4); }
+.ref tr:nth-child(3) .d{ color:var(--d8); }
+.ref tr:nth-child(4) .d{ color:var(--d12); }
+.ref tr:nth-child(5) .d{ color:var(--d20); }
 .ref p{ margin:6pt 0 0; font-size:7.6pt; line-height:1.45; color:var(--muted); }
 .foot{
   margin-top:9pt; padding-top:5pt; border-top:.75pt solid var(--line);
@@ -441,9 +455,9 @@ def build_character_sheet(site, chrome, out_dir):
     <span class="lbl">Your three Skills <span>&mdash; write in the die your Narrator gave you</span></span>
     <table>
       <tr><th>Skill</th><th>What it covers</th><th style="text-align:center">Die</th></tr>
-      <tr><td><b>Physical</b></td><td class="hint">Strength, senses, fine motor skills, stamina</td><td class="die">d&nbsp;&nbsp;&nbsp;</td></tr>
-      <tr><td><b>Mental</b></td><td class="hint">Knowledge, memory, reasoning, aptitude</td><td class="die">d&nbsp;&nbsp;&nbsp;</td></tr>
-      <tr><td><b>Social</b></td><td class="hint">Intuition, influence, charisma, empathy</td><td class="die">d&nbsp;&nbsp;&nbsp;</td></tr>
+      <tr><td><b>Body</b><br>Physical</td><td class="hint">Strength, senses, fine motor skills, stamina</td><td class="die">d&nbsp;&nbsp;&nbsp;</td></tr>
+      <tr><td><b>Mind</b><br>Mental</td><td class="hint">Knowledge, memory, reasoning, aptitude</td><td class="die">d&nbsp;&nbsp;&nbsp;</td></tr>
+      <tr><td><b>Soul</b><br>Spiritual</td><td class="hint">Connection: intuition, empathy, persuasion, deception, nature</td><td class="die">d&nbsp;&nbsp;&nbsp;</td></tr>
     </table>
   </div>
   <div class="ref">

@@ -20,7 +20,7 @@ it gets asked for. Built for a phone propped behind a screen. Works with no sign
 </div>
 </section>
 
-<section class="dpd-screen-block" markdown>
+<section class="dpd-screen-block dpd-diff" markdown>
 <h2 class="dpd-screen-label">How hard is it?</h2>
 
 | Die | Difficulty |
@@ -53,9 +53,9 @@ When a call is genuinely unclear, these decide it. Jeff's four, shortened for th
 
 | Skill | Reach for it when |
 | --- | --- |
-| **Physical** | Strength, senses, fine motor skills, stamina |
-| **Mental** | Knowledge, memory, reasoning, aptitude |
-| **Social** | Intuition, influence, charisma, empathy |
+| **Body** (Physical) | Strength, senses, fine motor skills, stamina |
+| **Mind** (Mental) | Knowledge, memory, reasoning, aptitude |
+| **Soul** (Spiritual) | Connection: intuition, empathy, persuasion, deception, nature |
 
 If a player argues their approach fits a different Skill and the argument is good, it fits.
 That is the Canon of fun doing its job.

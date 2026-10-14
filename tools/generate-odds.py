@@ -12,6 +12,7 @@ the final format.
 
     python3 tools/generate-odds.py
 """
+from decimal import Decimal, ROUND_HALF_UP
 from fractions import Fraction
 
 DICE = [4, 6, 8, 12, 20]
@@ -35,16 +36,18 @@ def outcomes(skill, challenge):
     return w, t, 1 - w - t
 
 
-def fmt(value):
-    """Format a number the way pct() formats a fraction."""
-    return f"{value:.0f}" if abs(value - round(value)) < 0.05 else f"{value:.1f}"
-
-
 def pct(fraction):
-    value = float(fraction) * 100
+    """One decimal place, rounded half up from the exact fraction.
+
+    Rounding the exact value (not a float) means 31.25 becomes 31.3 every
+    time, so a pairing and its mirror (d6 vs d8, d8 vs d6) always show the
+    same two numbers swapped, and a matched pair shows win == lose.
+    """
+    value = Decimal(fraction.numerator * 100) / Decimal(fraction.denominator)
+    value = value.quantize(Decimal("0.1"), rounding=ROUND_HALF_UP)
     # No decimal on whole numbers: "25%" reads better than "25.0%" in a grid
-    # this dense, and every one of these is exact anyway.
-    return f"{value:.0f}" if abs(value - round(value)) < 0.05 else f"{value:.1f}"
+    # this dense.
+    return f"{value:.0f}" if value == value.to_integral_value() else f"{value}"
 
 
 def main():
@@ -60,13 +63,11 @@ def main():
         cells = []
         for challenge in DICE:
             w, t, l = outcomes(skill, challenge)
-            # Round win and tie, then DERIVE lose from them. Rounding all
-            # three independently made nine of the 25 cells display as 99.9 or
-            # 100.1 -- while the page's own key promised "every column adds to
-            # 100". The underlying fractions were always exact; only the
-            # display lied.
-            w_s, t_s = pct(w), pct(t)
-            l_s = fmt(100 - float(w_s) - float(t_s))
+            # Round each of the three honestly. Deriving lose from the other
+            # two forced every cell to total exactly 100, but it made matched
+            # pairs look lopsided (41.7 win, 41.6 lose) and mirror cells
+            # disagree. A cell may now total 99.9 or 100.1; the key says so.
+            w_s, t_s, l_s = pct(w), pct(t), pct(l)
             cells.append(
                 '<td><span class="odds-w">%s</span>'
                 '<span class="odds-t">%s</span>'
@@ -106,7 +107,8 @@ across the rows, the Narrator's Difficulty die across the columns.</p>
   <span class="odds-w">win</span>
   <span class="odds-t">tie</span>
   <span class="odds-l">lose</span>
-  &mdash; percentages, from the player's side. Every column adds to 100.
+  &mdash; percentages, from the player's side, rounded to one decimal place.
+  Each cell adds to 100 before rounding.
 </p>
 
 </div>
@@ -146,12 +148,11 @@ range it is a quarter of all play.
 
 ## Reading the grid
 
-- **Down a column** &mdash; what one more point of Skill buys you against a fixed
+- **Down a column** &mdash; what a bigger Skill die buys you against a fixed
   challenge. Against a d12, moving from d4 to d20 takes you from 12.5%% to 67.5%%.
 - **Across a row** &mdash; how fast a challenge outruns you. A d8 Skill is favoured
-  against Easy and Moderate, even against Challenging, and outmatched above that.
-- **The diagonal** &mdash; an even contest, which is where the tie rule does most of
-  its work.
+  against Easy and Moderate, level with Challenging, and outmatched above that.
+- **The diagonal** &mdash; an even contest, where win and lose are exactly level.
 
 !!! note "How these were produced"
 
@@ -160,10 +161,7 @@ range it is a quarter of all play.
     simulation. The generator is `tools/generate-odds.py`, and it asserts the
     1 &divide; larger-die rule for all 25 pairings every time it runs.
 ''' % (head, "\n".join(rows), "\n".join(
-        "| d%d vs d%d | %s%% | %s%% | %s%% |" % (
-            d, d, pct(outcomes(d, d)[0]), pct(outcomes(d, d)[1]),
-            fmt(100 - float(pct(outcomes(d, d)[0])) - float(pct(outcomes(d, d)[1]))),
-        )
+        "| d%d vs d%d | %s%% | %s%% | %s%% |" % ((d, d) + tuple(pct(x) for x in outcomes(d, d)))
         for d in DICE
     ))
 
