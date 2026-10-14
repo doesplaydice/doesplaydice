@@ -82,6 +82,6 @@ the same table and play the same game. That's the whole design.
 </div>
 <div markdown>
 Pencil, paper, friends, and a set of five dice: **4, 6, 8, 12, and 20 sides.** That's it.
-Nothing to buy, nothing to install, no account to create.
+Nothing else to buy, nothing to install, no account to create.
 </div>
 </div>
