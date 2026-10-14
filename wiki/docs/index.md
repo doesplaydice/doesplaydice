@@ -7,9 +7,7 @@ hide:
 <div class="dpd-hero" markdown>
 <div markdown>
 
-# Does<br>Play<br>Dice
-
-<span class="dpd-kicker">Five dice. Fifteen minutes. A night out.</span>
+# Five dice.<br>Fifteen minutes.<br>A night out.
 
 <p class="dpd-lede">A story-telling game that's free to download, quick to learn, and only
 limited by your imagination. It gives you the creative outlet of a role-playing game &mdash;

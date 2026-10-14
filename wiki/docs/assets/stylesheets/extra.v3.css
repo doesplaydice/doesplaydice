@@ -124,12 +124,80 @@ body{ transition:background-color .35s, color .35s; }
 .dpd-kicker--muted{ color:var(--muted); }
 
 /* ---------- Chrome ---------------------------------------------------------- */
-/* The masthead: The Set header band, dark version, on every page and in
-   every scheme. Its own ground is #1b1b1b, so the band reads as a band on the
-   near-black page; the colour is repeated here so a wide screen extends it
-   edge to edge instead of showing page colour either side of 1200px. */
-.dpd-masthead{ display:block; background:#1b1b1b; border-bottom:1px solid var(--line); }
-.dpd-masthead img{ display:block; width:100%; max-width:960px; height:auto; margin:0 auto; }
+/* ---------- Masthead ---------------------------------------------------------
+   The Set wordmark over its band of faint dice, inlined from
+   overrides/partials/masthead.html. No ground of its own: it sits on --bg, and
+   every colour below comes from the palette, so it belongs to whichever
+   scheme is active. The wordmark shares the grid's left edge with the header
+   and the tabs; the dice run the full width and fade out at both ends. */
+.dpd-masthead{
+  --mh-d4:#c4553f; --mh-d8:#3f7aa3; --mh-d12:#5b8f62; --mh-d20:#f7ba00;
+  --mh-dice:#f7ba00; --mh-dice-op:.32;
+  position:relative; overflow:hidden; background:var(--bg);
+}
+[data-md-color-scheme="default"] .dpd-masthead{ --mh-d20:#e0a800; --mh-dice:#c48f00; --mh-dice-op:.38; }
+[data-md-color-scheme="terminal"] .dpd-masthead{
+  --mh-d4:var(--muted); --mh-d8:var(--muted); --mh-d12:var(--muted); --mh-d20:var(--accent);
+  --mh-dice:var(--ink); --mh-dice-op:.22;
+}
+.dpd-masthead-bd{
+  position:absolute; inset:0; width:100%; height:100%;
+  fill:none; stroke:var(--mh-dice); stroke-width:2; stroke-linejoin:round;
+  opacity:var(--mh-dice-op);
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);
+          mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);
+}
+.dpd-masthead-inner{ position:relative; padding:20px .8rem 16px; }
+.dpd-masthead-mark{ display:inline-block; line-height:0; }
+/* The negative margin cancels the side-bearing inside the drawing, so the ink
+   of DOES and DICE starts on the same line as the tab labels and page text. */
+.dpd-masthead-mark svg{ display:block; height:112px; width:auto; margin-left:-11px; }
+.dpd-masthead .mh-ink{ fill:var(--ink); stroke:var(--ink); }
+.dpd-masthead .mh-d4{ fill:var(--mh-d4); stroke:var(--mh-d4); }
+.dpd-masthead .mh-d8{ fill:var(--mh-d8); stroke:var(--mh-d8); }
+.dpd-masthead .mh-d12{ fill:var(--mh-d12); stroke:var(--mh-d12); }
+.dpd-masthead .mh-d20{ fill:var(--mh-d20); stroke:var(--mh-d20); }
+.dpd-masthead .mh-cut{ stroke:var(--bg); }
+.dpd-masthead .mh-pip{ fill:var(--bg); }
+.dpd-masthead .mh-halo{ flood-color:var(--bg); }
+@media screen and (max-width:76.1875em){
+  .dpd-masthead-inner{ padding:14px 16px 10px; }
+  .dpd-masthead-mark svg{ height:72px; margin-left:-7px; }
+}
+
+/* Desktop: the header's controls (theme, search, repository) move up into the
+   masthead band, on the right, so the top of the page is one band and not a
+   band plus a mostly empty bar. The header stops being sticky here; the tabs
+   were never sticky, and the back-to-top button covers the long pages. On
+   smaller screens the header keeps its own sticky row, because it carries the
+   menu button. */
+@media screen and (min-width:76.25em){
+  /* Doubled class: the general .md-header rule further down must not win. */
+  .md-header.md-header{
+    position:absolute; top:0; left:0; right:0;
+    background:transparent; border-bottom:0; box-shadow:none;
+  }
+  .md-header__inner{ height:148px; align-items:center; }
+  .md-header__title{ visibility:hidden; }
+  .md-tabs{ border-top:1px solid var(--line); }
+  /* Material pins the sidebars below the header by setting their top to the
+     header's height (here, the whole masthead) and sizing them to what is left.
+     With the header no longer sticky that left a 148px gap when scrolled. */
+  .md-sidebar{ top:24px !important; }
+  .md-sidebar__scrollwrap{ height:auto !important; max-height:calc(100vh - 48px); }
+  /* Quieter dice behind the controls, so search and the repository line read
+     cleanly over them. */
+  .dpd-masthead-bd{
+    -webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 50%,rgba(0,0,0,.3) 62%,rgba(0,0,0,.3) 92%,transparent);
+            mask-image:linear-gradient(90deg,transparent,#000 10%,#000 50%,rgba(0,0,0,.3) 62%,rgba(0,0,0,.3) 92%,transparent);
+  }
+}
+
+/* The masthead already says the name, so the header row does not repeat it.
+   The topic slot stays: Material swaps the page title into it once the page's
+   own heading scrolls away, and that is still useful. */
+.md-header__button.md-logo{ display:none; }
+.md-header__title .md-header__topic:first-child{ visibility:hidden; }
 
 .md-header{
   background:var(--bg); color:var(--ink);
@@ -290,7 +358,8 @@ body{ transition:background-color .35s, color .35s; }
 
 /* ---------- Hero -------------------------------------------------------------- */
 .dpd-hero{ display:grid; grid-template-columns:1fr auto; gap:32px; align-items:start; margin:40px 0 0; }
-.md-typeset .dpd-hero h1{ font-size:clamp(84px,14vw,168px); line-height:.86; margin:0; }
+/* The masthead carries the name, so the hero leads with the pitch. */
+.md-typeset .dpd-hero h1{ font-size:clamp(40px,6.4vw,84px); line-height:.95; margin:0 0 28px; }
 .dpd-hero-right{ display:flex; flex-direction:column; align-items:center; gap:26px; }
 .dpd-lede{
   font-family:var(--dpd-serif); font-size:clamp(20px,2.4vw,26px); line-height:1.45;
@@ -617,8 +686,11 @@ body{ transition:background-color .35s, color .35s; }
 /* Give the wordmark its own column so it can never collide with the dice. */
 .dpd-hero > div:first-child{ min-width:0; }
 .md-typeset .dpd-hero h1{ overflow-wrap:normal; }
-/* Home page has no sidebars, so let the container breathe to the design width. */
-.md-main__inner.md-grid{ max-width:1120px; }
+/* One column width for the whole page. The main area was narrowed to 1120px
+   while the header, tabs and footer kept Material's 1220px, so the tabs, the
+   sidebar and the page text each started at a different left edge. Every grid
+   now shares the same width, and the masthead, tabs, sidebar and text line up. */
+.md-grid{ max-width:1120px; }
 
 /* --- fixes, round two --------------------------------------------------------- */
 
@@ -633,14 +705,14 @@ body{ transition:background-color .35s, color .35s; }
 /* Page titles must never break inside a word. "NARRATORS" at 112px cannot fit a
    588px content column, and Material's default overflow-wrap:break-word was
    chopping it. Content pages get a size that fits the longest real title
-   ("CONTRIBUTE"); the home hero keeps its full scale because it has no sidebars. */
+   ("CONTRIBUTE"); the home hero has its own size, set with .dpd-hero above. */
 .md-typeset h1{
   font-size:clamp(36px,5.6vw,72px);
   overflow-wrap:normal;
   word-break:normal;
   hyphens:none;
 }
-.md-typeset .dpd-hero h1{ font-size:clamp(84px,14vw,168px); }
+.md-typeset .dpd-hero h1{ font-size:clamp(40px,6.4vw,84px); }
 
 /* The status pill should sit on its own line rather than stretch the title. */
 .md-typeset h1 .dpd-status{ margin-left:0; margin-top:14px; display:inline-block; }
@@ -916,7 +988,7 @@ body{ transition:background-color .35s, color .35s; }
   font-weight:400;
 }
 [data-md-color-scheme="terminal"] .md-typeset .dpd-hero h1{
-  font-size:clamp(84px,14vw,168px); line-height:.86; letter-spacing:normal;
+  font-size:clamp(40px,6.4vw,84px); line-height:.95; letter-spacing:normal;
 }
 [data-md-color-scheme="terminal"] .md-header__title{ letter-spacing:.08em; }
 

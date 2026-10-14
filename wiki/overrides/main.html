@@ -92,13 +92,10 @@
   {# GATE END (head) #}
 {% endblock %}
 
-{# PERMANENT: the masthead. The Set wordmark on its dice backdrop, dark
-   version, as a band above the sticky header. It scrolls away; the header
-   (with the tabs) stays. #}
+{# PERMANENT: the masthead. The Set wordmark on its dice backdrop, as a band
+   above the sticky header. It scrolls away; the header (with the tabs) stays. #}
 {% block header %}
-  <a class="dpd-masthead" href="{{ nav.homepage.url | url }}" aria-label="Does Play Dice, home">
-    <img src="{{ 'assets/img/masthead-dark.svg' | url }}" alt="Does Play Dice" width="1200" height="200">
-  </a>
+  {% include "partials/masthead.html" %}
   {{ super() }}
 {% endblock %}
 
