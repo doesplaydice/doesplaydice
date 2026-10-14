@@ -1,4 +1,4 @@
-# At the table <span class="dpd-status stub">Draft</span>
+# Example of play <span class="dpd-status stub">Draft</span>
 
 <div class="dpd-protobar" markdown>
 **Written for the site, not from a transcript.** The people are invented; the rolls are not.
