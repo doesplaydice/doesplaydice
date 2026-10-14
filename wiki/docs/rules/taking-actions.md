@@ -36,7 +36,8 @@ Narrator will tell you when that's the case, or the description of an ability wi
 ## Trying again, and pushing your luck
 
 **If you fail a check and still have actions left, you can usually try again.** If that punch
-misses, you can throw a second, or even a third.
+misses, you can throw a second, or even a third, though each attack after your first rolls a
+smaller die (see [Attacking](combat.md#attacking)).
 
 Sometimes you can't simply try again. Think of the classic movie scene where the hero has to
 defuse the bomb: cut the wrong wire and it goes off. Or you throw your only grenade and miss:

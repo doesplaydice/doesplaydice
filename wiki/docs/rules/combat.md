@@ -43,15 +43,29 @@ Body and a d4 Soul is a fighter who can be talked out of the fight in four sente
 stamina instead of one. Beating a d4 by five is a hard hit; beating a d20 by five is just a
 hit.
 
+**Every attack after your first steps down.** Your first attack on your turn rolls your full
+die. Your second rolls one die smaller, and your third two smaller: a d12 fighter swings d12,
+then d8, then d6. Three swings are allowed, but there's usually something better to do with
+that third action.
+
+The dice go d20, d12, d8, d6, d4. A step down is the next one smaller, and nothing goes below
+a d4.
+
 ## Defending
 
-You may defend **as many times per round as you have actions left.** Defence comes out of the
-same three actions as everything else, which is what makes being outnumbered frightening.
+**Defending is free.** It doesn't cost an action, and you always get to roll. An attack never
+just lands on someone who sees it coming: even an archer can miss.
 
-**An attack you don't defend against simply lands.** One stamina, straight off.
+**Every defence after your first in a round steps down.** Against the first attack on you each
+round, you roll your full die. Against the next, one die smaller, and so on down to a d4. When
+the next round starts, you're back to full.
 
-So three attackers against one defender is a real problem, and the answer isn't a special rule.
-It's the story: back into a doorway, put a table between you, or leave.
+Attacks and defences are counted separately. Swinging three times on your turn doesn't weaken
+your defence.
+
+So being outnumbered is a real problem: by the fourth attacker, a d12 fighter is defending on a
+d4. The answer isn't another rule. It's the story: back into a doorway, put a table between
+you, or leave.
 
 ## Leaving
 
