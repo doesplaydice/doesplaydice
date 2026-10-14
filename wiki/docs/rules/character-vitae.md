@@ -39,9 +39,9 @@ experience.
 
 | Skill | What it covers | Your die |
 | --- | --- | :---: |
-| **Physical** | Strength, senses, fine motor skills, stamina | ▢ |
-| **Mental** | Knowledge, memory, reasoning, aptitude | ▢ |
-| **Social** | Intuition, influence, charisma, empathy | ▢ |
+| **Body** (Physical) | Strength, senses, fine motor skills, stamina | ▢ |
+| **Mind** (Mental) | Knowledge, memory, reasoning, aptitude | ▢ |
+| **Soul** (Spiritual) | Will, faith, intuition, influence, charisma, empathy | ▢ |
 
 <span class="dpd-field-label">Notes — what happened, what you're carrying, what you owe</span>
 <div class="dpd-field"></div>

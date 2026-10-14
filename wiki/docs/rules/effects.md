@@ -72,7 +72,7 @@ disadvantage &mdash; would say something Jeff plainly does not mean.
 Where it belongs instead is character creation: part of who someone is, alongside background
 and connections. If it touches the dice at all, it does so the way armour does &mdash; already
 inside the Skill die, explained by the player. A character in a combat wheelchair who has
-trained for it has the Physical die their training earned.
+trained for it has the Body die their training earned.
 
 **Question for Jeff:** that is a reading of one sentence of intent, and it is his call. Did he
 want these in the rules, or in the world?

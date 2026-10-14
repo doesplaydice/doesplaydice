@@ -19,7 +19,7 @@ the same game.
 
 **Everyone rolls a die for order. Highest goes first.** Roll the Skill die that fits how you
 are entering the scene &mdash; Physical if you are already moving, Mental if you saw it
-coming, Social if you are talking your way in.
+coming, Spiritual if you are talking your way in.
 
 That is the whole of initiative, and it reuses the dice already in your hand.
 
@@ -67,7 +67,7 @@ underneath you. You do not have to say what you are doing instead until you do i
 **Stamina is a ceiling on what you can roll.** It is not hit points and there is nothing to
 subtract.
 
-You have a stamina track for each Skill: Physical, Mental and Social. It starts equal to the
+You have a stamina track for each Skill: Body, Mind and Soul. It starts equal to the
 number of sides on that Skill's die.
 
 When something costs you &mdash; a blow landed, an argument lost, a horror witnessed &mdash;
@@ -76,7 +76,7 @@ you take **one point of stamina in the Skill that suffered**. Nothing else happe
 A stamina penalty caps your roll on that Skill. **Roll higher than your ceiling and the result
 becomes your ceiling.**
 
-| Your Physical die | Stamina lost | Ceiling | You roll a 6, you get |
+| Your Body die | Stamina lost | Ceiling | You roll a 6, you get |
 | --- | --- | --- | --- |
 | d8 | 0 | 8 | 6 |
 | d8 | 2 | 6 | 6 |
@@ -84,4 +84,4 @@ becomes your ceiling.**
 | d8 | 7 | 1 | 1 |
 
 **At zero stamina in any Skill you are out.** Not dead &mdash; out. A fighter with a d20
-Physical and a d4 Social is a fighter who can be talked out of the fight in four sentences.
+Body and a d4 Soul is a fighter who can be talked out of the fight in four sentences.

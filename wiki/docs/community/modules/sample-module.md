@@ -36,7 +36,7 @@ There is no correct answer, and every Skill has a way in:
 | --- | --- | --- |
 | Shift the tree by main force | Physical | **d12** &mdash; high difficulty, alone |
 | Field-modify the cart for the sand alongside the road | Mental | **d8** &mdash; challenging |
-| Talk the whole party into hauling together | Social, then Physical | **d6** once six people pull |
+| Talk the whole party into hauling together | Spiritual, then Physical | **d6** once six people pull |
 
 That last row is the lesson, and it teaches itself: the hardest roll became the easiest one
 because someone thought to ask for help. New players work this out in about four minutes and

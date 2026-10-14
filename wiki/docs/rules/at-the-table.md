@@ -3,8 +3,8 @@
 The rules take ten minutes to read. This takes two, and it is probably the faster way in.
 
 Three people at a table. **Jess** is the Narrator. **Priya** plays Wren, a clockmaker's
-apprentice &mdash; Physical d8, Mental d12, Social d4. **Theo** plays Bram, who works the docks
-&mdash; Physical d12, Mental d6, Social d8.
+apprentice &mdash; Body d8, Mind d12, Soul d4. **Theo** plays Bram, who works the docks
+&mdash; Body d12, Mind d6, Soul d8.
 
 They want a ledger out of a print shop that closed three hours ago.
 
@@ -16,11 +16,11 @@ guard, exactly. He's eating chips out of paper and he has seen you.</p>
 <p class="dpd-say"><b>Theo</b> Bram walks straight up. We're not sneaking past a man who's
 already looking at us. I'll tell him we're collecting for the printers' benevolent fund.</p>
 
-<p class="dpd-say dpd-say--nar"><b>Jess</b> That's Social, and he's bored rather than stupid.
+<p class="dpd-say dpd-say--nar"><b>Jess</b> That's Spiritual, and he's bored rather than stupid.
 I'll make it a d12.</p>
 
 <div class="dpd-roll" data-outcome="narrator">
-  <div class="dpd-roll-line"><span class="dpd-roll-who">Bram &middot; Social</span><b>d8</b><span class="dpd-roll-num">3</span></div>
+  <div class="dpd-roll-line"><span class="dpd-roll-who">Bram &middot; Spiritual</span><b>d8</b><span class="dpd-roll-num">3</span></div>
   <div class="dpd-roll-line"><span class="dpd-roll-who">Jess &middot; Difficulty</span><b>d12</b><span class="dpd-roll-num">9</span></div>
   <p class="dpd-roll-out">Narrator wins.</p>
 </div>

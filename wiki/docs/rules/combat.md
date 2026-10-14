@@ -105,7 +105,7 @@ A weapon does not change the roll. It changes **what winning looks like.**
 | **Piercing** &mdash; spear, arrow, dagger | They lose one further stamina at the end of the round unless someone tends to it |
 | **Crushing** &mdash; hammer, club, staff | Armour does not help them &mdash; see below |
 
-Armour is not a number. It is already in your Physical die: a knight in good plate and a
+Armour is not a number. It is already in your Body die: a knight in good plate and a
 halfling who is impossible to catch can both be a d12, and each explains it their own way.
 **Crushing weapons ignore that explanation** &mdash; against a hammer, roll the die you would
 have had without the armour.

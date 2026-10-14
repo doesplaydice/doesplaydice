@@ -95,23 +95,9 @@ describe anything.
 ## Where this draft stops
 
 Jeff's file also contains starting dice per class &mdash; Warrior Body d8 / Mind d4 / Soul d6,
-and so on. **Those are not proposed here**, for a reason worth flagging:
+and so on. **Those are not proposed here** yet.
 
-!!! decision "OPEN DECISION — Body/Mind/Soul, or Physical/Mental/Social?"
-
-    Every class sketch in his notes uses **Body, Mind and Soul**. The frozen one page uses
-    **Physical, Mental and Social**. They are not the same three things, and this is the second
-    chapter where the difference has surfaced.
-
-    A *Soul* die is faith, will, and inner life. A *Social* die is other people. A hermit with
-    enormous Soul and no Social is a coherent character; under the one page they are the same
-    number.
-
-    **Question for Jeff:** are these three or four things? It is possible the honest answer is
-    four, and that the one page simply could not fit them. That would be a real finding, and it
-    would change this chapter, [Harm](harm.md), and the character sheet.
-
-    Until it is settled, no starting dice can be written down without guessing.
+Skills are Body, Mind and Soul (settled Oct 2026), so these can be written up next.
 
 Nor does this draft propose a full skill tree. His sketch is two levels deep in one branch and
 one level deep in the rest &mdash; enough to see the shape, not enough to infer the whole. That

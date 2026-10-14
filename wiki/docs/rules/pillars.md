@@ -26,10 +26,10 @@ overlap and it has caused confusion already:
 
 | | What it is |
 | --- | --- |
-| **Skills** &mdash; Physical, Mental, Social | Three numbers on your sheet. What your character is like |
+| **Skills** &mdash; Body, Mind, Soul | Three numbers on your sheet. What your character is like |
 | **Pillars** &mdash; fighting, talking, exploring | Three kinds of scene. What the table is doing right now |
 
-A fight can be won with a Social roll. A negotiation can turn on a Physical one. **The pillar
+A fight can be won with a Spiritual roll. A negotiation can turn on a Physical one. **The pillar
 does not pick the Skill** &mdash; the approach does, which is exactly what the one page already
 says.
 
@@ -56,13 +56,13 @@ system, and it deserves an answer before anything is written.
 
 !!! decision "OPEN DECISION — does talking need rules at all?"
 
-    The one page already handles it: describe what you are doing, roll Social against a
+    The one page already handles it: describe what you are doing, roll Spiritual against a
     Difficulty die, the Narrator says what happens. A tie means you got *something*.
 
     **The case for stopping there:** it works, it is already written, and the objection above
     is persuasive.
 
-    **The case for more:** Jeff's Skills give Social equal billing with Physical, and stamina
+    **The case for more:** Jeff's Skills give Soul equal billing with Physical, and stamina
     makes losing an argument mechanically as real as losing a fight. If a social defeat can put
     you out of a scene, some structure around how that happens seems fair to the player it
     happens to.

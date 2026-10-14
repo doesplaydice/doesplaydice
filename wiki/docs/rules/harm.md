@@ -59,7 +59,7 @@ by the table from the Skill that broke:
 | --- | --- |
 | **Physical** | Unconscious, winded, a leg that will not hold you |
 | **Mental** | Overwhelmed, concussed, unable to hold a thought |
-| **Social** | Humiliated, broken, unable to face the room |
+| **Spiritual** | Humiliated, broken, unable to face the room |
 
 You can be carried, tied up, questioned, argued with, or left. You cannot act.
 
@@ -81,9 +81,9 @@ everything:
 | --- | --- | --- |
 | **A moment's respite** | 1 point in one Skill | Catching your breath, a word from a friend |
 | **A night's rest** | All Physical and Mental | Requires food and shelter. His note: *"Food and drink are required to heal"* |
-| **Care from someone** | 1 point, any Skill | Medicine for Physical, counsel for Mental, company for Social |
+| **Care from someone** | 1 point, any Skill | Medicine for Physical, counsel for Mental, company for Spiritual |
 
-**Social stamina does not come back on its own overnight.** Someone has to give it to you.
+**Spiritual stamina does not come back on its own overnight.** Someone has to give it to you.
 That asymmetry is deliberate: a night alone does not fix having been humiliated in front of
 people who mattered.
 
