@@ -61,7 +61,7 @@ numbers are better.
 | --- | --- | --- |
 | **Body** | Physical | Strength, senses, fine motor skills, stamina |
 | **Mind** | Mental | Knowledge, memory, reasoning, aptitude |
-| **Soul** | Spiritual | Will, faith, intuition, influence, charisma, empathy |
+| **Soul** | Spiritual | Connection: intuition, empathy, persuasion, deception, nature |
 
 ## Roll Some Dice
 

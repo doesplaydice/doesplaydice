@@ -41,7 +41,7 @@ experience.
 | --- | --- | :---: |
 | **Body** (Physical) | Strength, senses, fine motor skills, stamina | ▢ |
 | **Mind** (Mental) | Knowledge, memory, reasoning, aptitude | ▢ |
-| **Soul** (Spiritual) | Will, faith, intuition, influence, charisma, empathy | ▢ |
+| **Soul** (Spiritual) | Connection: intuition, empathy, persuasion, deception, nature | ▢ |
 
 <span class="dpd-field-label">Notes — what happened, what you're carrying, what you owe</span>
 <div class="dpd-field"></div>

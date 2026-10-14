@@ -55,7 +55,7 @@ When a call is genuinely unclear, these decide it. Jeff's four, shortened for th
 | --- | --- |
 | **Body** (Physical) | Strength, senses, fine motor skills, stamina |
 | **Mind** (Mental) | Knowledge, memory, reasoning, aptitude |
-| **Soul** (Spiritual) | Will, faith, intuition, influence, charisma, empathy |
+| **Soul** (Spiritual) | Connection: intuition, empathy, persuasion, deception, nature |
 
 If a player argues their approach fits a different Skill and the argument is good, it fits.
 That is the Canon of fun doing its job.
