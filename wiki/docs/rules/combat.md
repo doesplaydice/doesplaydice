@@ -47,6 +47,10 @@ Body and a d4 Soul is a fighter who can be talked out of the fight in four sente
   are losing costs you something even on your own turn.
 - **A tie** &mdash; both of you get something. You land it *and* they do.
 
+**A hard hit.** Beat their roll by more than their die has sides, and it costs them **two**
+stamina instead of one. Beating a d4 by five is a hard hit; beating a d20 by five is just a
+hit.
+
 ## Defending
 
 You may defend **as many times per round as you have actions left.** Defence comes out of the
