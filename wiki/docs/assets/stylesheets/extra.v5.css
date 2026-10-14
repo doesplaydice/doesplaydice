@@ -12,6 +12,11 @@
    the masthead colours: same hues, brightness moved until small text clears
    5:1 on the page and on --card. The d6 is ink, as it is in the masthead.
 
+   --accent is for text, so it has to clear 4.5:1; on paper that pushes gold
+   towards brown. --accent-ui is the brighter gold for everything that is not
+   small text (borders, rails, fills, tints, the big ladder and roller
+   numerals), which only needs 3:1. On dark the two are the same colour.
+
    Dark is the default.
    =========================================================================== */
 
@@ -28,11 +33,13 @@
 [data-md-color-scheme="slate"]{        /* dark, default */
   --bg:#050505; --ink:#F4F2EC; --muted:#9A978E; --line:#2A2926;
   --accent:#F7BA00; --die:#B42318; --pip:#FFFFFF; --card:#0F0E0D;
+  --accent-ui:var(--accent); --on-accent:var(--bg);
   --d4:#CE7260; --d8:#5593BD; --d12:#619868; --d20:var(--accent);
 }
 [data-md-color-scheme="default"]{      /* light, warm paper */
   --bg:#F4F2EC; --ink:#0A0A0A; --muted:#66645E; --line:#D9D5C9;
-  --accent:#826200; --die:#B42318; --pip:#FFFFFF; --card:#FBFAF6;
+  --accent:#8C6900; --die:#B42318; --pip:#FFFFFF; --card:#FBFAF6;
+  --accent-ui:#B08400; --on-accent:var(--ink);
   --d4:#A14431; --d8:#346587; --d12:#436A48; --d20:var(--accent);
 }
 
@@ -122,7 +129,7 @@ body{ transition:background-color .35s, color .35s; }
   color:var(--accent); margin-right:10px;
 }
 .md-typeset a{ color:var(--ink); text-decoration:none; border-bottom:1px solid var(--line); }
-.md-typeset a:hover{ color:var(--accent); border-bottom-color:var(--accent); }
+.md-typeset a:hover{ color:var(--accent); border-bottom-color:var(--accent-ui); }
 .md-typeset code{
   font-family:var(--dpd-mono); font-size:.82em; background:var(--card);
   border:1px solid var(--line); border-radius:0; padding:.1em .35em; color:var(--ink);
@@ -321,7 +328,7 @@ body{ transition:background-color .35s, color .35s; }
   border-radius:0; border:1px solid var(--line); color:var(--ink);
   padding:14px 24px; transition:opacity .15s;
 }
-.md-typeset .md-button:hover{ background:transparent; color:var(--accent); border-color:var(--accent); }
+.md-typeset .md-button:hover{ background:transparent; color:var(--accent); border-color:var(--accent-ui); }
 .md-typeset .md-button--primary{
   background:var(--ink); color:var(--bg); border-color:var(--ink); padding:15px 24px;
 }
@@ -332,8 +339,8 @@ body{ transition:background-color .35s, color .35s; }
 .dpd-ladder > div{ border:1px solid var(--line); padding:22px 20px; display:flex; flex-direction:column; gap:10px; }
 .dpd-ladder b{ font-family:var(--dpd-display); font-weight:400; font-size:40px; line-height:1; letter-spacing:-.03em; color:var(--ink); }
 .dpd-ladder span{ font-family:var(--dpd-sans); font-size:14px; color:var(--muted); }
-.dpd-ladder > div.is-accent{ border-color:var(--accent); }
-.dpd-ladder > div.is-accent b{ color:var(--accent); }
+.dpd-ladder > div.is-accent{ border-color:var(--accent-ui); }
+.dpd-ladder > div.is-accent b{ color:var(--accent-ui); }
 
 /* ---------- Dice colours -------------------------------------------------------
    Each die in its masthead colour wherever one is named. All of these lists run
@@ -351,7 +358,6 @@ body{ transition:background-color .35s, color .35s; }
 .md-typeset .dpd-odds-grid tbody tr:nth-child(4) th,
 .md-typeset .dpd-odds-grid thead th:nth-child(5),
 .md-typeset .dpd-diff tbody tr:nth-child(4) td:first-child strong{ color:var(--d12); }
-.dpd-ladder > div:nth-child(5) b,
 .md-typeset .dpd-odds-grid tbody tr:nth-child(5) th,
 .md-typeset .dpd-odds-grid thead th:nth-child(6),
 .md-typeset .dpd-diff tbody tr:nth-child(5) td:first-child strong{ color:var(--d20); }
@@ -416,14 +422,14 @@ body{ transition:background-color .35s, color .35s; }
 .md-typeset summary::before{ display:none; }
 .md-typeset .admonition > p,
 .md-typeset details > p{ font-family:var(--dpd-serif); font-size:16px; }
-.md-typeset .admonition.quote,.md-typeset .admonition.note{ border-left-color:var(--accent); }
+.md-typeset .admonition.quote,.md-typeset .admonition.note{ border-left-color:var(--accent-ui); }
 .md-typeset .admonition.warning,.md-typeset .admonition.danger,
-.md-typeset .admonition.decision{ border-left-color:var(--accent); }
+.md-typeset .admonition.decision{ border-left-color:var(--accent-ui); }
 .md-typeset .admonition.decision .admonition-title{ color:var(--accent); }
 
 /* ---------- Preserved utility classes ----------------------------------------- */
 .dpd-protobar{
-  border:0; border-left:2px solid var(--accent); background:transparent;
+  border:0; border-left:2px solid var(--accent-ui); background:transparent;
   padding:2px 0 2px 20px; margin-bottom:32px;
   font-family:var(--dpd-sans); font-size:14px; line-height:1.55; color:var(--muted);
 }
@@ -506,7 +512,7 @@ body{ transition:background-color .35s, color .35s; }
 /* Kepler's nesting reads as one line of objects, so let it. */
 .md-typeset .dpd-kepler{
   font-family:var(--dpd-mono); font-size:13px; line-height:2.1;
-  border-left:2px solid var(--accent); padding:4px 0 4px 16px;
+  border-left:2px solid var(--accent-ui); padding:4px 0 4px 16px;
   margin:22px 0 26px; color:var(--muted);
 }
 .md-typeset .dpd-kepler strong{ color:var(--ink); font-weight:500; }
@@ -566,10 +572,10 @@ body{ transition:background-color .35s, color .35s; }
   border-top:1px solid var(--line); color:var(--muted);
 }
 /* The tie is the one the page is about, so it is the only one wearing colour. */
-.dpd-roll[data-outcome="tie"]{ border-color:var(--accent); }
+.dpd-roll[data-outcome="tie"]{ border-color:var(--accent-ui); }
 .dpd-roll[data-outcome="tie"] .dpd-roll-num{ color:var(--accent); }
 .md-typeset .dpd-roll[data-outcome="tie"] .dpd-roll-out{
-  color:var(--accent); border-top-color:var(--accent);
+  color:var(--accent); border-top-color:var(--accent-ui);
 }
 
 @media screen and (max-width:600px){
@@ -581,7 +587,7 @@ body{ transition:background-color .35s, color .35s; }
 /* ---------- Print --------------------------------------------------------------- */
 @media print{
   .dpd-masthead,.md-header,.md-tabs,.md-sidebar,.md-footer,.dpd-protobar,.md-content__button{ display:none !important; }
-  [data-md-color-scheme]{ --bg:#fff; --ink:#000; --muted:#444; --line:#bbb; --accent:#6B5000;
+  [data-md-color-scheme]{ --bg:#fff; --ink:#000; --muted:#444; --line:#bbb; --accent:#6B5000; --accent-ui:var(--accent);
     --d4:#8E3A2A; --d8:#2B5573; --d12:#38593C; }
   .md-typeset p{ font-size:12pt; }
   .md-main__inner{ margin:0; } .md-content{ max-width:100%; }
@@ -625,7 +631,7 @@ body{ transition:background-color .35s, color .35s; }
   background:transparent; color:var(--ink); margin-bottom:12px;
 }
 #dpd-gate input::placeholder{ color:var(--muted); }
-#dpd-gate input:focus{ outline:0; border-color:var(--accent); }
+#dpd-gate input:focus{ outline:0; border-color:var(--accent-ui); }
 #dpd-gate button{
   font-family:var(--dpd-sans); font-size:15px; font-weight:600;
   padding:15px 24px; border:1px solid var(--ink); border-radius:0; cursor:pointer;
@@ -744,7 +750,7 @@ body{ transition:background-color .35s, color .35s; }
   transition:border-color .15s, color .15s;
 }
 .dpd-roller-pick:hover{ border-color:var(--muted); color:var(--ink); }
-.dpd-roller-pick.is-on{ border-color:var(--die-c,var(--accent)); color:var(--die-c,var(--accent)); }
+.dpd-roller-pick.is-on{ border-color:var(--die-c,var(--accent-ui)); color:var(--die-c,var(--accent)); }
 
 /* The solids are injected as inline SVG by dice.js. Not a CSS mask -- that
    renders nothing at all in headless Chrome, so the icons would be missing
@@ -774,10 +780,10 @@ body{ transition:background-color .35s, color .35s; }
    which is the point of the tie rule. */
 .dpd-roller[data-result="you"] [data-side="you"] .dpd-roller-result,
 .dpd-roller[data-result="narrator"] [data-side="narrator"] .dpd-roller-result,
-.dpd-roller[data-result="tie"] .dpd-roller-result{ border-color:var(--accent); }
+.dpd-roller[data-result="tie"] .dpd-roller-result{ border-color:var(--accent-ui); }
 .dpd-roller[data-result="you"] [data-side="you"] .dpd-roller-num,
 .dpd-roller[data-result="narrator"] [data-side="narrator"] .dpd-roller-num,
-.dpd-roller[data-result="tie"] .dpd-roller-num{ color:var(--accent); }
+.dpd-roller[data-result="tie"] .dpd-roller-num{ color:var(--accent-ui); }
 
 .dpd-roller-go{
   margin-top:18px; background:var(--ink); color:var(--bg); border:1px solid var(--ink);
@@ -847,7 +853,7 @@ body{ transition:background-color .35s, color .35s; }
 .dpd-odds-grid tbody tr:nth-child(3) td:nth-child(4),
 .dpd-odds-grid tbody tr:nth-child(4) td:nth-child(5),
 .dpd-odds-grid tbody tr:nth-child(5) td:nth-child(6){
-  background:color-mix(in srgb, var(--accent) 8%, transparent);
+  background:color-mix(in srgb, var(--accent-ui) 8%, transparent);
 }
 .md-typeset .dpd-odds-key{
   font-family:var(--dpd-mono); font-size:11px; letter-spacing:.08em;
@@ -881,6 +887,7 @@ body{ transition:background-color .35s, color .35s; }
 [data-md-color-scheme="terminal"]{
   --bg:#0C0700; --ink:#F0A500; --muted:#9A6A00; --line:#3A2800;
   --accent:#FFC533; --die:#7A4A00; --pip:#0C0700; --card:#160D00;
+  --accent-ui:var(--accent); --on-accent:var(--bg);
   /* One phosphor: the dice lose their colours, and the d20 keeps the accent. */
   --d4:var(--ink); --d8:var(--ink); --d12:var(--ink); --d20:var(--accent);
   color-scheme:dark;
@@ -1029,7 +1036,7 @@ body[data-md-color-scheme="terminal"]::after{
   font-family:var(--dpd-mono); font-size:15px; color:var(--ink);
   cursor:pointer; transition:border-color .12s, color .12s;
 }
-.dpd-quickroll-btn:hover{ border-color:var(--die-c,var(--accent)); color:var(--die-c,var(--accent)); }
+.dpd-quickroll-btn:hover{ border-color:var(--die-c,var(--accent-ui)); color:var(--die-c,var(--accent)); }
 .dpd-quickroll-btn:active{ background:var(--card); }
 .dpd-quickroll-out{
   min-width:104px; min-height:96px; border:1px solid var(--line);
@@ -1047,7 +1054,7 @@ body[data-md-color-scheme="terminal"]::after{
 @media (prefers-reduced-motion: no-preference){
   .dpd-quickroll.is-hit .dpd-quickroll-out{ animation:dpd-hit .34s ease-out; }
   @keyframes dpd-hit{
-    0%{ border-color:var(--accent); transform:scale(1.03); }
+    0%{ border-color:var(--accent-ui); transform:scale(1.03); }
     100%{ border-color:var(--line); transform:scale(1); }
   }
 }
@@ -1104,8 +1111,8 @@ body[data-md-color-scheme="terminal"]::after{
 }
 .dpd-field.is-fillable:hover{ border-bottom-color:var(--muted); }
 .dpd-field.is-fillable:focus{
-  outline:none; border-bottom-color:var(--accent);
-  background:color-mix(in srgb, var(--accent) 5%, transparent);
+  outline:none; border-bottom-color:var(--accent-ui);
+  background:color-mix(in srgb, var(--accent-ui) 5%, transparent);
 }
 /* The die cell in the Skills table. Centred, mono, and wide enough for "d12". */
 /* The die cell. There are five dice and there will only ever be five, so this
@@ -1143,8 +1150,8 @@ body[data-md-color-scheme="terminal"]::after{
 }
 .dpd-die-select:hover{ border-bottom-color:var(--muted); }
 .dpd-die-select:focus{
-  outline:none; border-bottom-color:var(--accent);
-  background:color-mix(in srgb, var(--accent) 7%, transparent);
+  outline:none; border-bottom-color:var(--accent-ui);
+  background:color-mix(in srgb, var(--accent-ui) 7%, transparent);
 }
 .dpd-die-select.is-empty{ color:var(--line); }
 /* The dropdown itself is drawn by the browser, so it needs real colours. */
@@ -1166,9 +1173,9 @@ body[data-md-color-scheme="terminal"]::after{
   margin:0 0 0 6px; cursor:pointer;
   transition:color .12s, border-color .12s, background-color .12s;
 }
-.dpd-sheet-clear:hover{ color:var(--accent); border-color:var(--accent); }
+.dpd-sheet-clear:hover{ color:var(--accent); border-color:var(--accent-ui); }
 /* Downloading is the thing you came here to do; clearing is the way out. */
-.dpd-sheet-get{ background:var(--accent); border-color:var(--accent); color:var(--bg); }
+.dpd-sheet-get{ background:var(--accent-ui); border-color:var(--accent-ui); color:var(--on-accent); }
 .dpd-sheet-get:hover{ background:var(--ink); border-color:var(--ink); }
 .dpd-sheet-get[disabled]{ opacity:.6; cursor:default; }
 .dpd-sheet-error{ display:block; margin-top:8px; color:var(--accent); }
