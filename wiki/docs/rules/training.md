@@ -42,10 +42,6 @@ If the story earns it, you may drop a Skill one step and get those points back.
 With 5 points of training on a d20, your highest roll is still 20, but your lowest is 5. A
 trained d20 and an untrained d20 have the same best day. Only one of them has bad ones.
 
-That pairs with [stamina](combat.md#stamina): **training is a floor, exhaustion is a ceiling,
-and they close in on you from both ends.** A tired expert and a fresh amateur can end up rolling
-in the same narrow band, for opposite reasons.
-
 ## What everyone can already do
 
 Everyone can swing a sword. They may not be any good with it, and they may be as much danger to

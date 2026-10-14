@@ -16,8 +16,7 @@ hurt, what happens when you can't go on, and how you come back. For who goes whe
 
 ## Stamina
 
-**Stamina is a ceiling on what you can roll.** There are no hit points, and there is nothing to
-subtract.
+**Stamina is how much you can take before you're out.** There are no hit points.
 
 You have a stamina track for each Skill: Body, Mind and Soul. It starts equal to the
 number of sides on that Skill's die.
@@ -25,15 +24,8 @@ number of sides on that Skill's die.
 When something costs you &mdash; a blow landed, an argument lost, a horror witnessed &mdash;
 you take **one point of stamina in the Skill that suffered**. Nothing else happens.
 
-A stamina penalty caps your roll on that Skill. **Roll higher than your ceiling and the result
-becomes your ceiling.**
-
-| Your Body die | Stamina lost | Ceiling | You roll a 6, you get |
-| --- | --- | --- | --- |
-| d8 | 0 | 8 | 6 |
-| d8 | 2 | 6 | 6 |
-| d8 | 4 | 4 | 4 |
-| d8 | 7 | 1 | 1 |
+**Losing stamina doesn't change your rolls.** It costs you in only two ways: at zero you're
+out, and getting it back takes time (see [Coming back](#coming-back)).
 
 **At zero stamina in any Skill you are out.** Not dead &mdash; out. A fighter with a d20
 Body and a d4 Soul is a fighter who can be talked out of the fight in four sentences.
@@ -136,9 +128,8 @@ When something ought to leave a mark, it leaves a mark &mdash; written on the ch
 not tracked as a penalty.
 
 It doesn't have to be punishing. If the moment doesn't call for a lasting disadvantage, make it
-something you can see: a wound, a scar, a burn. A scar is part of who someone is now. If the
-table wants it to carry weight, it lowers a ceiling by one. Most of the time it should simply be
-true about you.
+something you can see: a wound, a scar, a burn. A scar is part of who someone is now, and it
+should simply be true about you.
 
 ## What's not here
 
