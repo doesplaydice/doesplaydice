@@ -9,7 +9,7 @@
 
   TEMPORARY -- the pre-launch passphrase gate, marked GATE START / GATE END.
   Delete only those blocks at go-live, plus the #dpd-gate rules in
-  extra.v3.css. Do NOT delete this file or drop custom_dir; that would take
+  extra.v4.css. Do NOT delete this file or drop custom_dir; that would take
   offline support with it.
 
   On the gate: it is a speed bump, NOT security. Pages are still served in
@@ -107,7 +107,7 @@
   {{ super() }}
   {# GATE START (scripts) -- this entire block is the gate. Delete to
      GATE END (scripts) at launch, along with the #dpd-gate rules in
-     extra.v3.css and the duplicated hash in wiki/docs/admin/index.html. #}
+     extra.v4.css and the duplicated hash in wiki/docs/admin/index.html. #}
   <script>
     (function () {
       var HASH = '6db171ebb2a69f147ae0ecba6569706d485052b22c676817b9057dd22fa6b7b7';

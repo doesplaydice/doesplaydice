@@ -317,23 +317,6 @@ body{ transition:background-color .35s, color .35s; }
 }
 .md-typeset .md-button--primary:hover{ background:var(--ink); color:var(--bg); opacity:.85; border-color:var(--ink); }
 
-/* ---------- Dice (pure CSS) -------------------------------------------------- */
-.dpd-dicecluster{ position:relative; width:180px; height:190px; }
-.dpd-die{
-  display:grid; grid-template-columns:repeat(3,1fr); gap:7px; padding:20px;
-  width:112px; height:112px; box-sizing:border-box; border-radius:24px;
-  background:var(--die); box-shadow:0 28px 44px -20px rgba(0,0,0,.65);
-  transform:rotate(12deg); position:absolute; right:0; top:0;
-}
-.dpd-die span{ border-radius:50%; background:var(--pip); }
-.dpd-die span.is-blank{ background:transparent; }
-.dpd-die--small{
-  width:76px; height:76px; padding:14px; gap:5px; border-radius:16px;
-  background:var(--ink); transform:rotate(-17deg);
-  box-shadow:0 18px 30px -16px rgba(0,0,0,.6); right:104px; top:78px;
-}
-.dpd-die--small span{ background:var(--bg); }
-
 /* ---------- Difficulty ladder ------------------------------------------------ */
 .dpd-ladder{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:12px; margin:20px 0 0; }
 .dpd-ladder > div{ border:1px solid var(--line); padding:22px 20px; display:flex; flex-direction:column; gap:10px; }
@@ -342,25 +325,10 @@ body{ transition:background-color .35s, color .35s; }
 .dpd-ladder > div.is-accent{ border-color:var(--accent); }
 .dpd-ladder > div.is-accent b{ color:var(--accent); }
 
-/* ---------- The five Platonic solids ----------------------------------------- */
-.dpd-solids{ display:flex; flex-direction:column; align-items:center; gap:10px; color:var(--ink); }
-.dpd-solids svg{ width:74px; height:74px; display:block; opacity:.75; }
-.dpd-solids svg:nth-child(1){ opacity:.42; }
-.dpd-solids svg:nth-child(2){ opacity:.54; }
-.dpd-solids svg:nth-child(3){ opacity:.66; }
-.dpd-solids svg:nth-child(4){ opacity:.78; }
-.dpd-solids svg:nth-child(5){ opacity:.9; }
-.dpd-solids figcaption{
-  font-family:var(--dpd-mono); font-size:10px; letter-spacing:.15em;
-  text-transform:uppercase; color:var(--muted); margin-top:14px; text-align:center;
-  max-width:150px; line-height:1.6;
-}
-
 /* ---------- Hero -------------------------------------------------------------- */
-.dpd-hero{ display:grid; grid-template-columns:1fr auto; gap:32px; align-items:start; margin:40px 0 0; }
+.dpd-hero{ margin:40px 0 0; }
 /* The masthead carries the name, so the hero leads with the pitch. */
 .md-typeset .dpd-hero h1{ font-size:clamp(40px,6.4vw,84px); line-height:.95; margin:0 0 28px; }
-.dpd-hero-right{ display:flex; flex-direction:column; align-items:center; gap:26px; }
 .dpd-lede{
   font-family:var(--dpd-serif); font-size:clamp(20px,2.4vw,26px); line-height:1.45;
   max-width:640px; color:var(--ink); margin:18px 0 28px;
@@ -442,54 +410,8 @@ body{ transition:background-color .35s, color .35s; }
 .md-typeset .grid.cards > ul > li > hr{ display:none; }
 
 /* ---------- Responsive --------------------------------------------------------- */
-/* Two things happen below the full-width hero, and they are separate.
-
-   The dice belong beside the wordmark. That pairing IS the hero, and dropping
-   it under the text loses it, so it stays in a second column as far down as
-   there is room for it. `display:contents` dissolves .dpd-hero-right so its two
-   children become grid items of the hero itself -- the dice can sit beside the
-   title while the solids run full width underneath, with no markup change.
-
-   The solids stop being a vertical rail. A stack of five is a composition for
-   standing beside a tall wordmark; once it is under the text it sits centred
-   in a box 470px tall with only ~74px of drawing in it, which is the empty
-   area that showed up on iPad. Horizontal costs about a hundred pixels of
-   height instead, uses the width, and reads as "five" at a glance -- the whole
-   point of five solids beside a game about five dice. */
-@media screen and (min-width:601px) and (max-width:76.1875em){
-  .dpd-hero{ grid-template-columns:1fr auto; column-gap:32px; row-gap:40px; }
-  .dpd-hero-right{ display:contents; }
-  .dpd-dicecluster{ grid-column:2; grid-row:1; align-self:start; }
-  .md-typeset figure.dpd-solids{ grid-column:1 / -1; grid-row:2; }
-}
-
-/* Phone: nothing fits beside the title, so the hero stacks. */
 @media screen and (max-width:600px){
-  .dpd-hero{ grid-template-columns:1fr; }
-  .dpd-hero-right{
-    display:flex; flex-direction:column; align-items:flex-start; gap:26px;
-  }
-  /* No transform:scale() here any more. A scaled element keeps its original
-     layout box, so shrinking the group to .8 left a band of phantom space that
-     nothing could fill -- part of what made this area look wrong. */
   .dpd-split,.dpd-rule{ margin-top:64px; }
-}
-
-/* The horizontal rail itself, shared by both cases above.
-   `figure.` for specificity: the alignment fix further down this file is also
-   (0,2,0) and comes later, and a media query carries no weight of its own, so
-   an equally-specific rule in here loses the cascade and does nothing. */
-@media screen and (max-width:76.1875em){
-  .md-typeset figure.dpd-solids{
-    flex-direction:row; flex-wrap:wrap; align-items:center;
-    justify-content:flex-start; gap:clamp(10px,2.6vw,24px); width:auto;
-  }
-  .dpd-solids svg{ width:clamp(44px,7.5vw,74px); height:auto; }
-  /* The caption is a flex item too. Give it the whole line so it sits under
-     the row instead of becoming a sixth object in it. */
-  .md-typeset figure.dpd-solids figcaption{
-    flex-basis:100%; text-align:left; max-width:none; margin:6px 0 0;
-  }
 }
 
 /* ---------- The colophon in the footer --------------------------------------------
@@ -620,8 +542,7 @@ body{ transition:background-color .35s, color .35s; }
 
 /* ---------- Print --------------------------------------------------------------- */
 @media print{
-  .dpd-masthead,.md-header,.md-tabs,.md-sidebar,.md-footer,.dpd-protobar,.md-content__button,
-  .dpd-solids,.dpd-dicecluster{ display:none !important; }
+  .dpd-masthead,.md-header,.md-tabs,.md-sidebar,.md-footer,.dpd-protobar,.md-content__button{ display:none !important; }
   [data-md-color-scheme]{ --bg:#fff; --ink:#000; --muted:#444; --line:#bbb; --accent:#A11F16; }
   .md-typeset p{ font-size:12pt; }
   .md-main__inner{ margin:0; } .md-content{ max-width:100%; }
@@ -677,14 +598,6 @@ body{ transition:background-color .35s, color .35s; }
 }
 
 /* --- fixes found on first render -------------------------------------------- */
-/* Material styles figcaption; ours needs to win. */
-.md-typeset .dpd-solids figcaption{
-  font-family:var(--dpd-mono); font-size:10px; font-style:normal;
-  letter-spacing:.15em; text-transform:uppercase; color:var(--muted);
-  margin:16px 0 0; text-align:center; max-width:150px; line-height:1.7;
-}
-/* Give the wordmark its own column so it can never collide with the dice. */
-.dpd-hero > div:first-child{ min-width:0; }
 .md-typeset .dpd-hero h1{ overflow-wrap:normal; }
 /* One column width for the whole page. The main area was narrowed to 1120px
    while the header, tabs and footer kept Material's 1220px, so the tabs, the
@@ -693,14 +606,6 @@ body{ transition:background-color .35s, color .35s; }
 .md-grid{ max-width:1120px; }
 
 /* --- fixes, round two --------------------------------------------------------- */
-
-/* Material sets `.md-typeset figure{display:flow-root}` (0,1,1), which outranks
-   `.dpd-solids` (0,1,0) -- so align-items never applied and the solids sat
-   38px left of their own caption. Match the specificity. */
-.md-typeset .dpd-solids{
-  display:flex; flex-direction:column; align-items:center;
-  margin:0; width:100%;
-}
 
 /* Page titles must never break inside a word. "NARRATORS" at 112px cannot fit a
    588px content column, and Material's default overflow-wrap:break-word was
@@ -1052,10 +957,6 @@ body[data-md-color-scheme="terminal"]::after{
   }
 }
 
-/* The dice are physical objects, not phosphor; drop them to the same palette so
-   the scene stays monochrome rather than one red die shouting in an amber
-   room. */
-[data-md-color-scheme="terminal"] .dpd-die{ box-shadow:0 0 0 1px var(--line); }
 [data-md-color-scheme="terminal"] .md-header{ border-bottom:1px solid var(--line); }
 
 /* ---------- The Narrator's screen -----------------------------------------------
