@@ -1,10 +1,4 @@
-# Basic Rules <span class="dpd-status ready">Complete</span>
-
-<div class="dpd-protobar" markdown>
-**This page is Jeff's finished text, reproduced verbatim from doesplaydice.com.**
-It is the one part of the project that is genuinely done and shippable today. Nothing
-below has been rewritten, reworded, or "improved" — only formatted.
-</div>
+# Basic Rules
 
 ## Introduction
 
@@ -148,24 +142,3 @@ suffer some minor or temporary setback as a result.
 The Narrator may set up a winning condition: completing the heist, solving the murder, or
 slaying the dragon. But keep in mind that the real goal is having fun and telling a story
 together! #winning
-
----
-
-!!! success "SETTLED — this page is frozen canon"
-
-    Confirmed by Jeff on **24 August 2026**: frozen core, with a path to stewarded
-    governance later.
-
-    These rules do not change by edit. Changing them takes a deliberate version event with
-    a date, so that anyone who builds on this version knows the ground will not move under
-    them. That is what makes "backwards compatible forever" a promise rather than a hope,
-    and it is what makes the game safe to fork.
-
-    `.github/CODEOWNERS` names who owns this page &mdash; either of Jeff's accounts must
-    approve a change to it. That is currently a **declaration, not an enforcement**: it only
-    takes effect once branch protection on `main` requires code-owner review, and that has
-    not been switched on yet. Until it is, anyone with push access can change this page
-    directly.
-
-    Everything else on this site is designed to expand. This page is the part that holds
-    still.
