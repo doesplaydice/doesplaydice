@@ -1,29 +1,18 @@
 {% extends "base.html" %}
 
 {#
-  This template holds two unrelated things. Keep them straight when tearing
-  down for launch.
-
   PERMANENT -- the installable/offline head tags below (manifest, theme colour,
-  apple-touch-icon). These stay forever.
+  apple-touch-icon) and the masthead. Do NOT delete this file or drop
+  custom_dir; that would take offline support with it.
 
-  TEMPORARY -- the pre-launch passphrase gate, marked GATE START / GATE END.
-  Delete only those blocks at go-live, plus the #dpd-gate rules in
-  extra.v5.css. Do NOT delete this file or drop custom_dir; that would take
-  offline support with it.
-
-  On the gate: it is a speed bump, NOT security. Pages are still served in
-  full, and curl returns everything regardless. It exists only to stop someone
-  stumbling onto an unfinished site. The passphrase is not stored here, only
-  its SHA-256 hash -- which keeps the passphrase out of the repository, but the
-  hash is public and can be attacked offline, so it must not be reused
-  anywhere that matters.
+  The pre-launch passphrase gate that used to live here was removed at
+  go-live (Oct 2026).
 #}
 
 {% block extrahead %}
   {{ super() }}
 
-  {# PERMANENT: installable / offline. Not part of the gate. #}
+  {# PERMANENT: installable / offline. #}
   <link rel="manifest" href="{{ 'manifest.webmanifest' | url }}">
   <link rel="apple-touch-icon" href="{{ 'assets/img/icon-180.png' | url }}">
   {# Matches the dark palette, which is the default. Safari paints the status
@@ -59,7 +48,7 @@
   <meta name="twitter:description" content="{{ page_desc }}">
   <meta name="twitter:image" content="{{ og_image }}">
 
-  {# PERMANENT: palette migration. Not part of the gate -- do not delete. #}
+  {# PERMANENT: palette migration -- do not delete. #}
   <script>
     // One-time palette migration.
     //
@@ -78,18 +67,6 @@
       } catch (e) { /* private mode: nothing to migrate */ }
     })();
   </script>
-  {# GATE START (head) -- delete to GATE END (head) at launch #}
-  <style>html.dpd-locked body{visibility:hidden}</style>
-  <script>
-    // Runs in <head>, before the body paints, so there is no flash of content.
-    (function () {
-      try {
-        if (sessionStorage.getItem('dpd-gate') === 'ok') return;
-      } catch (e) { /* private mode: fall through and prompt */ }
-      document.documentElement.classList.add('dpd-locked');
-    })();
-  </script>
-  {# GATE END (head) #}
 {% endblock %}
 
 {# PERMANENT: the masthead. The Set wordmark on its dice backdrop, as a band
@@ -105,126 +82,4 @@
 
 {% block scripts %}
   {{ super() }}
-  {# GATE START (scripts) -- this entire block is the gate. Delete to
-     GATE END (scripts) at launch, along with the #dpd-gate rules in
-     extra.v5.css and the duplicated hash in wiki/docs/admin/index.html. #}
-  <script>
-    (function () {
-      var HASH = '6db171ebb2a69f147ae0ecba6569706d485052b22c676817b9057dd22fa6b7b7';
-      var root = document.documentElement;
-      if (!root.classList.contains('dpd-locked')) return;
-
-      // Minimal SHA-256, used only when crypto.subtle is unavailable (http contexts).
-      function dpdSha256(ascii){
-        function rr(n,x){return (x>>>n)|(x<<(32-n));}
-        var K=[],H=[],i,j,p=2,s;
-        for(i=0;i<64;){
-          for(j=2,s=1;j*j<=p;j++) if(p%j===0){s=0;break;}
-          if(s){
-            if(i<8) H[i]=Math.floor(Math.pow(p,0.5)*Math.pow(2,32))>>>0;
-            K[i]=Math.floor(Math.pow(p,1/3)*Math.pow(2,32))>>>0;
-            i++;
-          }
-          p++;
-        }
-        var utf=unescape(encodeURIComponent(ascii)), words=[], len=utf.length;
-        for(i=0;i<len;i++) words[i>>2]|=utf.charCodeAt(i)<<((3-i%4)*8);
-        words[len>>2]|=0x80<<((3-len%4)*8);
-        words[((len+8>>6)+1)*16-1]=len*8;
-        var w=[],a,b,c,d,e,f,g,h,t1,t2;
-        for(j=0;j<words.length;j+=16){
-          a=H[0];b=H[1];c=H[2];d=H[3];e=H[4];f=H[5];g=H[6];h=H[7];
-          for(i=0;i<64;i++){
-            if(i<16) w[i]=words[j+i]|0;
-            else{
-              var g0=w[i-15],g1=w[i-2];
-              w[i]=(w[i-16]+(rr(7,g0)^rr(18,g0)^(g0>>>3))+w[i-7]+(rr(17,g1)^rr(19,g1)^(g1>>>10)))|0;
-            }
-            t1=(h+(rr(6,e)^rr(11,e)^rr(25,e))+((e&f)^(~e&g))+K[i]+w[i])|0;
-            t2=((rr(2,a)^rr(13,a)^rr(22,a))+((a&b)^(a&c)^(b&c)))|0;
-            h=g;g=f;f=e;e=(d+t1)|0;d=c;c=b;b=a;a=(t1+t2)|0;
-          }
-          H[0]=(H[0]+a)|0;H[1]=(H[1]+b)|0;H[2]=(H[2]+c)|0;H[3]=(H[3]+d)|0;
-          H[4]=(H[4]+e)|0;H[5]=(H[5]+f)|0;H[6]=(H[6]+g)|0;H[7]=(H[7]+h)|0;
-        }
-        var out='';
-        for(i=0;i<8;i++) out+=('00000000'+(H[i]>>>0).toString(16)).slice(-8);
-        return out;
-      }
-
-      async function hashOf(s){
-        // crypto.subtle only exists in a secure context. Over plain http it is
-        // undefined, which would otherwise lock the site with no way in.
-        if (window.crypto && crypto.subtle) {
-          try {
-            var buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(s));
-            return Array.from(new Uint8Array(buf))
-              .map(function (b) { return b.toString(16).padStart(2, '0'); }).join('');
-          } catch (e) { /* fall through */ }
-        }
-        return dpdSha256(s);
-      }
-
-      var el = document.createElement('div');
-      el.id = 'dpd-gate';
-      el.innerHTML =
-        '<form>' +
-          '<p class="dpd-gate-kicker">Does Play Dice</p>' +
-          '<h1>Not open yet</h1>' +
-          '<p class="dpd-gate-sub">This site goes public in October. Until then it needs the passphrase Jeff or Andrei gave you.</p>' +
-          // No autofocus: on a phone it opens the keyboard the instant the page
-          // loads and scrolls the field into view, leaving the page offset
-          // before anyone has touched it. The explicit focus() below still runs
-          // after a wrong passphrase, where it is a response to what the person
-          // just did rather than an ambush.
-          '<input type="password" autocomplete="current-password" aria-label="Passphrase" placeholder="Passphrase">' +
-          '<button type="submit">Enter</button>' +
-          '<p class="dpd-gate-err" hidden>That is not it. Try again.</p>' +
-        '</form>';
-      // Share-link unlock. Jeff needs to give a table of playtesters access
-      // without any of them typing a passphrase on a phone, and without
-      // weakening it to something guessable. A link carrying the same secret
-      // costs nothing extra: ?k=<passphrase> is checked against the same hash,
-      // and the parameter is stripped from the address bar immediately so it
-      // does not linger in history or end up in a screenshot.
-      (async function () {
-        var m = /[?&]k=([^&]+)/.exec(location.search);
-        if (!m) return;
-        var ok = false;
-        try { ok = (await hashOf(decodeURIComponent(m[1]))) === HASH; } catch (x) { ok = false; }
-        // Strip it whether or not it matched, so a wrong key is not left on screen.
-        try {
-          var q = location.search.replace(/([?&])k=[^&]*/, '$1').replace(/[?&]$/, '');
-          history.replaceState(null, '', location.pathname + (q === '?' ? '' : q) + location.hash);
-        } catch (x) {}
-        if (!ok) return;
-        try { sessionStorage.setItem('dpd-gate', 'ok'); } catch (x) {}
-        root.classList.remove('dpd-locked');
-        el.remove();
-      })();
-
-      document.body.appendChild(el);
-      el.style.visibility = 'visible';
-
-      var form = el.querySelector('form');
-      var input = el.querySelector('input');
-      var err = el.querySelector('.dpd-gate-err');
-
-      form.addEventListener('submit', async function (e) {
-        e.preventDefault();
-        var ok = false;
-        try { ok = (await hashOf(input.value)) === HASH; } catch (x) { ok = false; }
-        if (ok) {
-          try { sessionStorage.setItem('dpd-gate', 'ok'); } catch (x) {}
-          root.classList.remove('dpd-locked');
-          el.remove();
-        } else {
-          err.hidden = false;
-          input.value = '';
-          input.focus();
-        }
-      });
-    })();
-  </script>
-{# GATE END (scripts) #}
 {% endblock %}

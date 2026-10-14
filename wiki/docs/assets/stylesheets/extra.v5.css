@@ -593,55 +593,6 @@ body{ transition:background-color .35s, color .35s; }
   .md-main__inner{ margin:0; } .md-content{ max-width:100%; }
 }
 
-/* ===========================================================================
-   TEMPORARY PRE-LAUNCH GATE -- delete at go-live along with wiki/overrides/,
-   the custom_dir line in mkdocs.yml, and the scripts in docs/admin/index.html.
-   =========================================================================== */
-#dpd-gate{
-  position:fixed; inset:0; z-index:9999; visibility:visible;
-  display:grid; place-items:center; padding:24px; background:var(--bg);
-}
-#dpd-gate form{ width:100%; max-width:420px; }
-#dpd-gate .dpd-gate-kicker{
-  font-family:var(--dpd-mono); font-size:12px; letter-spacing:.16em;
-  text-transform:uppercase; color:var(--accent); margin:0 0 20px;
-}
-#dpd-gate h1{
-  font-family:var(--dpd-display); font-weight:400; text-transform:uppercase;
-  font-size:clamp(48px,9vw,84px); line-height:.88; letter-spacing:-.04em;
-  color:var(--ink); margin:0 0 18px;
-}
-#dpd-gate .dpd-gate-sub{
-  font-family:var(--dpd-serif); font-size:18px; line-height:1.55;
-  color:var(--muted); margin:0 0 28px;
-}
-#dpd-gate input{
-  /* 16px is not a taste decision: iOS Safari automatically zooms the page in
-     when a text field smaller than that receives focus, and the zoom persists
-     after the gate is dismissed -- which is exactly the "page loads slightly
-     wider than the screen, pinch to fix" and "starts 40px down the page" that
-     showed up on real iPhones and never on an emulator, because Chrome does
-     not do focus-zoom.
-
-     The lazy fix is `maximum-scale=1, user-scalable=no` on the viewport meta.
-     That works by taking pinch-zoom away from everybody, including people who
-     need it to read. 16px costs nothing and breaks nothing. */
-  width:100%; box-sizing:border-box; font-family:var(--dpd-sans); font-size:16px;
-  padding:14px 16px; border:1px solid var(--line); border-radius:0;
-  background:transparent; color:var(--ink); margin-bottom:12px;
-}
-#dpd-gate input::placeholder{ color:var(--muted); }
-#dpd-gate input:focus{ outline:0; border-color:var(--accent-ui); }
-#dpd-gate button{
-  font-family:var(--dpd-sans); font-size:15px; font-weight:600;
-  padding:15px 24px; border:1px solid var(--ink); border-radius:0; cursor:pointer;
-  background:var(--ink); color:var(--bg);
-}
-#dpd-gate button:hover{ opacity:.85; }
-#dpd-gate .dpd-gate-err{
-  font-family:var(--dpd-sans); font-size:14px; color:var(--accent); margin:16px 0 0;
-}
-
 /* --- fixes found on first render -------------------------------------------- */
 .md-typeset .dpd-hero h1{ overflow-wrap:normal; }
 /* One column width for the whole page. The main area was narrowed to 1120px
