@@ -46,9 +46,6 @@ When a call is genuinely unclear, these decide it. Jeff's four, shortened for th
 3. **Consistency** &mdash; outcomes should be predictable. Even if they aren't predicted.
 4. **Universality** &mdash; whatever a player can do, all players can do. Corollary: whatever
    the players can do, enemies can do.
-
-*Jeff's original says "the GM". The full wording is on [For Narrators](index.md); which word
-is canon is still [open](../decisions.md).*
 </section>
 
 <section class="dpd-screen-block" markdown>
