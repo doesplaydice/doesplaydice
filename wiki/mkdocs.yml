@@ -130,14 +130,13 @@ copyright: >
 nav:
   - Home: index.md
   - For Players:
+      - Character Vitae: rules/character-vitae.md
       - Basic Rules: rules/index.md
       - "Example of play": rules/at-the-table.md
       - The odds: rules/odds.md
       - Taking turns: rules/taking-actions.md
       - "Combat, harm and recovery": rules/combat.md
       - "Skills and training": rules/training.md
-      - "The three kinds of play (draft)": rules/pillars.md
-      - Character Vitae: rules/character-vitae.md
       - The World:
           - About the setting: world/index.md
           - "The five (draft)": world/cosmology.md
