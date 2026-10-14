@@ -713,6 +713,8 @@ body{ transition:background-color .35s, color .35s; }
   border-bottom:1px solid var(--line); text-decoration:none; border-top:0;
 }
 .dpd-dl-soon{ opacity:.45; }
+/* An odd card out spans the row instead of sitting alone in half of it. */
+.dpd-dlcards > :last-child:nth-child(odd){ grid-column:1 / -1; }
 .dpd-dl-soon .dpd-dl-go{ font-weight:400; color:var(--muted); font-style:italic; }
 
 /* ---------- The try-it dice roller ---------------------------------------------

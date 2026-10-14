@@ -24,32 +24,18 @@
     document.</span>
     <span class="dpd-dl-go">Download &rarr;</span>
   </a>
+  <a href="three-ideas.pdf">
+    <span class="dpd-kicker">PDF</span>
+    <span class="dpd-dl-title">Three ideas behind the game</span>
+    <span class="dpd-dl-desc">Open source, a simple core, and the Platonic solids: why the game
+    is free, small, and played with five dice.</span>
+    <span class="dpd-dl-go">Download &rarr;</span>
+  </a>
   <a href="https://github.com/doesplaydice/doesplaydice">
     <span class="dpd-kicker">Git</span>
     <span class="dpd-dl-title">The source</span>
     <span class="dpd-dl-desc">Every page here as markdown, in git. Fork it, mirror it, make it
     yours.</span>
     <span class="dpd-dl-go">View the repository &rarr;</span>
-  </a>
-</div>
-
-<div class="dpd-split" markdown>
-<div markdown>
-## Why it's built this way {.dpd-display}
-</div>
-<div markdown>
-Three ideas sit behind the game: anyone can take it, a first-timer and a veteran can share a
-table, and five dice are the whole universe. One page, with further reading for each.
-</div>
-</div>
-
-<div class="dpd-filelist">
-  <a href="three-ideas.pdf">
-    <span class="dpd-file-main">
-      <b>Three ideas behind the game</b>
-      <span>Open source, a simple core, and the Platonic solids: why Does Play Dice is free,
-      small, and played with five dice.</span>
-    </span>
-    <span class="dpd-file-name">three-ideas.pdf</span>
   </a>
 </div>

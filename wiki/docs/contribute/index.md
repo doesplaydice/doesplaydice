@@ -13,6 +13,22 @@ back as marks, and the one-page rules are frozen canon. The reasoning is below.
 The point of this project is that the game belongs to the people who play it. Write rules,
 settings, adversaries, adventures, art — and keep what you make.
 
+## Why it's built this way {.dpd-display}
+
+Three ideas sit behind the game: anyone can take it, a first-timer and a veteran can share a
+table, and five dice are the whole universe. One page, with further reading for each.
+
+<div class="dpd-filelist">
+  <a href="../downloads/three-ideas.pdf">
+    <span class="dpd-file-main">
+      <b>Three ideas behind the game</b>
+      <span>Open source, a simple core, and the Platonic solids: why Does Play Dice is free,
+      small, and played with five dice.</span>
+    </span>
+    <span class="dpd-file-name">three-ideas.pdf</span>
+  </a>
+</div>
+
 ## How editing actually works {.dpd-display}
 
 Two doors, which is what Jeff asked for on the call: *"go to the website and click a download
