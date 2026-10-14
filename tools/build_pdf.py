@@ -44,7 +44,6 @@ BOOK_PAGES = [
     ("rules/index.html", "Basic Rules"),
     ("rules/odds/index.html", "The Odds"),
     ("rules/character-vitae/index.html", "Character Vitae"),
-    ("world/index.html", "The World"),
 ]
 
 # Classes stripped from every page before printing. These are scaffolding for

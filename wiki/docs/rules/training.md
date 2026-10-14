@@ -85,8 +85,8 @@ Unarmed, then melee or ranged, then a specific family of weapons: swords, hammer
 ### Arcane
 
 The five schools of magic are the five dice, which are the five Platonic solids, which are the
-five elements &mdash; and each carries a planet. The dice on the table are the
-[cosmology of the world](../world/cosmology.md).
+five elements &mdash; and each carries a planet. The dice on the table are the cosmology of
+the world.
 
 | School | Die | Planet |
 | --- | --- | --- |

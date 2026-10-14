@@ -66,11 +66,6 @@ collections:
         file: "wiki/docs/index.md"
         fields:
           - { name: body, label: "Page", widget: markdown }
-      - name: world
-        label: "The World"
-        file: "wiki/docs/world/index.md"
-        fields:
-          - { name: body, label: "Page", widget: markdown }
       - name: narrators
         label: "For Narrators"
         file: "wiki/docs/narrators/index.md"
