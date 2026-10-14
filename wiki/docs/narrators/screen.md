@@ -20,7 +20,7 @@ it gets asked for. Built for a phone propped behind a screen. Works with no sign
 </div>
 </section>
 
-<section class="dpd-screen-block" markdown>
+<section class="dpd-screen-block dpd-diff" markdown>
 <h2 class="dpd-screen-label">How hard is it?</h2>
 
 | Die | Difficulty |
