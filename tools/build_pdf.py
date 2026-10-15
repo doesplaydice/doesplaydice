@@ -370,7 +370,13 @@ th{
 td{ border-bottom:.5pt solid var(--line); padding:6.5pt 6pt 6.5pt 0; vertical-align:middle; }
 td b{ font-size:10pt; }
 td .hint{ color:var(--muted); font-size:8.4pt; }
-.die{ width:22mm; text-align:center; font-family:var(--mono); font-size:12pt; color:var(--line); }
+.die{ width:18mm; text-align:center; font-family:var(--mono); font-size:12pt; color:var(--line); }
+/* Floor: the lowest you can roll on that Skill, from training. A small box,
+   blank until training puts a number in it. */
+.fl{ width:15mm; }
+.fl span{ display:block; width:9mm; height:6.5mm; margin:0 auto;
+  border:.75pt solid var(--line); border-radius:1pt; }
+.train{ margin-top:9pt; }
 
 .two{ display:grid; grid-template-columns:1fr 62mm; gap:14pt; align-items:start; }
 .ref{ border:.75pt solid var(--line); padding:8pt 10pt; }
@@ -475,11 +481,15 @@ def build_character_sheet(site, chrome, out_dir):
   <div>
     <span class="lbl">Your three Skills <span>&mdash; write in the die your Narrator gave you</span></span>
     <table>
-      <tr><th>Skill</th><th>What it covers</th><th style="text-align:center">Die</th></tr>
-      <tr><td><b>Body</b><br>Physical</td><td class="hint">Strength, senses, fine motor skills, endurance</td><td class="die">d&nbsp;&nbsp;&nbsp;</td></tr>
-      <tr><td><b>Mind</b><br>Mental</td><td class="hint">Knowledge, memory, reasoning, aptitude</td><td class="die">d&nbsp;&nbsp;&nbsp;</td></tr>
-      <tr><td><b>Soul</b><br>Spiritual</td><td class="hint">Connection: intuition, empathy, persuasion, deception, nature</td><td class="die">d&nbsp;&nbsp;&nbsp;</td></tr>
+      <tr><th>Skill</th><th>What it covers</th><th style="text-align:center">Die</th><th style="text-align:center">Floor</th></tr>
+      <tr><td><b>Body</b><br>Physical</td><td class="hint">Strength, senses, fine motor skills, endurance</td><td class="die">d&nbsp;&nbsp;&nbsp;</td><td class="fl"><span></span></td></tr>
+      <tr><td><b>Mind</b><br>Mental</td><td class="hint">Knowledge, memory, reasoning, aptitude</td><td class="die">d&nbsp;&nbsp;&nbsp;</td><td class="fl"><span></span></td></tr>
+      <tr><td><b>Soul</b><br>Spiritual</td><td class="hint">Connection: intuition, empathy, persuasion, deception, nature</td><td class="die">d&nbsp;&nbsp;&nbsp;</td><td class="fl"><span></span></td></tr>
     </table>
+    <div class="train">
+      <span class="lbl">Training points <span>&mdash; to spend when the story gives you a chance to train</span></span>
+      <div class="rule short"></div>
+    </div>
   </div>
   <div class="ref">
     <h3>How hard is it?</h3>
@@ -504,7 +514,7 @@ def build_character_sheet(site, chrome, out_dir):
 </div>
 
 <div class="block" style="margin-top:9pt">
-  <span class="lbl">Notes <span>&mdash; what happened, what you're carrying, what you owe</span></span>
+  <span class="lbl">Notes <span>&mdash; what happened, what you're carrying, what you owe, what's left a mark</span></span>
   <div class="rule short"></div><div class="rule short"></div>
   <div class="rule short"></div><div class="rule short"></div>
 </div>

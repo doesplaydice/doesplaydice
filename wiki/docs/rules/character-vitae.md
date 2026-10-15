@@ -28,15 +28,26 @@ done, and what they're good at. Fill in what matters and leave the rest blank.
 ### Skills
 
 Your Narrator picks three of the five dice. Assign one to each Skill. Bigger die, more
-experience.
+experience. The Floor is the lowest you can roll on that Skill, once
+[training](training.md) gives it one.
 
-| Skill | What it covers | Your die |
-| --- | --- | :---: |
-| **Body** (Physical) | Strength, senses, fine motor skills, endurance | ▢ |
-| **Mind** (Mental) | Knowledge, memory, reasoning, aptitude | ▢ |
-| **Soul** (Spiritual) | Connection: intuition, empathy, persuasion, deception, nature | ▢ |
+| Skill | What it covers | Your die | Floor |
+| --- | --- | :---: | :---: |
+| **Body** (Physical) | Strength, senses, fine motor skills, endurance | ▢ | ▢ |
+| **Mind** (Mental) | Knowledge, memory, reasoning, aptitude | ▢ | ▢ |
+| **Soul** (Spiritual) | Connection: intuition, empathy, persuasion, deception, nature | ▢ | ▢ |
 
-<span class="dpd-field-label">Notes — what happened, what you're carrying, what you owe</span>
+<span class="dpd-field-label">Training points — to spend when the story gives you a chance to train</span>
+<div class="dpd-field"></div>
+
+<span class="dpd-field-label">Stamina — one box per side of the Skill's die. Tick one off for each point you lose</span>
+<div class="dpd-stamina">
+<div class="dpd-st-row"><b>Body</b><span class="dpd-bx"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
+<div class="dpd-st-row"><b>Mind</b><span class="dpd-bx"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
+<div class="dpd-st-row"><b>Soul</b><span class="dpd-bx"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
+</div>
+
+<span class="dpd-field-label">Notes — what happened, what you're carrying, what you owe, what's left a mark</span>
 <div class="dpd-field"></div>
 <div class="dpd-field"></div>
 <div class="dpd-field"></div>

@@ -1088,10 +1088,12 @@ body[data-md-color-scheme="terminal"]::after{
 .md-typeset .dpd-sheet .md-typeset__table{ display:block; width:100%; }
 .md-typeset .dpd-sheet table{ width:100%; }
 .md-typeset .dpd-sheet table th{ min-width:0; }
-.md-typeset .dpd-sheet table th:last-child,
-.md-typeset .dpd-sheet table td:last-child{
-  width:1%; white-space:nowrap; padding-right:0;
+.md-typeset .dpd-sheet table th:nth-last-child(-n+2),
+.md-typeset .dpd-sheet table td:nth-last-child(-n+2){
+  width:1%; white-space:nowrap;
 }
+.md-typeset .dpd-sheet table th:last-child,
+.md-typeset .dpd-sheet table td:last-child{ padding-right:0; }
 .md-typeset .dpd-sheet td.is-die{
   text-align:center; padding-left:8px; min-width:0;
 }
@@ -1112,6 +1114,63 @@ body[data-md-color-scheme="terminal"]::after{
 .dpd-die-select.is-empty{ color:var(--line); }
 /* The dropdown itself is drawn by the browser, so it needs real colours. */
 .dpd-die-select option{ color:var(--ink); background:var(--bg); }
+
+/* The Floor: a small box for a number, like the one on the printed sheet. */
+.md-typeset .dpd-sheet td.is-floor{ text-align:center; padding-left:8px; }
+.dpd-floor{
+  display:inline-block; min-width:38px; min-height:30px; padding:3px 4px;
+  border:1px solid var(--line); border-radius:2px;
+  font-family:var(--dpd-mono); font-size:16px; line-height:1.4; text-align:center;
+  color:var(--ink); cursor:text; transition:border-color .12s, background-color .12s;
+}
+.dpd-floor:hover{ border-color:var(--muted); }
+.dpd-floor:focus{
+  outline:none; border-color:var(--accent-ui);
+  background:color-mix(in srgb, var(--accent-ui) 7%, transparent);
+}
+
+/* Stamina: twenty boxes a Skill, with the box where each die ends drawn in
+   that die's colour. Boxes past your die are greyed out; tick one off for
+   each point you lose. */
+.dpd-stamina{ margin:8px 0 22px; }
+.dpd-st-row{ display:flex; align-items:center; gap:10px; margin:6px 0; }
+.dpd-st-row > b{ width:44px; flex:none; font-size:14px; }
+.dpd-bx{ flex:1; display:grid; grid-template-columns:repeat(20, 1fr); gap:3px; max-width:560px; }
+.dpd-bx i{
+  display:block; aspect-ratio:1; border:1px solid var(--line); border-radius:2px;
+  cursor:pointer; position:relative;
+}
+.dpd-bx i:nth-child(4){ border:2px solid var(--d4); }
+.dpd-bx i:nth-child(6){ border:2px solid var(--ink); }
+.dpd-bx i:nth-child(8){ border:2px solid var(--d8); }
+.dpd-bx i:nth-child(12){ border:2px solid var(--d12); }
+.dpd-bx i:nth-child(20){ border:2px solid var(--d20); }
+.dpd-bx i:hover{ background:color-mix(in srgb, var(--accent-ui) 10%, transparent); }
+.dpd-bx i:focus-visible{ outline:2px solid var(--accent-ui); outline-offset:1px; }
+.dpd-bx i.is-spent{
+  background:linear-gradient(to bottom right, transparent calc(50% - 1.5px),
+    var(--ink) calc(50% - 1.5px), var(--ink) calc(50% + 1.5px), transparent calc(50% + 1.5px));
+}
+.dpd-bx i.is-out{
+  cursor:default; border-color:var(--line); opacity:.45;
+  background:
+    linear-gradient(to top right, transparent calc(50% - .75px), var(--muted) calc(50% - .75px),
+      var(--muted) calc(50% + .75px), transparent calc(50% + .75px)),
+    linear-gradient(to top left, transparent calc(50% - .75px), var(--muted) calc(50% - .75px),
+      var(--muted) calc(50% + .75px), transparent calc(50% + .75px));
+}
+.dpd-bx i.is-out:hover{ background-color:transparent; }
+/* On a phone, twenty boxes in a line are too small to tap: two lines of ten. */
+@media (max-width:600px){
+  .dpd-bx{ grid-template-columns:repeat(10, 1fr); gap:4px; max-width:280px; }
+  .md-typeset .dpd-sheet table th,
+  .md-typeset .dpd-sheet table td{ padding-left:4px; padding-right:4px; }
+  .md-typeset .dpd-sheet table th:nth-last-child(-n+2){ white-space:normal; }
+  .md-typeset .dpd-sheet td.is-die,
+  .md-typeset .dpd-sheet td.is-floor{ padding-left:4px; }
+  .dpd-die-select{ min-width:38px; }
+  .dpd-floor{ min-width:32px; }
+}
 
 .md-typeset .dpd-sheet-note{
   font-size:14px; color:var(--muted); line-height:1.55;
@@ -1143,4 +1202,5 @@ body[data-md-color-scheme="terminal"]::after{
   /* On paper the chooser is just the letters someone picked. */
   .dpd-die-select{ background:none; border-bottom:0; color:var(--ink); }
   .dpd-die-select.is-empty{ color:transparent; }
+  .dpd-floor{ border-color:var(--line); background:none; }
 }

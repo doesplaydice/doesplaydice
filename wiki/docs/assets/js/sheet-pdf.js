@@ -39,17 +39,29 @@
     'connections':[312.7, 540.0, 260.2],
     'habits-1':    [39.7, 494.3, 533.2],
     'habits-2':    [39.7, 467.3, 533.2],
-    'notes-1':     [39.7, 155.3, 533.2],
-    'notes-2':     [39.7, 132.0, 533.2],
-    'notes-3':     [39.7, 109.5, 533.2],
-    'notes-4':     [39.7,  87.0, 533.2],
+    'training':    [39.7, 276.0, 343.5],
+    'notes-1':     [39.7, 141.8, 533.2],
+    'notes-2':     [39.7, 119.3, 533.2],
+    'notes-3':     [39.7,  96.0, 533.2],
+    'notes-4':     [39.7,  73.5, 533.2],
     /* The die cells already have a grey "d" printed on them, so only the size
        goes here -- set on that glyph's own baseline, just past where it ends, so
        "d" + "8" reads as one word rather than two things near each other. */
-    'die-1':      [343.5, 415.5, 34.0],
-    'die-2':      [343.5, 386.3, 34.0],
-    'die-3':      [343.5, 357.0, 34.0]
+    'die-1':      [305.5, 411.0, 34.0],
+    'die-2':      [305.5, 372.8, 34.0],
+    'die-3':      [305.5, 334.5, 34.0],
+    /* The Floor boxes: left edge, bottom edge and width of each printed box.
+       The number is centred in it. */
+    'floor-1':    [346.9, 406.1, 24.7],
+    'floor-2':    [346.9, 367.9, 24.7],
+    'floor-3':    [346.9, 329.6, 24.7]
   };
+
+  /* The stamina boxes: twenty a row, one row per Skill (Body, Mind, Soul).
+     The left edge of the first box, the distance from one box to the next, the
+     size of a box, and the bottom edge of each row. The Download button crosses
+     out every box past the die you chose, as you would with a pencil. */
+  var STAMINA = { x: 90.4, step: 21.55, size: 17.2, rows: [225.4, 205.1, 184.9] };
 
   /* Which ruled lines each labelled block on the web page flows into. Matched on
      the label so that reordering the markdown cannot silently misfile answers. */
@@ -60,10 +72,12 @@
     { match: /school or job/i,   rules: ['school'] },
     { match: /habits/i,          rules: ['habits-1', 'habits-2'] },
     { match: /connections/i,     rules: ['connections'] },
+    { match: /training/i,        rules: ['training'] },
     { match: /notes/i,           rules: ['notes-1', 'notes-2', 'notes-3', 'notes-4'] }
   ];
 
   var DIE_RULES = ['die-1', 'die-2', 'die-3'];
+  var FLOOR_RULES = ['floor-1', 'floor-2', 'floor-3'];
 
   /* ---- Type metrics ------------------------------------------------------- */
 
@@ -217,16 +231,58 @@
                (r[1] + 4).toFixed(1) + ' Td (' + escapePdf(encode(text)) + ') Tj ET');
     }
 
+    /* Cross out the stamina boxes past the die: a d8 keeps eight. */
+    function crossOut(row, sides) {
+      var y = STAMINA.rows[row];
+      if (y === undefined || !(sides > 0)) return;
+      var inset = 3, s = STAMINA.size;
+      var lines = ['q 0.45 0.45 0.45 RG 0.9 w 1 J'];
+      for (var b = sides; b < 20; b++) {
+        var x = STAMINA.x + b * STAMINA.step;
+        lines.push((x + inset).toFixed(1) + ' ' + (y + inset).toFixed(1) + ' m ' +
+                   (x + s - inset).toFixed(1) + ' ' + (y + s - inset).toFixed(1) + ' l ' +
+                   (x + inset).toFixed(1) + ' ' + (y + s - inset).toFixed(1) + ' m ' +
+                   (x + s - inset).toFixed(1) + ' ' + (y + inset).toFixed(1) + ' l S');
+      }
+      lines.push('Q');
+      ops.push(lines.join('\n'));
+    }
+
+    /* Stamina already lost: one pencil-style stroke through each ticked box. */
+    function tickOff(row, boxes, sides) {
+      var y = STAMINA.rows[row];
+      if (y === undefined || !boxes.length) return;
+      var inset = 3, s = STAMINA.size;
+      var lines = ['q 0.04 0.04 0.04 RG 1.4 w 1 J'];
+      boxes.forEach(function (b) {
+        if (b < 0 || b >= 20 || (sides > 0 && b >= sides)) return;
+        var x = STAMINA.x + b * STAMINA.step;
+        lines.push((x + inset).toFixed(1) + ' ' + (y + inset).toFixed(1) + ' m ' +
+                   (x + s - inset).toFixed(1) + ' ' + (y + s - inset).toFixed(1) + ' l S');
+      });
+      lines.push('Q');
+      ops.push(lines.join('\n'));
+    }
+
     model.groups.forEach(function (group) {
       if (group.kind === 'skills') {
         group.rows.forEach(function (row, i) {
-          if (!DIE_RULES[i] || !row.die) return;
           /* The sheet already prints a grey "d"; only the size goes after it. */
-          var v = String(row.die).replace(/^\s*d/i, '').trim();
-          var r = RULES[DIE_RULES[i]];
-          if (!v) return;
-          ops.push('BT /F99 12 Tf ' + r[0].toFixed(1) + ' ' + r[1].toFixed(1) +
-                   ' Td (' + escapePdf(encode(v)) + ') Tj ET');
+          var v = String(row.die || '').replace(/^\s*d/i, '').trim();
+          if (DIE_RULES[i] && v) {
+            var r = RULES[DIE_RULES[i]];
+            ops.push('BT /F99 12 Tf ' + r[0].toFixed(1) + ' ' + r[1].toFixed(1) +
+                     ' Td (' + escapePdf(encode(v)) + ') Tj ET');
+          }
+          var floor = String(row.floor || '').trim();
+          if (FLOOR_RULES[i] && floor) {
+            var f = RULES[FLOOR_RULES[i]];
+            var x = f[0] + (f[2] - measure(encode(floor), 11)) / 2;
+            ops.push('BT /F99 11 Tf ' + x.toFixed(1) + ' ' + (f[1] + 5).toFixed(1) +
+                     ' Td (' + escapePdf(encode(floor)) + ') Tj ET');
+          }
+          crossOut(i, +v);
+          tickOff(i, row.spent || [], +v);
         });
         return;
       }

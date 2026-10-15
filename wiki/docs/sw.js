@@ -25,7 +25,7 @@
  * Bump CACHE when the precache list changes. Everything else self-heals,
  * because documents are always tried over the network first.
  */
-const CACHE = 'dpd-v9';
+const CACHE = 'dpd-v10';
 
 // The smallest set that makes the game usable with no network at all.
 const SHELL = [
@@ -35,7 +35,7 @@ const SHELL = [
   '/rules/character-vitae/',
   '/narrators/screen/',
   '/downloads/',
-  '/assets/stylesheets/extra.v6.css',
+  '/assets/stylesheets/extra.v7.css',
   '/assets/stylesheets/fonts.css',
   '/assets/js/dice.js',
   // The sheet is filled in at a table, where there may be no signal at all, and
