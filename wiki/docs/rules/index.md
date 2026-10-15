@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Does Play Dice is a game about story-telling. Think of it as group improv with a little chaos
+Does Play Dice is a game about storytelling. Think of it as group improv with a little chaos
 added to the mix with the introduction of the dice. Each player needs pencil, paper, and a set
 of 5 dice, one each with the following number of sides: 4, 6, 8, 12, and 20.
 
@@ -28,7 +28,7 @@ determine an Outcome.
 movie-style heist, a murder mystery dinner party, or a fantasy-based dungeon crawl with
 wizards, dragons, and mounds of treasure. There are resources and inspiration and
 world-building guides for you everywhere, but you can also simply download a module, game, or
-setting that someone else has created. Eventually, we'll post some here.
+setting that someone else has created.
 
 **4.** Provide the important details your players need to create their Characters. They need to
 know if they're creating a highly skilled criminal, a guest at a fancy dinner party, or a
@@ -52,12 +52,12 @@ everyone will work within the guidelines provided by your Narrator.
 or job, habits, quirks ... anything that makes you you.
 
 **7.** Last, assign one die of the three chosen by the Narrator to each of your Skills:
-Body, Mind, and Soul. Checks on them are called Physical, Mental, and Spiritual. We'll see how they're used below. For now, just know that higher
-numbers are better.
+Body, Mind, and Soul. Checks on them are called Physical, Mental, and Spiritual. We'll see how
+they're used below. For now, just know that higher numbers are better.
 
 </div>
 
-| Skill | Check | When it's used |
+| Skill | Check | What it covers |
 | --- | --- | --- |
 | **Body** | Physical | Strength, senses, fine motor skills, endurance |
 | **Mind** | Mental | Knowledge, memory, reasoning, aptitude |
@@ -67,20 +67,20 @@ numbers are better.
 
 <div class="dpd-steps" markdown>
 
-**8.** Ok, let's play! The Narrator will describe what's around you. If you have questions, ask.
-Talk to your Party. Talk to the people around you. (Anyone your Narrator describes that isn't
-in your Party.) When you want to do something, describe it to the Narrator. If what you want to
+**8.** OK, let's play! The Narrator will describe what's around you. If you have questions, ask.
+Talk to your Party. Talk to the people around you (anyone your Narrator describes who isn't
+in your Party). When you want to do something, describe it to the Narrator. If what you want to
 do is easy ("I open the door"), the Narrator will describe what happens next. ("You open the
 door and find an office filled with dusty books.") But what if you want to do something that
 isn't easy? What if the door is locked? This is the core mechanic of the game that makes it
-different from other forms of story-telling or improv by introducing an element of chance: we
+different from other forms of storytelling or improv by introducing an element of chance: we
 roll for it!
 
 **9.** What the Character rolls depends on how they choose to approach the challenge. You might
-try force open a locked door, a Physical challenge. Or you can search the area around the door
+try to force open a locked door, a Physical challenge. Or you can search the area around the door
 for a hidden key or a secret latch. Searching is a Mental challenge. Alternatively, if there's
 a particularly smooth talker in the Party, they might have learned about a secret knock from
-one of the guards. Learning that valuable tidbit would most likely involve a Spiritual Challenge.
+one of the guards. Learning that valuable tidbit would most likely involve a Spiritual challenge.
 Whichever you choose, when the Narrator calls for a Skill Check, you'll roll the die that you
 assigned to the applicable Skill: Body, Mind, or Soul.
 
@@ -88,7 +88,7 @@ assigned to the applicable Skill: Body, Mind, or Soul.
 attempting is and roll the corresponding die according to the table below. Let's assume you're
 attempting to shoulder check the door and the Narrator knows the door is pretty thick and the
 lock sturdy. Despite what we see in the movies, knocking down a door isn't an easy thing to do,
-so the Narrator decides in this case that it's a Highly Difficult challenge, or a d12.
+so the Narrator decides in this case that it's High difficulty: a d12.
 
 </div>
 

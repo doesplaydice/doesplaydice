@@ -4,7 +4,7 @@ hide:
   - toc
 ---
 
-# The screen <span class="dpd-status ready">For the table</span>
+# The screen
 
 <p class="dpd-lede-sm">Everything a Narrator needs mid-sentence, on one page, in the order
 it gets asked for. Built for a phone propped behind a screen. Works with no signal.</p>
@@ -39,7 +39,7 @@ high end. [The full odds &rarr;](../rules/odds.md)
 <section class="dpd-screen-block" markdown>
 <h2 class="dpd-screen-label">The four Canons</h2>
 
-When a call is genuinely unclear, these decide it. Jeff's four, shortened for the table.
+When a call is genuinely unclear, these four decide it.
 
 1. **Finality** &mdash; the Narrator is the final arbiter.
 2. **Fun** &mdash; seek collaborative and fun solutions.

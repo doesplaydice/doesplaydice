@@ -49,7 +49,7 @@ themselves and the people nearby as to the enemy, but they can swing it. The sam
 everything else, magic included.
 
 **Nothing on your sheet is a permission slip.** Anyone can try anything. Training isn't access,
-it's reliability: the difference between having a go and being someone the party can depend on.
+it's reliability: the difference between having a go and being someone the Party can depend on.
 An untrained attempt is never refused. It's just a roll with no floor under it.
 
 ---

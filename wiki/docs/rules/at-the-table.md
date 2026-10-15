@@ -4,7 +4,7 @@ The rules take ten minutes to read. This takes two, and it is probably the faste
 
 Three people at a table. **Jess** is the Narrator. **Priya** plays Wren, a clockmaker's
 apprentice &mdash; Body d8, Mind d12, Soul d4. **Theo** plays Bram, who works the docks
-&mdash; Body d12, Mind d6, Soul d8.
+&mdash; Body d12, Mind d4, Soul d8.
 
 They want a ledger out of a print shop that closed three hours ago.
 

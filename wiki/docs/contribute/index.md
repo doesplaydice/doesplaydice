@@ -1,4 +1,4 @@
-# Contribute
+# How to contribute
 
 The point of this project is that the game belongs to the people who play it. Write rules,
 settings, adversaries, adventures, art — and keep what you make.
@@ -31,9 +31,6 @@ There are two ways in, depending on how comfortable you are with the tools.
 
     Every page has an edit pencil in the top right. Click it, make your change, and it's sent
     to us as a pull request. No install, no command line.
-
-    Or use the full editor at <a href="../admin/" target="_blank" rel="noopener"><code>/admin/</code></a>
-    &mdash; sign in, write, and your change becomes a pull request automatically.
 
 -   :material-source-fork: **The savvy door**
 

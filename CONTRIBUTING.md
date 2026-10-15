@@ -13,12 +13,8 @@ deliberate, not gatekeeping.
 
 ## How to contribute
 
-**Without git.** Go to `/admin/` on the site, sign in with GitHub, and edit in the browser. Your
-change becomes a pull request automatically &mdash; you don't need to know what that means.
-
-**Trying it locally.** `/admin/` also offers *Work with Local Repository*: pick the project
-folder and the editor writes straight to the markdown on disk. No account, no server, no OAuth
-&mdash; useful for demos and for editing on a plane.
+**Without git.** Every page on the site has an edit pencil in the top right. Click it, make your
+change on GitHub, and it becomes a pull request &mdash; you don't need to know what that means.
 
 **With git.** Fork, branch, edit the markdown under `wiki/docs/`, open a PR. The whole site is
 plain markdown; there's nothing else to learn.

@@ -79,8 +79,9 @@ makes the promise real rather than rhetorical.
 You now have every word of the game, its full history, and the machinery that publishes it.
 
 **2. Rename it.**
-Change `site_name` in `wiki/mkdocs.yml` and the wordmark on the home page. This is the one step
-that is not optional &mdash; the name is a trademark and it is not yours.
+Change `site_name` and the footer in `wiki/mkdocs.yml`, the logo in
+`wiki/overrides/partials/masthead.html`, and the app name in `wiki/docs/manifest.webmanifest`.
+This is the one step that is not optional &mdash; the name is a trademark and it is not yours.
 
 **3. Turn on Pages.**
 Settings &rarr; Pages &rarr; Source: GitHub Actions. The workflow is already in the fork.

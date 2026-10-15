@@ -9,7 +9,7 @@ hide:
 
 # Five dice.<br>Fifteen minutes.<br>A night out.
 
-<p class="dpd-lede">A story-telling game that's free to download, quick to learn, and only
+<p class="dpd-lede">A storytelling game that's free to download, quick to learn, and only
 limited by your imagination. It gives you the creative outlet of a role-playing game &mdash;
 without the learning curve, or the shelf of rulebooks.</p>
 
@@ -43,8 +43,8 @@ Most role-playing games ask you to buy a shelf of books before you can sit down.
 doesn't. The complete rules are **one page**, they're free, and you can read them in the time
 it takes to make coffee.
 
-If you want more later, there's more &mdash; expanded rules, settings, adversaries, adventures. But
-the person who learned the one page and the person who's been playing for ten years can sit at
+If you want more later, there's more: rules for tracking turns, for fights, and for getting
+better. But the person who learned the one page and the person who's been playing for ten years can sit at
 the same table and play the same game. That's the whole design.
 </div>
 </div>
@@ -70,9 +70,9 @@ the same table and play the same game. That's the whole design.
   </a>
   <a href="contribute/">
     <span class="dpd-card-num">04</span>
-    <span class="dpd-card-title">Make it yours</span>
+    <span class="dpd-card-title">Build on it</span>
     <span class="dpd-card-desc">Write rules, settings, adversaries, adventures. Keep what you make.</span>
-    <span class="dpd-card-go">Contribute &rarr;</span>
+    <span class="dpd-card-go">How to contribute &rarr;</span>
   </a>
 </div>
 

@@ -76,7 +76,7 @@ rolls are better.
 
 Which stat you roll depends on **how you go about something**, not on what you're trying to
 do. Faced with a locked door, you can put your shoulder into it (Physical), hunt for a hidden
-key or a secret latch (Mental), or remember the guard who mentioned a secret knock (Spiritual).
+key or a secret latch (Mental), or talk a guard into telling you the secret knock (Spiritual).
 Same door, three ways through it. If you can describe it, the Narrator can tell you which stat
 it takes.
 
@@ -87,7 +87,7 @@ how strong, how quick, how sharp-eyed, how steady-handed, and how long you can k
 
 Reach for Body when you're forcing, lifting, climbing, running, swimming, fighting, or dodging.
 It's also the steady hand that picks a lock or stitches a wound, and the sharp eye that catches
-a glint in the grass or the creak of a floorboard. And it's the stamina to march all night or
+a glint in the grass or the creak of a floorboard. And it's the endurance to march all night or
 hold your breath that little bit longer.
 
 ### Mind &mdash; Mental checks

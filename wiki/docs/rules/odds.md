@@ -6,7 +6,7 @@ hide:
 # The odds
 
 <p class="dpd-lede-sm">Every possible roll in the game, worked out exactly. Your Skill die
-across the rows, the Narrator's Difficulty die across the columns.</p>
+down the side, the Narrator's Difficulty die across the top.</p>
 
 <div class="dpd-odds" markdown>
 
@@ -82,5 +82,4 @@ range it is a quarter of all play.
 
     Computed, not measured. Each cell enumerates all possible pairs of rolls and
     counts them, so these are exact probabilities rather than the results of a
-    simulation. The generator is `tools/generate-odds.py`, and it asserts the
-    1 &divide; larger-die rule for all 25 pairings every time it runs.
+    simulation.
