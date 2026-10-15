@@ -28,7 +28,7 @@
   {# On the home page, page.title is the NAV label ("Home"), which is useless as
      a share title. Use the game's name there and the page's own title elsewhere. #}
   {% if page and page.is_homepage %}
-    {% set page_title = config.site_name ~ ' — five dice, fifteen minutes, a night out' %}
+    {% set page_title = config.site_name ~ ' — five dice, fifteen minutes, hours of fun' %}
   {% else %}
     {% set page_title = ((page.meta and page.meta.title) or (page.title | striptags) or config.site_name) ~ ' — ' ~ config.site_name %}
   {% endif %}
