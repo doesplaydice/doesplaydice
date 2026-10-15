@@ -29,6 +29,8 @@ SKIP_SCHEMES = ("http:", "https:", "mailto:", "tel:", "data:", "javascript:")
 GENERATED = {
     "/downloads/does-play-dice-rules.pdf": "python3 tools/build_pdf.py",
     "/downloads/does-play-dice-book.pdf": "python3 tools/build_pdf.py",
+    "/downloads/does-play-dice-character-sheet.pdf": "python3 tools/build_pdf.py",
+    "/downloads/does-play-dice-reference.pdf": "python3 tools/build_pdf.py",
 }
 
 

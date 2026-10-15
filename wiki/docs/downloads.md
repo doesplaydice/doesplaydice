@@ -17,10 +17,17 @@
     so nobody has to look anything up mid-game.</span>
     <span class="dpd-dl-go">Download &rarr;</span>
   </a>
+  <a href="does-play-dice-reference.pdf">
+    <span class="dpd-kicker">PDF</span>
+    <span class="dpd-dl-title">Player reference</span>
+    <span class="dpd-dl-desc">The rules you need at the table on one page: the roll, your turn,
+    fighting, stamina and getting it back.</span>
+    <span class="dpd-dl-go">Download &rarr;</span>
+  </a>
   <a href="does-play-dice-book.pdf">
     <span class="dpd-kicker">PDF</span>
     <span class="dpd-dl-title">The full book</span>
-    <span class="dpd-dl-desc">Rules, character sheet, expansions and setting, as one
+    <span class="dpd-dl-desc">The rules and the character sheet, as one
     document.</span>
     <span class="dpd-dl-go">Download &rarr;</span>
   </a>
