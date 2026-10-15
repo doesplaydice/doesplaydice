@@ -45,7 +45,10 @@ CHROME_CANDIDATES = [
 # Pages that make up the book, in reading order.
 BOOK_PAGES = [
     ("rules/index.html", "Basic Rules"),
-    ("rules/odds/index.html", "The Odds"),
+    ("rules/taking-actions/index.html", "Taking turns"),
+    ("rules/combat/index.html", "Combat, harm and recovery"),
+    ("rules/training/index.html", "Skills and training"),
+    ("rules/odds/index.html", "The odds"),
     ("rules/character-vitae/index.html", "Character Vitae"),
 ]
 
@@ -54,11 +57,12 @@ BOOK_PAGES = [
 STRIP_CLASSES = [
     "dpd-protobar",     # "this page is a container" banners
     "dpd-status",       # the Complete / Not written pills
-    "admonition",       # includes every OPEN DECISION block
+    "admonition tip",   # "type into it" help, which only means anything on screen
     "md-content__button",
     "headerlink",
     "dpd-timeline",
     "dpd-roller",       # an interactive widget means nothing on paper
+    "dpd-sheet",        # the fill-in-the-browser sheet; the book prints the real one
 ]
 
 
@@ -304,6 +308,18 @@ blockquote{ margin:8pt 0; padding-left:10pt; border-left:2px solid var(--accent)
   color:var(--muted); font-style:italic; }
 hr{ border:0; border-top:1px solid var(--line); margin:12pt 0; }
 img{ max-width:100%; }
+
+/* The odds grid: win, tie and lose stacked in each cell, as on the site. */
+.dpd-odds-grid td span{ display:block; line-height:1.3; }
+.odds-w{ font-weight:700; }
+.odds-t{ color:var(--accent); }
+.odds-l{ color:var(--muted); }
+.dpd-odds-key{ font-family:var(--sans); font-size:8.6pt; color:var(--muted); }
+.dpd-odds-key span{ margin-right:6pt; }
+.admonition{ border-left:2px solid var(--accent); padding:2pt 0 2pt 10pt; margin:8pt 0 10pt;
+  break-inside:avoid; }
+.admonition-title{ font-family:var(--mono); font-size:7pt; letter-spacing:.13em;
+  text-transform:uppercase; color:var(--accent); margin:0 0 3pt; }
 
 /* The odds grid keeps the site's dice colours: d4, d6, d8, d12, d20 in order,
    d6 in ink. */
@@ -792,8 +808,18 @@ def build_book(site, chrome, out_dir):
         if not os.path.isfile(path):
             print("  skipping %s (not built)" % rel)
             continue
-        chapters.append('<div class="chapter">%s</div>' % article_of(path))
+        body = article_of(path)
+        # The web sheet sat between the intro and a rule; with it gone the
+        # rule would follow the intro directly.
+        body = re.sub(r"(</p>)\s*<hr\s*/?>", r"\1", body, count=1) \
+            if rel.startswith("rules/character-vitae/") else body
+        chapters.append('<div class="chapter">%s</div>' % body)
         contents.append("<li>%s</li>" % title)
+    # The designed character sheet is appended as the last page, after Chrome
+    # has printed the rest; it has its own page margins and type.
+    sheet = os.path.join(out_dir, "does-play-dice-character-sheet.pdf")
+    if os.path.isfile(sheet):
+        contents.append("<li>Character sheet</li>")
 
     toc = (
         '<div class="toc"><h2>Contents</h2><ol>%s</ol></div>' % "".join(contents)
@@ -819,7 +845,15 @@ def build_book(site, chrome, out_dir):
         + "".join(chapters),
         BOOK_CSS,
     )
-    return _render_in_site(site, chrome, page, out_dir, "does-play-dice-book.pdf")
+    book = _render_in_site(site, chrome, page, out_dir, "does-play-dice-book.pdf")
+    if os.path.isfile(sheet):
+        from pypdf import PdfWriter  # requirements.txt; only the book needs it
+        writer = PdfWriter()
+        writer.append(book)
+        writer.append(sheet)
+        with open(book, "wb") as out:
+            writer.write(out)
+    return book
 
 
 def _render_in_site(site, chrome, markup, out_dir, filename):
