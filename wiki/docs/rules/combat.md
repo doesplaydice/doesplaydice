@@ -121,18 +121,16 @@ that gives stamina back needs something more:
 | **Mind** | A trained counsellor, hypnosis, a clearing tonic, a spell that steadies the mind |
 | **Soul** | A trained counsellor, a performer who can move a room, a rite in a place that matters to you, a potion said to give you wings |
 
-**Stamina isn't healing.** Getting it back doesn't cure a disease, set a broken bone or close a
-serious wound. Those mend the way the story says they do, and they take treatment and time of
-their own.
+## Lasting harm
 
-## Scars
+**Stamina isn't healing.** Getting stamina back doesn't cure a disease, set a broken bone or
+close a serious wound. Harm like that is written on the character sheet, not counted in
+stamina, and it mends the way the story says it does, with treatment and time of its own.
 
-When something ought to leave a mark, it leaves a mark &mdash; written on the character sheet,
-not tracked as a penalty.
-
-It doesn't have to be punishing. If the moment doesn't call for a lasting disadvantage, make it
-something you can see: a wound, a scar, a burn. A scar is part of who someone is now, and it
-should simply be true about you.
+**Some things leave a mark.** Not every lasting hurt has to hold you back. If the moment
+doesn't call for a lasting disadvantage, make it something you can see: a scar, a burn, a
+streak of white in your hair. A scar is part of who someone is now, and it should simply be
+true about you.
 
 ## What's not here
 
