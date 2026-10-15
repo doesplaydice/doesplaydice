@@ -76,7 +76,7 @@ not a rules problem.
 seconds later the shoulder was the scene. Most systems would have given her a yes or a no. This
 one gave her a story, and it did it by accident, because two dice landed on five.
 
-**Nobody looked anything up.** Three rolls, three Skills, one number each side. That is the
+**Nobody looked anything up.** Three rolls, three stats, one number each side. That is the
 core procedure, and everything else builds on it.
 
 If you want to feel the tie rather than read about it, the roller on the

@@ -5,8 +5,9 @@ hide:
 
 # Skills and training
 
-Your three Skills &mdash; Body, Mind and Soul &mdash; say what you're like. Training says what
-you've learned, and it's how you get better.
+Your three stats &mdash; Body, Mind and Soul &mdash; say what you're like. Your **skills** say
+what you've learned: a combat manoeuvre, a new spell, picking pockets, a backstab, a craft.
+Training is how you gain skills, and how your stats get better.
 
 ## There are no levels
 
@@ -32,11 +33,14 @@ That turns "I want to get better at this" into a reason to go somewhere.
 
 ## What points buy
 
-**A bigger die.** Move a Skill up the ladder: d4 to d6 to d8 to d12 to d20. It costs the
+**New skills.** A combat manoeuvre, a new spell, picking pockets, a backstab, a craft: the
+things your [path](#paths) is made of.
+
+**A bigger die.** Move a stat up the ladder: d4 to d6 to d8 to d12 to d20. It costs the
 difference between the two dice &mdash; 2 points from d4 to d6, 8 points from d12 to d20.
 
 **A step back down.** Characters change: age, maturity, wisdom, injury, a new focus, a tragedy.
-If the story earns it, you may drop a Skill one step and get those points back.
+If the story earns it, you may drop a stat one step and get those points back.
 
 **A floor.** Training doesn't raise your best roll; **it stops you falling all the way down.**
 With 5 points of training on a d20, your highest roll is still 20, but your lowest is 5. A

@@ -84,15 +84,15 @@ Then paste the contents of `src/qr.svg` into each `<div class="qr">` in `src/han
 ## What is real and what is placeholder
 
 **Real** &mdash; the table tent and the one-shot frame. Both are built entirely from the
-published one-page rules: the three Skills, the five difficulty dice, the tie rule, and the
-principle that every obstacle should have a way in for each Skill.
+published one-page rules: the three stats, the five difficulty dice, the tie rule, and the
+principle that every obstacle should have a way in for each stat.
 
 **Sample** &mdash; the six characters. Names and backgrounds are deliberately setting-neutral
 placeholders, because the setting question (Timaeus? Prota? neither, at launch?) is still open.
 Replace them.
 
 The *structure* of the six is not a placeholder, and it's worth keeping. There are exactly six
-ways to deal three different dice across three Skills, and the set uses all six. No two players
+ways to deal three different dice across three stats, and the set uses all six. No two players
 at the table are alike, and every approach to a problem has someone who is good at it. Swap the
 trio and the six shapes still hold.
 

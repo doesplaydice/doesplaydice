@@ -25,13 +25,13 @@ done, and what they're good at. Fill in what matters and leave the rest blank.
 <span class="dpd-field-label">Connections — who you know in the Party, and how</span>
 <div class="dpd-field"></div>
 
-### Skills
+### Stats
 
-Your Narrator picks three of the five dice. Assign one to each Skill. Bigger die, more
-experience. The Floor is the lowest you can roll on that Skill, once
+Your Narrator picks three of the five dice. Assign one to each stat. Bigger die, more
+experience. The Floor is the lowest you can roll on that stat, once
 [training](training.md) gives it one.
 
-| Skill | What it covers | Your die | Floor |
+| Stat | What it covers | Your die | Floor |
 | --- | --- | :---: | :---: |
 | **Body** (Physical) | Strength, senses, fine motor skills, endurance | ▢ | ▢ |
 | **Mind** (Mental) | Knowledge, memory, reasoning, aptitude | ▢ | ▢ |
@@ -40,7 +40,7 @@ experience. The Floor is the lowest you can roll on that Skill, once
 <span class="dpd-field-label">Training points — to spend when the story gives you a chance to train</span>
 <div class="dpd-field"></div>
 
-<span class="dpd-field-label">Stamina — one box per side of the Skill's die. Tick one off for each point you lose</span>
+<span class="dpd-field-label">Stamina — one box per side of the stat's die. Tick one off for each point you lose</span>
 <div class="dpd-stamina">
 <div class="dpd-st-row"><b>Body</b><span class="dpd-bx"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
 <div class="dpd-st-row"><b>Mind</b><span class="dpd-bx"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div>

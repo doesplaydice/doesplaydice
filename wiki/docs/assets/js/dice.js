@@ -1,7 +1,7 @@
 /* The try-it dice roller on the rules page.
  *
  * The whole pitch is "fifteen minutes to learn", and the mechanic is a single
- * comparison: your Skill die against the Narrator's difficulty die, highest
+ * comparison: your stat die against the Narrator's difficulty die, highest
  * wins, a tie means both sides get something. Reading that takes a paragraph.
  * Doing it takes one click, so the page lets you do it.
  *
@@ -29,7 +29,7 @@
     { sides: 20, solid: 'icosahedron',  name: 'Icosahedron' }
   ];
 
-  // The rules walk through a d6 Skill against a d12 door. Start there, so the
+  // The rules walk through a d6 stat against a d12 door. Start there, so the
   // widget is already showing the example the reader just read.
   var DEFAULTS = { you: 6, narrator: 12 };
 

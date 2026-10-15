@@ -371,7 +371,7 @@ td{ border-bottom:.5pt solid var(--line); padding:6.5pt 6pt 6.5pt 0; vertical-al
 td b{ font-size:10pt; }
 td .hint{ color:var(--muted); font-size:8.4pt; }
 .die{ width:18mm; text-align:center; font-family:var(--mono); font-size:12pt; color:var(--line); }
-/* Floor: the lowest you can roll on that Skill, from training. A small box,
+/* Floor: the lowest you can roll on that stat, from training. A small box,
    blank until training puts a number in it. */
 .fl{ width:15mm; }
 .fl span{ display:block; width:9mm; height:6.5mm; margin:0 auto;
@@ -393,7 +393,7 @@ td .hint{ color:var(--muted); font-size:8.4pt; }
 .ref tr:nth-child(4) .d{ color:var(--d12); }
 .ref tr:nth-child(5) .d{ color:var(--d20); }
 .ref p{ margin:6pt 0 0; font-size:7.6pt; line-height:1.45; color:var(--muted); }
-/* Stamina: twenty boxes a Skill, with the five dice marked where each one
+/* Stamina: twenty boxes a stat, with the five dice marked where each one
    ends, so "cross out the boxes past your die" needs no arithmetic. */
 .stam{ margin-top:11pt; }
 .st-row{ display:flex; align-items:center; gap:8pt; margin-top:2.6pt; }
@@ -479,9 +479,9 @@ def build_character_sheet(site, chrome, out_dir):
 
 <div class="two">
   <div>
-    <span class="lbl">Your three Skills <span>&mdash; write in the die your Narrator gave you</span></span>
+    <span class="lbl">Your three stats <span>&mdash; write in the die your Narrator gave you</span></span>
     <table>
-      <tr><th>Skill</th><th>What it covers</th><th style="text-align:center">Die</th><th style="text-align:center">Floor</th></tr>
+      <tr><th>Stat</th><th>What it covers</th><th style="text-align:center">Die</th><th style="text-align:center">Floor</th></tr>
       <tr><td><b>Body</b><br>Physical</td><td class="hint">Strength, senses, fine motor skills, endurance</td><td class="die">d&nbsp;&nbsp;&nbsp;</td><td class="fl"><span></span></td></tr>
       <tr><td><b>Mind</b><br>Mental</td><td class="hint">Knowledge, memory, reasoning, aptitude</td><td class="die">d&nbsp;&nbsp;&nbsp;</td><td class="fl"><span></span></td></tr>
       <tr><td><b>Soul</b><br>Spiritual</td><td class="hint">Connection: intuition, empathy, persuasion, deception, nature</td><td class="die">d&nbsp;&nbsp;&nbsp;</td><td class="fl"><span></span></td></tr>
@@ -500,13 +500,13 @@ def build_character_sheet(site, chrome, out_dir):
       <tr><td class="d">d12</td><td>High difficulty</td></tr>
       <tr><td class="d">d20</td><td>&ldquo;Impossible&rdquo;</td></tr>
     </table>
-    <p>You roll your Skill die, the Narrator rolls the Difficulty die.
+    <p>You roll your stat die, the Narrator rolls the Difficulty die.
     Highest wins. <b>A tie means both sides get something.</b></p>
   </div>
 </div>
 
 <div class="block stam">
-  <span class="lbl">Stamina <span>&mdash; one box per side of the Skill's die. Cross out the rest; tick one off for each point you lose</span></span>
+  <span class="lbl">Stamina <span>&mdash; one box per side of the stat's die. Cross out the rest; tick one off for each point you lose</span></span>
   <div class="st-row st-hdr"><b></b><div class="bx"><em></em><em></em><em></em><em class="m4">d4</em><em></em><em class="m6">d6</em><em></em><em class="m8">d8</em><em></em><em></em><em></em><em class="m12">d12</em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em class="m20">d20</em></div></div>
   <div class="st-row"><b>Body</b><div class="bx"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
   <div class="st-row"><b>Mind</b><div class="bx"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
@@ -588,7 +588,7 @@ svg.i-s{ width:13pt; height:13pt; flex:none; }
 .step em{ font-style:normal; font-weight:700; color:var(--accent); }
 .arrow{ align-self:center; font-size:14pt; color:var(--accent-ui); }
 
-/* Skills */
+/* stats */
 table{ width:100%; border-collapse:collapse; }
 td{ border-bottom:.5pt solid var(--line); padding:3pt 5pt 3pt 0; vertical-align:top; }
 tr:last-child td{ border-bottom:0; }
@@ -682,9 +682,9 @@ REFERENCE_BODY = """
   <div class="flow">
     <div class="step"><svg class="i"><use href="#talk"/></svg><b>Say what you do</b><span>Easy things just happen. Hard things get a roll.</span></div>
     <div class="arrow">&rarr;</div>
-    <div class="step"><svg class="i"><use href="#pick"/></svg><b>Pick a Skill</b><span>Body, Mind or Soul: whichever fits how you try it.</span></div>
+    <div class="step"><svg class="i"><use href="#pick"/></svg><b>Pick a stat</b><span>Body, Mind or Soul: whichever fits how you try it.</span></div>
     <div class="arrow">&rarr;</div>
-    <div class="step"><svg class="i"><use href="#vs"/></svg><b>Both roll</b><span>Your Skill die against the Narrator's die.</span></div>
+    <div class="step"><svg class="i"><use href="#vs"/></svg><b>Both roll</b><span>Your stat die against the Narrator's die.</span></div>
     <div class="arrow">&rarr;</div>
     <div class="step"><svg class="i"><use href="#win"/></svg><b>Highest wins</b><span><em>Tie:</em> both sides get something.</span></div>
   </div>
@@ -692,7 +692,7 @@ REFERENCE_BODY = """
 
 <div class="cols">
   <section class="box">
-    <h2>Your three Skills</h2>
+    <h2>Your three stats</h2>
     <table class="skills">
       <tr><td><b>Body</b><i>Physical</i></td><td>Strength, senses, fine motor skills, endurance</td></tr>
       <tr><td><b>Mind</b><i>Mental</i></td><td>Knowledge, memory, reasoning, aptitude</td></tr>
@@ -710,7 +710,7 @@ REFERENCE_BODY = """
       <div class="rung r12"><svg><use href="#d12"/></svg><b>d12</b><span>High</span></div>
       <div class="rung r20"><svg><use href="#d20"/></svg><b>d20</b><span>&ldquo;Impossible&rdquo;</span></div>
     </div>
-    <p class="note">The Narrator picks the die. Against another character, they roll their Skill instead.</p>
+    <p class="note">The Narrator picks the die. Against another character, they roll their stat instead.</p>
   </section>
 </div>
 
@@ -733,7 +733,7 @@ REFERENCE_BODY = """
       <div class="q">Could you normally just try again?</div>
       <div class="paths">
         <div class="path"><b>Yes</b> &rarr; spend another action and roll again.</div>
-        <div class="path push"><b>No</b> &rarr; <b>push your luck:</b> 1 action <em>+ 1 stamina</em> in that Skill. Same check, same die.</div>
+        <div class="path push"><b>No</b> &rarr; <b>push your luck:</b> 1 action <em>+ 1 stamina</em> in that stat. Same check, same die.</div>
       </div>
       <div class="crit"><b>Fail a push</b> &rarr; <b>critical failure.</b> Worse than a miss, often double the effect. The Narrator decides.</div>
     </div>
@@ -744,7 +744,7 @@ REFERENCE_BODY = """
   <h2>Fighting</h2>
   <div class="fight">
     <table class="out">
-      <tr><td class="k">You win</td><td>&rarr; they lose <b>1 stamina</b> in the Skill they used</td></tr>
+      <tr><td class="k">You win</td><td>&rarr; they lose <b>1 stamina</b> in the stat they used</td></tr>
       <tr><td class="k">They win</td><td>&rarr; <b>you</b> lose 1, even on your own turn</td></tr>
       <tr><td class="k">Tie</td><td>&rarr; both land</td></tr>
       <tr><td class="k">Hard hit</td><td>Win by more than their die has sides &rarr; <b>2 stamina</b></td></tr>
@@ -762,9 +762,9 @@ REFERENCE_BODY = """
   <section class="box">
     <h2>Stamina</h2>
     <ul class="ar">
-      <li>One track per Skill, starting at the <b>sides on its die</b>: a d8 Body has 8.</li>
+      <li>One track per stat, starting at the <b>sides on its die</b>: a d8 Body has 8.</li>
       <li>Losing it <b>never changes your rolls.</b></li>
-      <li><b>0 in any Skill &rarr; you're out.</b> Out isn't dead.</li>
+      <li><b>0 in any stat &rarr; you're out.</b> Out isn't dead.</li>
     </ul>
     <table class="outs">
       <tr><td><b>Body</b></td><td>unconscious, winded, can't stand</td></tr>
@@ -776,9 +776,9 @@ REFERENCE_BODY = """
   <section class="box">
     <h2>Getting it back</h2>
     <table class="rec">
-      <tr><td>A full round of rest</td><td class="n">+1</td><td>any Skill, only while it's <b>below half</b></td></tr>
+      <tr><td>A full round of rest</td><td class="n">+1</td><td>any stat, only while it's <b>below half</b></td></tr>
       <tr><td>A night, with food and shelter</td><td class="n">All</td><td>Body, Mind and Soul</td></tr>
-      <tr><td>Care, with tools or training</td><td class="n">+1</td><td>any Skill: a healing kit, a counsellor, a spell</td></tr>
+      <tr><td>Care, with tools or training</td><td class="n">+1</td><td>any stat: a healing kit, a counsellor, a spell</td></tr>
     </table>
     <p class="note"><b>Stamina isn't healing.</b> Broken bones, disease and serious wounds mend in the story, in their own time.</p>
   </section>

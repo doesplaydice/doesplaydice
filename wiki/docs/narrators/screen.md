@@ -49,27 +49,27 @@ When a call is genuinely unclear, these four decide it.
 </section>
 
 <section class="dpd-screen-block" markdown>
-<h2 class="dpd-screen-label">The three Skills</h2>
+<h2 class="dpd-screen-label">The three stats</h2>
 
-| Skill | Reach for it when |
+| Stat | Reach for it when |
 | --- | --- |
 | **Body** (Physical) | Strength, senses, fine motor skills, endurance |
 | **Mind** (Mental) | Knowledge, memory, reasoning, aptitude |
 | **Soul** (Spiritual) | Connection: intuition, empathy, persuasion, deception, nature |
 
-If a player argues their approach fits a different Skill and the argument is good, it fits.
+If a player argues their approach fits a different stat and the argument is good, it fits.
 That is the Canon of fun doing its job.
 </section>
 
 <section class="dpd-screen-block" markdown>
 <h2 class="dpd-screen-label">In a fight</h2>
 
-- **Both sides roll.** The loser drops one stamina in the Skill they rolled. A tie lands both
+- **Both sides roll.** The loser drops one stamina in the stat they rolled. A tie lands both
   ways.
 - **Hard hit:** win by more than their die has sides, and it's two stamina.
 - **Step down:** each attack after your first on your turn, and each defence after your first
   in a round, rolls one die smaller, down to a d4. Defending is free.
-- **Out** at zero stamina in any Skill. Out isn't dead.
+- **Out** at zero stamina in any stat. Out isn't dead.
 
 | Getting stamina back | Recovers |
 | --- | --- |

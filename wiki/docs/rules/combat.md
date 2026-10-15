@@ -5,7 +5,7 @@ hide:
 
 # Combat, harm and recovery
 
-You already know how combat works, because it's the same roll as everything else: **your Skill
+You already know how combat works, because it's the same roll as everything else: **your stat
 die against theirs, highest wins, and a tie means both sides get something.**
 
 What follows only answers the questions a fight raises that a locked door doesn't: how you get
@@ -18,23 +18,23 @@ hurt, what happens when you can't go on, and how you come back. For who goes whe
 
 **Stamina is how much you can take before you're out.** There are no hit points.
 
-You have a stamina track for each Skill: Body, Mind and Soul. It starts equal to the
-number of sides on that Skill's die.
+You have a stamina track for each stat: Body, Mind and Soul. It starts equal to the
+number of sides on that stat's die.
 
 When something costs you &mdash; a blow landed, an argument lost, a horror witnessed &mdash;
-you take **one point of stamina in the Skill that suffered**. Nothing else happens.
+you take **one point of stamina in the stat that suffered**. Nothing else happens.
 
 **Losing stamina doesn't change your rolls.** It costs you in only two ways: at zero you're
 out, and getting it back takes time (see [Coming back](#coming-back)).
 
-**At zero stamina in any Skill you are out.** Not dead &mdash; out. A fighter with a d20
+**At zero stamina in any stat you are out.** Not dead &mdash; out. A fighter with a d20
 Body and a d4 Soul is a fighter who can be talked out of the fight in four sentences.
 
 ## Attacking
 
-**Both of you roll.** You roll the Skill die that fits how you're fighting; they roll theirs.
+**Both of you roll.** You roll the stat die that fits how you're fighting; they roll theirs.
 
-- **You win** &mdash; you land it. They lose **one stamina in the Skill they defended with.**
+- **You win** &mdash; you land it. They lose **one stamina in the stat they defended with.**
 - **They win** &mdash; the exchange goes against you, and *you* lose one stamina. A fight you
   are losing costs you something even on your own turn.
 - **A tie** &mdash; both of you get something. You land it *and* they do.
@@ -80,9 +80,9 @@ back. A losing fight is a decision, not a trap.
 ## What being out means
 
 Out isn't a coma and it isn't a countdown. It's **whatever the story says it is**, chosen by the
-table from the Skill that broke:
+table from the stat that broke:
 
-| The Skill that hit zero | What that looks like |
+| The stat that hit zero | What that looks like |
 | --- | --- |
 | **Body** | Unconscious, winded, a leg that won't hold you |
 | **Mind** | Overwhelmed, concussed, unable to hold a thought |
@@ -102,12 +102,12 @@ Stamina returns three ways:
 
 | | Recovers | |
 | --- | --- | --- |
-| **A moment's respite** | 1 point in any Skill | A full round of rest, while you're below half |
+| **A moment's respite** | 1 point in any stat | A full round of rest, while you're below half |
 | **A night's rest** | All stamina: Body, Mind and Soul | Requires food and shelter |
-| **Care from someone** | 1 point in any Skill | Requires the right tools or training |
+| **Care from someone** | 1 point in any stat | Requires the right tools or training |
 
 **A moment's respite means a full round of rest.** You take no actions and no reactions, nobody
-attacks you, and nothing harms you from any source. It only helps while a Skill's stamina is
+attacks you, and nothing harms you from any source. It only helps while a stat's stamina is
 **below half** its maximum: at half or more, a respite gives you nothing. A d12 Body down to 4
 can catch its breath back up to 6, and no further. A few quiet minutes will get you back on
 your feet, but not all the way.
@@ -115,7 +115,7 @@ your feet, but not all the way.
 **Care takes the right tools or the right training.** Anyone can sit with a friend, but care
 that gives stamina back needs something more:
 
-| Skill | Care that works |
+| Stat | Care that works |
 | --- | --- |
 | **Body** | A healing kit, a potion, a healing spell, someone trained in medicine |
 | **Mind** | A trained counsellor, hypnosis, a clearing tonic, a spell that steadies the mind |
