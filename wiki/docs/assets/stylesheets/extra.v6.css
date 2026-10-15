@@ -460,7 +460,7 @@ body{ transition:background-color .35s, color .35s; }
 
 /* ---------- The colophon in the footer --------------------------------------------
    Two short lines instead of one long one: who wrote it and under what, then who
-   built it. The heart is the only piece of accent colour down here. */
+   built it. The heart is the only piece of colour down here. */
 .md-copyright .dpd-colophon{
   display:flex; flex-direction:column; align-items:flex-start; gap:3px;
 }
@@ -468,6 +468,9 @@ body{ transition:background-color .35s, color .35s; }
 .md-copyright .dpd-heart{
   color:var(--accent); font-style:normal; line-height:1;
 }
+/* A red heart in dark and light. Terminal keeps its accent. */
+[data-md-color-scheme="slate"] .md-copyright .dpd-heart{ color:#E5484D; }
+[data-md-color-scheme="default"] .md-copyright .dpd-heart{ color:#C8323A; }
 .md-copyright a{ color:inherit; }
 .md-copyright a:hover{ color:var(--accent); }
 
