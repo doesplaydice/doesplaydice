@@ -1,4 +1,4 @@
-# Licence
+# Make it yours
 
 The short version: **the words are yours to take.** This page explains what that means, and
 how to do it.
