@@ -6,7 +6,7 @@
   <a href="does-play-dice-rules.pdf">
     <span class="dpd-kicker">PDF</span>
     <span class="dpd-dl-title">The one-page rules</span>
-    <span class="dpd-dl-desc">The complete game on a single sheet. Print it, fold it, put it in
+    <span class="dpd-dl-desc">The core rules on a single sheet. Print it, fold it, put it in
     the box with your dice.</span>
     <span class="dpd-dl-go">Download &rarr;</span>
   </a>

@@ -3,7 +3,7 @@
 
 Two artefacts, and they are deliberately different things:
 
-  does-play-dice-rules.pdf  The whole game on one sheet. This is the thing
+  does-play-dice-rules.pdf  The core rules on one sheet. This is the thing
                             people take home from a convention table, so it is
                             laid out for paper -- two columns, tight leading,
                             no navigation, no web furniture -- rather than
@@ -421,18 +421,18 @@ td .hint{ color:var(--muted); font-size:8.4pt; }
 
 
 def build_one_pager(site, chrome, out_dir):
-    """The whole game on a single sheet."""
+    """The core rules on a single sheet."""
     body = article_of(os.path.join(site, "rules", "index.html"))
     # The h1 is replaced by the masthead, so drop it from the flow.
     body = re.sub(r"<h1\b.*?</h1>", "", body, count=1, flags=re.S)
 
     page = shell(
         '<link rel="stylesheet" href="assets/stylesheets/fonts.css">',
-        "Does Play Dice -- the complete rules",
+        "Does Play Dice -- the core rules",
         f"""
 <div class="sheet-head">
   <div class="sheet-title">DOES<br>PLAY DICE</div>
-  <div class="sheet-sub">The complete rules<br>doesplaydice.com</div>
+  <div class="sheet-sub">The core rules<br>doesplaydice.com</div>
 </div>
 <div class="sheet-body">{body}
 <div class="sheet-foot">

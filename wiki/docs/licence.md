@@ -104,7 +104,7 @@ The licence does not require a GitHub account.
 - <a href="../downloads/does-play-dice-book.pdf">Download the full book as a PDF</a> &mdash; the
   rules and the character sheet in one document.
 - <a href="../downloads/does-play-dice-rules.pdf">Download the one-page rules</a> &mdash; the
-  complete game on a single sheet.
+  core rules on a single sheet.
 - Print either one, photocopy it, hand it out. That is a fork too. It is just made of paper.
 
 ## We would like to know, but you do not owe us that

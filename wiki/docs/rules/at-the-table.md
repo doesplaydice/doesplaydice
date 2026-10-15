@@ -77,7 +77,7 @@ seconds later the shoulder was the scene. Most systems would have given her a ye
 one gave her a story, and it did it by accident, because two dice landed on five.
 
 **Nobody looked anything up.** Three rolls, three Skills, one number each side. That is the
-entire procedure, and it does not get more complicated later.
+core procedure, and everything else builds on it.
 
 If you want to feel the tie rather than read about it, the roller on the
 <a href="../">Basic Rules</a> page rolls real dice, and the <a href="../odds/">odds page</a> has

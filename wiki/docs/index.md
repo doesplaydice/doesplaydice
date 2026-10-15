@@ -36,11 +36,11 @@ without the learning curve, or the shelf of rulebooks.</p>
 
 <div class="dpd-split" markdown>
 <div markdown>
-## The whole game fits on one page {.dpd-display}
+## The core rules fit on one page {.dpd-display}
 </div>
 <div markdown>
 Most role-playing games ask you to buy a shelf of books before you can sit down. This one
-doesn't. The complete rules are **one page**, they're free, and you can read them in the time
+doesn't. The core rules are **one page**, they're free, and you can read them in the time
 it takes to make coffee.
 
 If you want more later, there's more: rules for tracking turns, for fights, and for getting
@@ -53,7 +53,7 @@ the same table and play the same game. That's the whole design.
   <a href="rules/">
     <span class="dpd-card-num">01</span>
     <span class="dpd-card-title">Start here</span>
-    <span class="dpd-card-desc">The complete basic rules. Everything you need to play tonight.</span>
+    <span class="dpd-card-desc">The core rules. Everything you need to play tonight.</span>
     <span class="dpd-card-go">Basic Rules &rarr;</span>
   </a>
   <a href="rules/character-vitae/">
