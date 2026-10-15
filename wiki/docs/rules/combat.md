@@ -98,16 +98,32 @@ it &mdash; but it's a choice someone makes out loud, not the result of arithmeti
 
 ## Coming back
 
-Stamina returns three ways, and each kind of hurt has its own kind of cure:
+Stamina returns three ways:
 
 | | Recovers | |
 | --- | --- | --- |
-| **A moment's respite** | 1 point in one Skill | Catching your breath, a word from a friend |
-| **A night's rest** | All Body and Mind | Requires food and shelter |
-| **Care from someone** | 1 point, any Skill | Medicine for Body, counsel for Mind, company for Soul |
+| **A moment's respite** | 1 point in any Skill | A full round of rest, while you're below half |
+| **A night's rest** | All stamina: Body, Mind and Soul | Requires food and shelter |
+| **Care from someone** | 1 point in any Skill | Requires the right tools or training |
 
-**Soul stamina doesn't come back on its own overnight.** Someone has to give it to you. A night
-alone doesn't fix having been humiliated in front of people who matter.
+**A moment's respite means a full round of rest.** You take no actions and no reactions, nobody
+attacks you, and nothing harms you from any source. It only helps while a Skill's stamina is
+**below half** its maximum: at half or more, a respite gives you nothing. A d12 Body down to 4
+can catch its breath back up to 6, and no further. A few quiet minutes will get you back on
+your feet, but not all the way.
+
+**Care takes the right tools or the right training.** Anyone can sit with a friend, but care
+that gives stamina back needs something more:
+
+| Skill | Care that works |
+| --- | --- |
+| **Body** | A healing kit, a potion, a healing spell, someone trained in medicine |
+| **Mind** | A trained counsellor, hypnosis, a clearing tonic, a spell that steadies the mind |
+| **Soul** | A trained counsellor, a performer who can move a room, a rite in a place that matters to you, a potion said to give you wings |
+
+**Stamina isn't healing.** Getting it back doesn't cure a disease, set a broken bone or close a
+serious wound. Those mend the way the story says they do, and they take treatment and time of
+their own.
 
 ## Scars
 
