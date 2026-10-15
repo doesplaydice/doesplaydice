@@ -2,14 +2,10 @@
 
 Thanks for wanting to add to this game.
 
-> **OPEN DECISION.** The governance model below is written to work under either answer to
-> "who owns canon," with the switch marked. It needs Jeff's decision before launch.
-> See the [Contribute](wiki/docs/contribute/index.md) page.
-
 ## Two kinds of contribution
 
 **Modules** &mdash; adventures, settings, adversaries, optional rules, tools. Anything that
-*adds* without changing the one page. **The front door is open.** Write one, send it, it lands.
+*adds* without changing the one page.
 
 **Core rules** &mdash; the one page itself. A change here can invalidate every character, module
 and adventure anyone has already made, so it goes through review and it will be slow. That's
@@ -38,20 +34,6 @@ someone has to re-learn the basics, or that makes an existing character sheet wr
 If your idea needs the core to change, open an issue and make the case before writing code.
 
 ## Review
-
-<!-- ===================================================================== -->
-<!-- GOVERNANCE SWITCH -- pick one at launch and delete the others.        -->
-<!--                                                                       -->
-<!--  [ ] FROZEN CORE  Jeff is sole approver on wiki/docs/rules/index.md.  -->
-<!--                   Enforce with CODEOWNERS + branch protection.        -->
-<!--                   Modules merge on any maintainer approval.           -->
-<!--                                                                       -->
-<!--  [ ] OPEN CORE    Any maintainer can approve core changes.            -->
-<!--                   Relax CODEOWNERS to the maintainer team.            -->
-<!--                                                                       -->
-<!--  [ ] STEWARDED    Jeff approves today; a named group inherits later.  -->
-<!--                   Same as frozen core, plus a written succession doc. -->
-<!-- ===================================================================== -->
 
 Modules get a light read: does it work, is it clear, is it yours to give. Core changes get
 argued about.

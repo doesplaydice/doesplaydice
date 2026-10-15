@@ -1,9 +1,4 @@
-# Community <span class="dpd-status stub">Open front door</span>
-
-<div class="dpd-protobar" markdown>
-**This section is deliberately unowned.** Core rules go through review because a change there
-affects every table. Everything here does not.
-</div>
+# Community
 
 Adventures, settings, adversaries, optional rules, tools. Anything that adds to the game without
 changing the one page.
@@ -29,14 +24,6 @@ Two doors, same result &mdash; both open a pull request:
     [CONTRIBUTING.md](https://github.com/doesplaydice/doesplaydice/blob/main/CONTRIBUTING.md).
 
 </div>
-
-## The one rule
-
-!!! quote "The compatibility rule"
-
-    Anything you write must work at a table that only knows the one page.
-
-Add freely. Just don't make someone re-learn the basics to use what you made.
 
 ## Modules
 

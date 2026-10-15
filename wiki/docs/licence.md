@@ -5,7 +5,7 @@ The short version: **the words are yours to take.** This page is the reference.
 
 ## The text
 
-Everything written on this site — the rules, the setting, the examples — is
+Everything written on this site — the rules and the examples — is
 **Does Play Dice by Jeff Adams**, licensed
 <a href="https://creativecommons.org/licenses/by/4.0/" rel="license">CC BY 4.0</a>.
 
