@@ -1072,7 +1072,7 @@ body[data-md-color-scheme="terminal"]::after{
    is a chooser -- but it has to look like the rest of the sheet rather than like
    a browser form control, which is what appearance:none is doing here. */
 /* The die column takes only the room it needs. It was claiming 100px for three
-   characters, which pushed "Strength, senses, fine motor skills, stamina" one
+   characters, which pushed "Strength, senses, fine motor skills, endurance" one
    pixel past its column and wrapped it onto a second line.
    Two things are needed, and only one of them is obvious. width:1% is the old
    auto-layout trick for "shrink this column to its contents" -- but on its own

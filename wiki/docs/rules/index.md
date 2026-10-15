@@ -59,7 +59,7 @@ numbers are better.
 
 | Skill | Check | When it's used |
 | --- | --- | --- |
-| **Body** | Physical | Strength, senses, fine motor skills, stamina |
+| **Body** | Physical | Strength, senses, fine motor skills, endurance |
 | **Mind** | Mental | Knowledge, memory, reasoning, aptitude |
 | **Soul** | Spiritual | Connection: intuition, empathy, persuasion, deception, nature |
 

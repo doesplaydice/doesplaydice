@@ -455,7 +455,7 @@ def build_character_sheet(site, chrome, out_dir):
     <span class="lbl">Your three Skills <span>&mdash; write in the die your Narrator gave you</span></span>
     <table>
       <tr><th>Skill</th><th>What it covers</th><th style="text-align:center">Die</th></tr>
-      <tr><td><b>Body</b><br>Physical</td><td class="hint">Strength, senses, fine motor skills, stamina</td><td class="die">d&nbsp;&nbsp;&nbsp;</td></tr>
+      <tr><td><b>Body</b><br>Physical</td><td class="hint">Strength, senses, fine motor skills, endurance</td><td class="die">d&nbsp;&nbsp;&nbsp;</td></tr>
       <tr><td><b>Mind</b><br>Mental</td><td class="hint">Knowledge, memory, reasoning, aptitude</td><td class="die">d&nbsp;&nbsp;&nbsp;</td></tr>
       <tr><td><b>Soul</b><br>Spiritual</td><td class="hint">Connection: intuition, empathy, persuasion, deception, nature</td><td class="die">d&nbsp;&nbsp;&nbsp;</td></tr>
     </table>

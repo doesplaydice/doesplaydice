@@ -32,7 +32,7 @@ experience.
 
 | Skill | What it covers | Your die |
 | --- | --- | :---: |
-| **Body** (Physical) | Strength, senses, fine motor skills, stamina | ▢ |
+| **Body** (Physical) | Strength, senses, fine motor skills, endurance | ▢ |
 | **Mind** (Mental) | Knowledge, memory, reasoning, aptitude | ▢ |
 | **Soul** (Spiritual) | Connection: intuition, empathy, persuasion, deception, nature | ▢ |
 
@@ -71,7 +71,7 @@ it takes.
 
 ### Body &mdash; Physical checks
 
-**Strength, senses, fine motor skills, stamina.** Body is everything your physical self can do:
+**Strength, senses, fine motor skills, endurance.** Body is everything your physical self can do:
 how strong, how quick, how sharp-eyed, how steady-handed, and how long you can keep going.
 
 Reach for Body when you're forcing, lifting, climbing, running, swimming, fighting, or dodging.
