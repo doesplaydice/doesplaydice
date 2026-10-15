@@ -131,9 +131,3 @@ stamina, and it mends the way the story says it does, with treatment and time of
 doesn't call for a lasting disadvantage, make it something you can see: a scar, a burn, a
 streak of white in your hair. A scar is part of who someone is now, and it should simply be
 true about you.
-
-## What's not here
-
-No grid, no flanking, no attacks of opportunity, no called shots, no critical-hit deck. No wound
-categories, no injury tables, no death saves. Each one would add a table to a game whose whole
-promise is that there are none. If your group wants them, they belong in an optional module.
