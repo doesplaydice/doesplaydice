@@ -387,12 +387,30 @@ td .hint{ color:var(--muted); font-size:8.4pt; }
 .ref tr:nth-child(4) .d{ color:var(--d12); }
 .ref tr:nth-child(5) .d{ color:var(--d20); }
 .ref p{ margin:6pt 0 0; font-size:7.6pt; line-height:1.45; color:var(--muted); }
+/* Stamina: twenty boxes a Skill, with the five dice marked where each one
+   ends, so "cross out the boxes past your die" needs no arithmetic. */
+.stam{ margin-top:11pt; }
+.st-row{ display:flex; align-items:center; gap:8pt; margin-top:2.6pt; }
+.st-row > b{ width:15mm; font-size:9.5pt; }
+.bx{ display:grid; grid-template-columns:repeat(20, 6.3mm); column-gap:1.3mm; }
+.bx i{ height:6.3mm; border:.75pt solid var(--line); border-radius:1pt; }
+.bx i:nth-child(4){ border:1.3pt solid var(--d4); }
+.bx i:nth-child(6){ border:1.3pt solid var(--ink); }
+.bx i:nth-child(8){ border:1.3pt solid var(--d8); }
+.bx i:nth-child(12){ border:1.3pt solid var(--d12); }
+.bx i:nth-child(20){ border:1.3pt solid var(--d20); }
+.st-hdr{ margin-top:4pt; }
+.st-hdr em{ font-style:normal; font-family:var(--mono); font-size:6.4pt; font-weight:700;
+  text-align:right; line-height:1; }
+.st-hdr .m4{ color:var(--d4); } .st-hdr .m6{ color:var(--ink); } .st-hdr .m8{ color:var(--d8); }
+.st-hdr .m12{ color:var(--d12); } .st-hdr .m20{ color:var(--d20); }
 .foot{
   margin-top:9pt; padding-top:5pt; border-top:.75pt solid var(--line);
   display:flex; justify-content:space-between; gap:12pt;
   font-family:var(--mono); font-size:6pt; letter-spacing:.1em;
   text-transform:uppercase; color:var(--muted);
 }
+.stam ~ .foot{ margin-top:16pt; }
 """
 
 
@@ -475,6 +493,14 @@ def build_character_sheet(site, chrome, out_dir):
     <p>You roll your Skill die, the Narrator rolls the Difficulty die.
     Highest wins. <b>A tie means both sides get something.</b></p>
   </div>
+</div>
+
+<div class="block stam">
+  <span class="lbl">Stamina <span>&mdash; one box per side of the Skill's die. Cross out the rest; tick one off for each point you lose</span></span>
+  <div class="st-row st-hdr"><b></b><div class="bx"><em></em><em></em><em></em><em class="m4">d4</em><em></em><em class="m6">d6</em><em></em><em class="m8">d8</em><em></em><em></em><em></em><em class="m12">d12</em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em class="m20">d20</em></div></div>
+  <div class="st-row"><b>Body</b><div class="bx"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+  <div class="st-row"><b>Mind</b><div class="bx"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+  <div class="st-row"><b>Soul</b><div class="bx"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
 </div>
 
 <div class="block" style="margin-top:9pt">

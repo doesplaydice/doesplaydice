@@ -39,10 +39,10 @@
     'connections':[312.7, 540.0, 260.2],
     'habits-1':    [39.7, 494.3, 533.2],
     'habits-2':    [39.7, 467.3, 533.2],
-    'notes-1':     [39.7, 246.8, 533.2],
-    'notes-2':     [39.7, 224.3, 533.2],
-    'notes-3':     [39.7, 201.0, 533.2],
-    'notes-4':     [39.7, 178.5, 533.2],
+    'notes-1':     [39.7, 155.3, 533.2],
+    'notes-2':     [39.7, 132.0, 533.2],
+    'notes-3':     [39.7, 109.5, 533.2],
+    'notes-4':     [39.7,  87.0, 533.2],
     /* The die cells already have a grey "d" printed on them, so only the size
        goes here -- set on that glyph's own baseline, just past where it ends, so
        "d" + "8" reads as one word rather than two things near each other. */
