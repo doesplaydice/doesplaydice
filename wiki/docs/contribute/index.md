@@ -29,8 +29,8 @@ There are two ways in, depending on how comfortable you are with the tools.
 
     ---
 
-    Every page has an edit pencil in the top right. Click it, type, save. The site rebuilds
-    itself and publishes in about a minute. No install, no command line.
+    Every page has an edit pencil in the top right. Click it, make your change, and it's sent
+    to us as a pull request. No install, no command line.
 
     Or use the full editor at <a href="../admin/" target="_blank" rel="noopener"><code>/admin/</code></a>
     &mdash; sign in, write, and your change becomes a pull request automatically.
@@ -44,43 +44,11 @@ There are two ways in, depending on how comfortable you are with the tools.
 
 </div>
 
----
+## What happens to your change {.dpd-display}
 
-## The licence: CC BY 4.0 {.dpd-display}
+Every change, through either door, arrives as a pull request. We read each one and decide
+whether it fits the game. If it doesn't, nothing stops you: the licence lets you publish your
+own version, changed however you like.
 
-**You may copy it, change it, translate it, print it, and sell what you make** &mdash; including
-commercially, and including work you keep closed. No permission needed, nothing to share back.
-
-The one requirement is credit:
-
-!!! quote "The attribution to use"
-
-    Based on *Does Play Dice* by Jeff Adams &mdash; doesplaydice.com &mdash; licensed CC BY 4.0.
-
-If you changed things, say so. That's the whole obligation.
-
-### Why this one
-
-We wanted a licence that was **familiar, tested and well supported**, and not one written
-for a single industry. Creative Commons licences are used across publishing, education, music
-and the arts. Writers, publishers and lawyers already know what they mean, so nobody has to
-learn a new set of terms to build on this game. That's why we chose CC BY.
-
-It also **can't be revoked** &mdash; not by Jeff, not by anyone who takes on this project later.
-Once you have the text, it's yours to build on.
-
-We left out share-alike on purpose. It would have required anyone building on the game to open
-their own work too. That sounds protective, but it would block exactly what we want to see:
-people earning a living from what they make.
-
-## The name is not part of the licence {.dpd-display}
-
-The licence covers the **text**. It does not grant rights to the name **Does Play Dice** or the
-logo.
-
-You're free to build on the game and say your work is *compatible with* or *based on* Does Play
-Dice. You may not present it as the official game.
-
-That separation is deliberate and it's the standard arrangement: **the work is free to fork, the
-name stays accountable.** It's how a stranger tells the difference between the game and
-something that merely resembles it.
+Whatever you send is shared under the same terms as the rest of the game,
+[CC BY 4.0](../licence.md). You keep the credit for what you wrote.

@@ -25,8 +25,8 @@ python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
 
 Every page has an edit pencil, and `/admin/` on the site is a browser editor that turns your
 change into a pull request. Or fork this repository and edit the markdown directly. See
-[CONTRIBUTING.md](CONTRIBUTING.md), and [Take it](https://doesplaydice.com/fork/) for why
-forking is encouraged.
+[CONTRIBUTING.md](CONTRIBUTING.md), and the [licence page](https://doesplaydice.com/licence/) for how
+to fork it.
 
 Pull requests are built with `--strict`, so a broken link fails before review. Merges to `main`
 deploy to GitHub Pages.

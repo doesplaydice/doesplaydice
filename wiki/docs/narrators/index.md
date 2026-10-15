@@ -13,5 +13,4 @@ mid-game on one page.
 Does Play Dice is setting-agnostic: the rules don't assume a genre. You can run a heist, a
 dinner-party murder, a dungeon, a haunted colony ship.
 
-Written something that would help other Narrators? [Community modules](../community/index.md)
-are open to anyone.
+Written something that would help other Narrators? [Here's how to contribute](../contribute/index.md).

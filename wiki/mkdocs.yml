@@ -142,8 +142,5 @@ nav:
       - The screen: narrators/screen.md
   - For Builders:
       - How to contribute: contribute/index.md
-      - Take it: fork.md
       - Licence: licence.md
-      - Community modules: community/index.md
-      - "Sample: The Long Way Round": community/modules/sample-module.md
   - Download: downloads.md
