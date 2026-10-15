@@ -1,13 +1,9 @@
 #!/usr/bin/env python3
 """Reject dangerous raw HTML in documentation source.
 
-Python-Markdown passes raw HTML straight through, and wiki/docs/community/ is
-deliberately unowned -- CONTRIBUTING says community modules get "a light read".
-So a merged pull request could put a <script> tag on doesplaydice.com.
-
-Today that buys someone defacement. It gets worse later: the CMS at /admin/
-runs on this same origin and will hold a GitHub token once its OAuth broker is
-deployed, and any script on the origin can read that token from storage.
+Python-Markdown passes raw HTML straight through, and anyone can open a pull
+request with the edit pencil on any page. So a merged pull request could put a
+<script> tag on doesplaydice.com.
 
 This is a blunt check on purpose. The site uses plenty of legitimate raw HTML
 -- divs, spans, tables, inline SVG -- and none of that is touched. What is

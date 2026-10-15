@@ -6,21 +6,28 @@
   <a href="does-play-dice-rules.pdf">
     <span class="dpd-kicker">PDF</span>
     <span class="dpd-dl-title">The one-page rules</span>
-    <span class="dpd-dl-desc">The complete game on a single sheet. Print it, fold it, put it in
+    <span class="dpd-dl-desc">The core rules on a single sheet. Print it, fold it, put it in
     the box with your dice.</span>
     <span class="dpd-dl-go">Download &rarr;</span>
   </a>
   <a href="does-play-dice-character-sheet.pdf">
     <span class="dpd-kicker">PDF</span>
     <span class="dpd-dl-title">Character Vitae</span>
-    <span class="dpd-dl-desc">One page, room to write, and the difficulty ladder printed on it
-    so nobody has to look anything up mid-game.</span>
+    <span class="dpd-dl-desc">One page, with room to write, your stats and stamina, and space
+    for the skills you train in.</span>
+    <span class="dpd-dl-go">Download &rarr;</span>
+  </a>
+  <a href="does-play-dice-reference.pdf">
+    <span class="dpd-kicker">PDF</span>
+    <span class="dpd-dl-title">Player reference</span>
+    <span class="dpd-dl-desc">The rules you need at the table on one page: the roll, your turn,
+    fighting, stamina and getting it back.</span>
     <span class="dpd-dl-go">Download &rarr;</span>
   </a>
   <a href="does-play-dice-book.pdf">
     <span class="dpd-kicker">PDF</span>
     <span class="dpd-dl-title">The full book</span>
-    <span class="dpd-dl-desc">Rules, character sheet, expansions and setting, as one
+    <span class="dpd-dl-desc">The rules and the character sheet, as one
     document.</span>
     <span class="dpd-dl-go">Download &rarr;</span>
   </a>

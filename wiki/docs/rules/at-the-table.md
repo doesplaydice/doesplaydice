@@ -4,7 +4,7 @@ The rules take ten minutes to read. This takes two, and it is probably the faste
 
 Three people at a table. **Jess** is the Narrator. **Priya** plays Wren, a clockmaker's
 apprentice &mdash; Body d8, Mind d12, Soul d4. **Theo** plays Bram, who works the docks
-&mdash; Body d12, Mind d6, Soul d8.
+&mdash; Body d12, Mind d4, Soul d8.
 
 They want a ledger out of a print shop that closed three hours ago.
 
@@ -76,8 +76,8 @@ not a rules problem.
 seconds later the shoulder was the scene. Most systems would have given her a yes or a no. This
 one gave her a story, and it did it by accident, because two dice landed on five.
 
-**Nobody looked anything up.** Three rolls, three Skills, one number each side. That is the
-entire procedure, and it does not get more complicated later.
+**Nobody looked anything up.** Three rolls, three stats, one number each side. That is the
+core procedure, and everything else builds on it.
 
 If you want to feel the tie rather than read about it, the roller on the
 <a href="../">Basic Rules</a> page rolls real dice, and the <a href="../odds/">odds page</a> has

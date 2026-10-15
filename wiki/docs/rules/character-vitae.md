@@ -25,18 +25,34 @@ done, and what they're good at. Fill in what matters and leave the rest blank.
 <span class="dpd-field-label">Connections — who you know in the Party, and how</span>
 <div class="dpd-field"></div>
 
-### Skills
+### Stats
 
-Your Narrator picks three of the five dice. Assign one to each Skill. Bigger die, more
-experience.
+Your Narrator picks three of the five dice. Assign one to each stat. Bigger die, more
+experience. The Floor is the lowest you can roll on that stat, once
+[training](training.md) gives it one.
 
-| Skill | What it covers | Your die |
-| --- | --- | :---: |
-| **Body** (Physical) | Strength, senses, fine motor skills, stamina | ▢ |
-| **Mind** (Mental) | Knowledge, memory, reasoning, aptitude | ▢ |
-| **Soul** (Spiritual) | Connection: intuition, empathy, persuasion, deception, nature | ▢ |
+| Stat | What it covers | Your die | Floor |
+| --- | --- | :---: | :---: |
+| **Body** (Physical) | Strength, senses, fine motor skills, endurance | ▢ | ▢ |
+| **Mind** (Mental) | Knowledge, memory, reasoning, aptitude | ▢ | ▢ |
+| **Soul** (Spiritual) | Connection: intuition, empathy, persuasion, deception, nature | ▢ | ▢ |
 
-<span class="dpd-field-label">Notes — what happened, what you're carrying, what you owe</span>
+<span class="dpd-field-label">Training points — to spend when the story gives you a chance to train</span>
+<div class="dpd-field"></div>
+
+<span class="dpd-field-label">Skills — what you've trained in</span>
+<div class="dpd-field"></div>
+<div class="dpd-field"></div>
+<div class="dpd-field"></div>
+
+<span class="dpd-field-label">Stamina — one box per side of the stat's die. Tick one off for each point you lose</span>
+<div class="dpd-stamina">
+<div class="dpd-st-row"><b>Body</b><span class="dpd-bx"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
+<div class="dpd-st-row"><b>Mind</b><span class="dpd-bx"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
+<div class="dpd-st-row"><b>Soul</b><span class="dpd-bx"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
+</div>
+
+<span class="dpd-field-label">Notes — what happened, what you're carrying, what you owe, what's left a mark</span>
 <div class="dpd-field"></div>
 <div class="dpd-field"></div>
 <div class="dpd-field"></div>
@@ -65,18 +81,18 @@ rolls are better.
 
 Which stat you roll depends on **how you go about something**, not on what you're trying to
 do. Faced with a locked door, you can put your shoulder into it (Physical), hunt for a hidden
-key or a secret latch (Mental), or remember the guard who mentioned a secret knock (Spiritual).
+key or a secret latch (Mental), or talk a guard into telling you the secret knock (Spiritual).
 Same door, three ways through it. If you can describe it, the Narrator can tell you which stat
 it takes.
 
 ### Body &mdash; Physical checks
 
-**Strength, senses, fine motor skills, stamina.** Body is everything your physical self can do:
+**Strength, senses, fine motor skills, endurance.** Body is everything your physical self can do:
 how strong, how quick, how sharp-eyed, how steady-handed, and how long you can keep going.
 
 Reach for Body when you're forcing, lifting, climbing, running, swimming, fighting, or dodging.
 It's also the steady hand that picks a lock or stitches a wound, and the sharp eye that catches
-a glint in the grass or the creak of a floorboard. And it's the stamina to march all night or
+a glint in the grass or the creak of a floorboard. And it's the endurance to march all night or
 hold your breath that little bit longer.
 
 ### Mind &mdash; Mental checks

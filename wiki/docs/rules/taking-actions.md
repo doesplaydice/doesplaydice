@@ -36,7 +36,8 @@ Narrator will tell you when that's the case, or the description of an ability wi
 ## Trying again, and pushing your luck
 
 **If you fail a check and still have actions left, you can usually try again.** If that punch
-misses, you can throw a second, or even a third.
+misses, you can throw a second, or even a third, though each attack after your first rolls a
+smaller die (see [Attacking](combat.md#attacking)).
 
 Sometimes you can't simply try again. Think of the classic movie scene where the hero has to
 defuse the bomb: cut the wrong wire and it goes off. Or you throw your only grenade and miss:
@@ -46,8 +47,9 @@ We like good stories, though. And second chances. So even when a normal second t
 table, there's a way to try again &mdash; the stakes just go up.
 
 **You can push your luck: reroll the attempt you just failed.** It costs one action, the same as
-any second try, plus one stamina in the Skill you're rolling (see [Stamina](combat.md#stamina)).
-If you succeed, that's all it costs. **If you fail, it's a critical failure**: worse than an ordinary
+any second try, plus one stamina in the stat you're rolling (see [Stamina](combat.md#stamina)).
+It's the same check again, with the same die you just rolled: a push never steps down. If you
+succeed, that's all it costs. **If you fail, it's a critical failure**: worse than an ordinary
 failure, and often double its effect.
 
 - **Defusing the bomb.** If the bomb would cost each of you one stamina, a failed push costs

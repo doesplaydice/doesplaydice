@@ -13,11 +13,35 @@
  * leaves it.
  */
 (function () {
-  var KEY = 'dpd-sheet-v1';
+  /* Saved answers are keyed by name: the label a line sits under and which
+     line it is ("background-2"), or the Skill a die, floor or stamina track
+     belongs to ("die-body"). Version 1 keyed them by position instead, which
+     misfiles everything the moment a field is added above another one. */
+  var KEY = 'dpd-sheet-v2';
+  var OLD_KEY = 'dpd-sheet-v1';
+
+  /* What position f0, f1 ... meant in version 1, which is fixed forever, so
+     a sheet saved then still comes back with every answer where it was. */
+  var V1_ORDER = [
+    'character-name-1', 'played-by-1', 'background-1', 'background-2',
+    'school-or-job-1', 'habits-and-quirks-1', 'habits-and-quirks-2',
+    'connections-1', 'notes-1', 'notes-2', 'notes-3',
+    'die-body', 'die-mind', 'die-soul'
+  ];
 
   function load() {
-    try { return JSON.parse(localStorage.getItem(KEY) || '{}'); }
-    catch (e) { return {}; }
+    try {
+      var saved = localStorage.getItem(KEY);
+      if (saved) return JSON.parse(saved);
+      var old = JSON.parse(localStorage.getItem(OLD_KEY) || '{}');
+      var data = {};
+      V1_ORDER.forEach(function (name, i) {
+        if (typeof old['f' + i] === 'string') data[name] = old['f' + i];
+      });
+      save(data);
+      localStorage.removeItem(OLD_KEY);
+      return data;
+    } catch (e) { return {}; }
   }
 
   function save(data) {
@@ -32,6 +56,7 @@
   function describe(sheet) {
     var groups = [];
     var current = null;
+    var skills = null;
 
     [].forEach.call(sheet.children, function (node) {
       var labelSpan = node.querySelector && node.querySelector('.dpd-field-label');
@@ -53,22 +78,44 @@
         ? node
         : (node.querySelector && node.querySelector('table'));
       if (table) {
+        var col = columnsOf(table);
         var rows = [];
         [].forEach.call(table.querySelectorAll('tbody tr'), function (tr) {
           var cells = tr.children;
           if (cells.length < 3) return;
-          var chooser = cells[2].querySelector('select');
+          var dieCell = cells[col.die] || cells[cells.length - 1];
+          var chooser = dieCell.querySelector('select');
           rows.push({
             skill: textOf(cells[0]),
             covers: textOf(cells[1]),
             /* textContent of a cell holding a <select> is every option at once,
                which is not what anybody picked. */
-            die: chooser ? chooser.value : textOf(cells[2])
+            die: chooser ? chooser.value : textOf(dieCell),
+            floor: col.floor >= 0 && cells[col.floor] ? textOf(cells[col.floor]) : '',
+            spent: []
           });
         });
-        if (rows.length) { groups.push({ kind: 'skills', rows: rows }); current = null; }
+        if (rows.length) {
+          skills = { kind: 'skills', rows: rows };
+          groups.push(skills);
+          current = null;
+        }
       }
     });
+
+    /* The stamina boxes sit further down the sheet, but they belong to the
+       Skills, so the ones ticked off travel with each Skill's row. */
+    if (skills) {
+      [].forEach.call(sheet.querySelectorAll('.dpd-st-row'), function (track) {
+        var row = skills.rows.filter(function (r) {
+          return firstWord(r.skill) === firstWord(textOf(track.querySelector('b')));
+        })[0];
+        if (!row) return;
+        [].forEach.call(track.querySelectorAll('.dpd-bx i'), function (box, b) {
+          if (box.classList.contains('is-spent')) row.spent.push(b);
+        });
+      });
+    }
 
     return groups;
   }
@@ -77,6 +124,24 @@
     var s = name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
     return s || 'character-vitae';
   }
+
+  function firstWord(text) { return (text || '').trim().split(/\s+/)[0].toLowerCase(); }
+
+  /* Which column holds the die and which the floor, read from the headings so
+     that adding a column cannot quietly move an answer into the wrong one. */
+  function columnsOf(table) {
+    var col = { die: -1, floor: -1 };
+    [].forEach.call(table.querySelectorAll('thead th'), function (th, i) {
+      var t = textOf(th);
+      if (/\bdie\b/i.test(t)) col.die = i;
+      if (/floor/i.test(t)) col.floor = i;
+    });
+    return col;
+  }
+
+  /* The stamina boxes past a die's sides are not yours: grey them out, as the
+     printed sheet asks you to with a pencil. */
+  function sides(die) { return parseInt(String(die || '').replace(/^d/i, ''), 10) || 0; }
 
   /* There are five dice and there will only ever be five: the game is built on
      the five Platonic solids, and a sixth would not be a house rule, it would be
@@ -109,18 +174,47 @@
   }
 
   function build(sheet) {
-    /* Ruled lines, then the die cell at the end of each Skills row. The order
-       here is what the saved values are keyed on -- leave it alone. Each entry
-       knows how to read and write itself, because the dice are a <select> and
-       everything else is contenteditable. */
-    var cells = [].slice.call(sheet.querySelectorAll('.dpd-field')).map(function (el) {
-      return { el: el, text: true };
+    /* Every answer on the sheet, each under its own name. Each entry knows how
+       to read and write itself, because the dice are a <select>, the floors and
+       the ruled lines are contenteditable, and stamina is a row of boxes. */
+    var cells = [];
+    var label = '', line = 0;
+    [].forEach.call(sheet.children, function (node) {
+      var span = node.querySelector && node.querySelector('.dpd-field-label');
+      if (span) {
+        label = slug(textOf(span).split(/\s+\u2014\s+/)[0]);
+        line = 0;
+        return;
+      }
+      if (node.classList && node.classList.contains('dpd-field')) {
+        line += 1;
+        cells.push({ el: node, kind: 'text', key: label + '-' + line });
+      }
     });
-    sheet.querySelectorAll('table tr').forEach(function (row) {
-      var last = row.lastElementChild;
-      if (!last || last.tagName !== 'TD') return;
-      var name = row.firstElementChild ? row.firstElementChild.textContent.trim() : '';
-      cells.push({ el: last, text: false, label: name });
+
+    var tracks = {};
+    sheet.querySelectorAll('.dpd-st-row').forEach(function (track) {
+      tracks[firstWord(textOf(track.querySelector('b')))] = track;
+    });
+
+    sheet.querySelectorAll('table').forEach(function (table) {
+      var col = columnsOf(table);
+      if (col.die < 0) return;
+      table.querySelectorAll('tbody tr').forEach(function (row) {
+        var name = row.firstElementChild ? textOf(row.firstElementChild) : '';
+        var skill = firstWord(name);
+        var die = { el: row.children[col.die], kind: 'die', key: 'die-' + skill,
+                    label: name.split(/\s+/)[0] };
+        cells.push(die);
+        if (col.floor >= 0 && row.children[col.floor]) {
+          cells.push({ el: row.children[col.floor], kind: 'floor', key: 'floor-' + skill,
+                       label: name.split(/\s+/)[0] });
+        }
+        if (tracks[skill]) {
+          cells.push({ el: tracks[skill], kind: 'stamina', key: 'stamina-' + skill,
+                       label: name.split(/\s+/)[0], die: die });
+        }
+      });
     });
 
     var data = load();
@@ -130,17 +224,17 @@
       clearTimeout(pending);
       pending = setTimeout(function () {
         var out = {};
-        cells.forEach(function (c, j) {
+        cells.forEach(function (c) {
           var v = c.get();
-          if (v) out['f' + j] = v;
+          if (v) out[c.key] = v;
         });
         save(out);
       }, 400);
     }
 
-    cells.forEach(function (cell, i) {
+    cells.forEach(function (cell) {
       var el = cell.el;
-      if (cell.text) {
+      if (cell.kind === 'text') {
         el.setAttribute('contenteditable', 'plaintext-only');
         el.setAttribute('role', 'textbox');
         el.setAttribute('spellcheck', 'false');
@@ -148,7 +242,7 @@
         cell.get = function () { return el.textContent.trim(); };
         cell.set = function (v) { el.textContent = v; };
         el.addEventListener('input', queueSave);
-      } else {
+      } else if (cell.kind === 'die') {
         var select = makeDieChooser(el, cell.label);
         el.classList.add('is-die');
         cell.get = function () { return select.value; };
@@ -157,10 +251,85 @@
         cell.set = function (v) {
           select.value = DICE.indexOf(v) === -1 ? '' : v;
           select.sync();
+          select.dispatchEvent(new Event('dpd-die'));
         };
-        select.addEventListener('change', queueSave);
+        select.addEventListener('change', function () {
+          select.dispatchEvent(new Event('dpd-die'));
+          queueSave();
+        });
+        cell.select = select;
+      } else if (cell.kind === 'floor') {
+        /* A floor is a small number: the training points in that Skill. */
+        var box = document.createElement('span');
+        box.className = 'dpd-floor';
+        box.setAttribute('contenteditable', 'plaintext-only');
+        box.setAttribute('role', 'textbox');
+        box.setAttribute('inputmode', 'numeric');
+        box.setAttribute('aria-label', cell.label + ' floor');
+        el.textContent = '';
+        el.appendChild(box);
+        el.classList.add('is-floor');
+        cell.text = box;
+        cell.get = function () { return box.textContent.trim(); };
+        cell.set = function (v) { box.textContent = v; };
+        box.addEventListener('input', function () {
+          var clean = box.textContent.replace(/\D/g, '').slice(0, 2);
+          if (clean !== box.textContent) box.textContent = clean;
+          queueSave();
+        });
+      } else {
+        /* Stamina: tick a box off for each point lost, untick it as it comes
+           back. Boxes past the die are greyed out and cannot be ticked. */
+        var boxes = [].slice.call(el.querySelectorAll('.dpd-bx i'));
+        var spent = [];
+        boxes.forEach(function (b, n) {
+          b.setAttribute('role', 'checkbox');
+          b.setAttribute('aria-label', cell.label + ' stamina ' + (n + 1));
+          function toggle() {
+            if (b.classList.contains('is-out')) return;
+            b.classList.toggle('is-spent');
+            b.setAttribute('aria-checked', b.classList.contains('is-spent'));
+            queueSave();
+          }
+          b.addEventListener('click', toggle);
+          b.addEventListener('keydown', function (e) {
+            if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); toggle(); }
+          });
+        });
+        function fit() {
+          var n = sides(cell.die.select.value);
+          boxes.forEach(function (b, j) {
+            var out = n > 0 && j >= n;
+            b.classList.toggle('is-out', out);
+            if (out) b.classList.remove('is-spent');
+            b.setAttribute('aria-checked', b.classList.contains('is-spent'));
+            b.setAttribute('aria-disabled', out);
+            b.tabIndex = out ? -1 : 0;
+          });
+        }
+        cell.die.select.addEventListener('dpd-die', fit);
+        cell.get = function () {
+          spent = [];
+          boxes.forEach(function (b, j) { if (b.classList.contains('is-spent')) spent.push(j + 1); });
+          return spent.join(',');
+        };
+        cell.set = function (v) {
+          var marks = String(v || '').split(',').map(Number);
+          boxes.forEach(function (b, j) {
+            b.classList.toggle('is-spent', marks.indexOf(j + 1) !== -1);
+          });
+          fit();
+        };
+        fit();
       }
-      if (typeof data['f' + i] === 'string') cell.set(data['f' + i]);
+    });
+
+    /* Dice before stamina, so a track knows its die before it restores. */
+    cells.forEach(function (cell) {
+      if (cell.kind !== 'stamina' && typeof data[cell.key] === 'string') cell.set(data[cell.key]);
+    });
+    cells.forEach(function (cell) {
+      if (cell.kind === 'stamina' && typeof data[cell.key] === 'string') cell.set(data[cell.key]);
     });
 
     /* Chrome's print preview opens and then closes again on a page that is in
@@ -172,12 +341,14 @@
         document.activeElement.blur();
       }
       cells.forEach(function (c) {
-        if (c.text) c.el.removeAttribute('contenteditable');
+        if (c.kind === 'text') c.el.removeAttribute('contenteditable');
+        if (c.kind === 'floor') c.text.removeAttribute('contenteditable');
       });
     });
     window.addEventListener('afterprint', function () {
       cells.forEach(function (c) {
-        if (c.text) c.el.setAttribute('contenteditable', 'plaintext-only');
+        if (c.kind === 'text') c.el.setAttribute('contenteditable', 'plaintext-only');
+        if (c.kind === 'floor') c.text.setAttribute('contenteditable', 'plaintext-only');
       });
     });
 

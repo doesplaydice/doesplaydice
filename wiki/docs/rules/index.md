@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Does Play Dice is a game about story-telling. Think of it as group improv with a little chaos
+Does Play Dice is a game about storytelling. Think of it as group improv with a little chaos
 added to the mix with the introduction of the dice. Each player needs pencil, paper, and a set
 of 5 dice, one each with the following number of sides: 4, 6, 8, 12, and 20.
 
@@ -15,7 +15,7 @@ Most of the players will create a Character and come together to form a Party. A
 they'll work together towards a common goal.
 
 **2.** The exception: one player is the Narrator. The Narrator creates the overall story along
-with the challenges the Party will face. The Narrator also calls for Skill Checks as needed to
+with the challenges the Party will face. The Narrator also calls for checks as needed to
 determine an Outcome.
 
 </div>
@@ -28,15 +28,15 @@ determine an Outcome.
 movie-style heist, a murder mystery dinner party, or a fantasy-based dungeon crawl with
 wizards, dragons, and mounds of treasure. There are resources and inspiration and
 world-building guides for you everywhere, but you can also simply download a module, game, or
-setting that someone else has created. Eventually, we'll post some here.
+setting that someone else has created.
 
 **4.** Provide the important details your players need to create their Characters. They need to
 know if they're creating a highly skilled criminal, a guest at a fancy dinner party, or a
 dungeon delver. They need to know the time period, the level of technology that's available,
 and other basic details of the setting you've created for them. Last, they need to know which
-dice to choose from for their Skills. Of the 5 dice in a set, choose 3, keeping in mind that
-smaller dice represent less experience, while larger dice represent more. (When making a Skill
-Check, the highest roll wins.)
+dice to choose from for their stats. Of the 5 dice in a set, choose 3, keeping in mind that
+smaller dice represent less experience, while larger dice represent more. (When making a check,
+the highest roll wins.)
 
 </div>
 
@@ -51,15 +51,15 @@ everyone will work within the guidelines provided by your Narrator.
 **6.** Write down all of the details about your Character that matter: name, background, school
 or job, habits, quirks ... anything that makes you you.
 
-**7.** Last, assign one die of the three chosen by the Narrator to each of your Skills:
-Body, Mind, and Soul. Checks on them are called Physical, Mental, and Spiritual. We'll see how they're used below. For now, just know that higher
-numbers are better.
+**7.** Last, assign one die of the three chosen by the Narrator to each of your stats:
+Body, Mind, and Soul. Checks on them are called Physical, Mental, and Spiritual. We'll see how
+they're used below. For now, just know that higher numbers are better.
 
 </div>
 
-| Skill | Check | When it's used |
+| Stat | Check | What it covers |
 | --- | --- | --- |
-| **Body** | Physical | Strength, senses, fine motor skills, stamina |
+| **Body** | Physical | Strength, senses, fine motor skills, endurance |
 | **Mind** | Mental | Knowledge, memory, reasoning, aptitude |
 | **Soul** | Spiritual | Connection: intuition, empathy, persuasion, deception, nature |
 
@@ -67,28 +67,28 @@ numbers are better.
 
 <div class="dpd-steps" markdown>
 
-**8.** Ok, let's play! The Narrator will describe what's around you. If you have questions, ask.
-Talk to your Party. Talk to the people around you. (Anyone your Narrator describes that isn't
-in your Party.) When you want to do something, describe it to the Narrator. If what you want to
+**8.** OK, let's play! The Narrator will describe what's around you. If you have questions, ask.
+Talk to your Party. Talk to the people around you (anyone your Narrator describes who isn't
+in your Party). When you want to do something, describe it to the Narrator. If what you want to
 do is easy ("I open the door"), the Narrator will describe what happens next. ("You open the
 door and find an office filled with dusty books.") But what if you want to do something that
 isn't easy? What if the door is locked? This is the core mechanic of the game that makes it
-different from other forms of story-telling or improv by introducing an element of chance: we
+different from other forms of storytelling or improv by introducing an element of chance: we
 roll for it!
 
 **9.** What the Character rolls depends on how they choose to approach the challenge. You might
-try force open a locked door, a Physical challenge. Or you can search the area around the door
+try to force open a locked door, a Physical challenge. Or you can search the area around the door
 for a hidden key or a secret latch. Searching is a Mental challenge. Alternatively, if there's
 a particularly smooth talker in the Party, they might have learned about a secret knock from
-one of the guards. Learning that valuable tidbit would most likely involve a Spiritual Challenge.
-Whichever you choose, when the Narrator calls for a Skill Check, you'll roll the die that you
-assigned to the applicable Skill: Body, Mind, or Soul.
+one of the guards. Learning that valuable tidbit would most likely involve a Spiritual challenge.
+Whichever you choose, when the Narrator calls for a check, you'll roll the die that you
+assigned to the applicable stat: Body, Mind, or Soul.
 
 **10.** The Narrator rolls against you. They decide how difficult the challenge you're
 attempting is and roll the corresponding die according to the table below. Let's assume you're
 attempting to shoulder check the door and the Narrator knows the door is pretty thick and the
 lock sturdy. Despite what we see in the movies, knocking down a door isn't an easy thing to do,
-so the Narrator decides in this case that it's a Highly Difficult challenge, or a d12.
+so the Narrator decides in this case that it's High difficulty: a d12.
 
 </div>
 
@@ -102,7 +102,7 @@ so the Narrator decides in this case that it's a Highly Difficult challenge, or 
 
 <div class="dpd-steps" markdown>
 
-**11.** Now, both of you roll. The Character rolls the die assigned to the Skill; let's assume
+**11.** Now, both of you roll. The Character rolls the die assigned to the stat; let's assume
 that's a d6. The Narrator rolls the die corresponding to the Difficulty, which we determined
 above is a d12. Highest roll wins, and the Outcome will reflect that. If the Player has the
 higher roll, perhaps they force open the door in one attempt and catch whoever is on the other
@@ -116,12 +116,12 @@ suffer some minor or temporary setback as a result.
 
 <div class="dpd-roller" data-roller>
   <span class="dpd-roller-kicker">Try it</span>
-  <p class="dpd-roller-lede">Pick your Skill die and the difficulty the Narrator sets, then roll.
+  <p class="dpd-roller-lede">Pick your stat die and the difficulty the Narrator sets, then roll.
   Highest wins. A tie means both sides get something.</p>
 
   <div class="dpd-roller-grid">
     <div class="dpd-roller-side" data-side="you">
-      <span class="dpd-roller-label">Your Skill die</span>
+      <span class="dpd-roller-label">Your stat die</span>
       <div class="dpd-roller-picks"></div>
       <div class="dpd-roller-result"><span class="dpd-roller-num">&mdash;</span></div>
     </div>

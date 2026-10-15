@@ -25,7 +25,7 @@
  * Bump CACHE when the precache list changes. Everything else self-heals,
  * because documents are always tried over the network first.
  */
-const CACHE = 'dpd-v8';
+const CACHE = 'dpd-v10';
 
 // The smallest set that makes the game usable with no network at all.
 const SHELL = [
@@ -35,7 +35,7 @@ const SHELL = [
   '/rules/character-vitae/',
   '/narrators/screen/',
   '/downloads/',
-  '/assets/stylesheets/extra.v5.css',
+  '/assets/stylesheets/extra.v7.css',
   '/assets/stylesheets/fonts.css',
   '/assets/js/dice.js',
   // The sheet is filled in at a table, where there may be no signal at all, and
@@ -47,6 +47,8 @@ const SHELL = [
   // button cannot work offline -- and filling a sheet in is something people do
   // at a table, which is precisely where there is no signal.
   '/downloads/does-play-dice-character-sheet.pdf',
+  // The player reference is the other thing people reach for at that table.
+  '/downloads/does-play-dice-reference.pdf',
   '/assets/img/solid-tetrahedron.svg',
   '/assets/img/solid-hexahedron.svg',
   '/assets/img/solid-octahedron.svg',

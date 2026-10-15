@@ -4,7 +4,7 @@ hide:
   - toc
 ---
 
-# The screen <span class="dpd-status ready">For the table</span>
+# The screen
 
 <p class="dpd-lede-sm">Everything a Narrator needs mid-sentence, on one page, in the order
 it gets asked for. Built for a phone propped behind a screen. Works with no signal.</p>
@@ -39,7 +39,7 @@ high end. [The full odds &rarr;](../rules/odds.md)
 <section class="dpd-screen-block" markdown>
 <h2 class="dpd-screen-label">The four Canons</h2>
 
-When a call is genuinely unclear, these decide it. Jeff's four, shortened for the table.
+When a call is genuinely unclear, these four decide it.
 
 1. **Finality** &mdash; the Narrator is the final arbiter.
 2. **Fun** &mdash; seek collaborative and fun solutions.
@@ -49,16 +49,35 @@ When a call is genuinely unclear, these decide it. Jeff's four, shortened for th
 </section>
 
 <section class="dpd-screen-block" markdown>
-<h2 class="dpd-screen-label">The three Skills</h2>
+<h2 class="dpd-screen-label">The three stats</h2>
 
-| Skill | Reach for it when |
+| Stat | Reach for it when |
 | --- | --- |
-| **Body** (Physical) | Strength, senses, fine motor skills, stamina |
+| **Body** (Physical) | Strength, senses, fine motor skills, endurance |
 | **Mind** (Mental) | Knowledge, memory, reasoning, aptitude |
 | **Soul** (Spiritual) | Connection: intuition, empathy, persuasion, deception, nature |
 
-If a player argues their approach fits a different Skill and the argument is good, it fits.
+If a player argues their approach fits a different stat and the argument is good, it fits.
 That is the Canon of fun doing its job.
+</section>
+
+<section class="dpd-screen-block" markdown>
+<h2 class="dpd-screen-label">In a fight</h2>
+
+- **Both sides roll.** The loser drops one stamina in the stat they rolled. A tie lands both
+  ways.
+- **Hard hit:** win by more than their die has sides, and it's two stamina.
+- **Step down:** each attack after your first on your turn, and each defence after your first
+  in a round, rolls one die smaller, down to a d4. Defending is free.
+- **Out** at zero stamina in any stat. Out isn't dead.
+
+| Getting stamina back | Recovers |
+| --- | --- |
+| A full round of rest | 1 point, only while below half |
+| A night with food and shelter | Everything |
+| Care, with the right tools or training | 1 point |
+
+[Combat, harm and recovery &rarr;](../rules/combat.md)
 </section>
 
 <section class="dpd-screen-block" markdown>
@@ -69,14 +88,6 @@ That is the Canon of fun doing its job.
 - **Let the dice decide, then narrate backwards.** Roll first, explain after.
 - **A tie is a gift.** It is the one outcome where you get to say yes *and*.
 - **When in doubt, escalate the situation, not the difficulty.**
-</section>
-
-<section class="dpd-screen-block dpd-screen-todo" markdown>
-<h2 class="dpd-screen-label">Warm-up questions</h2>
-
-**Jeff's section.** `100 Warmup Questions.md` in his notes is already table-ready and belongs
-here, one at a time, on a tap. It is not published yet, so this is a placeholder rather than
-an invention &mdash; nothing in this section has been written for him.
 </section>
 
 </div>

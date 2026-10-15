@@ -75,6 +75,51 @@ def rules_in(stream):
     return [r for r in rects if r[3] <= 2.2 and r[2] > 40]
 
 
+def boxes_in(stream):
+    """The outline of every stroked shape, in page points. Chrome draws a
+    bordered box (the Floor boxes, the stamina boxes) as a path rather than a
+    rectangle, so this takes the bounding box of each path it strokes."""
+    ctm = (1, 0, 0, 1, 0, 0)
+    stack, nums, pts, boxes = [], [], [], []
+
+    def at(x, y):
+        return (ctm[0] * x + ctm[2] * y + ctm[4], ctm[1] * x + ctm[3] * y + ctm[5])
+
+    for num, op in re.findall(r'(-?[\d.]+)|([A-Za-z*\'"]+)', stream):
+        if num:
+            nums.append(float(num))
+            continue
+        if op == 'q':
+            stack.append(ctm)
+        elif op == 'Q' and stack:
+            ctm = stack.pop()
+        elif op == 'cm' and len(nums) >= 6:
+            ctm = _mul(tuple(nums[-6:]), ctm)
+        elif op in ('m', 'l') and len(nums) >= 2:
+            pts.append(at(*nums[-2:]))
+        elif op == 'c' and len(nums) >= 6:
+            pts.append(at(*nums[-2:]))
+        elif op in ('S', 's', 'f', 'F', 'f*', 'B', 'B*', 'b', 'b*', 'n'):
+            if pts and op in ('S', 's'):
+                xs = [p[0] for p in pts]
+                ys = [p[1] for p in pts]
+                boxes.append((min(xs), min(ys), max(xs) - min(xs), max(ys) - min(ys)))
+            pts = []
+        nums = []
+    return [b for b in boxes if b[2] > 10 and b[3] > 10]
+
+
+def declared_stamina(js_path):
+    """The stamina grid sheet-pdf.js crosses boxes out on."""
+    src = open(js_path, encoding='utf-8').read()
+    m = re.search(r'var STAMINA = \{\s*x:\s*([\d.]+),\s*step:\s*([\d.]+),\s*'
+                  r'size:\s*([\d.]+),\s*rows:\s*\[([^\]]*)\]', src)
+    if not m:
+        raise SystemExit("could not find the STAMINA table in %s" % js_path)
+    rows = [float(v) for v in m.group(4).split(',')]
+    return float(m.group(1)), float(m.group(2)), float(m.group(3)), rows
+
+
 def declared_rules(js_path):
     """The coordinates sheet-pdf.js will actually write at."""
     src = open(js_path, encoding='utf-8').read()
@@ -103,31 +148,55 @@ def main():
         print("  (run tools/build_pdf.py first; CI does this on every push)")
         return 0
 
-    found = rules_in(content_stream(open(pdf_path, "rb").read()))
+    stream = content_stream(open(pdf_path, "rb").read())
+    found = rules_in(stream)
+    boxes = boxes_in(stream)
     declared = declared_rules(args.js)
 
+    def box_near(x, y):
+        return any(abs(b[0] - x) <= TOLERANCE and abs(b[1] - y) <= TOLERANCE
+                   for b in boxes)
+
     problems = []
+    checked = 0
     for name, (x, y, _w) in sorted(declared.items()):
         if name.startswith("die-"):
             continue  # written on a printed glyph's baseline, not on a rule
+        checked += 1
+        if name.startswith("floor-"):
+            if not box_near(x, y):
+                problems.append((name, x, y))
+            continue
         near = [r for r in found
                 if abs(r[1] - y) <= TOLERANCE and r[0] - TOLERANCE <= x <= r[0] + r[2]]
         if not near:
             problems.append((name, x, y))
 
+    sx, step, _size, rows = declared_stamina(args.js)
+    for i, y in enumerate(rows):
+        for b in range(20):
+            checked += 1
+            x = sx + b * step
+            if not box_near(x, y):
+                problems.append(("stamina-%d-%d" % (i + 1, b + 1), x, y))
+
     if problems:
         print("The character sheet has moved under the Download button.\n")
-        print("These coordinates in %s no longer sit on a ruled line:\n" % args.js)
+        print("These coordinates in %s no longer sit on the sheet's lines and boxes:\n" % args.js)
         for name, x, y in problems:
-            print("  %-14s expected a rule at x=%.1f y=%.1f" % (name, x, y))
+            print("  %-14s expected a %s at x=%.1f y=%.1f"
+                  % (name, "rule" if name[:5] not in ("floor", "stami") else "box", x, y))
         print("\nThe ruled lines actually in the sheet now:\n")
         for x, y, w, _h in sorted(found, key=lambda r: (-r[1], r[0])):
             print("  x=%6.1f  y=%6.1f  width=%6.1f" % (x, y, w))
-        print("\nUpdate the RULES table in sheet-pdf.js to match, then re-run this.")
+        print("\nThe boxes actually in the sheet now:\n")
+        for x, y, w, h in sorted(boxes, key=lambda r: (-r[1], r[0])):
+            print("  x=%6.1f  y=%6.1f  width=%6.1f  height=%6.1f" % (x, y, w, h))
+        print("\nUpdate the RULES and STAMINA tables in sheet-pdf.js to match, then re-run this.")
         return 1
 
-    print("Download button: all %d ruled lines still where sheet-pdf.js expects."
-          % (len(declared) - 3))
+    print("Download button: all %d lines and boxes still where sheet-pdf.js expects."
+          % checked)
     return 0
 
 

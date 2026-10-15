@@ -1,6 +1,6 @@
 # Does Play Dice
 
-A story-telling game that's free to download, quick to learn, and only limited by your
+A storytelling game that's free to download, quick to learn, and only limited by your
 imagination. This repository is the source of [doesplaydice.com](https://doesplaydice.com).
 
 Does Play Dice by Jeff Adams is licensed [CC BY 4.0](LICENSE). The name and logo are held back
@@ -23,10 +23,9 @@ python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
 
 ## Contribute or fork
 
-Every page has an edit pencil, and `/admin/` on the site is a browser editor that turns your
-change into a pull request. Or fork this repository and edit the markdown directly. See
-[CONTRIBUTING.md](CONTRIBUTING.md), and [Take it](https://doesplaydice.com/fork/) for why
-forking is encouraged.
+Every page has an edit pencil that turns your change into a pull request. Or fork this repository and edit the markdown directly. See
+[CONTRIBUTING.md](CONTRIBUTING.md), and the [licence page](https://doesplaydice.com/licence/) for how
+to fork it.
 
 Pull requests are built with `--strict`, so a broken link fails before review. Merges to `main`
 deploy to GitHub Pages.
