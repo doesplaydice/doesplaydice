@@ -379,20 +379,8 @@ td .hint{ color:var(--muted); font-size:8.4pt; }
 .train{ margin-top:9pt; }
 
 .two{ display:grid; grid-template-columns:1fr 62mm; gap:14pt; align-items:start; }
-.ref{ border:.75pt solid var(--line); padding:8pt 10pt; }
-.ref h3{
-  font-family:var(--mono); font-size:6.6pt; letter-spacing:.14em; text-transform:uppercase;
-  color:var(--accent); margin:0 0 5pt; font-weight:500;
-}
-.ref table td{ padding:3.2pt 4pt 3.2pt 0; border-bottom:.4pt solid var(--line); }
-.ref .d{ font-family:var(--mono); font-weight:700; width:12mm; }
-
-/* The site's dice colours: each die in its masthead colour, d6 in ink. */
-.ref tr:nth-child(1) .d{ color:var(--d4); }
-.ref tr:nth-child(3) .d{ color:var(--d8); }
-.ref tr:nth-child(4) .d{ color:var(--d12); }
-.ref tr:nth-child(5) .d{ color:var(--d20); }
-.ref p{ margin:6pt 0 0; font-size:7.6pt; line-height:1.45; color:var(--muted); }
+/* Skills: what training has bought, beside the stats it builds on. */
+.skl .rule.short{ height:7.6mm; }
 /* Stamina: twenty boxes a stat, with the five dice marked where each one
    ends, so "cross out the boxes past your die" needs no arithmetic. */
 .stam{ margin-top:11pt; }
@@ -491,17 +479,10 @@ def build_character_sheet(site, chrome, out_dir):
       <div class="rule short"></div>
     </div>
   </div>
-  <div class="ref">
-    <h3>How hard is it?</h3>
-    <table>
-      <tr><td class="d">d4</td><td>Easy</td></tr>
-      <tr><td class="d">d6</td><td>Moderate</td></tr>
-      <tr><td class="d">d8</td><td>Challenging</td></tr>
-      <tr><td class="d">d12</td><td>High difficulty</td></tr>
-      <tr><td class="d">d20</td><td>&ldquo;Impossible&rdquo;</td></tr>
-    </table>
-    <p>You roll your stat die, the Narrator rolls the Difficulty die.
-    Highest wins. <b>A tie means both sides get something.</b></p>
+  <div class="skl">
+    <span class="lbl">Skills <span>&mdash; what you've trained in</span></span>
+    <div class="rule short"></div><div class="rule short"></div><div class="rule short"></div>
+    <div class="rule short"></div><div class="rule short"></div><div class="rule short"></div>
   </div>
 </div>
 

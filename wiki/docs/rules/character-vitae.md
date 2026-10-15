@@ -40,6 +40,11 @@ experience. The Floor is the lowest you can roll on that stat, once
 <span class="dpd-field-label">Training points — to spend when the story gives you a chance to train</span>
 <div class="dpd-field"></div>
 
+<span class="dpd-field-label">Skills — what you've trained in</span>
+<div class="dpd-field"></div>
+<div class="dpd-field"></div>
+<div class="dpd-field"></div>
+
 <span class="dpd-field-label">Stamina — one box per side of the stat's die. Tick one off for each point you lose</span>
 <div class="dpd-stamina">
 <div class="dpd-st-row"><b>Body</b><span class="dpd-bx"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div>

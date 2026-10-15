@@ -40,6 +40,12 @@
     'habits-1':    [39.7, 494.3, 533.2],
     'habits-2':    [39.7, 467.3, 533.2],
     'training':    [39.7, 276.0, 343.5],
+    'skills-1':   [397.5, 426.8, 175.5],
+    'skills-2':   [397.5, 405.0, 175.5],
+    'skills-3':   [397.5, 384.0, 175.5],
+    'skills-4':   [397.5, 362.3, 175.5],
+    'skills-5':   [397.5, 340.5, 175.5],
+    'skills-6':   [397.5, 319.5, 175.5],
     'notes-1':     [39.7, 141.8, 533.2],
     'notes-2':     [39.7, 119.3, 533.2],
     'notes-3':     [39.7,  96.0, 533.2],
@@ -73,6 +79,8 @@
     { match: /habits/i,          rules: ['habits-1', 'habits-2'] },
     { match: /connections/i,     rules: ['connections'] },
     { match: /training/i,        rules: ['training'] },
+    { match: /^skills/i,         rules: ['skills-1', 'skills-2', 'skills-3', 'skills-4',
+                                         'skills-5', 'skills-6'] },
     { match: /notes/i,           rules: ['notes-1', 'notes-2', 'notes-3', 'notes-4'] }
   ];
 

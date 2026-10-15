@@ -13,8 +13,8 @@
   <a href="does-play-dice-character-sheet.pdf">
     <span class="dpd-kicker">PDF</span>
     <span class="dpd-dl-title">Character Vitae</span>
-    <span class="dpd-dl-desc">One page, room to write, and the difficulty ladder printed on it
-    so nobody has to look anything up mid-game.</span>
+    <span class="dpd-dl-desc">One page, with room to write, your stats and stamina, and space
+    for the skills you train in.</span>
     <span class="dpd-dl-go">Download &rarr;</span>
   </a>
   <a href="does-play-dice-reference.pdf">
