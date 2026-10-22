@@ -20,7 +20,7 @@ If you changed things, say so. That is the whole obligation.
 
 ## What is *not* covered
 
-The licence applies to **everything in this repository** except the name: the rules, tables,
+The licence applies to **everything in this repository** except the name and logo: the rules, tables,
 examples, spells, skills, character templates, story guides, handouts, maps, downloads and site.
 Nothing in the game itself is held back as closed content.
 

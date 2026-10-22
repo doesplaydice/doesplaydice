@@ -1,6 +1,6 @@
 # Make it yours
 
-The short version: **the whole game is yours to take.** Only the name stays with us. This page explains what that means, and
+The short version: **the whole game is yours to take.** Only the name and logo stay with us. This page explains what that means, and
 how to do it.
 
 ## The text
@@ -51,8 +51,8 @@ two: open rules on one side, and on the other a closed list of "product identity
 material" &mdash; the iconic monsters, the named spells, the setting, the art. The owlbear and
 Leomund's Tiny Hut stay behind that wall, even though they sit right inside the rules.
 
-**We don't split the game.** The only thing held back is the name *Does Play Dice*. Everything
-else is CC BY:
+**We don't split the game.** The only things held back are the name *Does Play Dice* and its
+logo. Everything else is CC BY:
 
 - the rules, and every example of them
 - spells, skills and character templates
