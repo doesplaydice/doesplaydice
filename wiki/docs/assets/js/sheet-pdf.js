@@ -50,14 +50,14 @@
     'notes-2':     [39.7, 119.3, 533.2],
     'notes-3':     [39.7,  96.0, 533.2],
     'notes-4':     [39.7,  73.5, 533.2],
-    /* The die cells already have a grey "d" printed on them, so only the size
+    /* The die cells already have a gray "d" printed on them, so only the size
        goes here -- set on that glyph's own baseline, just past where it ends, so
        "d" + "8" reads as one word rather than two things near each other. */
     'die-1':      [305.5, 411.0, 34.0],
     'die-2':      [305.5, 372.8, 34.0],
     'die-3':      [305.5, 334.5, 34.0],
     /* The Floor boxes: left edge, bottom edge and width of each printed box.
-       The number is centred in it. */
+       The number is centered in it. */
     'floor-1':    [346.9, 406.1, 24.7],
     'floor-2':    [346.9, 367.9, 24.7],
     'floor-3':    [346.9, 329.6, 24.7]
@@ -69,7 +69,7 @@
      out every box past the die you chose, as you would with a pencil. */
   var STAMINA = { x: 90.4, step: 21.55, size: 17.2, rows: [225.4, 205.1, 184.9] };
 
-  /* Which ruled lines each labelled block on the web page flows into. Matched on
+  /* Which ruled lines each labeled block on the web page flows into. Matched on
      the label so that reordering the markdown cannot silently misfile answers. */
   var BLOCKS = [
     { match: /character name/i,  rules: ['name'] },
@@ -275,7 +275,7 @@
     model.groups.forEach(function (group) {
       if (group.kind === 'skills') {
         group.rows.forEach(function (row, i) {
-          /* The sheet already prints a grey "d"; only the size goes after it. */
+          /* The sheet already prints a gray "d"; only the size goes after it. */
           var v = String(row.die || '').replace(/^\s*d/i, '').trim();
           if (DIE_RULES[i] && v) {
             var r = RULES[DIE_RULES[i]];

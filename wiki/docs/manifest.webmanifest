@@ -1,7 +1,7 @@
 {
   "name": "Does Play Dice",
   "short_name": "Play Dice",
-  "description": "A story-telling game. Five dice, fifteen minutes, hours of fun.",
+  "description": "A story-telling game. Five dice, fifteen minutes, a lifetime of adventure.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",

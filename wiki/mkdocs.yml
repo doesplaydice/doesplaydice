@@ -107,7 +107,7 @@ plugins:
   - search
 
 extra:
-  # The "Made with Material for MkDocs" line moves to the licence page, where
+  # The "Made with Material for MkDocs" line moves to the license page, where
   # the rest of the credits live. Material is MIT; the footer notice is a
   # courtesy, not a condition, and the footer had grown too long to read.
   generator: false
@@ -117,11 +117,11 @@ extra:
       name: doesplaydice.com
 
 # Two short lines rather than one long one. The excluded-marks wording that used
-# to live here is the sort of thing you read once, so it moved to /licence/.
+# to live here is the sort of thing you read once, so it moved to /license/.
 copyright: >
   <span class="dpd-colophon">
-  <span>Does Play Dice by Jeff Adams &middot; 2026 &middot;
-  <a href="/licence/" rel="license">CC BY 4.0</a></span>
+  <span>Does Play Dice &middot; 2026 &middot;
+  <a href="/license/" rel="license">CC BY 4.0</a></span>
   <span class="dpd-colophon-by">Made with
   <span class="dpd-heart" role="img" aria-label="love">&#9829;</span>
   by <a href="https://llamassist.ai">Llamassist</a></span>
@@ -129,7 +129,7 @@ copyright: >
 
 nav:
   - Home: index.md
-  - For Players:
+  - Player's Guide:
       - Character Vitae: rules/character-vitae.md
       - Basic Rules: rules/index.md
       - "Example of play": rules/at-the-table.md
@@ -137,10 +137,10 @@ nav:
       - Taking turns: rules/taking-actions.md
       - "Combat, harm and recovery": rules/combat.md
       - "Skills and training": rules/training.md
-  - For Narrators:
+  - Narrator's Guide:
       - Running a game: narrators/index.md
       - The screen: narrators/screen.md
-  - For Builders:
+  - Contributor's Guide:
       - How to contribute: contribute/index.md
-      - Make it yours: licence.md
-  - Download: downloads.md
+      - Make it yours: license.md
+  - Downloads: downloads.md

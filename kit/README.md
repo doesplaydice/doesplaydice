@@ -2,7 +2,7 @@
 
 Print-ready pieces for running Does Play Dice at a table with strangers.
 
-Built for **black-and-white printing** &mdash; nothing depends on colour, because the realistic
+Built for **black-and-white printing** &mdash; nothing depends on color, because the realistic
 scenario is a home printer or a copy shop the morning of the convention.
 
 ## The pieces
@@ -102,5 +102,5 @@ trio and the six shapes still hold.
 
 - The name on every piece assumes **Does Play Dice**. If the answer is Free Worlds, it's a
   find-and-replace across four files.
-- There's no licence line on any piece yet, because the licence isn't chosen. Every piece has
+- There's no license line on any piece yet, because the license isn't chosen. Every piece has
   room in its footer for one.

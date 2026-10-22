@@ -6,8 +6,8 @@ hide:
 # Skills and training
 
 Your three stats &mdash; Body, Mind and Soul &mdash; say what you're like. Your **skills** say
-what you've learned: a combat manoeuvre, a new spell, picking pockets, a backstab, a craft.
-Training is how you gain skills, and how your stats get better.
+what you've learned: a combat maneuver, a new spell, picking pockets, a backstab, a craft.
+Training is how you gain skills, and how you reshape your stats as your character changes.
 
 ## There are no levels
 
@@ -33,14 +33,17 @@ That turns "I want to get better at this" into a reason to go somewhere.
 
 ## What points buy
 
-**New skills.** A combat manoeuvre, a new spell, picking pockets, a backstab, a craft: the
+**New skills.** A combat maneuver, a new spell, picking pockets, a backstab, a craft: the
 things your [path](#paths) is made of.
 
-**A bigger die.** Move a stat up the ladder: d4 to d6 to d8 to d12 to d20. It costs the
-difference between the two dice &mdash; 2 points from d4 to d6, 8 points from d12 to d20.
+**A swap.** Characters change: age, maturity, wisdom, injury, a new focus, a tragedy. If the
+story earns it, you may swap the dice on two of your stats, so a Body d12 and Mind d6 become a
+Body d6 and Mind d12. A swap costs the difference between the two dice: 6 points to swap a d6
+and a d12, 2 points to swap a d4 and a d6.
 
-**A step back down.** Characters change: age, maturity, wisdom, injury, a new focus, a tragedy.
-If the story earns it, you may drop a stat one step and get those points back.
+**Not a bigger die.** Points never buy a step up the ladder. With only five dice, one player on
+a d20 at a table of d8s is playing a different game from everyone else. **A bigger die is the
+Narrator's to give**, when the story has earned it and the table stays even.
 
 **A floor.** Training doesn't raise your best roll; **it stops you falling all the way down.**
 With 5 points of training on a d20, your highest roll is still 20, but your lowest is 5. A

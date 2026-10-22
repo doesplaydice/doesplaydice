@@ -33,7 +33,7 @@ concurrency:
   # Keyed by ref, not a single shared "pages" group. Sharing it meant a PR
   # build could cancel an in-flight production deploy and leave the site
   # silently on the previous version -- a cheap accident during launch
-  # weekend. Only PR builds are worth cancelling when superseded.
+  # weekend. Only PR builds are worth canceling when superseded.
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 

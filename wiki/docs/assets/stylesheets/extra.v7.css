@@ -5,17 +5,17 @@
    the masthead), implemented as a Material for MkDocs skin. Two deliberate
    palettes, not an inversion.
 
-   The other dice keep their masthead colours too, but only where a die is
+   The other dice keep their masthead colors too, but only where a die is
    named (the difficulty ladder, the odds grid, the rollers, the Screen's
-   difficulty table), so each die has one colour everywhere and the accent
+   difficulty table), so each die has one color everywhere and the accent
    stays the only highlight. --d4/--d8/--d12/--d20 are the text versions of
-   the masthead colours: same hues, brightness moved until small text clears
+   the masthead colors: same hues, brightness moved until small text clears
    5:1 on the page and on --card. The d6 is ink, as it is in the masthead.
 
    --accent is for text, so it has to clear 4.5:1; on paper that pushes gold
    towards brown. --accent-ui is the brighter gold for everything that is not
    small text (borders, rails, fills, tints, the big ladder and roller
-   numerals), which only needs 3:1. On dark the two are the same colour.
+   numerals), which only needs 3:1. On dark the two are the same color.
 
    Dark is the default.
    =========================================================================== */
@@ -45,7 +45,7 @@
 
 /* ---------- Map onto Material ----------------------------------------------- */
 /* Every scheme has to be listed here. Material only ships `default` and
-   `slate`; an unrecognised scheme name gets no variables of its own, so it
+   `slate`; an unrecognized scheme name gets no variables of its own, so it
    silently falls back to Material's light defaults -- which is exactly what
    `terminal` did on its first run: the attribute flipped, the toggle icon
    changed, and the page stayed white. */
@@ -63,7 +63,7 @@
   --md-primary-fg-color:var(--bg);
   /* Material paints .md-nav__source -- the repository block at the top of the
      mobile drawer -- with --md-primary-fg-color--dark, and its default is
-     indigo #303fa1. Mapping only the base colour left that one block bright
+     indigo #303fa1. Mapping only the base color left that one block bright
      blue in every scheme, which is what showed on a phone. --light is used for
      muted primary text and had the same problem. */
   --md-primary-fg-color--dark:var(--card);
@@ -144,7 +144,7 @@ body{ transition:background-color .35s, color .35s; }
 /* ---------- Masthead ---------------------------------------------------------
    The Set wordmark over its band of faint dice, inlined from
    overrides/partials/masthead.html. No ground of its own: it sits on --bg, and
-   every colour below comes from the palette, so it belongs to whichever
+   every color below comes from the palette, so it belongs to whichever
    scheme is active. The wordmark shares the grid's left edge with the header
    and the tabs; the dice run the full width and fade out at both ends. */
 .dpd-masthead{
@@ -245,7 +245,7 @@ body{ transition:background-color .35s, color .35s; }
   background:var(--card); border-radius:0;
   /* An inset shadow, not a border: it draws the same 1px rule but occupies no
      layout space, so Material's full-height input still fills the form exactly
-     and the placeholder centres. A real border shifted the text down a pixel. */
+     and the placeholder centers. A real border shifted the text down a pixel. */
   box-shadow:inset 0 0 0 1px var(--line);
 }
 .md-search__input{ font-family:var(--dpd-sans); }
@@ -342,8 +342,8 @@ body{ transition:background-color .35s, color .35s; }
 .dpd-ladder > div.is-accent{ border-color:var(--accent-ui); }
 .dpd-ladder > div.is-accent b{ color:var(--accent-ui); }
 
-/* ---------- Dice colours -------------------------------------------------------
-   Each die in its masthead colour wherever one is named. All of these lists run
+/* ---------- Dice colors -------------------------------------------------------
+   Each die in its masthead color wherever one is named. All of these lists run
    d4, d6, d8, d12, d20 in that order, so position picks the die; the d6 stays
    ink. Grouped here so the mapping lives in one place. */
 .dpd-ladder > div:nth-child(1) b,
@@ -386,7 +386,7 @@ body{ transition:background-color .35s, color .35s; }
 
    Margin is deliberately left alone. Zeroing it here also removed Material's
    18px top margin on the paragraph, which pulled the buttons up under the lede
-   and lost the air that framed the hero. Only the flex behaviour was ever
+   and lost the air that framed the hero. Only the flex behavior was ever
    needed; the spacing was already right. */
 .md-typeset .dpd-actions > p{
   display:flex; flex-wrap:wrap; gap:14px;
@@ -460,7 +460,7 @@ body{ transition:background-color .35s, color .35s; }
 
 /* ---------- The colophon in the footer --------------------------------------------
    Two short lines instead of one long one: who wrote it and under what, then who
-   built it. The heart is the only piece of colour down here. */
+   built it. The heart is the only piece of color down here. */
 .md-copyright .dpd-colophon{
   display:flex; flex-direction:column; align-items:flex-start; gap:3px;
 }
@@ -544,8 +544,8 @@ body{ transition:background-color .35s, color .35s; }
   white-space:nowrap;
 }
 /* The Narrator is the one voice that is not a player, so it gets the rule --
-   but not a dimmer colour. The Narrator is doing the actual scene-writing here,
-   and greying out the best prose on a page whose whole job is to make you feel
+   but not a dimmer color. The Narrator is doing the actual scene-writing here,
+   and graying out the best prose on a page whose whole job is to make you feel
    the fiction is the wrong trade for a bit of extra contrast. */
 .md-typeset .dpd-say--nar{ border-left-color:var(--line); }
 .md-typeset .dpd-say--nar b{ color:var(--accent); }
@@ -574,7 +574,7 @@ body{ transition:background-color .35s, color .35s; }
   text-transform:uppercase; margin:8px 0 0; padding-top:10px;
   border-top:1px solid var(--line); color:var(--muted);
 }
-/* The tie is the one the page is about, so it is the only one wearing colour. */
+/* The tie is the one the page is about, so it is the only one wearing color. */
 .dpd-roll[data-outcome="tie"]{ border-color:var(--accent-ui); }
 .dpd-roll[data-outcome="tie"] .dpd-roll-num{ color:var(--accent); }
 .md-typeset .dpd-roll[data-outcome="tie"] .dpd-roll-out{
@@ -837,14 +837,14 @@ body{ transition:background-color .35s, color .35s; }
    Written as a descendant selector -- `[data-md-color-scheme="terminal"] body`
    -- it matches nothing at all, because there is no body inside a body. That
    is why the scanlines and the flicker silently never rendered in the first
-   version: the colours worked, because those rules target the attribute
+   version: the colors worked, because those rules target the attribute
    directly, and every effect did not.
    -------------------------------------------------------------------------- */
 [data-md-color-scheme="terminal"]{
   --bg:#0C0700; --ink:#F0A500; --muted:#9A6A00; --line:#3A2800;
   --accent:#FFC533; --die:#7A4A00; --pip:#0C0700; --card:#160D00;
   --accent-ui:var(--accent); --on-accent:var(--bg);
-  /* One phosphor: the dice lose their colours, and the d20 keeps the accent. */
+  /* One phosphor: the dice lose their colors, and the d20 keeps the accent. */
   --d4:var(--ink); --d8:var(--ink); --d12:var(--ink); --d20:var(--accent);
   color-scheme:dark;
 }
@@ -909,7 +909,7 @@ body{ transition:background-color .35s, color .35s; }
 
 /* Scanlines and vignette, painted over everything and click-through.
    multiply rather than a flat overlay: it darkens the lit phosphor instead of
-   greying it out, which is what a real shadow mask does to the picture. */
+   graying it out, which is what a real shadow mask does to the picture. */
 body[data-md-color-scheme="terminal"]::after{
   content:""; position:fixed; inset:0; z-index:9998; pointer-events:none;
   background:
@@ -1070,7 +1070,7 @@ body[data-md-color-scheme="terminal"]::after{
   outline:none; border-bottom-color:var(--accent-ui);
   background:color-mix(in srgb, var(--accent-ui) 5%, transparent);
 }
-/* The die cell in the Skills table. Centred, mono, and wide enough for "d12". */
+/* The die cell in the Skills table. Centered, mono, and wide enough for "d12". */
 /* The die cell. There are five dice and there will only ever be five, so this
    is a chooser -- but it has to look like the rest of the sheet rather than like
    a browser form control, which is what appearance:none is doing here. */
@@ -1112,7 +1112,7 @@ body[data-md-color-scheme="terminal"]::after{
   background:color-mix(in srgb, var(--accent-ui) 7%, transparent);
 }
 .dpd-die-select.is-empty{ color:var(--line); }
-/* The dropdown itself is drawn by the browser, so it needs real colours. */
+/* The dropdown itself is drawn by the browser, so it needs real colors. */
 .dpd-die-select option{ color:var(--ink); background:var(--bg); }
 
 /* The Floor: a small box for a number, like the one on the printed sheet. */
@@ -1130,7 +1130,7 @@ body[data-md-color-scheme="terminal"]::after{
 }
 
 /* Stamina: twenty boxes a Skill, with the box where each die ends drawn in
-   that die's colour. Boxes past your die are greyed out; tick one off for
+   that die's color. Boxes past your die are grayed out; tick one off for
    each point you lose. */
 .dpd-stamina{ margin:8px 0 22px; }
 .dpd-st-row{ display:flex; align-items:center; gap:10px; margin:6px 0; }

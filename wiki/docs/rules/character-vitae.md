@@ -100,7 +100,7 @@ hold your breath that little bit longer.
 **Knowledge, memory, reasoning, aptitude.** Mind is what you know, what you can remember, and
 how well you can work something out.
 
-Reach for Mind when you're recalling a name, a history or a rumour, reading a map or an old
+Reach for Mind when you're recalling a name, a history or a rumor, reading a map or an old
 language, solving a puzzle, working out how a mechanism fits together, spotting the number that
 doesn't add up in a ledger, planning a route, or picking up something new in a hurry.
 

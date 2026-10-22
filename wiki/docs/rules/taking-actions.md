@@ -9,7 +9,7 @@ For long stretches of a game you may never think about turns at all, especially 
 no fight and nothing is racing the clock. As a player, keep an eye on the people around the
 table and make sure you're not hogging the spotlight. Everyone should get a chance to take
 part. If you're the Narrator, you can help with that too. (There's more on running the table in
-the [For Narrators](../narrators/index.md) section.)
+the [Narrator's Guide](../narrators/index.md).)
 
 You're still taking turns in those moments. You're just not keeping track.
 

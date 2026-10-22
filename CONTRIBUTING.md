@@ -38,13 +38,13 @@ argued about.
 
 You keep authorship of what you write.
 
-Contributions are accepted under the project's licence, **CC BY 4.0** &mdash; the same terms the
+Contributions are accepted under the project's license, **CC BY 4.0** &mdash; the same terms the
 rest of the game uses. In practice that means anyone may reuse what you contribute, including
 commercially, as long as they credit it. By opening a pull request you confirm the work is yours
 to give.
 
-See [NOTICE.md](NOTICE.md) for what the licence does and doesn't cover.
+See [NOTICE.md](NOTICE.md) for what the license does and doesn't cover.
 
 **Do not submit** text, stat blocks, art, or tables copied from other games. That includes
-paraphrases close enough to be recognisable. This project's whole argument is that you shouldn't
+paraphrases close enough to be recognizable. This project's whole argument is that you shouldn't
 need someone else's rulebook &mdash; borrowing from one would be a poor start.

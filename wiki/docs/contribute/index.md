@@ -1,7 +1,8 @@
 # How to contribute
 
 The point of this project is that the game belongs to the people who play it. Write rules,
-settings, adversaries, adventures, art — and keep what you make.
+settings, adversaries, adventures, art — and keep what you make. No half measures: apart from the
+name and logo, [the whole game is open](../license.md#no-half-measures), and nothing is held back as closed content.
 
 ## Why it's built this way {.dpd-display}
 
@@ -44,8 +45,8 @@ There are two ways in, depending on how comfortable you are with the tools.
 ## What happens to your change {.dpd-display}
 
 Every change, through either door, arrives as a pull request. We read each one and decide
-whether it fits the game. If it doesn't, nothing stops you: the licence lets you publish your
+whether it fits the game. If it doesn't, nothing stops you: the license lets you publish your
 own version, changed however you like.
 
 Whatever you send is shared under the same terms as the rest of the game,
-[CC BY 4.0](../licence.md). You keep the credit for what you wrote.
+[CC BY 4.0](../license.md). You keep the credit for what you wrote.

@@ -67,7 +67,7 @@ That is the Canon of fun doing its job.
 - **Both sides roll.** The loser drops one stamina in the stat they rolled. A tie lands both
   ways.
 - **Hard hit:** win by more than their die has sides, and it's two stamina.
-- **Step down:** each attack after your first on your turn, and each defence after your first
+- **Step down:** each attack after your first on your turn, and each defense after your first
   in a round, rolls one die smaller, down to a d4. Defending is free.
 - **Out** at zero stamina in any stat. Out isn't dead.
 

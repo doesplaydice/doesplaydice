@@ -56,12 +56,12 @@ a d4.
 **Defending is free.** It doesn't cost an action, and you always get to roll. An attack never
 just lands on someone who sees it coming: even an archer can miss.
 
-**Every defence after your first in a round steps down.** Against the first attack on you each
+**Every defense after your first in a round steps down.** Against the first attack on you each
 round, you roll your full die. Against the next, one die smaller, and so on down to a d4. When
 the next round starts, you're back to full.
 
-Attacks and defences are counted separately. Swinging three times on your turn doesn't weaken
-your defence.
+Attacks and defenses are counted separately. Swinging three times on your turn doesn't weaken
+your defense.
 
 So being outnumbered is a real problem: by the fourth attacker, a d12 fighter is defending on a
 d4. The answer isn't another rule. It's the story: back into a doorway, put a table between
