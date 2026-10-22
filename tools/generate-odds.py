@@ -89,14 +89,14 @@ hide:
 
 # The odds
 
-<p class="dpd-lede-sm">Every possible roll in the game, worked out exactly. Your Skill die
-across the rows, the Narrator's Difficulty die across the columns.</p>
+<p class="dpd-lede-sm">Every possible roll in the game, worked out exactly. Your stat die
+down the side, the Narrator's Difficulty die across the top.</p>
 
 <div class="dpd-odds" markdown>
 
 <table class="dpd-odds-grid">
   <thead>
-    <tr><th scope="col"><span class="odds-corner">skill \\ challenge</span></th>%s</tr>
+    <tr><th scope="col"><span class="odds-corner">stat \\ challenge</span></th>%s</tr>
   </thead>
   <tbody>
 %s
@@ -129,7 +129,7 @@ Which means the most generous rule in the game &mdash; *both sides get something
 &mdash; fires **most often for beginners attempting easy things**, and almost
 disappears at the top of the range.
 
-A new player with a d4 Skill trying something Easy triggers it on a quarter of
+A new player with a d4 stat trying something Easy triggers it on a quarter of
 their rolls. Two experts in a d20 standoff trigger it on one roll in twenty.
 The game gets more decisive exactly as the stakes rise, and it is at its most
 collaborative exactly where new players are standing.
@@ -148,9 +148,9 @@ range it is a quarter of all play.
 
 ## Reading the grid
 
-- **Down a column** &mdash; what a bigger Skill die buys you against a fixed
+- **Down a column** &mdash; what a bigger stat die buys you against a fixed
   challenge. Against a d12, moving from d4 to d20 takes you from 12.5%% to 67.5%%.
-- **Across a row** &mdash; how fast a challenge outruns you. A d8 Skill is favored
+- **Across a row** &mdash; how fast a challenge outruns you. A d8 stat is favored
   against Easy and Moderate, level with Challenging, and outmatched above that.
 - **The diagonal** &mdash; an even contest, where win and lose are exactly level.
 
@@ -158,8 +158,7 @@ range it is a quarter of all play.
 
     Computed, not measured. Each cell enumerates all possible pairs of rolls and
     counts them, so these are exact probabilities rather than the results of a
-    simulation. The generator is `tools/generate-odds.py`, and it asserts the
-    1 &divide; larger-die rule for all 25 pairings every time it runs.
+    simulation.
 ''' % (head, "\n".join(rows), "\n".join(
         "| d%d vs d%d | %s%% | %s%% | %s%% |" % ((d, d) + tuple(pct(x) for x in outcomes(d, d)))
         for d in DICE
