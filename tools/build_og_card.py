@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Draw the link preview card: wiki/docs/assets/img/og-card.v2.png (1200x630).
+"""Draw the link preview card: wiki/docs/assets/img/og-card.v3.png (1200x630).
 
 This is the picture Discord, BlueSky, Reddit and iMessage show when someone
 pastes the link. It reuses the masthead (overrides/partials/masthead.html), so
@@ -26,10 +26,10 @@ from build_pdf import find_chrome  # noqa: E402
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 MASTHEAD = os.path.join(ROOT, "wiki", "overrides", "partials", "masthead.html")
 FONTS = os.path.join(ROOT, "wiki", "docs", "assets", "fonts")
-OUT = os.path.join(ROOT, "wiki", "docs", "assets", "img", "og-card.v2.png")
+OUT = os.path.join(ROOT, "wiki", "docs", "assets", "img", "og-card.v3.png")
 
 # Keep in step with the home page heading (wiki/docs/index.md).
-TAGLINE = "Five dice. Fifteen minutes. Hours of fun."
+TAGLINE = "Five dice. Fifteen minutes. A lifetime of adventure."
 
 # The dark palette and the masthead colours, from extra.v7.css.
 CSS = """

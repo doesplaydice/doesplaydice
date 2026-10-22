@@ -833,7 +833,7 @@ def build_book(site, chrome, out_dir):
 <div class="cover">
   <div>
     <div class="cover-title">DOES<br>PLAY<br>DICE</div>
-    <div class="cover-sub">Five dice. Fifteen minutes. Hours of fun.</div>
+    <div class="cover-sub">Five dice. Fifteen minutes. A lifetime of adventure.</div>
   </div>
   <div class="cover-foot">
     Jeff Adams<br>
