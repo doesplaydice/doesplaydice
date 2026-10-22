@@ -12,7 +12,7 @@
 # the one page ended up owned by whoever owned everything else. It looked
 # correct and did nothing.
 #
-# Jeff has two accounts, both org admins. Either can approve.
+# Jeff's account is @thoughtsfired.
 
 # --- Everything in the site: any maintainer -----------------------------------
 /wiki/docs/                    @doesplaydice/maintainers
@@ -25,4 +25,4 @@
 /wiki/docs/community/
 
 # --- Frozen core: the one page needs Jeff himself. LAST, so it wins. ----------
-/wiki/docs/rules/index.md      @doesplaydice-user @thoughtsfired
+/wiki/docs/rules/index.md      @thoughtsfired
