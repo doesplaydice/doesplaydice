@@ -120,7 +120,7 @@ extra:
 # to live here is the sort of thing you read once, so it moved to /licence/.
 copyright: >
   <span class="dpd-colophon">
-  <span>Does Play Dice by Jeff Adams &middot; 2026 &middot;
+  <span>Does Play Dice &middot; 2026 &middot;
   <a href="/licence/" rel="license">CC BY 4.0</a></span>
   <span class="dpd-colophon-by">Made with
   <span class="dpd-heart" role="img" aria-label="love">&#9829;</span>
@@ -140,7 +140,7 @@ nav:
   - Narrator's Guide:
       - Running a game: narrators/index.md
       - The screen: narrators/screen.md
-  - For Builders:
+  - Contributor's Guide:
       - How to contribute: contribute/index.md
       - Make it yours: licence.md
   - Downloads: downloads.md

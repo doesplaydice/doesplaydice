@@ -13,8 +13,6 @@ hide:
 learn, and only limited by your imagination. Opposed rolls, three stats, five dice, and no
 shelf of rulebooks.</p>
 
-<p class="dpd-kicker">Newcomer friendly &middot; Any level of experience</p>
-
 <div class="dpd-actions" markdown>
 [Read the rules](rules/index.md){ .md-button .md-button--primary }
 [Download and play](downloads.md){ .md-button }

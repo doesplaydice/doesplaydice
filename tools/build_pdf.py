@@ -440,7 +440,7 @@ def build_one_pager(site, chrome, out_dir):
 </div>
 <div class="sheet-body">{body}
 <div class="sheet-foot">
-  <span>Does Play Dice by Jeff Adams</span>
+  <span>Does Play Dice &middot; doesplaydice.com</span>
   <span>Text licensed CC BY 4.0 &middot; name and logo excluded</span>
 </div>
 </div>""",
@@ -517,7 +517,7 @@ def build_character_sheet(site, chrome, out_dir):
 </div>
 
 <div class="foot">
-  <span>Does Play Dice by Jeff Adams</span>
+  <span>Does Play Dice &middot; doesplaydice.com</span>
   <span>Text licensed CC BY 4.0 &middot; name and logo excluded</span>
 </div>""",
         SHEET_CSS,
@@ -782,7 +782,7 @@ REFERENCE_BODY = """
 </div>
 
 <div class="foot">
-  <span>Does Play Dice by Jeff Adams</span>
+  <span>Does Play Dice &middot; doesplaydice.com</span>
   <span>Text licensed CC BY 4.0 &middot; name and logo excluded</span>
 </div>
 """
@@ -836,7 +836,6 @@ def build_book(site, chrome, out_dir):
     <div class="cover-sub">Five dice. Fifteen minutes. A lifetime of adventure.</div>
   </div>
   <div class="cover-foot">
-    Jeff Adams<br>
     doesplaydice.com<br>
     Text licensed CC BY 4.0 &middot; the name and logo are excluded
   </div>

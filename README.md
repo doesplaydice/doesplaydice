@@ -3,7 +3,7 @@
 A storytelling game that's free to download, quick to learn, and only limited by your
 imagination. This repository is the source of [doesplaydice.com](https://doesplaydice.com).
 
-Does Play Dice by Jeff Adams is licensed [CC BY 4.0](LICENSE). The name and logo are held back
+Does Play Dice is licensed [CC BY 4.0](LICENSE). The name and logo are held back
 as marks; see [NOTICE.md](NOTICE.md) and the [licence page](https://doesplaydice.com/licence/).
 
 ## What's in here

@@ -14,7 +14,7 @@ The one requirement is **credit**.
 
 ## The attribution to use
 
-> Based on *Does Play Dice* by Jeff Adams — doesplaydice.com — licensed CC BY 4.0.
+> Based on *Does Play Dice* — doesplaydice.com — licensed CC BY 4.0.
 
 If you changed things, say so. That is the whole obligation.
 
@@ -42,7 +42,7 @@ the game and something that merely resembles it.
 The Open Game License turned out to be revocable, and in 2023 an attempt to revoke it nearly
 took a twenty-year ecosystem with it.
 
-**CC BY cannot be revoked.** Not by Jeff, not by anyone who acquires this project later, not by
+**CC BY cannot be revoked.** Not by us, not by anyone who takes over this project later, not by
 anyone at all. That is the entire point. It is also the licence Wizards of the Coast ultimately
 released the D&D 5.1 SRD under, which means material can move between the two.
 

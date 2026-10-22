@@ -6,13 +6,13 @@ how to do it.
 ## The text
 
 Everything written on this site — the rules and the examples — is
-**Does Play Dice by Jeff Adams**, licensed
+**Does Play Dice**, licensed
 <a href="https://creativecommons.org/licenses/by/4.0/" rel="license">CC BY 4.0</a>.
 
 You can copy it, change it, print it, teach from it, and sell what you make from
 it. You do not need permission and you do not owe anyone money. The licence is
-irrevocable: it cannot be taken back later, by Jeff or by anyone who comes after
-him.
+irrevocable: it cannot be taken back later, by us or by anyone who looks after
+the project in future.
 
 <div class="dpd-fork-grid" markdown>
 
@@ -30,7 +30,7 @@ him.
 <div class="dpd-fork-no" markdown>
 ### You must
 
-- **Give credit.** Say the game is based on Does Play Dice by Jeff Adams, link the licence, and
+- **Give credit.** Say the game is based on Does Play Dice, link the licence, and
   note if you changed things.
 - **Use your own name.** *Does Play Dice* and the logo are held as trademarks and are **not**
   covered by the licence. See [What is not covered](#what-is-not-covered).
@@ -40,16 +40,16 @@ him.
 
 The one condition is credit. Something like this is enough:
 
-> Based on <a href="https://doesplaydice.com">Does Play Dice</a> by Jeff Adams,
+> Based on <a href="https://doesplaydice.com">Does Play Dice</a>,
 > licensed <a href="https://creativecommons.org/licenses/by/4.0/" rel="license">CC BY 4.0</a>.
 > Changes were made.
 
-## No halfsies
+## No half measures
 
-Most open game licences only open part of a game. The OGL and the ORC licence split a game in
-two: open rules on one side, and on the other a closed list of "product identity" or "reserved
-material" &mdash; the iconic monsters, the named spells, the setting, the art. The owlbear and
-Leomund's Tiny Hut stay behind that wall, even though they sit right inside the rules.
+Many open game licences only open up parts of a game. Both the OGL and the ORC licence, for
+example, split a game in two: open rules on one side, and on the other a closed list of "product
+identity" or "reserved material." Iconic monsters, named NPCs and spells, campaign settings, and
+artwork stay behind that wall.
 
 **We don't split the game.** The only things held back are the name *Does Play Dice* and its
 logo. Everything else is CC BY:
