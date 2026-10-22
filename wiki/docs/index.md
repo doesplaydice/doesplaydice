@@ -9,9 +9,11 @@ hide:
 
 # Five dice.<br>Fifteen minutes.<br>A lifetime of adventure.
 
-<p class="dpd-lede">A storytelling game that's free to download, quick to learn, and only
-limited by your imagination. It gives you the creative outlet of a role-playing game &mdash;
-without the learning curve, or the shelf of rulebooks.</p>
+<p class="dpd-lede">A rules-light tabletop role-playing game that's free to download, quick to
+learn, and only limited by your imagination. Opposed rolls, three stats, five dice, and no
+shelf of rulebooks.</p>
+
+<p class="dpd-kicker">Newcomer friendly &middot; Any level of experience</p>
 
 <div class="dpd-actions" markdown>
 [Read the rules](rules/index.md){ .md-button .md-button--primary }
@@ -65,8 +67,8 @@ the same table and play the same game. That's the whole design.
   <a href="narrators/">
     <span class="dpd-card-num">03</span>
     <span class="dpd-card-title">Run a game</span>
-    <span class="dpd-card-desc">Guidance for Narrators: setting scenes, calling checks, pacing a night.</span>
-    <span class="dpd-card-go">For Narrators &rarr;</span>
+    <span class="dpd-card-desc">For the Narrator (your GM): setting scenes, calling checks, pacing a night.</span>
+    <span class="dpd-card-go">Narrator's Guide &rarr;</span>
   </a>
   <a href="contribute/">
     <span class="dpd-card-num">04</span>
