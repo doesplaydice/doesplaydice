@@ -1,7 +1,8 @@
 # How to contribute
 
 The point of this project is that the game belongs to the people who play it. Write rules,
-settings, adversaries, adventures, art — and keep what you make.
+settings, adversaries, adventures, art — and keep what you make. No halfsies: apart from the
+name, [the whole game is open](../licence.md#no-halfsies), and nothing is held back as closed content.
 
 ## Why it's built this way {.dpd-display}
 

@@ -1,6 +1,6 @@
 # Make it yours
 
-The short version: **the words are yours to take.** This page explains what that means, and
+The short version: **the whole game is yours to take.** Only the name stays with us. This page explains what that means, and
 how to do it.
 
 ## The text
@@ -43,6 +43,24 @@ The one condition is credit. Something like this is enough:
 > Based on <a href="https://doesplaydice.com">Does Play Dice</a> by Jeff Adams,
 > licensed <a href="https://creativecommons.org/licenses/by/4.0/" rel="license">CC BY 4.0</a>.
 > Changes were made.
+
+## No halfsies
+
+Most open game licences only open part of a game. The OGL and the ORC licence split a game in
+two: open rules on one side, and on the other a closed list of "product identity" or "reserved
+material" &mdash; the iconic monsters, the named spells, the setting, the art. The owlbear and
+Leomund's Tiny Hut stay behind that wall, even though they sit right inside the rules.
+
+**We don't split the game.** The only thing held back is the name *Does Play Dice*. Everything
+else is CC BY:
+
+- the rules, and every example of them
+- spells, skills and character templates
+- story guides, their pregenerated characters, handouts and maps
+- every download, and every page of this site
+- the campaign setting, when it's released
+
+You can keep your own work closed if you want to. We're not keeping ours.
 
 ## What is not covered
 
