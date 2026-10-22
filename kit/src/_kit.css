@@ -2,13 +2,13 @@
    Does Play Dice -- convention kit, shared print styles
 
    Designed for BLACK AND WHITE. Every piece must survive a home printer or a
-   copy shop. Colour is used only where losing it costs nothing: the one accent
-   drops to mid-grey and no information goes with it.
+   copy shop. Color is used only where losing it costs nothing: the one accent
+   drops to mid-gray and no information goes with it.
 
    Same type and palette as the website (Oct 2026): Archivo Black headlines,
    Familjen Grotesk text, Literata for the italic asides, JetBrains Mono for
    labels, all self-hosted from wiki/docs/assets/fonts. Gold accent; each die
-   in its masthead colour, d6 in ink. Every colour reads as a mid-to-dark grey
+   in its masthead color, d6 in ink. Every color reads as a mid-to-dark gray
    in black and white, so the pieces still survive a photocopier.
    =========================================================================== */
 
@@ -17,7 +17,7 @@
 :root{
   --ink:#000;
   --paper:#fff;
-  --accent:#8C6900;      /* the site's d20 gold, text weight; ~45% grey in B&W */
+  --accent:#8C6900;      /* the site's d20 gold, text weight; ~45% gray in B&W */
   --d4:#A14431; --d8:#346587; --d12:#436A48; --d20:var(--accent);
   --soft:#666;
   --hair:#bbb;

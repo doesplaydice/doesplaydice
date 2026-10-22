@@ -31,7 +31,7 @@ OUT = os.path.join(ROOT, "wiki", "docs", "assets", "img", "og-card.v3.png")
 # Keep in step with the home page heading (wiki/docs/index.md).
 TAGLINE = "Five dice. Fifteen minutes. A lifetime of adventure."
 
-# The dark palette and the masthead colours, from extra.v7.css.
+# The dark palette and the masthead colors, from extra.v7.css.
 CSS = """
 @font-face{ font-family:"Archivo Black"; src:url("FONTS/archivo-black-normal-400-latin.woff2"); }
 @font-face{ font-family:"JetBrains Mono"; font-weight:400 700;

@@ -10,7 +10,7 @@ Everything written on this site — the rules and the examples — is
 <a href="https://creativecommons.org/licenses/by/4.0/" rel="license">CC BY 4.0</a>.
 
 You can copy it, change it, print it, teach from it, and sell what you make from
-it. You do not need permission and you do not owe anyone money. The licence is
+it. You do not need permission and you do not owe anyone money. The license is
 irrevocable: it cannot be taken back later, by us or by anyone who looks after
 the project in future.
 
@@ -24,16 +24,16 @@ the project in future.
 - **Sell it.** Print it, bundle it, charge whatever you like.
 - **Build on it.** Adventures, settings, apps, translations.
 - **Keep your version closed** if you want to. There is no share-alike clause.
-- **Do all of the above forever.** The licence is irrevocable.
+- **Do all of the above forever.** The license is irrevocable.
 </div>
 
 <div class="dpd-fork-no" markdown>
 ### You must
 
-- **Give credit.** Say the game is based on Does Play Dice, link the licence, and
+- **Give credit.** Say the game is based on Does Play Dice, link the license, and
   note if you changed things.
 - **Use your own name.** *Does Play Dice* and the logo are held as trademarks and are **not**
-  covered by the licence. See [What is not covered](#what-is-not-covered).
+  covered by the license. See [What is not covered](#what-is-not-covered).
 </div>
 
 </div>
@@ -46,7 +46,7 @@ The one condition is credit. Something like this is enough:
 
 ## No half measures
 
-Many open game licences only open up parts of a game. Both the OGL and the ORC licence, for
+Many open game licenses only open up parts of a game. Both the OGL and the ORC license, for
 example, split a game in two: open rules on one side, and on the other a closed list of "product
 identity" or "reserved material." Iconic monsters, named NPCs and spells, campaign settings, and
 artwork stay behind that wall.
@@ -67,16 +67,16 @@ You can keep your own work closed if you want to. We're not keeping ours.
 **The name "Does Play Dice" and the Does Play Dice logo are excluded.** They are
 held as marks and are not part of the CC BY grant.
 
-This is the one piece of deliberate friction in an otherwise open licence, and
+This is the one piece of deliberate friction in an otherwise open license, and
 it exists for a specific reason: it means anyone can publish their own version
 of these rules, but nobody can publish a *different* game under this game's
 name. Call your version whatever you like, say what it is based on, and you are
 well inside the line.
 
-## Why this licence
+## Why this license
 
-We wanted a licence that was **familiar, tested and well supported**, and not one written
-for a single industry. Creative Commons licences are used across publishing, education, music
+We wanted a license that was **familiar, tested and well supported**, and not one written
+for a single industry. Creative Commons licenses are used across publishing, education, music
 and the arts. Writers, publishers and lawyers already know what they mean, so nobody has to
 learn a new set of terms to build on this game. That's why we chose CC BY.
 
@@ -117,7 +117,7 @@ markdown. Nothing points back at us.
 
 ### If you would rather not use git
 
-The licence does not require a GitHub account.
+The license does not require a GitHub account.
 
 - <a href="../downloads/does-play-dice-book.pdf">Download the full book as a PDF</a> &mdash; the
   rules and the character sheet in one document.
@@ -129,7 +129,7 @@ The licence does not require a GitHub account.
 
 If you build something,
 [tell us](https://github.com/doesplaydice/doesplaydice/issues). If you would rather not, that
-is entirely your right, and the licence says so.
+is entirely your right, and the license says so.
 
 The measure of whether this worked is not how many people come back here. It is how many
 versions of this game exist that we never hear about.
@@ -139,7 +139,7 @@ versions of this game exist that we never hear about.
 The site is a static one, and it makes no third-party requests — everything
 below is served from this domain.
 
-| What | Licence |
+| What | License |
 | --- | --- |
 | [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/) | MIT |
 | [MkDocs](https://www.mkdocs.org/) | BSD 2-Clause |

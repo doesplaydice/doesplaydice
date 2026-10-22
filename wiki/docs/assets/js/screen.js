@@ -10,7 +10,7 @@
 
   function roll(sides) {
     // Same rejection sampling as the rules-page roller: no die size divides
-    // 2^32 evenly, so plain modulo would quietly favour the low faces.
+    // 2^32 evenly, so plain modulo would quietly favor the low faces.
     var limit = Math.floor(4294967296 / sides) * sides;
     var buf = new Uint32Array(1);
     if (window.crypto && window.crypto.getRandomValues) {

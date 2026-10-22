@@ -150,7 +150,7 @@ range it is a quarter of all play.
 
 - **Down a column** &mdash; what a bigger Skill die buys you against a fixed
   challenge. Against a d12, moving from d4 to d20 takes you from 12.5%% to 67.5%%.
-- **Across a row** &mdash; how fast a challenge outruns you. A d8 Skill is favoured
+- **Across a row** &mdash; how fast a challenge outruns you. A d8 Skill is favored
   against Easy and Moderate, level with Challenging, and outmatched above that.
 - **The diagonal** &mdash; an even contest, where win and lose are exactly level.
 

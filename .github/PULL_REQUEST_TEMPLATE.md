@@ -2,7 +2,7 @@
 Thanks for contributing to Does Play Dice.
 
 Everything here is licensed CC BY 4.0. By opening this pull request you are
-offering your contribution under the same licence — inbound equals outbound.
+offering your contribution under the same license — inbound equals outbound.
 The name and logo are trademarks and are not covered by it.
 -->
 

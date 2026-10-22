@@ -139,7 +139,7 @@
     return col;
   }
 
-  /* The stamina boxes past a die's sides are not yours: grey them out, as the
+  /* The stamina boxes past a die's sides are not yours: gray them out, as the
      printed sheet asks you to with a pencil. */
   function sides(die) { return parseInt(String(die || '').replace(/^d/i, ''), 10) || 0; }
 
@@ -279,7 +279,7 @@
         });
       } else {
         /* Stamina: tick a box off for each point lost, untick it as it comes
-           back. Boxes past the die are greyed out and cannot be ticked. */
+           back. Boxes past the die are grayed out and cannot be ticked. */
         var boxes = [].slice.call(el.querySelectorAll('.dpd-bx i'));
         var spent = [];
         boxes.forEach(function (b, n) {

@@ -1,4 +1,4 @@
-# What the licence covers
+# What the license covers
 
 **Does Play Dice** is licensed under
 [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/).
@@ -20,7 +20,7 @@ If you changed things, say so. That is the whole obligation.
 
 ## What is *not* covered
 
-The licence applies to **everything in this repository** except the name and logo: the rules, tables,
+The license applies to **everything in this repository** except the name and logo: the rules, tables,
 examples, spells, skills, character templates, story guides, handouts, maps, downloads and site.
 Nothing in the game itself is held back as closed content.
 
@@ -43,10 +43,10 @@ The Open Game License turned out to be revocable, and in 2023 an attempt to revo
 took a twenty-year ecosystem with it.
 
 **CC BY cannot be revoked.** Not by us, not by anyone who takes over this project later, not by
-anyone at all. That is the entire point. It is also the licence Wizards of the Coast ultimately
+anyone at all. That is the entire point. It is also the license Wizards of the Coast ultimately
 released the D&D 5.1 SRD under, which means material can move between the two.
 
 ## Contributions
 
-Contributions are accepted under the same licence — CC BY 4.0. By opening a pull request you
+Contributions are accepted under the same license — CC BY 4.0. By opening a pull request you
 confirm the work is yours to give. See [CONTRIBUTING.md](CONTRIBUTING.md).

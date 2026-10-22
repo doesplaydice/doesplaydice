@@ -6,7 +6,7 @@ hide:
 # Skills and training
 
 Your three stats &mdash; Body, Mind and Soul &mdash; say what you're like. Your **skills** say
-what you've learned: a combat manoeuvre, a new spell, picking pockets, a backstab, a craft.
+what you've learned: a combat maneuver, a new spell, picking pockets, a backstab, a craft.
 Training is how you gain skills, and how you reshape your stats as your character changes.
 
 ## There are no levels
@@ -33,7 +33,7 @@ That turns "I want to get better at this" into a reason to go somewhere.
 
 ## What points buy
 
-**New skills.** A combat manoeuvre, a new spell, picking pockets, a backstab, a craft: the
+**New skills.** A combat maneuver, a new spell, picking pockets, a backstab, a craft: the
 things your [path](#paths) is made of.
 
 **A swap.** Characters change: age, maturity, wisdom, injury, a new focus, a tragedy. If the

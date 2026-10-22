@@ -321,7 +321,7 @@ img{ max-width:100%; }
 .admonition-title{ font-family:var(--mono); font-size:7pt; letter-spacing:.13em;
   text-transform:uppercase; color:var(--accent); margin:0 0 3pt; }
 
-/* The odds grid keeps the site's dice colours: d4, d6, d8, d12, d20 in order,
+/* The odds grid keeps the site's dice colors: d4, d6, d8, d12, d20 in order,
    d6 in ink. */
 .dpd-odds-grid tbody tr:nth-child(1) th,.dpd-odds-grid thead th:nth-child(2){ color:var(--d4); }
 .dpd-odds-grid tbody tr:nth-child(3) th,.dpd-odds-grid thead th:nth-child(4){ color:var(--d8); }
@@ -749,7 +749,7 @@ REFERENCE_BODY = """
     <div class="step-down">
       <div class="sd-title">Each one after the first steps down a die</div>
       <div class="sd-row"><span class="sd-lbl">Attacks, your turn</span><span class="sd r12">d12</span>&rarr;<span class="sd r8">d8</span>&rarr;<span class="sd r6">d6</span></div>
-      <div class="sd-row"><span class="sd-lbl">Defences, per round</span><span class="sd r12">d12</span>&rarr;<span class="sd r8">d8</span>&rarr;<span class="sd r6">d6</span>&rarr;<span class="sd r4">d4</span></div>
+      <div class="sd-row"><span class="sd-lbl">Defenses, per round</span><span class="sd r12">d12</span>&rarr;<span class="sd r8">d8</span>&rarr;<span class="sd r6">d6</span>&rarr;<span class="sd r4">d4</span></div>
       <p class="note">Never below d4. <b>Defending is free</b>: no action. Counts reset each round. <b>You can always leave:</b> say so and go.</p>
     </div>
   </div>
